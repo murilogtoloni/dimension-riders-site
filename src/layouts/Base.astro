@@ -1,7 +1,7 @@
 ---
 import LangSwitch from '../components/LangSwitch.astro';
 import { GITHUB_URL } from '../config';
-import { HTML_LANG, LOCALES, localePath, t, type Locale, type Page } from '../i18n';
+import { HTML_LANG, LOCALES, OG_LOCALE, localePath, t, type Locale, type Page } from '../i18n';
 import '../styles/global.css';
 
 interface Props { locale: Locale; page: Page; title?: string }
@@ -32,6 +32,10 @@ const nav: Page[] = ['home', 'fold', 'download'];
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={OG_LOCALE[locale]} />
+    {LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#12101a" />
   </head>
   <body>

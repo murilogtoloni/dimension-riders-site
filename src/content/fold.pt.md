@@ -24,7 +24,7 @@ Um Desdobrado forte o bastante pra manter um Rasgo aberto e mandar nos dois lado
 
 ## Os Cavaleiros
 
-Uma ordem antiga, de muitos mundos. Todo mundo que entrou nela lembra do dia em que um Tirano chegou. A ordem tem uma regra só, mais velha que qualquer teoria: um Rasgo aberto é um Rasgo pra selar. Os Cavaleiros não dizem nada sobre a Marca. Cada um tem uma resposta. Nenhum conta a sua.
+Uma ordem antiga, de muitos mundos. Cada mundo que entrou nela lembra do dia em que um Tirano chegou. A ordem tem uma regra só, mais velha que qualquer teoria: um Rasgo aberto é um Rasgo pra selar. Os Cavaleiros não dizem nada sobre a Marca. Cada um tem uma resposta. Nenhum conta a sua.
 
 Todo Cavaleiro carrega uma Estilha: um único fragmento de Âmbar, lascado e polido. Uma Estilha não abre nada. Só deixa uma pessoa passar por um Rasgo que já existe. E ela puxa. Quando um Rasgo é selado, a Dobra se fecha de estalo, e a Estilha arrasta o Cavaleiro para o próximo vinco que está cedendo. Cavaleiros não escolhem pra onde vão. Cavalgam o puxão.
 

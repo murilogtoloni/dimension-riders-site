@@ -22,4 +22,4 @@ Se um dia o jogo passar a coletar algum dado (por exemplo, um ranking online), e
 
 ## Contato
 
-Dúvidas: abra uma issue em https://github.com/murilogtoloni/dimension-riders.
+Dúvidas: abra uma issue [no GitHub](https://github.com/murilogtoloni/dimension-riders).

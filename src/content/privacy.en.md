@@ -22,4 +22,4 @@ If the game ever starts collecting data (for example, an online leaderboard), th
 
 ## Contact
 
-Questions: open an issue at https://github.com/murilogtoloni/dimension-riders.
+Questions: open an issue [on GitHub](https://github.com/murilogtoloni/dimension-riders).

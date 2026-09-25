@@ -25,13 +25,14 @@ describe('links internos', () => {
   });
 
   for (const file of files) {
-    it(`${file.slice(DIST.length)}: todo link interno tem a base e aponta para uma página que existe`, () => {
+    it(`${file.slice(DIST.length)}: todo link interno tem a base e aponta para uma página que existe; sem <script>`, () => {
       const html = readFileSync(file, 'utf8');
       const hrefs = [...html.matchAll(/<a\s[^>]*href="([^"]*)"/g)].map((m) => m[1]);
       const internal = hrefs.filter((h) => h.startsWith('/'));
       const withoutBase = internal.filter((h) => !h.startsWith(`${BASE}/`));
       const broken = internal.filter((h) => h.startsWith(`${BASE}/`) && !existsSync(targetFile(h)));
       expect({ withoutBase, broken }).toEqual({ withoutBase: [], broken: [] });
+      if (file.slice(DIST.length) !== '/index.html') expect(html).not.toMatch(/<script/);
     });
   }
 });

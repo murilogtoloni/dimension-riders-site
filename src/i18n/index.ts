@@ -8,6 +8,9 @@ export const DEFAULT_LOCALE: Locale = 'en';
 /** Valor do atributo lang do <html> e dos hreflang. */
 export const HTML_LANG: Record<Locale, string> = { en: 'en', pt: 'pt-BR' };
 
+/** Valor de og:locale por idioma. */
+export const OG_LOCALE: Record<Locale, string> = { en: 'en_US', pt: 'pt_BR' };
+
 export const PAGES = ['home', 'fold', 'download', 'privacy'] as const;
 export type Page = (typeof PAGES)[number];
 

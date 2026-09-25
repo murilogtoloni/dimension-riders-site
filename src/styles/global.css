@@ -57,7 +57,7 @@ h1, h2, h3 { line-height: 1.15; margin: 0 0 0.5em; }
 .cta { padding-block: 2rem 3rem; }
 .cta .store-buttons { justify-content: center; }
 
-.prose { padding-block: 1rem 3rem; max-width: 44rem; }
+.prose { padding-block: 1rem 3rem; max-width: 44rem; overflow-wrap: anywhere; }
 .prose h1 { color: var(--amber); }
 
 .site-footer { display: flex; flex-wrap: wrap; gap: 1rem; padding-block: 1.5rem; color: var(--muted); border-top: 1px solid var(--line); font-size: 0.9rem; }
