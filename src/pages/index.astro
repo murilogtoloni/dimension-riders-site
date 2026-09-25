@@ -1,0 +1,29 @@
+---
+import { DEFAULT_LOCALE, LOCALES, localePath, t } from '../i18n';
+
+const targets = Object.fromEntries(LOCALES.map((l) => [l, localePath(l, 'home')]));
+const fallback = targets[DEFAULT_LOCALE];
+const siteName = t(DEFAULT_LOCALE, 'site.name');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{siteName}</title>
+    <meta http-equiv="refresh" content={`1;url=${fallback}`} />
+    <script is:inline define:vars={{ targets, fallback }}>
+      var langs = navigator.languages || [navigator.language || ''];
+      var hit = null;
+      for (var i = 0; i < langs.length && !hit; i++) {
+        var code = String(langs[i]).toLowerCase().split('-')[0];
+        if (targets[code]) hit = targets[code];
+      }
+      location.replace(hit || fallback);
+    </script>
+  </head>
+  <body>
+    <a href={fallback}>{siteName}</a>
+  </body>
+</html>

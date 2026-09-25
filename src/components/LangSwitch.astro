@@ -1,0 +1,12 @@
+---
+import { HTML_LANG, LOCALES, localePath, t, type Locale, type Page } from '../i18n';
+
+interface Props { locale: Locale; page: Page }
+const { locale, page } = Astro.props;
+const others = LOCALES.filter((l) => l !== locale);
+---
+{others.map((other) => (
+  <a class="lang-switch" href={localePath(other, page)} hreflang={HTML_LANG[other]} lang={HTML_LANG[other]}>
+    {t(other, 'site.languageName')}
+  </a>
+))}

@@ -1,0 +1,58 @@
+---
+import LangSwitch from '../components/LangSwitch.astro';
+import { GITHUB_URL } from '../config';
+import { HTML_LANG, LOCALES, OG_LOCALE, localePath, t, type Locale, type Page } from '../i18n';
+import '../styles/global.css';
+
+interface Props { locale: Locale; page: Page; title?: string }
+const { locale, page, title } = Astro.props;
+
+const siteName = t(locale, 'site.name');
+const fullTitle = title ? `${title} · ${siteName}` : siteName;
+const description = t(locale, `meta.${page}`);
+const absolute = (path: string) => new URL(path, Astro.site).toString();
+const canonical = absolute(localePath(locale, page));
+const ogImage = absolute(`${import.meta.env.BASE_URL.replace(/\/+$/, '')}/og.png`);
+const favicon = `${import.meta.env.BASE_URL.replace(/\/+$/, '')}/favicon.svg`;
+const nav: Page[] = ['home', 'fold', 'download'];
+---
+<!doctype html>
+<html lang={HTML_LANG[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {LOCALES.map((l) => <link rel="alternate" hreflang={HTML_LANG[l]} href={absolute(localePath(l, page))} />)}
+    <link rel="alternate" hreflang="x-default" href={absolute(localePath('en', page))} />
+    <link rel="icon" href={favicon} type="image/svg+xml" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={OG_LOCALE[locale]} />
+    {LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#12101a" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={localePath(locale, 'home')}>{siteName}</a>
+      <nav aria-label={t(locale, 'nav.label')}>
+        {nav.map((p) => (
+          <a href={localePath(locale, p)} aria-current={p === page ? 'page' : undefined}>{t(locale, `nav.${p}`)}</a>
+        ))}
+        <LangSwitch locale={locale} page={page} />
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <a href={localePath(locale, 'privacy')}>{t(locale, 'nav.privacy')}</a>
+      <a href={GITHUB_URL}>{t(locale, 'footer.source')}</a>
+      <span>{t(locale, 'footer.madeBy', { developer: t(locale, 'site.developer') })}</span>
+    </footer>
+  </body>
+</html>
