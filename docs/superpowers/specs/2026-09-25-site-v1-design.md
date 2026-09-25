@@ -99,8 +99,11 @@ dimension-riders-site/
       fold.pt.md
       privacy.en.md              a política de privacidade
       privacy.pt.md
+    config.ts                    constantes de produto: link da loja, link do APK, versão, GitHub
     layouts/
       Base.astro                 <head>, cabeçalho, rodapé, hreflang, metadados sociais
+    views/
+      Home, DocPage, Download    uma "view" por tipo de página, recebe o idioma; as páginas só a chamam
     components/
       Hero.astro
       FeatureBlock.astro
@@ -118,9 +121,10 @@ dimension-riders-site/
   public/
     favicon.svg
   tests/
-    i18n-parity.test.ts
-    links.test.ts
-    fold-verb.test.ts
+    helpers.ts                   BASE (lido do astro.config), DIST, read()
+    i18n.test.ts, i18n-parity.test.ts, root-redirect.test.ts
+    home.test.ts, home-sections.test.ts, docs.test.ts, download.test.ts
+    links.test.ts, fold-verb.test.ts
   docs/superpowers/specs/        este arquivo
   .github/workflows/deploy.yml
 ```
@@ -147,13 +151,14 @@ dimension-riders-site/
   original.
 - **APK**: não fica no site. É asset de um Release no GitHub do repositório do jogo; o botão aponta para o link
   fixo de "última versão" (`.../releases/latest/download/dimension-riders-release.apk`). A versão exibida na
-  página Baixar vem de uma constante no dicionário, atualizada a cada release.
-- **Play Store**: o link vive numa constante; vazio, o botão da loja não é renderizado.
+  página Baixar vem de `APP_VERSION` em `src/config.ts`, atualizada a cada release.
+- **Play Store**: o link vive em `PLAY_STORE_URL` em `src/config.ts`; vazio, o botão da loja não é renderizado.
 
 ## 7. Deploy
 
-- Workflow `deploy.yml`: em push na `main`, instala, roda `npm test`, roda `astro build`, publica no GitHub
-  Pages com as actions oficiais (`withastro/action` + `actions/deploy-pages`). Sem segredos.
+- Workflow `deploy.yml`: em push na `main`, instala (`actions/setup-node`), roda `astro build`, roda
+  `npm test` (os testes de HTML leem `dist/`), publica no GitHub Pages com `actions/upload-pages-artifact` +
+  `actions/deploy-pages`. Sem segredos.
 - Setup manual único, pelo Murilo: criar o repositório `murilogtoloni/dimension-riders-site` no GitHub e ligar
   Pages com origem "GitHub Actions" nas configurações.
 - `base` em `astro.config.mjs` é `/dimension-riders-site`; todo link interno usa `import.meta.env.BASE_URL`
@@ -167,8 +172,12 @@ Rodam com `npm test` (Vitest) e no workflow antes do build.
   idioma diferir do padrão (`en`).
 - **Links internos**: após o build, percorre o HTML em `dist/` e falha se algum `href` interno apontar para um
   arquivo que não existe. Cobre os dois idiomas e o seletor de idioma.
-- **"fold" como verbo**: percorre os textos em inglês (`en.json`, `*.en.md`, HTML gerado) e falha se encontrar
-  `folds`, `folded`, `folding` ou `fold the`, ignorando "the Fold" e "into the fold". Regra do STORY.md, seção 8.
+- **"fold" como verbo**: percorre os textos de interface em inglês (`en.json`, exceto a chave narrativa
+  `hero.opening`, onde a abertura da história diz "who folded the worlds") e falha se encontrar `fold`, `folds`,
+  `folded` ou `folding`, ignorando "the Fold" e "into the fold". A história em `fold.en.md` é narrativa e fica
+  fora da regra. Regra do STORY.md, seção 8.
+- **Páginas geradas**: um teste por página confere no HTML de `dist/` o `lang`, os textos do idioma certo, os
+  `hreflang`, o link do APK e a ausência do botão da loja enquanto o link estiver vazio.
 - **Build**: `astro build` é o teste principal de rotas, imagens e Markdown. Roda no workflow.
 
 Sem teste visual automatizado. A conferência no celular é do Murilo.
