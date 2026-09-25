@@ -1,0 +1,12 @@
+---
+import { loadDoc, type DocName } from '../content/load';
+import { t, type Locale } from '../i18n';
+import Base from '../layouts/Base.astro';
+
+interface Props { locale: Locale; page: DocName }
+const { locale, page } = Astro.props;
+const { Content } = loadDoc(page, locale);
+---
+<Base locale={locale} page={page} title={t(locale, `${page}.title`)}>
+  <article class="prose"><Content /></article>
+</Base>
