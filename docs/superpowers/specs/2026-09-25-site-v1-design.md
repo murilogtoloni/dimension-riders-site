@@ -104,18 +104,19 @@ dimension-riders-site/
     components/
       Hero.astro
       FeatureBlock.astro
-      Gallery.astro              lê public/images/shots/; mostra aviso se vazia
+      Gallery.astro              lê src/images/shots/ via import.meta.glob; mostra aviso se vazia
       StoreButtons.astro         Play Store (opcional) + APK
       LangSwitch.astro
     pages/
       index.astro                redirecionamento por idioma
       en/  index.astro, fold.astro, download.astro, privacy.astro
       pt/  index.astro, dobra.astro, baixar.astro, privacidade.astro
-  public/
     images/
       icon.png                   AppIcon_1024 do jogo
       feature.png                FeatureGraphic_1024x500 do jogo
-      shots/                     capturas de tela (vazia até chegarem)
+      shots/                     capturas de tela (vazia até chegarem, com .gitkeep)
+  public/
+    favicon.svg
   tests/
     i18n-parity.test.ts
     links.test.ts
@@ -137,12 +138,13 @@ dimension-riders-site/
 ## 6. Imagens e download
 
 - **Existentes**: `AppIcon_1024.png` e `FeatureGraphic_1024x500.png` do repositório do jogo
-  (`Assets/Icons/`), copiados para `public/images/`.
+  (`Assets/Icons/`), copiados para `src/images/`.
 - **Capturas de tela**: pelo menos quatro, em retrato, tiradas pelo Murilo no celular, em
-  `public/images/shots/`. A galeria lê a pasta; adicionar é colocar o arquivo. Se a pasta estiver vazia, a
+  `src/images/shots/`. A galeria lê a pasta com `import.meta.glob`; adicionar é colocar o arquivo. Se a pasta estiver vazia, a
   galeria mostra um quadro "capturas em breve" (texto do dicionário) e não quebra o layout.
-- **Otimização**: as imagens passam pelo `<Image>` do Astro (redimensionamento e WebP no build). Comita-se o
-  PNG original.
+- **Otimização**: as imagens ficam em `src/images/` e passam pelo `<Image>` do Astro (redimensionamento e
+  WebP no build), o que só funciona para imagens importadas de `src/`, não de `public/`. Comita-se o PNG
+  original.
 - **APK**: não fica no site. É asset de um Release no GitHub do repositório do jogo; o botão aponta para o link
   fixo de "última versão" (`.../releases/latest/download/dimension-riders-release.apk`). A versão exibida na
   página Baixar vem de uma constante no dicionário, atualizada a cada release.
