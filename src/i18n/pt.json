@@ -1,0 +1,71 @@
+{
+  "site": {
+    "name": "Dimension Riders",
+    "developer": "Murilo Toloni",
+    "languageName": "Português"
+  },
+  "nav": {
+    "label": "Principal",
+    "home": "Início",
+    "fold": "A Dobra",
+    "download": "Baixar",
+    "privacy": "Privacidade",
+    "switchLabel": "Mudar idioma"
+  },
+  "meta": {
+    "home": "Um jogo de ação para celular. Cavalgue os vincos entre mundos, sele os Rasgos, derrube os Tiranos.",
+    "fold": "A história do Dimension Riders: a Dobra, o Âmbar, a Marca, os Desdobrados e os Cavaleiros.",
+    "download": "Baixe o Dimension Riders para Android, grátis e offline.",
+    "privacy": "Política de privacidade do Dimension Riders: nenhum dado coletado, funciona offline."
+  },
+  "hero": {
+    "tagline": "Cavalgue os vincos. Sele os Rasgos. Traga os mundos de volta pra Dobra.",
+    "opening": "Ninguém sabe quem dobrou os mundos. Ninguém sabe se alguém dobrou. Os mundos ficam em camadas, cada uma sem saber das outras, coladas pelo Âmbar que endurece nos vincos. E todo pedaço de Âmbar, em todo canto da Dobra, guarda a mesma Marca. Os Desdobrados dizem que ela é uma chave. Os Cavaleiros preferem não dizer. Os dois lados carregam Âmbar. Só um deles quer abrir."
+  },
+  "features": {
+    "ride": {
+      "title": "Cavalgue os vincos",
+      "text": "Todo Rasgo é um caminho entre dois mundos. Avance por ele com dois joysticks: um polegar anda, o outro mira e atira."
+    },
+    "seal": {
+      "title": "Sele os Rasgos",
+      "text": "Ondas de creeps jorram pelo Rasgo. Limpe rápido: quanto mais tempo um Rasgo fica aberto, mais largo ele fica."
+    },
+    "tyrants": {
+      "title": "Derrube os Tiranos",
+      "text": "No fim de todo vinco espera um Desdobrado forte o bastante pra manter o Rasgo aberto. Vença, sele o Rasgo, e deixe sua Estilha te puxar pro próximo."
+    }
+  },
+  "gallery": {
+    "title": "Direto dos vincos",
+    "empty": "Capturas de tela em breve.",
+    "alt": "Captura de tela {n} do Dimension Riders"
+  },
+  "cta": {
+    "title": "Sua Estilha está puxando.",
+    "text": "Grátis. Offline. Sem anúncios, sem conta."
+  },
+  "buttons": {
+    "playStore": "Disponível no Google Play",
+    "apk": "Baixar o APK",
+    "apkVersion": "Versão {version} · Android 8 ou mais novo"
+  },
+  "download": {
+    "title": "Baixar",
+    "intro": "O Dimension Riders é grátis, funciona offline e não tem anúncios nem conta.",
+    "storeTitle": "Google Play",
+    "storeSoon": "A página no Google Play está chegando. Até lá, instale o APK abaixo.",
+    "storeReady": "O jeito mais fácil: instale pelo Google Play e receba as atualizações sozinho.",
+    "apkTitle": "Instalar o APK",
+    "requirements": "Android 8 ou mais novo.",
+    "step1": "Baixe o APK pelo botão acima.",
+    "step2": "Abra o arquivo. O Android vai pedir pra permitir instalar dessa origem. Permita uma vez.",
+    "step3": "Toque em Instalar. Pra atualizar depois, baixe o APK novo e instale por cima do antigo."
+  },
+  "footer": {
+    "source": "Código no GitHub",
+    "madeBy": "Feito por {developer}"
+  },
+  "fold": { "title": "A Dobra" },
+  "privacy": { "title": "Política de privacidade" }
+}

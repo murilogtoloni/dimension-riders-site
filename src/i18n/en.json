@@ -1,0 +1,71 @@
+{
+  "site": {
+    "name": "Dimension Riders",
+    "developer": "Murilo Toloni",
+    "languageName": "English"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "fold": "The Fold",
+    "download": "Download",
+    "privacy": "Privacy",
+    "switchLabel": "Change language"
+  },
+  "meta": {
+    "home": "A mobile action game. Ride the creases between worlds, seal the Tears, bring down the Tyrants.",
+    "fold": "The story of Dimension Riders: the Fold, the Amber, the Mark, the Unfolded and the Riders.",
+    "download": "Download Dimension Riders for Android, free and offline.",
+    "privacy": "Dimension Riders privacy policy: no data collected, works offline."
+  },
+  "hero": {
+    "tagline": "Ride the creases. Seal the Tears. Bring the worlds back into the fold.",
+    "opening": "No one knows who folded the worlds. No one knows if anyone did. The worlds lie in layers, each unaware of the others, glued by the Amber that hardens in the creases. And every piece of Amber, in every corner of the Fold, carries the same Mark. The Unfolded say it is a key. The Riders would rather not say. Both sides carry Amber. Only one of them wants to open."
+  },
+  "features": {
+    "ride": {
+      "title": "Ride the creases",
+      "text": "Every Tear is a path between two worlds. Push down it with twin-stick controls: one thumb moves, the other aims and fires."
+    },
+    "seal": {
+      "title": "Seal the Tears",
+      "text": "Waves of creeps pour through. Clear them fast: the longer a Tear stays open, the wider it gets."
+    },
+    "tyrants": {
+      "title": "Bring down the Tyrants",
+      "text": "At the end of every crease waits an Unfolded strong enough to hold the Tear open. Beat it, seal the Tear, and let your Shard pull you to the next one."
+    }
+  },
+  "gallery": {
+    "title": "From the creases",
+    "empty": "Screenshots coming soon.",
+    "alt": "Screenshot {n} of Dimension Riders"
+  },
+  "cta": {
+    "title": "Your Shard is pulling.",
+    "text": "Free. Offline. No ads, no accounts."
+  },
+  "buttons": {
+    "playStore": "Get it on Google Play",
+    "apk": "Download the APK",
+    "apkVersion": "Version {version} · Android 8 or newer"
+  },
+  "download": {
+    "title": "Download",
+    "intro": "Dimension Riders is free, works offline, and has no ads or accounts.",
+    "storeTitle": "Google Play",
+    "storeSoon": "The Google Play listing is coming soon. Until then, install the APK below.",
+    "storeReady": "The easiest way: install from Google Play and get updates automatically.",
+    "apkTitle": "Install the APK",
+    "requirements": "Android 8 or newer.",
+    "step1": "Download the APK with the button above.",
+    "step2": "Open the file. Android will ask you to allow installs from this source. Allow it once.",
+    "step3": "Tap Install. To update later, download the new APK and install it over the old one."
+  },
+  "footer": {
+    "source": "Source on GitHub",
+    "madeBy": "Made by {developer}"
+  },
+  "fold": { "title": "The Fold" },
+  "privacy": { "title": "Privacy policy" }
+}
