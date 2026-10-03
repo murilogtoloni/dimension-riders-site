@@ -59,10 +59,10 @@ Both sides carry Amber. Only one of them wants to open.
 ## Those who seal, carve
 
 The order has a custom older than any written rule. When a Tear closes, the Rider carves the order's symbol
-into the nearest stone: folded paper with a dot at the middle crease, painted the cyan of the Shard. It is
+into the nearest stone: a shield with two folded layers and a crystal between them, painted the cyan of the Shard. It is
 the Seal. Every Rider adds a notch of their own.
 
-To the order, the drawing is the Fold and someone at the crease: a person standing between two worlds so
+To the order, the drawing is two worlds and the Shard between them: a person standing in the middle so
 that both stay whole. To the people who live there, it is good news: there was an invasion here, and it is over.
 
 The worlds that were helped remake the Seal with what they have. A creased leaf with a drop in the middle.
@@ -83,8 +83,8 @@ Nobody believes it. Almost nobody.
 ## A door locked from the outside
 
 The Unfolded read it all the other way round. They say Amber proves the worlds were once one: if every
-fragment remembers two worlds, they must have touched one day. The Fold would be a prison, and the dot at
-the crease the staple that keeps the paper folded. “Unfolding is freedom,” they announce. And they intend
+fragment remembers two worlds, they must have touched one day. The Fold would be a prison, and the crystal
+between the layers the staple that keeps the paper folded. “Unfolding is freedom,” they announce. And they intend
 to rule everything they free.
 
 That is why the Tyrants have the Seals broken in the worlds they take. The vainest carve their own version

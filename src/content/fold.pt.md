@@ -61,10 +61,10 @@ Os dois lados carregam Âmbar. Só um deles quer abrir.
 ## Quem sela, talha
 
 A ordem tem um costume mais velho que qualquer regra escrita. Quando um Rasgo se fecha, o Cavaleiro talha na
-pedra mais próxima o símbolo da ordem: papel dobrado, com um ponto no vinco do meio, pintado do ciano da
-Estilha. É o Selo. Cada Cavaleiro acrescenta um entalhe só seu.
+pedra mais próxima o símbolo da ordem: um escudo com duas camadas dobradas e um cristal entre elas, pintado
+do ciano da Estilha. É o Selo. Cada Cavaleiro acrescenta um entalhe só seu.
 
-Para a ordem, o desenho é a Dobra e alguém no vinco: uma pessoa parada entre dois mundos para que os dois
+Para a ordem, o desenho são dois mundos e a Estilha entre eles: uma pessoa parada no meio para que os dois
 continuem inteiros. Para quem mora ali, é notícia boa: aqui teve invasão, e acabou.
 
 Os povos ajudados refazem o Selo com o que têm. Uma folha dobrada com uma gota no meio. Uma mola com um
@@ -85,8 +85,8 @@ Ninguém acredita. Quase ninguém.
 ## Uma porta trancada por fora
 
 Os Desdobrados leem tudo ao contrário. Dizem que o Âmbar prova que os mundos já foram um só: se cada
-fragmento lembra de dois mundos, é porque um dia eles se tocavam. A Dobra seria uma prisão, e o ponto no
-vinco, o grampo que mantém o papel dobrado. “Desdobrar é libertar”, anunciam. E pretendem mandar em tudo o
+fragmento lembra de dois mundos, é porque um dia eles se tocavam. A Dobra seria uma prisão, e o cristal
+entre as camadas, o grampo que mantém o papel dobrado. “Desdobrar é libertar”, anunciam. E pretendem mandar em tudo o
 que libertarem.
 
 Por isso os Tiranos mandam quebrar os Selos dos mundos que tomam. Os mais vaidosos talham por cima a própria
