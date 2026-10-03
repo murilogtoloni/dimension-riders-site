@@ -9,7 +9,7 @@ A ordem dos Cavaleiros reúne gente de muitas camadas. Cada mundo que entrou par
 Tirano chegou. Seus Cavaleiros seguem viagem para dar aos outros a mesma chance que tiveram: fechar a
 passagem dos invasores e deixar a vida seguir.
 
-A regra da ordem é simples: um Rasgo aberto é um Rasgo pra selar.
+A regra da ordem é simples: uma Fenda aberta é uma Fenda pra selar.
 
 ## Mundos como papel dobrado
 
@@ -28,13 +28,13 @@ guarda a memória dos dois mundos que o formaram, como um fóssil de dois lados 
 
 Um veio em repouso só brilha. Mas os Desdobrados aprenderam a reunir Âmbar suficiente em ninhos e ligar suas
 memórias. Aquecer o conjunto ajuda a despertá-lo; um fragmento sozinho não basta. Os dois mundos lembrados
-pelo ninho se tocam, e um Rasgo se abre.
+pelo ninho se tocam, e uma Fenda se abre.
 
-Quanto mais tempo essa ligação permanece ativa, mais largo o Rasgo fica.
+Quanto mais tempo essa ligação permanece ativa, mais larga a Fenda fica.
 
 ## Quem abre quer mandar
 
-Os Desdobrados usam os Rasgos para conquistar outros mundos. Alguns dos primeiros exploradores do Âmbar
+Os Desdobrados usam as Fendas para conquistar outros mundos. Alguns dos primeiros exploradores do Âmbar
 fugiam de derrotas e expulsões. Os que se tornaram Tiranos escolheram transformar a fuga em conquista.
 Viajar entre camadas não faz de ninguém um Desdobrado; tomar outros mundos é a escolha dessa facção.
 
@@ -48,19 +48,19 @@ invasores que restam.
 ## Quem sela segue o puxão
 
 Cada Cavaleiro carrega uma Estilha: um único fragmento de Âmbar preparado pela ordem. Lascado, polido e com
-a memória estabilizada, ele passa a brilhar em ciano. Não abre Rasgos, mesmo aquecido. Acompanha caminhos
+a memória estabilizada, ele passa a brilhar em ciano. Não abre Fendas, mesmo aquecido. Acompanha caminhos
 que já existem.
 
-Quando um Rasgo se fecha, o movimento corre pelos vincos. A Estilha puxa seu Cavaleiro por esse último
+Quando uma Fenda se fecha, o movimento corre pelos vincos. A Estilha puxa seu Cavaleiro por esse último
 caminho até o próximo vinco que está cedendo. A travessia termina de fechar a passagem atrás dele.
 
 Por isso Cavaleiros: cavalgam o puxão. O destino vem da Dobra; a coragem de seguir é deles.
 
-Os dois lados carregam Âmbar. Só um deles quer abrir.
+Proteja a Dobra. Sele as Fendas.
 
 ## Quem sela, talha
 
-A ordem tem um costume mais velho que qualquer regra escrita. Quando um Rasgo se fecha, o Cavaleiro talha na
+A ordem tem um costume mais velho que qualquer regra escrita. Quando uma Fenda se fecha, o Cavaleiro talha na
 pedra mais próxima o símbolo da ordem: um escudo com duas camadas dobradas e um cristal entre elas, pintado
 do ciano da Estilha. É o Selo. Cada Cavaleiro acrescenta um entalhe só seu.
 

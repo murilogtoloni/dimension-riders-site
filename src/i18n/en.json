@@ -13,23 +13,23 @@
     "switchLabel": "Change language"
   },
   "meta": {
-    "home": "A mobile action game. Ride the creases between worlds, seal the Tears, bring down the Tyrants.",
+    "home": "A mobile action game. Ride the creases between worlds, seal the Rifts, bring down the Tyrants.",
     "fold": "The story of Dimension Riders: the Fold, the Amber, the Unfolded, the Riders and the Seal.",
     "download": "Download Dimension Riders for Android, free and offline.",
     "privacy": "Dimension Riders privacy policy: no data collected, works offline."
   },
   "hero": {
-    "tagline": "Cross worlds. Bring down the Tyrants. Seal the Tears.",
-    "opening": "The worlds lie apart, like layers of folded paper. The Tyrants found a way to tear through that paper and invade the other side. You are a Rider. Cross worlds, fight the invaders and seal the Tears before they grow. Your Shard is already pulling. Another world needs your help."
+    "tagline": "Cross worlds. Bring down the Tyrants. Seal the Rifts.",
+    "opening": "The worlds lie apart, like layers of folded paper. The Tyrants found a way to tear through that paper and invade the other side. You are a Rider. Cross worlds, fight the invaders and seal the Rifts before they grow. Your Shard is already pulling. Another world needs your help."
   },
   "features": {
     "ride": {
       "title": "Ride the creases",
-      "text": "Every Tear opens onto a crease between two worlds. Ride it with twin-stick controls: one thumb moves, the other aims and fires."
+      "text": "Every Rift opens onto a crease between two worlds. Ride it with twin-stick controls: one thumb moves, the other aims and fires."
     },
     "seal": {
-      "title": "Seal the Tears",
-      "text": "Fight waves of invaders and reach the exit to seal the Tear. Every closed passage cuts off a route for the invasion."
+      "title": "Seal the Rifts",
+      "text": "Fight waves of invaders and reach the exit to seal the Rift. Every closed passage cuts off a route for the invasion."
     },
     "tyrants": {
       "title": "Bring down the Tyrants",

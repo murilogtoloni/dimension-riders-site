@@ -9,7 +9,7 @@ The order of Riders brings together people from many layers. Every world that jo
 Tyrant arrived. Its Riders travel on to give others the same chance they had: close the invaders' passage
 and let life carry on.
 
-The order has one simple rule: an open Tear is a Tear to seal.
+The order has one simple rule: an open Rift is a Rift to seal.
 
 ## Worlds like folded paper
 
@@ -28,13 +28,13 @@ fragment remembers the two worlds that formed it, like a fossil with two sides a
 
 An undisturbed vein only glows. But the Unfolded learned to gather enough Amber into nests and link its
 memories. Heating the gathered Amber helps awaken it; a single fragment is not enough. The two worlds
-remembered by the nest touch, and a Tear opens.
+remembered by the nest touch, and a Rift opens.
 
-The longer that link stays active, the wider the Tear grows.
+The longer that link stays active, the wider the Rift grows.
 
 ## Those who open want to rule
 
-The Unfolded use Tears to conquer other worlds. Some of the earliest Amber explorers were fleeing defeat
+The Unfolded use Rifts to conquer other worlds. Some of the earliest Amber explorers were fleeing defeat
 or exile. Those who became Tyrants chose to turn their escape into conquest. Travelling between layers
 does not make someone one of the Unfolded; taking over other worlds is this faction's choice.
 
@@ -47,18 +47,18 @@ cracks and the passage begins to close. At the main nest, the Tyrant and the rem
 ## Those who seal ride the pull
 
 Every Rider carries a Shard: a single fragment of Amber prepared by the order. Chipped, polished and with
-its memory stabilised, it glows cyan. It cannot open Tears, even when heated. It follows paths that already exist.
+its memory stabilised, it glows cyan. It cannot open Rifts, even when heated. It follows paths that already exist.
 
-When a Tear closes, the movement travels along the creases. The Shard pulls its Rider along that last path
+When a Rift closes, the movement travels along the creases. The Shard pulls its Rider along that last path
 to the next crease that is giving way. The crossing finishes closing the passage behind them.
 
 That is why they are Riders: they ride the pull. The Fold sets the destination; the courage to go is theirs.
 
-Both sides carry Amber. Only one of them wants to open.
+Protect the Fold. Seal the Rifts.
 
 ## Those who seal, carve
 
-The order has a custom older than any written rule. When a Tear closes, the Rider carves the order's symbol
+The order has a custom older than any written rule. When a Rift closes, the Rider carves the order's symbol
 into the nearest stone: a shield with two folded layers and a crystal between them, painted the cyan of the Shard. It is
 the Seal. Every Rider adds a notch of their own.
 
