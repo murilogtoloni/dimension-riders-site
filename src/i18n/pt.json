@@ -19,8 +19,8 @@
     "privacy": "Política de privacidade do Dimension Riders: nenhum dado coletado, funciona offline."
   },
   "hero": {
-    "tagline": "Cavalgue os vincos. Sele os Rasgos. Traga os mundos de volta pra Dobra.",
-    "opening": "Ninguém sabe quem dobrou os mundos. Ninguém sabe se alguém dobrou. Os mundos ficam em camadas, cada uma sem saber das outras, coladas pelo Âmbar que endurece nos vincos. E todo pedaço de Âmbar, em todo canto da Dobra, guarda a mesma Marca. Os Desdobrados dizem que ela é uma chave. Os Cavaleiros preferem não dizer. Os dois lados carregam Âmbar. Só um deles quer abrir."
+    "tagline": "Atravesse mundos. Derrube os Tiranos. Sele os Rasgos.",
+    "opening": "Os mundos vivem separados, como camadas de papel dobrado. Os Tiranos encontraram um jeito de rasgar esse papel — e invadir o outro lado. Você é um Cavaleiro. Atravesse mundos, enfrente os invasores e sele os Rasgos antes que cresçam. Sua Estilha já está puxando. Tem outro mundo precisando de ajuda."
   },
   "features": {
     "ride": {
@@ -29,11 +29,11 @@
     },
     "seal": {
       "title": "Sele os Rasgos",
-      "text": "Ondas de creeps jorram pelo Rasgo. Limpe rápido: quanto mais tempo um Rasgo fica aberto, mais largo ele fica."
+      "text": "Enfrente as ondas de invasores e avance até a saída para selar o Rasgo. Cada passagem fechada interrompe um caminho da invasão."
     },
     "tyrants": {
       "title": "Derrube os Tiranos",
-      "text": "No fim de todo vinco espera um Desdobrado forte o bastante pra manter o Rasgo aberto. Vença, sele o Rasgo, e deixe sua Estilha te puxar pro próximo."
+      "text": "Atravesse os postos da invasão até chegar ao Tirano da dimensão. Derrube o líder, vença seus defensores e feche a passagem que ele sustenta."
     }
   },
   "gallery": {

@@ -19,8 +19,8 @@
     "privacy": "Dimension Riders privacy policy: no data collected, works offline."
   },
   "hero": {
-    "tagline": "Ride the creases. Seal the Tears. Bring the worlds back into the fold.",
-    "opening": "No one knows who folded the worlds. No one knows if anyone did. The worlds lie in layers, each unaware of the others, glued by the Amber that hardens in the creases. And every piece of Amber, in every corner of the Fold, carries the same Mark. The Unfolded say it is a key. The Riders would rather not say. Both sides carry Amber. Only one of them wants to open."
+    "tagline": "Cross worlds. Bring down the Tyrants. Seal the Tears.",
+    "opening": "The worlds lie apart, like layers of folded paper. The Tyrants found a way to tear through that paper and invade the other side. You are a Rider. Cross worlds, fight the invaders and seal the Tears before they grow. Your Shard is already pulling. Another world needs your help."
   },
   "features": {
     "ride": {
@@ -29,11 +29,11 @@
     },
     "seal": {
       "title": "Seal the Tears",
-      "text": "Waves of creeps pour through. Clear them fast: the longer a Tear stays open, the wider it gets."
+      "text": "Fight waves of invaders and reach the exit to seal the Tear. Every closed passage cuts off a route for the invasion."
     },
     "tyrants": {
       "title": "Bring down the Tyrants",
-      "text": "At the end of every crease waits an Unfolded strong enough to hold the Tear open. Beat it, seal the Tear, and let your Shard pull you to the next one."
+      "text": "Fight through the invasion outposts to reach the layer’s Tyrant. Bring down the leader, defeat the defenders and close the passage they sustain."
     }
   },
   "gallery": {
