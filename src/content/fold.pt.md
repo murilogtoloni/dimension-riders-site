@@ -58,14 +58,36 @@ Por isso Cavaleiros: cavalgam o puxão. O destino vem da Dobra; a coragem de seg
 
 Os dois lados carregam Âmbar. Só um deles quer abrir.
 
-## Uma pergunta em todo fragmento
+## Quem sela, talha
 
-Além dos dois mundos, todo veio de Âmbar guarda uma terceira impressão. Sempre a mesma, sem corresponder a
-nenhum mundo conhecido. É a Marca. Ninguém sabe se é assinatura, cicatriz ou aviso.
+A ordem tem um costume mais velho que qualquer regra escrita. Quando um Rasgo se fecha, o Cavaleiro talha na
+pedra mais próxima o símbolo da ordem: papel dobrado, com um ponto no vinco do meio, pintado do ciano da
+Estilha. É o Selo. Cada Cavaleiro acrescenta um entalhe só seu.
 
-Os Desdobrados dizem que ela prova que os mundos já foram um só e que a Dobra é uma prisão. “Desdobrar é
-libertar”, anunciam. E pretendem mandar em tudo o que libertarem.
+Para a ordem, o desenho é a Dobra e alguém no vinco: uma pessoa parada entre dois mundos para que os dois
+continuem inteiros. Para quem mora ali, é notícia boa: aqui teve invasão, e acabou.
 
-Os Cavaleiros têm suas próprias teorias — e discordam à vontade. A ordem não tem uma resposta oficial.
-Encontrar a Marca em outro mundo pode contar algo sobre quem viveu ali. Explicar por que ela está em todo
-Âmbar é outra história.
+Os povos ajudados refazem o Selo com o que têm. Uma folha dobrada com uma gota no meio. Uma mola com um
+rebite. Lajes de basalto empilhadas, com uma pedra azul. Nenhum sabe dizer de quem aprendeu.
+
+## Selos velhos demais
+
+Os Cavaleiros encontram Selos em mundos onde a ordem não lembra de ter estado. Gastos pela chuva de séculos,
+com a tinta sumida, com entalhes que ninguém reconhece.
+
+A ordem não tem uma resposta oficial, e os Cavaleiros discordam à vontade. Talvez tenha havido outros antes.
+Talvez a ordem seja muito mais velha do que pensa. Talvez seja só o tempo: numa camada onde ele corre
+depressa, um Selo do ano passado já é ruína.
+
+Os veteranos contam aos novatos a história do Cavaleiro que achou o próprio entalhe numa pedra de mil anos.
+Ninguém acredita. Quase ninguém.
+
+## Uma porta trancada por fora
+
+Os Desdobrados leem tudo ao contrário. Dizem que o Âmbar prova que os mundos já foram um só: se cada
+fragmento lembra de dois mundos, é porque um dia eles se tocavam. A Dobra seria uma prisão, e o ponto no
+vinco, o grampo que mantém o papel dobrado. “Desdobrar é libertar”, anunciam. E pretendem mandar em tudo o
+que libertarem.
+
+Por isso os Tiranos mandam quebrar os Selos dos mundos que tomam. Os mais vaidosos talham por cima a própria
+versão, com a própria cara.

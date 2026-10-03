@@ -56,14 +56,36 @@ That is why they are Riders: they ride the pull. The Fold sets the destination; 
 
 Both sides carry Amber. Only one of them wants to open.
 
-## A question in every fragment
+## Those who seal, carve
 
-Beyond the two worlds, every vein of Amber holds a third impression. Always the same, belonging to no known
-world. It is the Mark. Nobody knows whether it is a signature, a scar or a warning.
+The order has a custom older than any written rule. When a Tear closes, the Rider carves the order's symbol
+into the nearest stone: folded paper with a dot at the middle crease, painted the cyan of the Shard. It is
+the Seal. Every Rider adds a notch of their own.
 
-The Unfolded say it proves the worlds were once one and the Fold is a prison. “Unfolding is freedom,” they
-announce. And they intend to rule everything they free.
+To the order, the drawing is the Fold and someone at the crease: a person standing between two worlds so
+that both stay whole. To the people who live there, it is good news: there was an invasion here, and it is over.
 
-The Riders have their own theories — and freely disagree. The order has no official answer. Finding the
-Mark in another world might tell you something about the people who lived there. Explaining why it appears
-in all Amber is another story.
+The worlds that were helped remake the Seal with what they have. A creased leaf with a drop in the middle.
+A spring with a rivet. Stacked slabs of basalt with one blue stone. None of them can say who taught them.
+
+## Seals that are too old
+
+Riders find Seals in worlds the order does not remember visiting. Worn by centuries of rain, the paint long
+gone, with notches nobody recognises.
+
+The order has no official answer, and the Riders freely disagree. Maybe there were others before. Maybe the
+order is far older than it thinks. Maybe it is only time: in a layer where time runs fast, last year's Seal
+is already a ruin.
+
+Veterans tell newcomers the story of the Rider who found their own notch on a thousand-year-old stone.
+Nobody believes it. Almost nobody.
+
+## A door locked from the outside
+
+The Unfolded read it all the other way round. They say Amber proves the worlds were once one: if every
+fragment remembers two worlds, they must have touched one day. The Fold would be a prison, and the dot at
+the crease the staple that keeps the paper folded. “Unfolding is freedom,” they announce. And they intend
+to rule everything they free.
+
+That is why the Tyrants have the Seals broken in the worlds they take. The vainest carve their own version
+on top, with their own face on it.
