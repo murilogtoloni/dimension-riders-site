@@ -12,7 +12,7 @@ const fullTitle = title ? `${title} · ${siteName}` : siteName;
 const description = t(locale, `meta.${page}`);
 const absolute = (path: string) => new URL(path, Astro.site).toString();
 const canonical = absolute(localePath(locale, page));
-const ogImage = absolute(`${import.meta.env.BASE_URL.replace(/\/+$/, '')}/og.png`);
+const ogImage = absolute(`${import.meta.env.BASE_URL.replace(/\/+$/, '')}/og.jpg`);
 const favicon = `${import.meta.env.BASE_URL.replace(/\/+$/, '')}/favicon.svg`;
 const nav: Page[] = ['home', 'fold', 'download'];
 ---
@@ -32,6 +32,8 @@ const nav: Page[] = ['home', 'fold', 'download'];
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content={OG_LOCALE[locale]} />
     {LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
