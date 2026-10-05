@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://murilogtoloni.github.io',
-  base: '/dimension-riders-site',
+  site: 'https://dimensionriders.app',
+  base: '/',
   trailingSlash: 'always',
   i18n: {
     locales: ['en', { path: 'pt', codes: ['pt-BR', 'pt'] }],

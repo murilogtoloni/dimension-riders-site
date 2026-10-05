@@ -12,10 +12,14 @@ describe('páginas de texto', () => {
     expect(read('/pt/dobra/index.html')).toContain('<html lang="pt-BR"');
   });
 
-  it('Privacidade existe nos dois idiomas e diz que não coleta dados', () => {
+  it('Privacidade explica progresso local e dados dos anúncios nos dois idiomas', () => {
     expect(read('/en/privacy/index.html')).toMatch(/does not collect/i);
     expect(read('/pt/privacidade/index.html')).toMatch(/não coleta/i);
-    expect(read('/en/privacy/index.html')).toContain('2026-09-25');
+    expect(read('/en/privacy/index.html')).toContain('2026-10-05');
+    for (const path of ['/en/privacy/index.html', '/pt/privacidade/index.html']) {
+      expect(read(path)).toContain('Google AdMob');
+      expect(read(path)).toContain('mailto:support@dimensionriders.app');
+    }
   });
 
   it('nunca afirma a origem da Dobra nem do Selo, e o Âmbar não guarda Marca', () => {

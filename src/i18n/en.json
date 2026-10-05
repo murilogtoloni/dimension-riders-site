@@ -16,7 +16,7 @@
     "home": "A mobile action game. Ride the creases between worlds, seal the Rifts, bring down the Tyrants.",
     "fold": "The story of Dimension Riders: the Fold, the Amber, the Unfolded, the Riders and the Seal.",
     "download": "Download Dimension Riders for Android, free and offline.",
-    "privacy": "Dimension Riders privacy policy: no data collected, works offline."
+    "privacy": "Dimension Riders privacy policy: local progress, optional ads and your privacy choices."
   },
   "hero": {
     "tagline": "Cross worlds. Bring down the Tyrants. Seal the Rifts.",
@@ -43,7 +43,7 @@
   },
   "cta": {
     "title": "Your Shard is pulling.",
-    "text": "Free. Offline. No ads, no accounts."
+    "text": "Free. Plays offline. No accounts. Ads only if you choose."
   },
   "buttons": {
     "playStore": "Get it on Google Play",
@@ -52,19 +52,20 @@
   },
   "download": {
     "title": "Download",
-    "intro": "Dimension Riders is free, works offline, and has no ads or accounts.",
+    "intro": "Dimension Riders is free, plays offline and has no accounts. Video ads are optional.",
     "storeTitle": "Google Play",
-    "storeSoon": "The Google Play listing is coming soon. Until then, install the APK below.",
+    "storeSoon": "The Google Play release is in preparation.",
     "storeReady": "The easiest way: install from Google Play and get updates automatically.",
     "apkTitle": "Install the APK",
     "requirements": "Android 8 or newer.",
     "step1": "Download the APK with the button above.",
     "step2": "Open the file. Android will ask you to allow installs from this source. Allow it once.",
-    "step3": "Tap Install. To update later, download the new APK and install it over the old one."
+    "step3": "Tap Install. To update later, download the new APK and install it over the old one.",
+    "unavailable": "Public downloads are not available yet."
   },
   "footer": {
-    "source": "Source on GitHub",
-    "madeBy": "Made by {developer}"
+    "madeBy": "Made by {developer}",
+    "contact": "Contact"
   },
   "fold": { "title": "The Fold" },
   "privacy": { "title": "Privacy policy" }

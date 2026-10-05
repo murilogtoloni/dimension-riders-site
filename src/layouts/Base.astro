@@ -1,6 +1,6 @@
 ---
 import LangSwitch from '../components/LangSwitch.astro';
-import { GITHUB_URL } from '../config';
+import { CONTACT_EMAIL } from '../config';
 import { HTML_LANG, LOCALES, OG_LOCALE, localePath, t, type Locale, type Page } from '../i18n';
 import '../styles/global.css';
 
@@ -53,7 +53,7 @@ const nav: Page[] = ['home', 'fold', 'download'];
     <main><slot /></main>
     <footer class="site-footer">
       <a href={localePath(locale, 'privacy')}>{t(locale, 'nav.privacy')}</a>
-      <a href={GITHUB_URL}>{t(locale, 'footer.source')}</a>
+      <a href={`mailto:${CONTACT_EMAIL}`}>{t(locale, 'footer.contact')}</a>
       <span>{t(locale, 'footer.madeBy', { developer: t(locale, 'site.developer') })}</span>
     </footer>
   </body>

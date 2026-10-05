@@ -1,6 +1,6 @@
 ---
 import StoreButtons from '../components/StoreButtons.astro';
-import { PLAY_STORE_URL } from '../config';
+import { APK_URL, PLAY_STORE_URL } from '../config';
 import { t, type Locale } from '../i18n';
 import Base from '../layouts/Base.astro';
 
@@ -15,13 +15,15 @@ const { locale } = Astro.props;
     <h2>{t(locale, 'download.storeTitle')}</h2>
     <p>{PLAY_STORE_URL === '' ? t(locale, 'download.storeSoon') : t(locale, 'download.storeReady')}</p>
 
-    <h2>{t(locale, 'download.apkTitle')}</h2>
     <StoreButtons locale={locale} />
+    {APK_URL !== '' && <>
+    <h2>{t(locale, 'download.apkTitle')}</h2>
     <p>{t(locale, 'download.requirements')}</p>
     <ol>
       <li>{t(locale, 'download.step1')}</li>
       <li>{t(locale, 'download.step2')}</li>
       <li>{t(locale, 'download.step3')}</li>
     </ol>
+    </>}
   </article>
 </Base>
