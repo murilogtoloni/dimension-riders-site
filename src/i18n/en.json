@@ -54,17 +54,18 @@
     "title": "Download",
     "intro": "Dimension Riders is free, works offline, and has no ads or accounts.",
     "storeTitle": "Google Play",
-    "storeSoon": "The Google Play listing is coming soon. Until then, install the APK below.",
+    "storeSoon": "The Google Play release is in preparation.",
     "storeReady": "The easiest way: install from Google Play and get updates automatically.",
     "apkTitle": "Install the APK",
     "requirements": "Android 8 or newer.",
     "step1": "Download the APK with the button above.",
     "step2": "Open the file. Android will ask you to allow installs from this source. Allow it once.",
-    "step3": "Tap Install. To update later, download the new APK and install it over the old one."
+    "step3": "Tap Install. To update later, download the new APK and install it over the old one.",
+    "unavailable": "Public downloads are not available yet."
   },
   "footer": {
-    "source": "Source on GitHub",
-    "madeBy": "Made by {developer}"
+    "madeBy": "Made by {developer}",
+    "contact": "Contact"
   },
   "fold": { "title": "The Fold" },
   "privacy": { "title": "Privacy policy" }

@@ -54,17 +54,18 @@
     "title": "Baixar",
     "intro": "O Dimension Riders é grátis, funciona offline e não tem anúncios nem conta.",
     "storeTitle": "Google Play",
-    "storeSoon": "A página no Google Play chega em breve. Até lá, instale o APK abaixo.",
+    "storeSoon": "O lançamento no Google Play está em preparação.",
     "storeReady": "O jeito mais fácil: instale pelo Google Play e as atualizações chegam sozinhas.",
     "apkTitle": "Instalar o APK",
     "requirements": "Android 8 ou mais novo.",
     "step1": "Baixe o APK pelo botão acima.",
     "step2": "Abra o arquivo. O Android vai pedir pra permitir instalar dessa origem. Permita uma vez.",
-    "step3": "Toque em Instalar. Pra atualizar depois, baixe o APK novo e instale por cima do antigo."
+    "step3": "Toque em Instalar. Pra atualizar depois, baixe o APK novo e instale por cima do antigo.",
+    "unavailable": "O download público ainda não está disponível."
   },
   "footer": {
-    "source": "Código no GitHub",
-    "madeBy": "Feito por {developer}"
+    "madeBy": "Feito por {developer}",
+    "contact": "Contato"
   },
   "fold": { "title": "A Dobra" },
   "privacy": { "title": "Política de privacidade" }

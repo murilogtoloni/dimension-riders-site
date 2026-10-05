@@ -5,9 +5,11 @@ import { t, type Locale } from '../i18n';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const hasStore = PLAY_STORE_URL !== '';
+const hasApk = APK_URL !== '';
 ---
 <div class="store-buttons">
   {hasStore && <a class="btn btn-primary" href={PLAY_STORE_URL}>{t(locale, 'buttons.playStore')}</a>}
-  <a class={`btn ${hasStore ? 'btn-secondary' : 'btn-primary'}`} href={APK_URL}>{t(locale, 'buttons.apk')}</a>
-  <small>{t(locale, 'buttons.apkVersion', { version: APP_VERSION })}</small>
+  {hasApk && <a class={`btn ${hasStore ? 'btn-secondary' : 'btn-primary'}`} href={APK_URL}>{t(locale, 'buttons.apk')}</a>}
+  {hasApk && <small>{t(locale, 'buttons.apkVersion', { version: APP_VERSION })}</small>}
+  {!hasStore && !hasApk && <p>{t(locale, 'download.unavailable')}</p>}
 </div>

@@ -11,13 +11,20 @@ describe('página Baixar', () => {
     expect(existsSync(`${DIST}/pt/baixar/index.html`)).toBe(true);
   });
 
-  it('tem o link do APK, a versão, os requisitos e os três passos', () => {
+  it('oferece APK e instruções somente quando houver download público', () => {
     const html = read('/en/download/index.html');
-    expect(html).toContain(APK_URL);
-    expect(html).toContain(`Version ${APP_VERSION}`);
-    expect(html).toContain(en.download.requirements);
-    expect(html).toContain(en.download.step1);
-    expect(html).toContain(en.download.step3);
+    if (APK_URL !== '') {
+      expect(html).toContain(`href="${APK_URL}"`);
+      expect(html).toContain(`Version ${APP_VERSION}`);
+      expect(html).toContain(en.download.requirements);
+      expect(html).toContain(en.download.step1);
+      expect(html).toContain(en.download.step3);
+    } else {
+      expect(html).not.toContain(en.buttons.apk);
+      expect(html).not.toContain(en.download.apkTitle);
+      expect(html).not.toContain(en.download.step1);
+      if (PLAY_STORE_URL === '') expect(html).toContain(en.download.unavailable);
+    }
   });
 
   it('fala da loja de acordo com a constante', () => {

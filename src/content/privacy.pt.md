@@ -1,6 +1,6 @@
 # Política de privacidade
 
-Última atualização: 2026-09-25
+Última atualização: 2026-10-05
 
 Dimension Riders é um jogo para Android feito por Murilo Toloni.
 
@@ -22,4 +22,4 @@ Se um dia o jogo passar a coletar algum dado (por exemplo, um ranking online), e
 
 ## Contato
 
-Dúvidas: abra uma issue [no GitHub](https://github.com/murilogtoloni/dimension-riders).
+Dúvidas: escreva para [contato@dimensionriders.app](mailto:contato@dimensionriders.app).
