@@ -1,20 +1,26 @@
 ---
 import { Image } from 'astro:assets';
-import { shots } from '../images/shots';
+import { shotsFor } from '../images/shots';
 import { t, type Locale } from '../i18n';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
+const shots = shotsFor(locale);
+const keys = ['forest', 'gear', 'lava', 'arsenal'] as const;
 ---
-<section class="gallery">
-  <h2>{t(locale, 'gallery.title')}</h2>
-  {shots.length === 0 ? (
-    <p class="gallery-empty">{t(locale, 'gallery.empty')}</p>
-  ) : (
+<div class="gallery-band">
+  <section class="content wrap gallery" aria-labelledby="gallery-title">
+    <div class="eyebrow">{t(locale, 'gallery.eyebrow')}</div>
+    <div class="section-top"><h2 id="gallery-title">{t(locale, 'gallery.title')}</h2><p>{t(locale, 'gallery.intro')}</p></div>
     <div class="gallery-track">
-      {shots.map((shot, i) => (
-        <Image src={shot} alt={t(locale, 'gallery.alt', { n: String(i + 1) })} width={360} loading="lazy" />
+      {keys.map((key) => (
+        <figure class="shot">
+          <a href={shots[key].src} aria-label={t(locale, 'gallery.enlarge', { name: t(locale, `gallery.${key}`) })}>
+            <Image src={shots[key]} alt={t(locale, `gallery.${key}Alt`)} widths={[180, 280, 560]} sizes="(max-width: 600px) 45vw, 270px" loading="lazy" />
+          </a>
+          <figcaption>{t(locale, `gallery.${key}`)}</figcaption>
+        </figure>
       ))}
     </div>
-  )}
-</section>
+  </section>
+</div>

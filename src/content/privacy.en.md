@@ -1,5 +1,3 @@
-# Privacy policy
-
 Last updated: 2026-10-05
 
 Dimension Riders is an Android game made by Murilo Toloni.

@@ -1,5 +1,8 @@
 ---
 import StoreButtons from '../components/StoreButtons.astro';
+import { Image } from 'astro:assets';
+import feature from '../images/feature.webp';
+import icon from '../images/icon.webp';
 import { APK_URL, PLAY_STORE_URL } from '../config';
 import { t, type Locale } from '../i18n';
 import Base from '../layouts/Base.astro';
@@ -8,22 +11,40 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 ---
 <Base locale={locale} page="download" title={t(locale, 'download.title')}>
-  <article class="prose">
-    <h1>{t(locale, 'download.title')}</h1>
-    <p>{t(locale, 'download.intro')}</p>
-
-    <h2>{t(locale, 'download.storeTitle')}</h2>
-    <p>{PLAY_STORE_URL === '' ? t(locale, 'download.storeSoon') : t(locale, 'download.storeReady')}</p>
-
-    <StoreButtons locale={locale} />
-    {APK_URL !== '' && <>
-    <h2>{t(locale, 'download.apkTitle')}</h2>
-    <p>{t(locale, 'download.requirements')}</p>
-    <ol>
-      <li>{t(locale, 'download.step1')}</li>
-      <li>{t(locale, 'download.step2')}</li>
-      <li>{t(locale, 'download.step3')}</li>
-    </ol>
-    </>}
-  </article>
+  <section class="download-main">
+    <div class="wrap">
+      <div class="download-grid">
+        <div class="download-art">
+          <Image src={feature} alt={t(locale, 'download.artAlt')} widths={[480, 640, 1024]} sizes="(max-width: 600px) 90vw, 540px" loading="eager" />
+          <Image class="mini-icon" src={icon} alt={t(locale, 'site.name')} width={92} loading="lazy" />
+        </div>
+        <div class="download-copy">
+          <div class="eyebrow">{t(locale, 'download.eyebrow')}</div>
+          <h1>{t(locale, 'download.headline')}</h1>
+          <p>{t(locale, 'download.intro')}</p>
+          <div class="download-panel">
+            <div class="ribbon">
+              <h2>{t(locale, 'download.storeTitle')}</h2>
+              {!PLAY_STORE_URL && <span class="badge-soon">{t(locale, 'download.soon')}</span>}
+            </div>
+            <StoreButtons locale={locale} />
+            <p>{PLAY_STORE_URL === '' ? t(locale, 'download.storeSoon') : t(locale, 'download.storeReady')}</p>
+            <p class="notice">
+              {!PLAY_STORE_URL && !APK_URL && <>{t(locale, 'download.unavailable')}<br /></>}
+              {t(locale, 'download.requirements')}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="download-features">
+        {(['free', 'offline', 'account'] as const).map((key) => (
+          <div><h2>{t(locale, `download.benefits.${key}.title`)}</h2><p>{t(locale, `download.benefits.${key}.text`)}</p></div>
+        ))}
+      </div>
+      {APK_URL !== '' && <article class="prose apk-instructions">
+        <h2>{t(locale, 'download.apkTitle')}</h2>
+        <ol><li>{t(locale, 'download.step1')}</li><li>{t(locale, 'download.step2')}</li><li>{t(locale, 'download.step3')}</li></ol>
+      </article>}
+    </div>
+  </section>
 </Base>

@@ -1,6 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import { APK_URL, APP_VERSION, PLAY_STORE_URL } from '../config';
+import enBadge from '../images/badges/en-google-play.png';
+import ptBadge from '../images/badges/pt-google-play.png';
 import { t, type Locale } from '../i18n';
+import DownloadIcon from './DownloadIcon.astro';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -8,8 +12,15 @@ const hasStore = PLAY_STORE_URL !== '';
 const hasApk = APK_URL !== '';
 ---
 <div class="store-buttons">
-  {hasStore && <a class="btn btn-primary" href={PLAY_STORE_URL}>{t(locale, 'buttons.playStore')}</a>}
-  {hasApk && <a class={`btn ${hasStore ? 'btn-secondary' : 'btn-primary'}`} href={APK_URL}>{t(locale, 'buttons.apk')}</a>}
+  {hasStore ? (
+    <a class="play-badge" href={PLAY_STORE_URL}>
+      <Image src={locale === 'pt' ? ptBadge : enBadge} alt={t(locale, 'buttons.playStore')} width={220} format="png" loading="eager" />
+    </a>
+  ) : (
+    <button class="store-disabled" disabled>
+      <DownloadIcon /><span>{t(locale, 'buttons.androidPlatform')}<small>{t(locale, 'download.soon')}</small></span>
+    </button>
+  )}
+  {hasApk && <a class={`button ${hasStore ? 'secondary' : ''}`} href={APK_URL}><DownloadIcon />{t(locale, 'buttons.apk')}</a>}
   {hasApk && <small>{t(locale, 'buttons.apkVersion', { version: APP_VERSION })}</small>}
-  {!hasStore && !hasApk && <p>{t(locale, 'download.unavailable')}</p>}
 </div>

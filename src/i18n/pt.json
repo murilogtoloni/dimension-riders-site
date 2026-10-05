@@ -10,7 +10,8 @@
     "fold": "A Dobra",
     "download": "Baixar",
     "privacy": "Privacidade",
-    "switchLabel": "Mudar idioma"
+    "switchLabel": "Mudar idioma",
+    "skip": "Pular para o conteúdo"
   },
   "meta": {
     "home": "Um jogo de ação para celular. Cavalgue os vincos entre mundos, sele as Fendas, derrube os Tiranos.",
@@ -19,27 +20,43 @@
     "privacy": "Política de privacidade do Dimension Riders: progresso local, anúncios opcionais e suas escolhas de privacidade."
   },
   "hero": {
-    "tagline": "Atravesse mundos. Derrube os Tiranos. Sele as Fendas.",
-    "opening": "Os mundos vivem separados, como camadas de papel dobrado. Os Tiranos encontraram um jeito de rasgar esse papel — e invadir o outro lado. Você é um Cavaleiro. Atravesse mundos, enfrente os invasores e sele as Fendas antes que cresçam. Sua Estilha já está puxando. Tem outro mundo precisando de ajuda."
+    "tagline": "Proteja a Dobra.",
+    "call": "Sele as Fendas.",
+    "opening": "Você é um Cavaleiro. Atravesse mundos, enfrente os invasores e derrube os Tiranos. Sua Estilha já está puxando.",
+    "eyebrow": "AÇÃO PARA ANDROID · GRÁTIS · OFFLINE",
+    "explore": "Conheça os mundos",
+    "soon": "Em breve no Google Play · Sem conta",
+    "available": "No Google Play · Sem conta",
+    "art": "Arte promocional do jogo"
   },
   "features": {
     "ride": {
-      "title": "Cavalgue os vincos",
-      "text": "Toda Fenda dá num vinco entre dois mundos. Cavalgue por ele com dois joysticks: um polegar anda, o outro mira e atira."
+      "title": "Mova. Mire. Atire.",
+      "text": "Dois polegares, uma missão."
     },
     "seal": {
-      "title": "Sele as Fendas",
-      "text": "Enfrente as ondas de invasores e avance até a saída para selar a Fenda. Cada passagem fechada interrompe um caminho da invasão."
+      "title": "Cada corrida, uma escolha.",
+      "text": "Armas, relíquias e runas."
     },
     "tyrants": {
-      "title": "Derrube os Tiranos",
-      "text": "Atravesse os postos da invasão até chegar ao Tirano da dimensão. Derrube o líder, vença seus defensores e feche a passagem que ele sustenta."
-    }
+      "title": "Mundos para proteger.",
+      "text": "Enfrente seus invasores."
+    },
+    "label": "Como jogar"
   },
   "gallery": {
-    "title": "Direto dos vincos",
-    "empty": "Capturas de tela em breve.",
-    "alt": "Captura de tela {n} do Dimension Riders"
+    "eyebrow": "DIRETO DO JOGO",
+    "title": "Veja a corrida de perto.",
+    "intro": "Capturas reais. Armas, invasores e mundos para atravessar.",
+    "enlarge": "Ampliar captura: {name}",
+    "forest": "Na Floresta Primeva",
+    "forestAlt": "Corrida na Floresta Primeva: Cavaleiro e invasores junto à muralha.",
+    "gear": "Na Engrenagem",
+    "gearAlt": "Corrida na Engrenagem: Cavaleiro enfrentando criaturas de máquinas.",
+    "lava": "Na Caldeira",
+    "lavaAlt": "Corrida na Caldeira: Cavaleiro, criaturas e efeitos do combate.",
+    "arsenal": "Prepare seu equipamento",
+    "arsenalAlt": "Menu Equipar com o Cavaleiro, armas, relíquias e runas."
   },
   "cta": {
     "title": "Sua Estilha está puxando.",
@@ -48,25 +65,83 @@
   "buttons": {
     "playStore": "Disponível no Google Play",
     "apk": "Baixar o APK",
-    "apkVersion": "Versão {version} · Android 8 ou mais novo"
+    "apkVersion": "Versão {version} · Android 8 ou mais novo",
+    "android": "Baixar para Android",
+    "androidPlatform": "Para Android"
   },
   "download": {
     "title": "Baixar",
-    "intro": "O Dimension Riders é grátis, joga offline e não tem conta. Anúncios em vídeo são opcionais.",
+    "intro": "Dimension Riders para Android. Ação com dois joysticks, corridas entre mundos e uma Fenda para selar.",
     "storeTitle": "Google Play",
-    "storeSoon": "O lançamento no Google Play está em preparação.",
+    "storeSoon": "O lançamento no Google Play está em preparação. O botão de instalação será liberado aqui quando a ficha estiver pública.",
     "storeReady": "O jeito mais fácil: instale pelo Google Play e as atualizações chegam sozinhas.",
     "apkTitle": "Instalar o APK",
     "requirements": "Android 8 ou mais novo.",
     "step1": "Baixe o APK pelo botão acima.",
     "step2": "Abra o arquivo. O Android vai pedir pra permitir instalar dessa origem. Permita uma vez.",
     "step3": "Toque em Instalar. Pra atualizar depois, baixe o APK novo e instale por cima do antigo.",
-    "unavailable": "O download público ainda não está disponível."
+    "unavailable": "O download público ainda não está disponível.",
+    "headline": "Seu próximo mundo cabe no bolso.",
+    "eyebrow": "DIMENSION RIDERS · ANDROID",
+    "soon": "EM BREVE",
+    "artAlt": "Arte promocional com o Cavaleiro diante de uma Fenda.",
+    "benefits": {
+      "free": {
+        "title": "Grátis para jogar",
+        "text": "Anúncios em vídeo são opcionais."
+      },
+      "offline": {
+        "title": "Jogue offline",
+        "text": "A corrida e o progresso ficam no aparelho."
+      },
+      "account": {
+        "title": "Sem criar conta",
+        "text": "Comece sua jornada sem cadastro."
+      }
+    }
   },
   "footer": {
     "madeBy": "Feito por {developer}",
     "contact": "Contato"
   },
-  "fold": { "title": "A Dobra" },
-  "privacy": { "title": "Política de privacidade" }
+  "fold": {
+    "title": "A Dobra",
+    "intro": "Quem são os Cavaleiros, o que move os Tiranos e por que sua Estilha está puxando.",
+    "imageAlt": "Seleção de dimensões da Dobra no jogo.",
+    "imageCaption": "As dimensões da Dobra, vistas no jogo."
+  },
+  "privacy": {
+    "title": "Política de privacidade",
+    "intro": "Seus dados, anúncios opcionais e suas escolhas de privacidade."
+  },
+  "roster": {
+    "title": "Pequenos heróis. Grandes encrencas.",
+    "intro": "Um Cavaleiro entre muitos. Criaturas de outros mundos. E Tiranos que não querem ir embora.",
+    "concept": "Arte de conceito do jogo",
+    "knight": {
+      "title": "O Cavaleiro",
+      "text": "A Estilha puxa. Você segue.",
+      "alt": "Cavaleiro chibi com armadura azul, penacho e Estilha ciano."
+    },
+    "chaser": {
+      "title": "Invasor da Floresta",
+      "text": "Nem todo morador da floresta é amigo.",
+      "alt": "Invasor esquilo da Floresta com resina de Âmbar no peito."
+    },
+    "forestTyrant": {
+      "title": "Tirano da Floresta",
+      "text": "O líder que sustenta a invasão.",
+      "alt": "Tirano da Floresta com corpo de árvore e coroa de Âmbar."
+    },
+    "lavaTyrant": {
+      "title": "Tirano da Caldeira",
+      "text": "Âmbar, pedra e muito mau humor.",
+      "alt": "Tirano da Caldeira: golem de magma com cristais de Âmbar."
+    }
+  },
+  "story": {
+    "title": "Tem outro mundo precisando de ajuda.",
+    "text": "Os mundos vivem em camadas. Os Tiranos abrem Fendas para invadir. Os Cavaleiros seguem os vincos para fechá-las.",
+    "link": "Explore a Dobra"
+  }
 }

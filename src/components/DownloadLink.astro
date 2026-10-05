@@ -1,0 +1,7 @@
+---
+import { localePath, t, type Locale } from '../i18n';
+import DownloadIcon from './DownloadIcon.astro';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+<a class="button" href={localePath(locale, 'download')}><DownloadIcon />{t(locale, 'buttons.android')}</a>

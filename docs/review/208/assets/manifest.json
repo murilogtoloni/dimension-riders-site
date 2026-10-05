@@ -1,0 +1,122 @@
+[
+  {
+    "file": "Rajdhani-OFL.txt",
+    "bytes": 4372,
+    "sha256": "793bdd8538a0c03afb5bc10906be27ad1dc76f143cfeac8c55cd9075a5b3a55c"
+  },
+  {
+    "file": "Rajdhani-SemiBold.ttf",
+    "bytes": 390340,
+    "sha256": "94bbd25a18ca665999feb05a537de9fd2b860dcfb78bbe9ca00270825bf235da"
+  },
+  {
+    "file": "RussoOne-OFL.txt",
+    "bytes": 4389,
+    "sha256": "d391b94070ab7aee254ca62df17ac3718fe5709e0d8b3c9a947dbd234f510d4f"
+  },
+  {
+    "file": "RussoOne-Regular.ttf",
+    "bytes": 39124,
+    "sha256": "bc0abcc660bd8b7ad3000ecb2898a27c58a29a50f7ec81652fa12e75148d09df"
+  },
+  {
+    "file": "chaser.png",
+    "bytes": 693999,
+    "sha256": "724f1437db68f1c88361c9da1866aae03c707c704ec12a05646c0b652e5a0d14"
+  },
+  {
+    "file": "en-1-title.png",
+    "bytes": 1545895,
+    "sha256": "51853dca53a76dfc91b5128b95e28b0c9d19c85a4864a89be14df1ead30fcec6"
+  },
+  {
+    "file": "en-2-run-0.png",
+    "bytes": 3065876,
+    "sha256": "05ab86de572a8d632c5cf02e99670c1c45aee20a3e9db3a3ada069dd8e8500f7"
+  },
+  {
+    "file": "en-3-run-1.png",
+    "bytes": 2686626,
+    "sha256": "0815b42e8850fc764a79ba6dea05fb97107cb228d4f62bc079fcd60247113918"
+  },
+  {
+    "file": "en-4-run-2.png",
+    "bytes": 2845973,
+    "sha256": "8baec72229f17793be30fbb9ea8a50b4fa147d999f325c5b34c9b0971e9fd21b"
+  },
+  {
+    "file": "en-5-arsenal.png",
+    "bytes": 1550596,
+    "sha256": "c60a21579cd5e7db6c87f11c525937de3563283fed33b3d598b14a429da89caa"
+  },
+  {
+    "file": "en-6-fold.png",
+    "bytes": 959552,
+    "sha256": "ec07af5face30ce06912a5e5502a44b5dfc7bee13a06dc49c5f5d258058d6489"
+  },
+  {
+    "file": "feature.png",
+    "bytes": 559031,
+    "sha256": "ef84be96341ab6bc1ce5a83647275606e596c50d458dff6b2636a001c6a4c3b7"
+  },
+  {
+    "file": "forest-tyrant.png",
+    "bytes": 1374974,
+    "sha256": "8a3b6b459f42b35da89aa57072f918a47d325a4f3747c78a748e84afd50413e8"
+  },
+  {
+    "file": "icon.png",
+    "bytes": 387917,
+    "sha256": "608b19a174b622a2cd86a856e7fec3a7e4ee4dbf302a3d265147e930d0027cff"
+  },
+  {
+    "file": "knight.png",
+    "bytes": 1237795,
+    "sha256": "05d8608f0d4542cf99bbfaaf5213365c1920d34b7e220cf851260599f475c008"
+  },
+  {
+    "file": "lava-tyrant.png",
+    "bytes": 1531055,
+    "sha256": "2d1a0488e3e6a1fb8695a43d4a5a844b29797ef97e86cbcc1b1eff154089ba2f"
+  },
+  {
+    "file": "pt-1-title.png",
+    "bytes": 1541896,
+    "sha256": "00590c001ba663ac86aa4fb6441e826876facf9451c90a213d66d883d62c5574"
+  },
+  {
+    "file": "pt-2-run-0.png",
+    "bytes": 3272153,
+    "sha256": "6bfbb58c250154084b7e0e7d9142e9430ac04629458165e0bbca4c7f76fb5fb3"
+  },
+  {
+    "file": "pt-3-run-1.png",
+    "bytes": 2739482,
+    "sha256": "4307ef07a644efb40d7ba740b27c79db0677fea062dc629e840163e2c0bc89a4"
+  },
+  {
+    "file": "pt-4-run-2.png",
+    "bytes": 2893060,
+    "sha256": "9e95f6e1c1679a9dc2df9d1505f485b72df37c322eadd728ee0e936d77030cf2"
+  },
+  {
+    "file": "pt-5-arsenal.png",
+    "bytes": 1546496,
+    "sha256": "460ea63582cc7284c8b546e9f428e623a76ebcf06eaf9022e6af57aeb0e7eb0a"
+  },
+  {
+    "file": "pt-6-fold.png",
+    "bytes": 971898,
+    "sha256": "906525da4ad243fc538981d9f0d0f5cd0b2a3f33ac559f0f0ad8940bf4c574c2"
+  },
+  {
+    "file": "selo.svg",
+    "bytes": 2545,
+    "sha256": "2586900022f8c529c00b0f3e3ffd258fc78dd152665085ba3a964e931f47ee34"
+  },
+  {
+    "file": "store-source.json",
+    "bytes": 3593,
+    "sha256": "b9a93e824ae478cefa9b9bfa7cc01c88bc23cebc2365abe9ba65f205efe5343d"
+  }
+]

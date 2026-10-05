@@ -1,5 +1,3 @@
-# A Dobra
-
 Os Tiranos abrem caminhos entre mundos para invadir o outro lado. Os Cavaleiros seguem esses caminhos para
 interromper a invasão. Você é um deles — e sua Estilha já está puxando.
 

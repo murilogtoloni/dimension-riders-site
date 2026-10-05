@@ -1,6 +1,6 @@
 /** Constantes de produto. Não são texto de interface: não vão no dicionário. */
 
-/** Link da ficha na Play Store. Vazio até a ficha existir: o botão da loja não aparece. */
+/** Link da ficha pública na Play Store. Vazio: botão Android em breve; preenchido: selo oficial com link. */
 export const PLAY_STORE_URL = '';
 
 /** Vazio até existir APK público. Releases do repositório privado não abrem para visitantes. */
