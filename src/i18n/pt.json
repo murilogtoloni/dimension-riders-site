@@ -16,7 +16,7 @@
     "home": "Um jogo de ação para celular. Cavalgue os vincos entre mundos, sele as Fendas, derrube os Tiranos.",
     "fold": "A história do Dimension Riders: a Dobra, o Âmbar, os Desdobrados, os Cavaleiros e o Selo.",
     "download": "Baixe o Dimension Riders para Android, grátis e offline.",
-    "privacy": "Política de privacidade do Dimension Riders: nenhum dado coletado, funciona offline."
+    "privacy": "Política de privacidade do Dimension Riders: progresso local, anúncios opcionais e suas escolhas de privacidade."
   },
   "hero": {
     "tagline": "Atravesse mundos. Derrube os Tiranos. Sele as Fendas.",
@@ -43,7 +43,7 @@
   },
   "cta": {
     "title": "Sua Estilha está puxando.",
-    "text": "Grátis. Offline. Sem anúncios, sem conta."
+    "text": "Grátis. Joga offline. Sem conta. Anúncio só se você quiser."
   },
   "buttons": {
     "playStore": "Disponível no Google Play",
@@ -52,7 +52,7 @@
   },
   "download": {
     "title": "Baixar",
-    "intro": "O Dimension Riders é grátis, funciona offline e não tem anúncios nem conta.",
+    "intro": "O Dimension Riders é grátis, joga offline e não tem conta. Anúncios em vídeo são opcionais.",
     "storeTitle": "Google Play",
     "storeSoon": "O lançamento no Google Play está em preparação.",
     "storeReady": "O jeito mais fácil: instale pelo Google Play e as atualizações chegam sozinhas.",

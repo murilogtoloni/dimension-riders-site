@@ -16,7 +16,7 @@
     "home": "A mobile action game. Ride the creases between worlds, seal the Rifts, bring down the Tyrants.",
     "fold": "The story of Dimension Riders: the Fold, the Amber, the Unfolded, the Riders and the Seal.",
     "download": "Download Dimension Riders for Android, free and offline.",
-    "privacy": "Dimension Riders privacy policy: no data collected, works offline."
+    "privacy": "Dimension Riders privacy policy: local progress, optional ads and your privacy choices."
   },
   "hero": {
     "tagline": "Cross worlds. Bring down the Tyrants. Seal the Rifts.",
@@ -43,7 +43,7 @@
   },
   "cta": {
     "title": "Your Shard is pulling.",
-    "text": "Free. Offline. No ads, no accounts."
+    "text": "Free. Plays offline. No accounts. Ads only if you choose."
   },
   "buttons": {
     "playStore": "Get it on Google Play",
@@ -52,7 +52,7 @@
   },
   "download": {
     "title": "Download",
-    "intro": "Dimension Riders is free, works offline, and has no ads or accounts.",
+    "intro": "Dimension Riders is free, plays offline and has no accounts. Video ads are optional.",
     "storeTitle": "Google Play",
     "storeSoon": "The Google Play release is in preparation.",
     "storeReady": "The easiest way: install from Google Play and get updates automatically.",
