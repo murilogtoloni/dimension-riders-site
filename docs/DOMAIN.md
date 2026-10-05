@@ -2,9 +2,9 @@
 
 Issue: dimension-riders#116. Domínio comprado pelo Murilo em 2026-10-05: `dimensionriders.app`.
 
-Murilo confirmou o domínio salvo no GitHub Pages e os registros A, AAAA e www no Route 53; conferidos no DNS autoritativo. Também cadastrou os aliases `contact` e `support` no ImprovMX; `support@dimensionriders.app` é o contato público escolhido no painel da #117. MX/TXT conferidos; Murilo confirmou a entrega de teste em `contact` e `support`; falta concluir HTTPS.
+Murilo confirmou o domínio salvo no GitHub Pages e os registros A, AAAA e www no Route 53; conferidos no DNS autoritativo. Também cadastrou os aliases `contact` e `support` no ImprovMX; `support@dimensionriders.app` é o contato público escolhido no painel da #117. MX/TXT conferidos; Murilo confirmou a entrega de teste em `contact` e `support`. HTTPS e Enforce HTTPS ativos, com certificado para o domínio principal e www; todas as nove páginas e os cinco assets conferidos em 2026-10-05.
 
-O branch prepara o site na raiz do domínio, CNAME no artefato, contato por e-mail e links públicos. O APK fica
+O site está publicado na raiz do domínio, com CNAME no artefato, contato por e-mail e links públicos. O APK fica
 oculto enquanto não há distribuição pública; o Release do jogo privado responde 404 sem autenticação. O teste
 interno continua pelo convite do Google Play. A política com anúncios foi copiada dos modelos atualizados da #117, usando `support@dimensionriders.app`; os textos do site descrevem anúncios opcionais.
 
