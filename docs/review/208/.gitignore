@@ -1,0 +1,4 @@
+# Artes existentes e capturas da revisão vivem na oficina e no pacote do homelab.
+# O manifesto e a pesquisa registram procedência; não duplicar 54 MB no site.
+assets/*.png
+captures/*.png

@@ -1,0 +1,290 @@
+[
+  {
+    "name": "a-pt-home",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-pt-download",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 1
+  },
+  {
+    "name": "a-pt-fold",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-pt-privacy",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-en-home",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-en-download",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 1
+  },
+  {
+    "name": "a-en-fold",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-en-privacy",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-pt-home",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-pt-download",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 1
+  },
+  {
+    "name": "b-pt-fold",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-pt-privacy",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-en-home",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-en-download",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 1
+  },
+  {
+    "name": "b-en-fold",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-en-privacy",
+    "device": "desktop",
+    "width": 1440,
+    "scroll": 1440,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-pt-home",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-pt-download",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 1
+  },
+  {
+    "name": "a-pt-fold",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-pt-privacy",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-en-home",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-en-download",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 1
+  },
+  {
+    "name": "a-en-fold",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "a-en-privacy",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-pt-home",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-pt-download",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 1
+  },
+  {
+    "name": "b-pt-fold",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-pt-privacy",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-en-home",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-en-download",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 1
+  },
+  {
+    "name": "b-en-fold",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  },
+  {
+    "name": "b-en-privacy",
+    "device": "mobile",
+    "width": 390,
+    "scroll": 390,
+    "images": [],
+    "headings": 1,
+    "disabled": 0
+  }
+]
