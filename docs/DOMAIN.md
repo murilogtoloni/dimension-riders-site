@@ -2,7 +2,7 @@
 
 Issue: dimension-riders#116. Domínio comprado pelo Murilo em 2026-10-05: `dimensionriders.app`.
 
-Murilo confirmou o domínio salvo no GitHub Pages e os registros A, AAAA e www no Route 53; conferidos no DNS autoritativo. Também cadastrou os aliases `contact` e `support` no ImprovMX; `support@dimensionriders.app` é o contato público escolhido no painel da #117. MX/TXT conferidos; Murilo confirmou a entrega de teste em `contact`, e falta confirmar `support` e HTTPS.
+Murilo confirmou o domínio salvo no GitHub Pages e os registros A, AAAA e www no Route 53; conferidos no DNS autoritativo. Também cadastrou os aliases `contact` e `support` no ImprovMX; `support@dimensionriders.app` é o contato público escolhido no painel da #117. MX/TXT conferidos; Murilo confirmou a entrega de teste em `contact` e `support`; falta concluir HTTPS.
 
 O branch prepara o site na raiz do domínio, CNAME no artefato, contato por e-mail e links públicos. O APK fica
 oculto enquanto não há distribuição pública; o Release do jogo privado responde 404 sem autenticação. O teste
@@ -55,7 +55,9 @@ murilogtoloni.github.io
 
 3. Aguarde DNS check successful no GitHub Pages. Marque Enforce HTTPS assim que o certificado estiver disponível
    (o GitHub informa até 24 h). O domínio `.app` precisa de HTTPS para abrir no navegador. Avise pelo painel quando
-   tiver salvo o domínio e o DNS; o agente integra/publica o branch e confere as páginas e os assets. Não é preciso
+   tiver salvo o domínio e o DNS; o agente integra/publica o branch e confere as páginas e os assets. Se o certificado
+   continuar sem ser criado depois de alguns minutos, remova o Custom domain e salve `dimensionriders.app` novamente
+   no Pages para reiniciar a emissão, conforme a orientação oficial do GitHub. Não é preciso
    mesclar o PR à mão.
 
 ## Encaminhamento do contato (Murilo)
@@ -89,7 +91,10 @@ Se já houver serviço de e-mail/MX/SPF, informe no painel antes de substituir: 
    conferir que consegue atender o contato. O plano Free encaminha recebimento; envio com remetente do domínio
    requer configuração adicional. Avise pelo painel quando o teste funcionar.
 
-## AdMob (Murilo fornece; agente publica)
+## AdMob (pendência da #117)
+
+Murilo adiou a configuração do AdMob no painel da #117. O domínio já permite servir o arquivo na raiz; publicar
+`public/app-ads.txt` quando a linha personalizada real da conta for fornecida, antes de habilitar anúncios reais.
 
 Abra AdMob > Apps > View all apps > app-ads.txt > How to set up app-ads.txt. Copie a linha personalizada completa
 para o comentário do painel. Ela contém o publisher ID real da conta (`pub-` e 16 dígitos); não use IDs de teste ou
