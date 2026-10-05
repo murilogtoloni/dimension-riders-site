@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import knight from '../images/characters/knight.webp';
+import chaser from '../images/characters/chaser.webp';
+import forestTyrant from '../images/characters/forest-tyrant.webp';
+import lavaTyrant from '../images/characters/lava-tyrant.webp';
+import { t, type Locale } from '../i18n';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const characters = [
+  { key: 'knight', image: knight }, { key: 'chaser', image: chaser },
+  { key: 'forestTyrant', image: forestTyrant }, { key: 'lavaTyrant', image: lavaTyrant },
+];
+---
+<section class="content wrap" aria-labelledby="roster-title">
+  <div class="section-top">
+    <h2 id="roster-title">{t(locale, 'roster.title')}</h2><p>{t(locale, 'roster.intro')}</p>
+  </div>
+  <div class="roster">
+    {characters.map(({ key, image }) => (
+      <article class="character">
+        <Image src={image} alt={t(locale, `roster.${key}.alt`)} widths={[180, 280, 560]} sizes="(max-width: 850px) 45vw, 270px" loading="lazy" />
+        <div class="caption">
+          <h3>{t(locale, `roster.${key}.title`)}</h3><p>{t(locale, `roster.${key}.text`)}</p><small>{t(locale, 'roster.concept')}</small>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,27 +1,35 @@
 ---
-import FeatureBlock from '../components/FeatureBlock.astro';
 import Gallery from '../components/Gallery.astro';
 import Hero from '../components/Hero.astro';
-import StoreButtons from '../components/StoreButtons.astro';
-import { shots } from '../images/shots';
-import { t, type Locale } from '../i18n';
+import Roster from '../components/Roster.astro';
+import DownloadLink from '../components/DownloadLink.astro';
+import { localePath, t, type Locale } from '../i18n';
 import Base from '../layouts/Base.astro';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const features = ['ride', 'seal', 'tyrants'] as const;
+const seal = `${import.meta.env.BASE_URL.replace(/\/+$/, '')}/selo.svg`;
 ---
 <Base locale={locale} page="home">
   <Hero locale={locale} />
-  <section class="features">
-    {features.map((key, i) => (
-      <FeatureBlock title={t(locale, `features.${key}.title`)} text={t(locale, `features.${key}.text`)} image={shots[i]} />
+  <section class="wrap summary" aria-label={t(locale, 'features.label')}>
+    {features.map((key) => (
+      <div><h2>{t(locale, `features.${key}.title`)}</h2><p>{t(locale, `features.${key}.text`)}</p></div>
     ))}
   </section>
+  <Roster locale={locale} />
   <Gallery locale={locale} />
-  <section class="cta">
+  <section class="content wrap">
+    <div class="story-callout">
+      <img src={seal} width="135" height="155" alt="" loading="lazy" />
+      <div><h2>{t(locale, 'story.title')}</h2><p>{t(locale, 'story.text')}</p></div>
+      <a class="button secondary" href={localePath(locale, 'fold')}>{t(locale, 'story.link')}</a>
+    </div>
+  </section>
+  <section class="closing">
     <h2>{t(locale, 'cta.title')}</h2>
     <p>{t(locale, 'cta.text')}</p>
-    <StoreButtons locale={locale} />
+    <DownloadLink locale={locale} />
   </section>
 </Base>

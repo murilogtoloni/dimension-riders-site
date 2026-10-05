@@ -1,5 +1,3 @@
-# The Fold
-
 The Tyrants open paths between worlds to invade the other side. The Riders follow those paths to stop
 the invasion. You are one of them — and your Shard is already pulling.
 

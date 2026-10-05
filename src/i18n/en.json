@@ -10,7 +10,8 @@
     "fold": "The Fold",
     "download": "Download",
     "privacy": "Privacy",
-    "switchLabel": "Change language"
+    "switchLabel": "Change language",
+    "skip": "Skip to content"
   },
   "meta": {
     "home": "A mobile action game. Ride the creases between worlds, seal the Rifts, bring down the Tyrants.",
@@ -19,27 +20,43 @@
     "privacy": "Dimension Riders privacy policy: local progress, optional ads and your privacy choices."
   },
   "hero": {
-    "tagline": "Cross worlds. Bring down the Tyrants. Seal the Rifts.",
-    "opening": "The worlds lie apart, like layers of folded paper. The Tyrants found a way to tear through that paper and invade the other side. You are a Rider. Cross worlds, fight the invaders and seal the Rifts before they grow. Your Shard is already pulling. Another world needs your help."
+    "tagline": "Protect the Fold.",
+    "call": "Seal the Rifts.",
+    "opening": "You are a Rider. Cross worlds, fight the invaders and bring down the Tyrants. Your Shard is already pulling.",
+    "eyebrow": "ACTION FOR ANDROID · FREE · OFFLINE",
+    "explore": "Discover the worlds",
+    "soon": "Coming soon to Google Play · No account",
+    "available": "On Google Play · No account",
+    "art": "Game promotional art"
   },
   "features": {
     "ride": {
-      "title": "Ride the creases",
-      "text": "Every Rift opens onto a crease between two worlds. Ride it with twin-stick controls: one thumb moves, the other aims and fires."
+      "title": "Move. Aim. Shoot.",
+      "text": "Two thumbs, one mission."
     },
     "seal": {
-      "title": "Seal the Rifts",
-      "text": "Fight waves of invaders and reach the exit to seal the Rift. Every closed passage cuts off a route for the invasion."
+      "title": "Every run, a choice.",
+      "text": "Weapons, relics and runes."
     },
     "tyrants": {
-      "title": "Bring down the Tyrants",
-      "text": "Fight through the invasion outposts to reach the layer’s Tyrant. Bring down the leader, defeat the defenders and close the passage they sustain."
-    }
+      "title": "Worlds to protect.",
+      "text": "Face their invaders."
+    },
+    "label": "How to play"
   },
   "gallery": {
-    "title": "From the creases",
-    "empty": "Screenshots coming soon.",
-    "alt": "Screenshot {n} of Dimension Riders"
+    "eyebrow": "FROM THE GAME",
+    "title": "Take a closer look at the run.",
+    "intro": "Real screenshots. Weapons, invaders and worlds to cross.",
+    "enlarge": "Enlarge screenshot: {name}",
+    "forest": "In the Primeval Forest",
+    "forestAlt": "Primeval Forest run: Rider and invaders by the wall.",
+    "gear": "In Gearworks",
+    "gearAlt": "Gearworks run: Rider fighting machine creatures.",
+    "lava": "In Caldera",
+    "lavaAlt": "Caldera run: Rider, creatures and combat effects.",
+    "arsenal": "Prepare your equipment",
+    "arsenalAlt": "Equipment menu showing the Rider, weapons, relics and runes."
   },
   "cta": {
     "title": "Your Shard is pulling.",
@@ -48,25 +65,83 @@
   "buttons": {
     "playStore": "Get it on Google Play",
     "apk": "Download the APK",
-    "apkVersion": "Version {version} · Android 8 or newer"
+    "apkVersion": "Version {version} · Android 8 or newer",
+    "android": "Download for Android",
+    "androidPlatform": "For Android"
   },
   "download": {
     "title": "Download",
-    "intro": "Dimension Riders is free, plays offline and has no accounts. Video ads are optional.",
+    "intro": "Dimension Riders for Android. Dual-stick action, runs across worlds and a Rift to seal.",
     "storeTitle": "Google Play",
-    "storeSoon": "The Google Play release is in preparation.",
+    "storeSoon": "The Google Play launch is in preparation. Installation will be available here when the listing is public.",
     "storeReady": "The easiest way: install from Google Play and get updates automatically.",
     "apkTitle": "Install the APK",
     "requirements": "Android 8 or newer.",
     "step1": "Download the APK with the button above.",
     "step2": "Open the file. Android will ask you to allow installs from this source. Allow it once.",
     "step3": "Tap Install. To update later, download the new APK and install it over the old one.",
-    "unavailable": "Public downloads are not available yet."
+    "unavailable": "Public downloads are not available yet.",
+    "headline": "Your next world fits in your pocket.",
+    "eyebrow": "DIMENSION RIDERS · ANDROID",
+    "soon": "COMING SOON",
+    "artAlt": "Promotional art with the Rider in front of a Rift.",
+    "benefits": {
+      "free": {
+        "title": "Free to play",
+        "text": "Video ads are optional."
+      },
+      "offline": {
+        "title": "Play offline",
+        "text": "Your runs and progress stay on your device."
+      },
+      "account": {
+        "title": "No account needed",
+        "text": "Start your journey without signing up."
+      }
+    }
   },
   "footer": {
     "madeBy": "Made by {developer}",
     "contact": "Contact"
   },
-  "fold": { "title": "The Fold" },
-  "privacy": { "title": "Privacy policy" }
+  "fold": {
+    "title": "The Fold",
+    "intro": "Who the Riders are, what drives the Tyrants and why your Shard is pulling.",
+    "imageAlt": "In-game dimension selection in the Fold.",
+    "imageCaption": "The Fold’s dimensions, as seen in the game."
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "intro": "Your data, optional ads and your privacy choices."
+  },
+  "roster": {
+    "title": "Little heroes. Big trouble.",
+    "intro": "One Rider among many. Creatures from other worlds. And Tyrants who refuse to leave.",
+    "concept": "Game concept art",
+    "knight": {
+      "title": "The Rider",
+      "text": "The Shard pulls. You follow.",
+      "alt": "Chibi Rider with blue armor, a plume and a cyan Shard."
+    },
+    "chaser": {
+      "title": "Forest invader",
+      "text": "Not every forest dweller is a friend.",
+      "alt": "Forest squirrel invader with Amber resin on its chest."
+    },
+    "forestTyrant": {
+      "title": "Forest Tyrant",
+      "text": "The leader behind the invasion.",
+      "alt": "Forest Tyrant with a tree body and an Amber crown."
+    },
+    "lavaTyrant": {
+      "title": "Caldera Tyrant",
+      "text": "Amber, stone and a very bad temper.",
+      "alt": "Caldera Tyrant: magma golem with Amber crystals."
+    }
+  },
+  "story": {
+    "title": "Another world needs your help.",
+    "text": "The worlds lie in layers. The Tyrants open Rifts to invade. The Riders follow the creases to seal them.",
+    "link": "Explore the Fold"
+  }
 }

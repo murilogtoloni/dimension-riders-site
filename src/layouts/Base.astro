@@ -14,6 +14,7 @@ const absolute = (path: string) => new URL(path, Astro.site).toString();
 const canonical = absolute(localePath(locale, page));
 const ogImage = absolute(`${import.meta.env.BASE_URL.replace(/\/+$/, '')}/og.jpg`);
 const favicon = `${import.meta.env.BASE_URL.replace(/\/+$/, '')}/favicon.svg`;
+const seal = `${import.meta.env.BASE_URL.replace(/\/+$/, '')}/selo.svg`;
 const nav: Page[] = ['home', 'fold', 'download'];
 ---
 <!doctype html>
@@ -38,23 +39,30 @@ const nav: Page[] = ['home', 'fold', 'download'];
     <meta property="og:locale" content={OG_LOCALE[locale]} />
     {LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#12101a" />
+    <meta name="theme-color" content="#0b0820" />
   </head>
   <body>
+    <a class="skip-link" href="#main">{t(locale, 'nav.skip')}</a>
     <header class="site-header">
-      <a class="brand" href={localePath(locale, 'home')}>{siteName}</a>
+      <div class="wrap header-inner">
+      <a class="brand" href={localePath(locale, 'home')}><img src={seal} width="48" height="56" alt="" /><span>{siteName}</span></a>
       <nav aria-label={t(locale, 'nav.label')}>
         {nav.map((p) => (
-          <a href={localePath(locale, p)} aria-current={p === page ? 'page' : undefined}>{t(locale, `nav.${p}`)}</a>
+          <a class={p === 'download' ? 'nav-download' : undefined} href={localePath(locale, p)} aria-current={p === page ? 'page' : undefined}>{t(locale, `nav.${p}`)}</a>
         ))}
         <LangSwitch locale={locale} page={page} />
       </nav>
+      </div>
     </header>
-    <main><slot /></main>
+    <main id="main" tabindex="-1"><slot /></main>
     <footer class="site-footer">
+      <div class="wrap footer-inner">
+      <span>{t(locale, 'footer.madeBy', { developer: t(locale, 'site.developer') })}</span>
+      <div class="footer-links">
       <a href={localePath(locale, 'privacy')}>{t(locale, 'nav.privacy')}</a>
       <a href={`mailto:${CONTACT_EMAIL}`}>{t(locale, 'footer.contact')}</a>
-      <span>{t(locale, 'footer.madeBy', { developer: t(locale, 'site.developer') })}</span>
+      </div>
+      </div>
     </footer>
   </body>
 </html>

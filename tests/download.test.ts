@@ -31,10 +31,14 @@ describe('página Baixar', () => {
     const html = read('/pt/baixar/index.html');
     if (PLAY_STORE_URL === '') {
       expect(html).toContain(pt.download.storeSoon);
+      expect(html).toContain(pt.download.soon);
+      expect(html).toMatch(/<button[^>]*class="store-disabled"[^>]*disabled/);
       expect(html).not.toContain(pt.buttons.playStore);
     } else {
       expect(html).toContain(pt.download.storeReady);
-      expect(html).toContain(PLAY_STORE_URL);
+      expect(html).toContain(`href="${PLAY_STORE_URL}"`);
+      expect(html).toContain(`alt="${pt.buttons.playStore}"`);
+      expect(html).not.toContain('class="store-disabled"');
     }
   });
 });
