@@ -2,6 +2,8 @@
 
 Issue: dimension-riders#116. Domínio comprado pelo Murilo em 2026-10-05: `dimensionriders.app`.
 
+Murilo confirmou o domínio salvo no GitHub Pages e os registros A, AAAA e www no Route 53; conferidos no DNS autoritativo. Também cadastrou os aliases `contact` e `support` no ImprovMX; `contact@dimensionriders.app` será o contato oficial da política e da ficha; aguardam MX/TXT, teste de entrega e certificado HTTPS.
+
 O branch prepara o site na raiz do domínio, CNAME no artefato, contato por e-mail e links públicos. O APK fica
 oculto enquanto não há distribuição pública; o Release do jogo privado responde 404 sem autenticação. O teste
 interno continua pelo convite do Google Play. A política da Fase 2 é trabalho da #117; ela usa o mesmo contato.
@@ -63,7 +65,7 @@ você já lê; não precisa divulgar esse endereço no site nem enviar senha ao 
 o serviço e configure o mesmo alias, informando qual no painel.
 
 1. Abra [ImprovMX](https://app.improvmx.com/), crie/acesse sua conta e adicione `dimensionriders.app`. Confirme a
-   conta e o destino conforme os e-mails recebidos. No domínio, crie alias `contato`, encaminhado para sua caixa.
+   conta e o destino conforme os e-mails recebidos. No domínio, crie alias `contact`, encaminhado para sua caixa.
 2. No mesmo DNS, crie MX na raiz com as duas linhas abaixo (prioridade já incluída). Crie TXT na raiz com o valor
    abaixo, incluindo as aspas no Route 53. Ambos: TTL 300, Simple routing, Alias desligado.
 
@@ -83,7 +85,7 @@ TXT, nome vazio:
 Se já houver serviço de e-mail/MX/SPF, informe no painel antes de substituir: SPF deve continuar em um único TXT.
 
 3. No ImprovMX, confira a ativação do domínio. Envie uma mensagem de uma segunda conta para
-   `contato@dimensionriders.app` e confirme recebimento (inclusive spam). Responda a ela pela caixa de destino para
+   `contact@dimensionriders.app` e confirme recebimento (inclusive spam). Responda a ela pela caixa de destino para
    conferir que consegue atender o contato. O plano Free encaminha recebimento; envio com remetente do domínio
    requer configuração adicional. Avise pelo painel quando o teste funcionar.
 
@@ -106,7 +108,7 @@ abaixo, o AdMob poderá verificar o domínio. A publicação da ficha é da #117
 Site: https://dimensionriders.app/
 Política de privacidade (EN): https://dimensionriders.app/en/privacy/
 Política de privacidade (PT): https://dimensionriders.app/pt/privacidade/
-E-mail: contato@dimensionriders.app
+E-mail: contact@dimensionriders.app
 ```
 
 ## Fontes oficiais

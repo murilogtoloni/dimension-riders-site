@@ -9,4 +9,4 @@ export const APK_URL = '';
 /** Versão exibida na página Baixar. Atualizar a cada release do jogo. */
 export const APP_VERSION = '0.1.0';
 
-export const CONTACT_EMAIL = 'contato@dimensionriders.app';
+export const CONTACT_EMAIL = 'contact@dimensionriders.app';

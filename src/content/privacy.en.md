@@ -22,4 +22,4 @@ If the game ever starts collecting data (for example, an online leaderboard), th
 
 ## Contact
 
-Questions: email [contato@dimensionriders.app](mailto:contato@dimensionriders.app).
+Questions: email [contact@dimensionriders.app](mailto:contact@dimensionriders.app).

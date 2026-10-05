@@ -22,4 +22,4 @@ Se um dia o jogo passar a coletar algum dado (por exemplo, um ranking online), e
 
 ## Contato
 
-Dúvidas: escreva para [contato@dimensionriders.app](mailto:contato@dimensionriders.app).
+Dúvidas: escreva para [contact@dimensionriders.app](mailto:contact@dimensionriders.app).
