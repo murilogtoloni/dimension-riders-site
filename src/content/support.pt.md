@@ -1,6 +1,6 @@
 ## Fale com a gente
 
-Escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app), em português ou inglês. Respondemos em até 2 dias úteis.
+Escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app), em português ou inglês. Respondemos em até uma semana, do e-mail pessoal do desenvolvedor, Murilo Toloni.
 
 Para a gente achar o problema mais rápido, conte:
 

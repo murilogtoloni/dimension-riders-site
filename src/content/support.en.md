@@ -1,6 +1,6 @@
 ## Contact us
 
-Email [support@dimensionriders.app](mailto:support@dimensionriders.app), in English or Portuguese. We reply within 2 business days.
+Email [support@dimensionriders.app](mailto:support@dimensionriders.app), in English or Portuguese. We reply within a week, from the developer's personal email (Murilo Toloni).
 
 To help us find the problem faster, tell us:
 
