@@ -10,6 +10,8 @@
     "fold": "The Fold",
     "download": "Download",
     "privacy": "Privacy",
+    "support": "Support",
+    "terms": "Terms",
     "switchLabel": "Change language",
     "skip": "Skip to content"
   },
@@ -17,7 +19,9 @@
     "home": "A mobile action game. Ride the creases between worlds, seal the Rifts, bring down the Tyrants.",
     "fold": "The story of Dimension Riders: the Fold, the Amber, the Unfolded, the Riders and the Seal.",
     "download": "Download Dimension Riders for Android, free and offline.",
-    "privacy": "Dimension Riders privacy policy: local progress, optional ads and your privacy choices."
+    "privacy": "Dimension Riders privacy policy: local progress, optional ads and your privacy choices.",
+    "support": "Dimension Riders support: how to reach us and answers to common questions.",
+    "terms": "Dimension Riders terms of use: minimum age, rewarded ads and Amber, which has no monetary value."
   },
   "hero": {
     "tagline": "Protect the Fold.",
@@ -113,6 +117,14 @@
   "privacy": {
     "title": "Privacy policy",
     "intro": "Your data, optional ads and your privacy choices."
+  },
+  "support": {
+    "title": "Support",
+    "intro": "How to reach us and answers to common questions."
+  },
+  "terms": {
+    "title": "Terms of use",
+    "intro": "The rules of the game outside the game, in a few lines."
   },
   "roster": {
     "title": "Little heroes. Big trouble.",

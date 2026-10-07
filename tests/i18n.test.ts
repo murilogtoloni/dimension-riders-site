@@ -6,13 +6,15 @@ describe('i18n', () => {
     expect([...LOCALES]).toEqual(['en', 'pt']);
     expect(DEFAULT_LOCALE).toBe('en');
     expect(HTML_LANG).toEqual({ en: 'en', pt: 'pt-BR' });
-    expect([...PAGES]).toEqual(['home', 'fold', 'download', 'privacy']);
+    expect([...PAGES]).toEqual(['home', 'fold', 'download', 'privacy', 'support', 'terms']);
   });
 
   it('tem um slug por página em cada idioma', () => {
     expect(ROUTES.fold).toEqual({ en: 'fold', pt: 'dobra' });
     expect(ROUTES.download).toEqual({ en: 'download', pt: 'baixar' });
     expect(ROUTES.privacy).toEqual({ en: 'privacy', pt: 'privacidade' });
+    expect(ROUTES.support).toEqual({ en: 'support', pt: 'suporte' });
+    expect(ROUTES.terms).toEqual({ en: 'terms', pt: 'termos' });
     expect(ROUTES.home).toEqual({ en: '', pt: '' });
   });
 

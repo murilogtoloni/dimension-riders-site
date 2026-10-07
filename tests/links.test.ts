@@ -20,8 +20,8 @@ function targetFile(href: string): string {
 describe('links internos', () => {
   const files = existsSync(DIST) ? htmlFiles(DIST) : [];
 
-  it('dist/ existe e tem as 9 páginas (rode npm run build antes)', () => {
-    expect(files.length).toBe(9);
+  it('dist/ existe e tem as 13 páginas (rode npm run build antes)', () => {
+    expect(files.length).toBe(13);
   });
 
   for (const file of files) {

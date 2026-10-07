@@ -1,7 +1,7 @@
 import type { MarkdownInstance } from 'astro';
 import type { Locale } from '../i18n';
 
-export type DocName = 'fold' | 'privacy';
+export type DocName = 'fold' | 'privacy' | 'support' | 'terms';
 
 const docs = import.meta.glob<MarkdownInstance<Record<string, unknown>>>('./*.md', { eager: true });
 

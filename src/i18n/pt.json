@@ -10,6 +10,8 @@
     "fold": "A Dobra",
     "download": "Baixar",
     "privacy": "Privacidade",
+    "support": "Suporte",
+    "terms": "Termos",
     "switchLabel": "Mudar idioma",
     "skip": "Pular para o conteúdo"
   },
@@ -17,7 +19,9 @@
     "home": "Um jogo de ação para celular. Cavalgue os vincos entre mundos, sele as Fendas, derrube os Tiranos.",
     "fold": "A história do Dimension Riders: a Dobra, o Âmbar, os Desdobrados, os Cavaleiros e o Selo.",
     "download": "Baixe o Dimension Riders para Android, grátis e offline.",
-    "privacy": "Política de privacidade do Dimension Riders: progresso local, anúncios opcionais e suas escolhas de privacidade."
+    "privacy": "Política de privacidade do Dimension Riders: progresso local, anúncios opcionais e suas escolhas de privacidade.",
+    "support": "Suporte do Dimension Riders: como falar com a gente e respostas às dúvidas mais comuns.",
+    "terms": "Termos de uso do Dimension Riders: idade mínima, anúncios recompensados e o Âmbar, que não tem valor em dinheiro."
   },
   "hero": {
     "tagline": "Proteja a Dobra.",
@@ -113,6 +117,14 @@
   "privacy": {
     "title": "Política de privacidade",
     "intro": "Seus dados, anúncios opcionais e suas escolhas de privacidade."
+  },
+  "support": {
+    "title": "Suporte",
+    "intro": "Como falar com a gente e as respostas às dúvidas mais comuns."
+  },
+  "terms": {
+    "title": "Termos de uso",
+    "intro": "As regras do jogo fora do jogo, em poucas linhas."
   },
   "roster": {
     "title": "Pequenos heróis. Grandes encrencas.",
