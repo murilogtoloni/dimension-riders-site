@@ -31,8 +31,8 @@
   },
   "features": {
     "ride": {
-      "title": "Move. Aim. Shoot.",
-      "text": "Two thumbs, one mission."
+      "title": "Move. Stop. Shoot.",
+      "text": "One thumb. Tap your target."
     },
     "seal": {
       "title": "Every run, a choice.",
@@ -71,7 +71,7 @@
   },
   "download": {
     "title": "Download",
-    "intro": "Dimension Riders for Android. Dual-stick action, runs across worlds and a Rift to seal.",
+    "intro": "Dimension Riders for Android. One-thumb action, runs across worlds and a Rift to seal.",
     "storeTitle": "Google Play",
     "storeSoon": "The Google Play launch is in preparation. Installation will be available here when the listing is public.",
     "storeReady": "The easiest way: install from Google Play and get updates automatically.",

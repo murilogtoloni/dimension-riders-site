@@ -31,8 +31,8 @@
   },
   "features": {
     "ride": {
-      "title": "Mova. Mire. Atire.",
-      "text": "Dois polegares, uma missão."
+      "title": "Mova. Pare. Atire.",
+      "text": "Um polegar. Toque no alvo."
     },
     "seal": {
       "title": "Cada corrida, uma escolha.",
@@ -71,7 +71,7 @@
   },
   "download": {
     "title": "Baixar",
-    "intro": "Dimension Riders para Android. Ação com dois joysticks, corridas entre mundos e uma Fenda para selar.",
+    "intro": "Dimension Riders para Android. Ação com um polegar só, corridas entre mundos e uma Fenda para selar.",
     "storeTitle": "Google Play",
     "storeSoon": "O lançamento no Google Play está em preparação. O botão de instalação será liberado aqui quando a ficha estiver pública.",
     "storeReady": "O jeito mais fácil: instale pelo Google Play e as atualizações chegam sozinhas.",
