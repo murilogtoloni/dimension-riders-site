@@ -28,4 +28,4 @@ O jogo é grátis e não vende nada. O Âmbar se ganha jogando e não se compra.
 
 ### Como apago meus dados?
 
-O jogo não tem conta, e o progresso fica só no seu aparelho: desinstalar apaga tudo. O que vai ao Google (anúncios e, quando ligados, métricas e relatórios de falha) está na [Política de privacidade](/pt/privacidade/), com o jeito de pedir a exclusão.
+Não pedimos conta nem login, e o progresso fica só no seu aparelho: desinstalar apaga tudo. Para as recompensas diárias, o jogo cria sozinho um identificador anônimo, sem nome nem email; como não sabemos quem você é, não há o que pedir: esses registros, as métricas e os relatórios de falha expiram sozinhos nos prazos da [Política de privacidade](/pt/privacidade/).

@@ -1,45 +1,45 @@
-Última atualização: 2026-10-05
+Última atualização: 2026-10-09
 
-Dimension Riders é um jogo para Android feito no Brasil.
+Dimension Riders é um jogo para Android feito no Brasil. Responsável pelos dados descritos aqui: o desenvolvedor do jogo. Contato: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
-## O que o jogo coleta
+Não pedimos conta nem login, nem nome ou email, e o seu progresso fica só no aparelho: desinstalar o jogo apaga tudo.
 
-O jogo em si não coleta, não guarda e não envia nenhum dado pessoal. Não tem conta nem analytics próprio, e funciona sem internet.
+## O que sai do aparelho
 
-## Anúncios
+Google Analytics para Firebase (métricas): como o jogo é jogado (corridas, sessões, desempenho), a versão, o aparelho, o idioma, o país aproximado pelo IP e um identificador da instalação, sem o ID de publicidade; serve para ajustar a dificuldade.
 
-O jogo mostra anúncios em vídeo só quando você escolhe assistir (por exemplo, para dobrar o Âmbar no fim de uma corrida). O jogo não mostra anúncios automáticos. Você também pode escolher um vídeo recompensado para ter uma segunda chance após a derrota.
+Firebase Crashlytics (relatórios de falha): quando o jogo trava, o erro, o trecho do código, a versão, o aparelho e identificadores da instalação e da sessão; serve para corrigir erros.
 
-Os anúncios são fornecidos pelo Google AdMob. Para exibir e medir anúncios e evitar fraude, o AdMob pode coletar do seu aparelho:
+Google AdMob (vídeos recompensados, opcionais): para mostrar e medir anúncios e evitar fraude, pode tratar o ID de publicidade, outros identificadores do aparelho, o IP e as interações com os anúncios; o kit inicia ao abrir o jogo. Mais: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
 
-- o ID de publicidade e outros identificadores do aparelho;
-- o endereço IP, de onde sai uma localização aproximada;
-- como você interage com os anúncios e dados de diagnóstico (falhas e desempenho).
+## Identificador anônimo
 
-Esses dados vão para o Google e os parceiros dele, não para o desenvolvedor do jogo. Como o Google usa esses dados: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+Para registrar as recompensas diárias e não pagar a mesma duas vezes, o jogo cria sozinho, no Firebase, um identificador aleatório, sem nome nem email, com os recibos e um contador de dias. Nada do seu progresso vai para lá.
 
-## Suas escolhas
+## Permissão e como desligar
 
-- Não assistir: os anúncios são opcionais e o jogo inteiro funciona sem eles. Sem internet, nenhum anúncio é carregado.
-- Consentimento: onde a lei pede (por exemplo, na Europa e no Reino Unido), o jogo pergunta antes de usar seus dados para anúncios personalizados. Dá para rever a resposta em Configurações, dentro do jogo.
-- ID de publicidade: nas configurações do Android (Privacidade > Anúncios) você pode redefinir ou excluir o ID de publicidade.
+Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, métricas e relatórios de falha só saem com a sua permissão, pedida na primeira abertura; fora dessas regiões, o envio começa ligado, pelo nosso legítimo interesse em melhorar o jogo. Ligue ou desligue cada um em Configurações > Termos e privacidade > Opções de dados. Anúncios personalizados: na área europeia, o Google pergunta antes (mude em Configurações > Privacidade dos anúncios); fora dela, não há personalização.
 
-## O que fica no seu aparelho
+## Por quanto tempo guardamos
 
-Seu progresso (corridas, melhores tempos, Âmbar e o que você destravou) é salvo só no seu aparelho, no armazenamento privado do app. Desinstalar o jogo apaga tudo.
+Métricas: 2 meses no Google Analytics.
 
-## Crianças
+Relatórios de falha: 90 dias no Crashlytics.
 
-O jogo não é dirigido a crianças com menos de 13 anos.
+Recompensas: recibos, contador e conta, 2 meses sem uso; o registro do identificador anônimo pode permanecer.
 
-## Google Play
+## Segurança
 
-Se você instalar o jogo pelo Google Play, o Google pode processar dados conforme a política de privacidade dele, que é independente deste jogo.
+Tudo sai por conexão criptografada (HTTPS) para o Google (Firebase e AdMob), que trata os dados só para prestar esses serviços, em servidores que podem ficar fora do Brasil. Não vendemos dados.
 
-## Mudanças
+## Crianças e adolescentes
 
-Se o jogo passar a coletar algum outro dado (por exemplo, um ranking online), esta página vai dizer exatamente o quê, por quê e como recusar, antes de essa versão ser lançada.
+O jogo não é dirigido a menores de 13 anos; nas regiões europeias acima, menores de 16 devem pedir a um responsável antes de permitir o envio.
 
-## Contato
+## Seus direitos
 
-Dúvidas: [support@dimensionriders.app](mailto:support@dimensionriders.app).
+Não temos como saber quem você é, então não conseguimos localizar nem apagar dados seus a pedido; eles expiram sozinhos nos prazos acima. Dúvidas e direitos (ANPD, no Brasil, ou a autoridade de proteção de dados do seu país): [support@dimensionriders.app](mailto:support@dimensionriders.app).
+
+## Mudanças nesta política
+
+Se esta política mudar de forma importante, o jogo avisa na abertura seguinte.

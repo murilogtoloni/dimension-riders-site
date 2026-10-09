@@ -12,13 +12,21 @@ describe('páginas de texto', () => {
     expect(read('/pt/dobra/index.html')).toContain('<html lang="pt-BR"');
   });
 
-  it('Privacidade explica progresso local e dados dos anúncios nos dois idiomas', () => {
-    expect(read('/en/privacy/index.html')).toMatch(/does not collect/i);
-    expect(read('/pt/privacidade/index.html')).toMatch(/não coleta/i);
-    expect(read('/en/privacy/index.html')).toContain('2026-10-05');
+  it('Privacidade nomeia o Analytics, o Crashlytics e o AdMob, com data e contato, nos dois idiomas (#248)', () => {
+    expect(read('/en/privacy/index.html')).toContain('2026-10-09');
     for (const path of ['/en/privacy/index.html', '/pt/privacidade/index.html']) {
-      expect(read(path)).toContain('Google AdMob');
-      expect(read(path)).toContain('mailto:support@dimensionriders.app');
+      const html = read(path);
+      for (const s of ['Google Analytics', 'Crashlytics', 'Google AdMob', 'mailto:support@dimensionriders.app']) expect(html).toContain(s);
+    }
+    expect(read('/pt/privacidade/index.html')).toContain('Segurança');
+    // #312: recompensas pelo servidor com login anônimo; o texto diz que o registro não expira sozinho.
+    for (const s of ['Não pedimos conta nem login', 'Identificador anônimo', 'pode permanecer']) expect(read('/pt/privacidade/index.html')).toContain(s);
+    for (const s of ['account or login', 'Anonymous identifier', 'may remain']) expect(read('/en/privacy/index.html')).toContain(s);
+  });
+
+  it('nenhuma página identifica o desenvolvedor como pessoa (#281)', () => {
+    for (const path of ['/en/index.html', '/pt/index.html', '/en/support/index.html', '/pt/suporte/index.html', '/en/terms/index.html', '/pt/termos/index.html', '/en/privacy/index.html', '/pt/privacidade/index.html']) {
+      expect(read(path)).not.toMatch(/Toloni|Murilo/);
     }
   });
 
@@ -26,6 +34,7 @@ describe('páginas de texto', () => {
     for (const [path, settings] of [['/en/support/index.html', 'Settings'], ['/pt/suporte/index.html', 'Configurações']]) {
       const html = read(path);
       expect(html).toContain('mailto:support@dimensionriders.app');
+      expect(html).toContain(path.startsWith('/en') ? 'anonymous identifier' : 'identificador anônimo'); // #312
       expect(html).toContain(settings);
       expect(html).toContain('<h3');
     }
