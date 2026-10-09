@@ -30,7 +30,7 @@ O jogo é oferecido como está. Corrigimos falhas assim que possível, mas não 
 
 ## Mudanças e lei
 
-Se estes termos mudarem, a nova versão aparece nesta página com a data atualizada. Estes termos seguem a lei brasileira. Quem baixa pelo Google Play também segue os termos do Google Play.
+Se estes termos mudarem, publicamos a nova versão no site e no jogo, com a data atualizada. Estes termos seguem a lei brasileira. Quem baixa pelo Google Play também segue os termos do Google Play.
 
 ## Contato
 
