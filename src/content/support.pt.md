@@ -28,4 +28,4 @@ O jogo é grátis e não vende nada. O Âmbar se ganha jogando e não se compra.
 
 ### Como apago meus dados?
 
-O jogo não tem conta e não guarda seus dados fora do aparelho: desinstalar apaga tudo. Os dados que o Google AdMob coleta para os anúncios estão na [Política de privacidade](/pt/privacidade/).
+O jogo não tem conta, e o progresso fica só no seu aparelho: desinstalar apaga tudo. O que vai ao Google (anúncios e, quando ligados, métricas e relatórios de falha) está na [Política de privacidade](/pt/privacidade/), com o jeito de pedir a exclusão.

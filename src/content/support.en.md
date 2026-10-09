@@ -28,4 +28,4 @@ The game is free and sells nothing. Amber is earned by playing and can't be boug
 
 ### How do I delete my data?
 
-The game has no account and keeps none of your data off your device: uninstalling erases everything. The data Google AdMob collects for ads is covered in the [Privacy policy](/en/privacy/).
+The game has no account, and your progress stays only on your device: uninstalling erases it. What goes to Google (ads and, when turned on, metrics and crash reports) is covered in the [Privacy policy](/en/privacy/), along with how to ask for deletion.
