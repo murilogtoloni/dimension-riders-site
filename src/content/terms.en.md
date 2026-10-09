@@ -1,6 +1,6 @@
 Last updated: 2026-10-07
 
-These terms apply to the game Dimension Riders, made by Murilo Toloni in Brazil. By playing, you agree to them.
+These terms apply to the game Dimension Riders, made in Brazil. By playing, you agree to them.
 
 ## Age
 

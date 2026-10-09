@@ -1,6 +1,6 @@
 Última atualização: 2026-10-07
 
-Estes termos valem para o jogo Dimension Riders, feito por Murilo Toloni, no Brasil. Ao jogar, você concorda com eles.
+Estes termos valem para o jogo Dimension Riders, feito no Brasil. Ao jogar, você concorda com eles.
 
 ## Idade
 

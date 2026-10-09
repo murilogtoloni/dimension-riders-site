@@ -1,6 +1,6 @@
 ## Fale com a gente
 
-Escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app), em português ou inglês. Respondemos em até uma semana, do e-mail pessoal do desenvolvedor, Murilo Toloni.
+Escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app), em português ou inglês. Respondemos em até uma semana.
 
 Para a gente achar o problema mais rápido, conte:
 
@@ -17,10 +17,6 @@ Não. O progresso fica salvo só no seu aparelho, e o jogo não guarda cópia em
 ### O anúncio não carrega
 
 Os anúncios precisam de internet, e nem sempre há um disponível. Tente de novo mais tarde. O jogo inteiro funciona sem eles.
-
-### Como mudo minha escolha sobre anúncios personalizados?
-
-Onde a lei pede (por exemplo, na Europa e no Reino Unido), use Configurações > Privacidade dos anúncios, dentro do jogo. Em qualquer lugar, dá para redefinir ou excluir o ID de publicidade nas configurações do Android.
 
 ### O jogo fechou sozinho ou travou
 

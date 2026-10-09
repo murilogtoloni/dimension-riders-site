@@ -1,7 +1,6 @@
 {
   "site": {
     "name": "Dimension Riders",
-    "developer": "Murilo Toloni",
     "languageName": "English"
   },
   "nav": {
@@ -105,7 +104,7 @@
     }
   },
   "footer": {
-    "madeBy": "Made by {developer}",
+    "madeBy": "An independent game, made in Brazil.",
     "contact": "Contact"
   },
   "fold": {
