@@ -19,6 +19,9 @@ describe('páginas de texto', () => {
       for (const s of ['Google Analytics', 'Crashlytics', 'Google AdMob', 'mailto:support@dimensionriders.app']) expect(html).toContain(s);
     }
     expect(read('/pt/privacidade/index.html')).toContain('Segurança');
+    // #312: recompensas pelo servidor com login anônimo; o texto diz que o registro não expira sozinho.
+    for (const s of ['Não pedimos conta nem login', 'Cloud Firestore', 'não expira sozinho']) expect(read('/pt/privacidade/index.html')).toContain(s);
+    for (const s of ['account or login', 'Cloud Firestore', 'does not expire on its own']) expect(read('/en/privacy/index.html')).toContain(s);
   });
 
   it('nenhuma página identifica o desenvolvedor como pessoa (#281)', () => {

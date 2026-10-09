@@ -4,7 +4,7 @@ Dimension Riders é um jogo para Android feito no Brasil. Responsável pelos dad
 
 ## Resumo
 
-O jogo funciona inteiro sem enviar dados de métricas ou de falhas. Usamos o Google Analytics para Firebase (métricas) e o Firebase Crashlytics (relatórios de falha) para ajustar a dificuldade e corrigir erros. Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, nada disso é enviado sem a sua permissão, pedida num aviso na primeira abertura. Nos outros lugares, o envio começa ligado e você pode desligar quando quiser. Não temos contas, não pedimos nome nem email, e o seu progresso fica só no aparelho. Os vídeos recompensados são opcionais e usam o Google AdMob.
+O jogo funciona inteiro sem enviar dados de métricas ou de falhas. Usamos o Google Analytics para Firebase (métricas) e o Firebase Crashlytics (relatórios de falha) para ajustar a dificuldade e corrigir erros. Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, nada disso é enviado sem a sua permissão, pedida num aviso na primeira abertura. Nos outros lugares, o envio começa ligado e você pode desligar quando quiser. Não pedimos conta nem login, nem nome ou email, e o seu progresso fica só no aparelho. Os vídeos recompensados são opcionais e usam o Google AdMob.
 
 ## Como o jogo sabe onde o aviso é exigido
 
@@ -36,6 +36,8 @@ Métricas: os dados de cada evento ficam no Google Analytics por 2 meses. Relat�
 
 Relatórios de falha: 90 dias no Crashlytics.
 
+Recompensas: recibos e contador, 12 meses sem uso; o login anônimo, até você pedir a exclusão.
+
 ## Quem recebe os dados
 
 O Google (Firebase e AdMob) trata os dados para prestar esses serviços, em servidores que podem ficar fora do Brasil, como nos Estados Unidos, com as garantias contratuais do Google. Não vendemos dados.
@@ -52,13 +54,17 @@ Os vídeos recompensados são opcionais. Para mostrar e medir os anúncios e evi
 
 O progresso fica só no seu aparelho, e o jogo não usa o backup automático do Google. Trocar ou formatar o celular, ou desinstalar o jogo, apaga o progresso.
 
+## Recompensas diárias e semanais
+
+Para entregar cada recompensa diária ou semanal uma vez só, mesmo que o relógio do aparelho mude, o jogo usa o Firebase (Authentication e Cloud Firestore), do Google. Na primeira sincronização ele cria um login anônimo, sem nome, email ou senha, identificado por um código aleatório que você não vê, e guarda nele os recibos das recompensas (data, valor e posição no ciclo) e um contador de dias. Nada do seu progresso vai para lá. Os recibos e o contador são apagados sozinhos depois de 12 meses sem uso. O registro do login anônimo não expira sozinho: ele fica até você pedir a exclusão (veja "Seus direitos").
+
 ## Crianças e adolescentes
 
 O jogo não é dirigido a menores de 13 anos. Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, se você tem menos de 16 anos, peça a um responsável antes de permitir métricas ou relatórios de falha.
 
 ## Seus direitos
 
-Você pode pedir acesso, correção, exclusão ou portabilidade dos seus dados, saber com quem são compartilhados e se opor ao tratamento, escrevendo para [support@dimensionriders.app](mailto:support@dimensionriders.app). Como não há contas, explicaremos como localizar os dados da sua instalação no serviço correspondente. Se não for possível localizá-los, diremos o motivo e quando eles expiram. Não envie senha nem o seu save por email. Você também pode reclamar à ANPD, no Brasil, ou à autoridade de proteção de dados do seu país.
+Você pode pedir acesso, correção, exclusão ou portabilidade dos seus dados, saber com quem são compartilhados e se opor ao tratamento, escrevendo para [support@dimensionriders.app](mailto:support@dimensionriders.app). Como não há login com nome ou email, explicaremos como localizar os dados da sua instalação no serviço correspondente. Se não for possível localizá-los, diremos o motivo e quando eles expiram. Não envie senha nem o seu save por email. Você também pode reclamar à ANPD, no Brasil, ou à autoridade de proteção de dados do seu país.
 
 ## Mudanças nesta política
 

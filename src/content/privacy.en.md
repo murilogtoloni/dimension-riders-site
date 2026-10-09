@@ -4,7 +4,7 @@ Dimension Riders is an Android game made in Brazil. The game's developer is resp
 
 ## Summary
 
-The whole game works without sending any metrics or crash data. We use Google Analytics for Firebase (metrics) and Firebase Crashlytics (crash reports) to tune the difficulty and fix errors. In the European Union, the European Economic Area, Switzerland and the United Kingdom, none of this is sent without your permission, which a notice asks for the first time you open the game. Everywhere else, sending starts on and you can turn it off whenever you like. There are no accounts, we don't ask for your name or email, and your progress stays on your device. Rewarded videos are optional and use Google AdMob.
+The whole game works without sending any metrics or crash data. We use Google Analytics for Firebase (metrics) and Firebase Crashlytics (crash reports) to tune the difficulty and fix errors. In the European Union, the European Economic Area, Switzerland and the United Kingdom, none of this is sent without your permission, which a notice asks for the first time you open the game. Everywhere else, sending starts on and you can turn it off whenever you like. We don't ask you for an account or login, nor for your name or email, and your progress stays on your device. Rewarded videos are optional and use Google AdMob.
 
 ## How the game knows where the notice is required
 
@@ -36,6 +36,8 @@ Metrics: event-level data stays in Google Analytics for 2 months. Reports with t
 
 Crash reports: 90 days in Crashlytics.
 
+Rewards: receipts and counter, 12 months without use; the anonymous login, until you ask for its deletion.
+
 ## Who receives the data
 
 Google (Firebase and AdMob) processes the data to provide these services, on servers that may be outside Brazil, such as in the United States, under Google's contractual safeguards. We don't sell data.
@@ -52,13 +54,17 @@ Rewarded videos are optional. To show and measure ads and prevent fraud, Google 
 
 Your progress stays only on your device, and the game doesn't use Google's automatic backup. Changing or resetting your phone, or uninstalling the game, erases your progress.
 
+## Daily and weekly rewards
+
+To deliver each daily or weekly reward only once, even if the device clock changes, the game uses Google's Firebase (Authentication and Cloud Firestore). On the first sync it creates an anonymous login, with no name, email or password, identified by a random code you never see, and stores there the reward receipts (date, amount and position in the cycle) and a day counter. None of your progress goes there. The receipts and the counter are deleted automatically after 12 months without use. The anonymous login record does not expire on its own: it stays until you ask for its deletion (see "Your rights").
+
 ## Children and teenagers
 
 The game is not directed at children under 13. In the European Union, the European Economic Area, Switzerland and the United Kingdom, if you are under 16, ask a parent or guardian before allowing metrics or crash reports.
 
 ## Your rights
 
-You can ask to access, correct, delete or port your data, to know who it is shared with, and to object to its processing, by writing to [support@dimensionriders.app](mailto:support@dimensionriders.app). Since there are no accounts, we will explain how to find your installation's data in the relevant service. If it can't be found, we will tell you why and when it expires. Don't send passwords or your save file by email. You can also complain to Brazil's data protection authority (ANPD) or to the data protection authority in your country.
+You can ask to access, correct, delete or port your data, to know who it is shared with, and to object to its processing, by writing to [support@dimensionriders.app](mailto:support@dimensionriders.app). Since there is no login with a name or email, we will explain how to find your installation's data in the relevant service. If it can't be found, we will tell you why and when it expires. Don't send passwords or your save file by email. You can also complain to Brazil's data protection authority (ANPD) or to the data protection authority in your country.
 
 ## Changes to this policy
 
