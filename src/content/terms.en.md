@@ -1,4 +1,4 @@
-Last updated: 2026-10-07
+Last updated: 2026-10-09
 
 These terms apply to the game Dimension Riders, made in Brazil. By playing, you agree to them.
 
@@ -22,11 +22,11 @@ Your progress is saved only on your device. If it is lost (by uninstalling the g
 
 ## Using the game
 
-You may play as much as you like on your device. You may not sell or redistribute the game, or modified copies of it. The game, its art, story and sounds belong to the developer or to those who licensed them to the developer.
+You may play as much as you like on your device. You may not sell or redistribute the game, or modified copies of it. Do not use cheats, modified versions or programs that alter the game, and do not reverse engineer it. The game, its art, story and sounds belong to the developer or to those who licensed them to the developer.
 
-## Warranty
+## Warranty and liability
 
-The game is provided as is. We fix problems as soon as we can, but we don't guarantee that it works on every device or without interruption. Nothing here takes away the rights that consumer law gives you.
+The game is provided as is. We fix problems as soon as we can, but we don't guarantee that it works on every device or without interruption. The game may change or stop being offered at any time. To the extent the law allows, we are not liable for indirect losses, such as lost progress or time without playing. Nothing here takes away the rights that consumer law gives you.
 
 ## Changes and law
 

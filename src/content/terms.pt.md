@@ -1,4 +1,4 @@
-Última atualização: 2026-10-07
+Última atualização: 2026-10-09
 
 Estes termos valem para o jogo Dimension Riders, feito no Brasil. Ao jogar, você concorda com eles.
 
@@ -22,11 +22,11 @@ O progresso fica salvo só no seu aparelho. Se ele se perder (ao desinstalar o j
 
 ## Uso do jogo
 
-Você pode jogar à vontade no seu aparelho. Não pode vender nem redistribuir o jogo, nem cópias modificadas dele. O jogo, a arte, a história e os sons pertencem ao desenvolvedor ou a quem os licenciou para ele.
+Você pode jogar à vontade no seu aparelho. Não pode vender nem redistribuir o jogo, nem cópias modificadas dele. Não use trapaças, versões modificadas ou programas que alterem o jogo, e não faça engenharia reversa dele. O jogo, a arte, a história e os sons pertencem ao desenvolvedor ou a quem os licenciou para ele.
 
-## Garantia
+## Garantia e responsabilidade
 
-O jogo é oferecido como está. Corrigimos falhas assim que possível, mas não garantimos que ele funcione em todo aparelho nem sem interrupção. Nada aqui tira os direitos que a lei do consumidor garante a você.
+O jogo é oferecido como está. Corrigimos falhas assim que possível, mas não garantimos que ele funcione em todo aparelho nem sem interrupção. O jogo pode mudar ou deixar de ser oferecido a qualquer momento. Na medida em que a lei permite, não respondemos por perdas indiretas, como progresso perdido ou tempo sem jogar. Nada aqui tira os direitos que a lei do consumidor garante a você.
 
 ## Mudanças e lei
 
