@@ -114,8 +114,6 @@
     "indexLabel": "Chapters",
     "chapter": "Chapter {n}",
     "heroAlt": "Painting: the Rider, bow in hand, before a wide Rift with islands floating inside it.",
-    "imageAlt": "In-game dimension selection in the Fold.",
-    "imageCaption": "The layers, as they appear in the game.",
     "worlds": {
       "label": "The five layers",
       "note": "Cut from runs in the game.",
@@ -176,7 +174,6 @@
       "amber": "Amber crystal: glowing golden veins.",
       "amberCaption": "Amber of the Fold, as it appears in the nests.",
       "riderRift": "Painting: the Rider before an open Rift, the Shard glowing on his chest.",
-      "riderRiftCaption": "The Rider and the Rift the Shard follows.",
       "seal": "The Seal: a shield with two golden layers and a cyan crystal between them.",
       "sealCaption": "The Seal, symbol of the order."
     },

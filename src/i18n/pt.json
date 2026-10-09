@@ -114,8 +114,6 @@
     "indexLabel": "Capítulos",
     "chapter": "Capítulo {n}",
     "heroAlt": "Pintura: o Cavaleiro, de arco na mão, diante de uma Fenda larga com ilhas flutuando lá dentro.",
-    "imageAlt": "Seleção de dimensões da Dobra no jogo.",
-    "imageCaption": "As camadas, como aparecem no jogo.",
     "worlds": {
       "label": "As cinco camadas",
       "note": "Recortes de corridas no jogo.",
@@ -176,7 +174,6 @@
       "amber": "Cristal de Âmbar: veios dourados que brilham.",
       "amberCaption": "Âmbar da Dobra, como aparece nos ninhos.",
       "riderRift": "Pintura: o Cavaleiro diante de uma Fenda aberta, com a Estilha brilhando no peito.",
-      "riderRiftCaption": "O Cavaleiro e a Fenda que a Estilha acompanha.",
       "seal": "O Selo: escudo com duas camadas em ouro e um cristal ciano entre elas.",
       "sealCaption": "O Selo, símbolo da ordem."
     },
