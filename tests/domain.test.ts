@@ -15,6 +15,12 @@ describe('publicação no domínio próprio (#116)', () => {
     }
   });
 
+  it('app-ads.txt na raiz com o publisher real do AdMob (#312)', () => {
+    const lines = read('/app-ads.txt').trim().split('\n');
+    expect(lines).toEqual(['google.com, pub-4500268638478905, DIRECT, f08c47fec0942fa0']);
+    expect(read('/app-ads.txt')).not.toContain('pub-3940256099942544');
+  });
+
   it('nenhuma página pública manda visitantes para o repositório privado ou a antiga subpasta', () => {
     const htmlFiles = readdirSync(DIST, { recursive: true }).filter((path) => String(path).endsWith('.html'));
     for (const path of htmlFiles) {
