@@ -110,8 +110,78 @@
   "fold": {
     "title": "A Dobra",
     "intro": "Quem são os Cavaleiros, o que move os Tiranos e por que sua Estilha está puxando.",
-    "imageAlt": "Seleção de dimensões da Dobra no jogo.",
-    "imageCaption": "As dimensões da Dobra, vistas no jogo."
+    "eyebrow": "A história de Dimension Riders",
+    "indexLabel": "Capítulos",
+    "chapter": "Capítulo {n}",
+    "heroAlt": "Pintura: o Cavaleiro, de arco na mão, diante de uma Fenda larga com ilhas flutuando lá dentro.",
+    "worlds": {
+      "label": "As cinco camadas",
+      "note": "Recortes de corridas no jogo.",
+      "layer": "Camada {n}",
+      "forest": {
+        "name": "Floresta Primeva",
+        "line": "Onde o tempo corre devagar, os Desdobrados ainda empunham pedra e fúria.",
+        "alt": "Corrida na Floresta Primeva, vista de cima: grama, muralha de pedra e criaturas."
+      },
+      "gear": {
+        "name": "Engrenagem",
+        "line": "Onde o tempo corre depressa, os Desdobrados chegam de ferro e fumaça.",
+        "alt": "Corrida na Engrenagem, vista de cima: chão de chapas de aço e máquinas."
+      },
+      "lava": {
+        "name": "Caldeira",
+        "line": "Onde o tempo mal começou, os Desdobrados tomaram o vulcão das tribos.",
+        "alt": "Corrida na Caldeira, vista de cima: basalto, cinza e criaturas de rocha."
+      },
+      "ice": {
+        "name": "Geleira",
+        "line": "Onde o tempo quase parou, os Desdobrados tomaram o lago gelado dos pescadores.",
+        "alt": "Corrida na Geleira, vista de cima: lago congelado com neve nas bordas."
+      },
+      "reef": {
+        "name": "Atol",
+        "line": "Onde o tempo já afundou o vulcão, os Desdobrados fecharam os canais e tomaram a lagoa do povo das palafitas.",
+        "alt": "Corrida no Atol, vista de cima: areia clara, coral e criaturas de recife."
+      }
+    },
+    "cast": {
+      "label": "Os Tiranos",
+      "note": "Arte de conceito do jogo.",
+      "forest": {
+        "name": "Tirano da Floresta",
+        "alt": "Tirano da Floresta: corpo de árvore coberto de musgo e coroa de Âmbar."
+      },
+      "gear": {
+        "name": "Tirano da Engrenagem",
+        "alt": "Tirano da Engrenagem: armadura roxa e dourada com engrenagens e cristais de Âmbar."
+      },
+      "lava": {
+        "name": "Tirano da Caldeira",
+        "alt": "Tirano da Caldeira: golem de magma com cristais de Âmbar."
+      },
+      "ice": {
+        "name": "Tirano da Geleira",
+        "alt": "Tirano da Geleira: gigante de gelo com coroa de cristais e capa roxa."
+      },
+      "reef": {
+        "name": "Tirano do Atol",
+        "alt": "Tirano do Atol: caranguejo bordô com coroa dourada e uma garra enorme."
+      }
+    },
+    "figures": {
+      "threeRifts": "Pintura: o Cavaleiro atira enquanto três Fendas se abrem para mundos diferentes.",
+      "threeRiftsCaption": "Três Fendas, três camadas: Geleira, Caldeira e Floresta.",
+      "amber": "Cristal de Âmbar: veios dourados que brilham.",
+      "amberCaption": "Âmbar da Dobra, como aparece nos ninhos.",
+      "riderRift": "Pintura: o Cavaleiro diante de uma Fenda aberta, com a Estilha brilhando no peito.",
+      "seal": "O Selo: escudo com duas camadas em ouro e um cristal ciano entre elas.",
+      "sealCaption": "O Selo, símbolo da ordem."
+    },
+    "cta": {
+      "title": "Sua Estilha já está puxando.",
+      "text": "Tem outro mundo precisando de ajuda.",
+      "home": "Voltar ao início"
+    }
   },
   "privacy": {
     "title": "Política de privacidade",

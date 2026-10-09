@@ -1,7 +1,5 @@
 ---
 import { loadDoc, type DocName } from '../content/load';
-import { Image } from 'astro:assets';
-import { shotsFor } from '../images/shots';
 import { t, type Locale } from '../i18n';
 import Base from '../layouts/Base.astro';
 
@@ -15,9 +13,5 @@ const { Content } = loadDoc(page, locale);
   </section>
   <div class="reading">
     <article class="prose"><Content /></article>
-    {page === 'fold' && <figure class="fold-shot">
-      <Image src={shotsFor(locale).fold} alt={t(locale, 'fold.imageAlt')} widths={[320, 540, 760]} sizes="(max-width: 600px) 90vw, 360px" loading="lazy" />
-      <figcaption>{t(locale, 'fold.imageCaption')}</figcaption>
-    </figure>}
   </div>
 </Base>

@@ -1,91 +1,72 @@
-Os Tiranos abrem caminhos entre mundos para invadir o outro lado. Os Cavaleiros seguem esses caminhos para
-interromper a invasão. Você é um deles — e sua Estilha já está puxando.
+Os mundos vivem separados, como camadas de papel dobrado. Os Tiranos encontraram um jeito de rasgar esse
+papel e invadir o outro lado.
 
-## Mundos que precisam de ajuda
-
-A ordem dos Cavaleiros reúne gente de muitas camadas. Cada mundo que entrou para ela lembra de quando um
-Tirano chegou. Seus Cavaleiros seguem viagem para dar aos outros a mesma chance que tiveram: fechar a
-passagem dos invasores e deixar a vida seguir.
-
-A regra da ordem é simples: uma Fenda aberta é uma Fenda pra selar.
+Você é um Cavaleiro. Atravesse mundos, enfrente os invasores e sele as Fendas antes que cresçam.
 
 ## Mundos como papel dobrado
 
-Os mundos ficam em camadas, como papel dobrado. O conjunto é a Dobra. Onde ela está lisa, os mundos vivem
-separados; muitos nem sabem dos outros. Nos vincos, duas camadas se apertam.
+Os mundos ficam em camadas, uma sobre a outra, como papel dobrado. O conjunto é a Dobra. Onde ela está
+lisa, cada mundo vive por conta própria; muitos nem desconfiam dos outros. Nos vincos, duas camadas se
+apertam.
 
-O tempo corre em ritmos diferentes em cada camada. Algumas tiveram tempo para construir máquinas; outras
-abrigam florestas primevas. Cada uma tem suas próprias criaturas e sua própria história.
+O tempo não corre igual em todas. Numa camada ele mal começou, e a terra ainda se forma. Em outra, as
+máquinas já tomaram conta. Em outra, o inverno dura gerações. Cada mundo tem suas criaturas, seu povo e sua
+história.
 
 Ninguém sabe quem dobrou os mundos. Ninguém sabe se alguém dobrou.
 
 ## O Âmbar lembra
 
-O atrito entre as camadas deixa nos vincos um resíduo que endurece em veios dourados: o Âmbar. Cada fragmento
-guarda a memória dos dois mundos que o formaram, como um fóssil de dois lados ao mesmo tempo.
+Onde duas camadas se esfregam, o atrito deixa um resíduo que endurece em veios dourados: o Âmbar. Cada
+fragmento guarda a lembrança dos dois mundos que o formaram, como um fóssil de dois lados ao mesmo tempo.
 
-Um veio em repouso só brilha. Mas os Desdobrados aprenderam a reunir Âmbar suficiente em ninhos e ligar suas
-memórias. Aquecer o conjunto ajuda a despertá-lo; um fragmento sozinho não basta. Os dois mundos lembrados
-pelo ninho se tocam, e uma Fenda se abre.
-
-Quanto mais tempo essa ligação permanece ativa, mais larga a Fenda fica.
+Um veio em paz só brilha. Mas quem junta Âmbar suficiente num ninho e liga as memórias dele faz os dois
+mundos lembrados se tocarem. É assim que uma Fenda se abre. E quanto mais tempo o ninho fica aceso, mais
+larga ela fica.
 
 ## Quem abre quer mandar
 
-Os Desdobrados usam as Fendas para conquistar outros mundos. Alguns dos primeiros exploradores do Âmbar
-fugiam de derrotas e expulsões. Os que se tornaram Tiranos escolheram transformar a fuga em conquista.
-Viajar entre camadas não faz de ninguém um Desdobrado; tomar outros mundos é a escolha dessa facção.
+Os Desdobrados aprenderam a abrir Fendas e usam cada uma para invadir o mundo do outro lado. Entre os
+primeiros a mexer com o Âmbar havia derrotados, expulsos e gente que arruinou a própria casa. Os que viraram
+Tiranos trocaram a fuga pela conquista.
 
-Cada Tirano sustenta um ninho principal. Seus seguidores ocupam os caminhos e mantêm ninhos menores para
-trazer tropas. Os Cavaleiros enfrentam esses grupos até chegar ao líder da invasão.
+Cada Tirano sustenta um ninho principal. Seus seguidores tomam os caminhos e montam ninhos menores para
+trazer mais tropas; o Tenente, braço direito do Tirano, guarda o meio do caminho. Para desfazer um ninho, é
+preciso vencer quem o defende. Para fechar a Fenda, é preciso derrubar o Tirano.
 
-Vencer os defensores permite ao Cavaleiro desfazer a ligação do ninho. Os fragmentos perdem seu brilho ativo,
-o ninho racha e a passagem começa a fechar. No ninho principal, é preciso derrubar o Tirano e vencer os
-invasores que restam.
+Eles têm uma explicação para tudo isso. Dizem que o Âmbar prova que os mundos já foram um só, que a Dobra é
+uma prisão e que desdobrar é libertar. E pretendem mandar em tudo o que libertarem.
 
 ## Quem sela segue o puxão
 
-Cada Cavaleiro carrega uma Estilha: um único fragmento de Âmbar preparado pela ordem. Lascado, polido e com
-a memória estabilizada, ele passa a brilhar em ciano. Não abre Fendas, mesmo aquecido. Acompanha caminhos
-que já existem.
+Os Cavaleiros são uma ordem antiga, de muitos mundos. Cada mundo que entrou para ela lembra do dia em que um
+Tirano chegou, e de quem veio ajudar. A regra é simples: uma Fenda aberta é uma Fenda pra selar.
 
-Quando uma Fenda se fecha, o movimento corre pelos vincos. A Estilha puxa seu Cavaleiro por esse último
-caminho até o próximo vinco que está cedendo. A travessia termina de fechar a passagem atrás dele.
+Cada Cavaleiro carrega uma Estilha: um único fragmento de Âmbar, lascado, polido e preparado pela ordem até
+brilhar em ciano. A Estilha não abre Fendas, nem aquecida. Ela só acompanha caminhos que já existem.
 
-Por isso Cavaleiros: cavalgam o puxão. O destino vem da Dobra; a coragem de seguir é deles.
+Quando um ninho se desfaz e a Fenda começa a fechar, o movimento corre pelos vincos. A Estilha sente, e puxa
+o Cavaleiro por esse último caminho até o próximo vinco que está cedendo. A travessia termina de fechar a
+passagem atrás dele.
+
+Por isso o nome: eles cavalgam o puxão. O destino vem da Dobra. A coragem de seguir é deles.
 
 Proteja a Dobra. Sele as Fendas.
 
 ## Quem sela, talha
 
-A ordem tem um costume mais velho que qualquer regra escrita. Quando uma Fenda se fecha, o Cavaleiro talha na
-pedra mais próxima o símbolo da ordem: um escudo com duas camadas dobradas e um cristal entre elas, pintado
-do ciano da Estilha. É o Selo. Cada Cavaleiro acrescenta um entalhe só seu.
+Fechada a Fenda, o Cavaleiro talha na pedra mais próxima o símbolo da ordem: um escudo com duas camadas
+dobradas e um cristal entre elas, pintado do ciano da Estilha. É o Selo. Cada Cavaleiro acrescenta um
+entalhe só seu.
 
-Para a ordem, o desenho são dois mundos e a Estilha entre eles: uma pessoa parada no meio para que os dois
-continuem inteiros. Para quem mora ali, é notícia boa: aqui teve invasão, e acabou.
+Para quem mora ali, o Selo é notícia boa: aqui teve invasão, e acabou. Os povos ajudados o refazem do seu
+jeito: uma folha dobrada com uma gota no meio, uma mola com um rebite, lajes de basalto com uma pedra azul,
+uma rede com uma boia de vidro, uma vela de esteira com uma concha. Nenhum sabe dizer de quem aprendeu.
 
-Os povos ajudados refazem o Selo com o que têm. Uma folha dobrada com uma gota no meio. Uma mola com um
-rebite. Lajes de basalto empilhadas, com uma pedra azul. Nenhum sabe dizer de quem aprendeu.
+Os Tiranos mandam quebrar os Selos dos mundos que tomam, e os Desdobrados mais fortes carregam os cacos. O
+Cavaleiro que os vence recolhe a lasca: é uma runa. Quem carrega uma luta um pouco diferente, e a ordem não
+sabe explicar por quê.
 
-## Selos velhos demais
-
-Os Cavaleiros encontram Selos em mundos onde a ordem não lembra de ter estado. Gastos pela chuva de séculos,
-com a tinta sumida, com entalhes que ninguém reconhece.
-
-A ordem não tem uma resposta oficial, e os Cavaleiros discordam à vontade. Talvez tenha havido outros antes.
-Talvez a ordem seja muito mais velha do que pensa. Talvez seja só o tempo: numa camada onde ele corre
-depressa, um Selo do ano passado já é ruína.
-
-Os veteranos contam aos novatos a história do Cavaleiro que achou o próprio entalhe numa pedra de mil anos.
-Ninguém acredita. Quase ninguém.
-
-## Uma porta trancada por fora
-
-Os Desdobrados leem tudo ao contrário. Dizem que o Âmbar prova que os mundos já foram um só: se cada
-fragmento lembra de dois mundos, é porque um dia eles se tocavam. A Dobra seria uma prisão, e o cristal
-entre as camadas, o grampo que mantém o papel dobrado. “Desdobrar é libertar”, anunciam. E pretendem mandar em tudo o
-que libertarem.
-
-Por isso os Tiranos mandam quebrar os Selos dos mundos que tomam. Os mais vaidosos talham por cima a própria
-versão, com a própria cara.
+Há Selos velhos demais, em mundos onde a ordem não lembra de ter estado, com entalhes que ninguém reconhece.
+Os veteranos contam a história do Cavaleiro que achou o próprio entalhe numa pedra de mil anos. Ninguém
+acredita. Quase ninguém.

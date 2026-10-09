@@ -1,0 +1,89 @@
+/* Página da Dobra (#339), direção "Travessia": pinturas de largura total e fundo escuro. */
+.fold { background: radial-gradient(ellipse at 50% 0%, #2a1a4d 0%, #0b0820 60%), #0b0820; color: #faf5ff; }
+.fold-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 680px; display: grid; align-items: end; }
+.fold-hero-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; z-index: -2; }
+.fold-hero::after { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, #0b082066 0%, #0b082000 30%, #0b0820 94%), linear-gradient(90deg, #0b0820d9 0%, #0b082080 45%, #0b082000 78%); }
+.fold-hero-copy { padding: 130px 0 56px; }
+.fold-hero h1 { font-size: clamp(56px, 8vw, 108px); margin: 8px 0 18px; letter-spacing: -2px; color: var(--gold-hi); text-shadow: 0 4px 0 #2a1105, 0 12px 34px #000a; }
+.fold-lede { max-width: 600px; }
+.fold-lede p { font-size: clamp(20px, 2.2vw, 25px); line-height: 1.5; color: #efe8ff; text-shadow: 0 2px 10px #000a; }
+.fold-lede p:last-child { font-family: Russo, system-ui, sans-serif; font-size: 20px; color: var(--cyan); }
+.fold-index { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 26px; font-size: 15px; letter-spacing: .6px; text-transform: uppercase; }
+.fold-index a { text-decoration: none; color: #d9d0ea; border-bottom: 1px solid #6b5a8c; padding-bottom: 4px; }
+.fold-index a span { font-family: Russo, system-ui, sans-serif; color: var(--gold); margin-right: 8px; }
+
+.fold-chapter { padding: 100px 0; scroll-margin-top: 24px; }
+.fold-chapter + .fold-chapter { border-top: 1px solid #2d2246; }
+.fold-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 60px; align-items: center; }
+.fold-grid.flip .fold-text { order: 2; }
+.fold-kicker { font-family: Russo, system-ui, sans-serif; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-size: 14px; margin: 0 0 10px; }
+.fold-kicker::before { content: ''; display: inline-block; width: 28px; height: 2px; background: var(--gold); vertical-align: middle; margin-right: 12px; }
+.fold-text h2 { font-size: clamp(32px, 4vw, 48px); margin: 0 0 24px; color: #fff; }
+.fold-text p { font-size: 20px; line-height: 1.7; color: #ded6ee; max-width: 580px; }
+.fold-text.wide p { max-width: 780px; }
+.fold-text p.motto { font-family: Russo, system-ui, sans-serif; font-size: clamp(24px, 3vw, 34px); color: var(--cyan); line-height: 1.25; margin-top: 34px; }
+.fold-figure { margin: 0; }
+.fold-figure img { border-radius: 18px; border: 2px solid #76552e; box-shadow: 0 24px 60px #000a, 0 6px 0 #05030b; }
+.fold-figure figcaption { font-size: 15px; color: #b5a9c8; margin-top: 14px; text-align: center; }
+.fold-medal { width: min(100%, 400px); aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 4px solid #b4873f; margin: auto;
+  box-shadow: 0 0 0 7px #0b0820, 0 0 0 9px #5e462b, 0 0 90px #d9a44140; }
+.fold-medal img { width: 100%; height: 100%; object-fit: cover; border: 0; border-radius: 0; box-shadow: none; }
+
+.fold-worlds, .fold-cast { margin-top: 64px; }
+.fold-worlds-top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 22px; }
+.fold-worlds-top h3 { font-size: 22px; color: var(--gold-hi); margin: 0; }
+.fold-worlds-top p { font-size: 15px; color: #b5a9c8; margin: 0; }
+.fold-world-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; list-style: none; padding: 0; margin: 0; }
+.fold-world { background: #1a1230; border: 2px solid #5e462b; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 0 #05030b; transform: rotate(var(--tilt, 0)); }
+.fold-world:nth-child(odd) { --tilt: -1.2deg; }
+.fold-world:nth-child(even) { --tilt: 1deg; }
+.fold-world img { aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+.fold-world div { padding: 14px 14px 16px; }
+.fold-world .layer { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cyan); }
+.fold-world h4 { font-family: Russo, system-ui, sans-serif; font-weight: 400; font-size: 17px; color: var(--gold-hi); margin: 4px 0 8px; }
+.fold-world p { font-size: 15px; line-height: 1.45; color: #cfc6e0; margin: 0; }
+.fold-cast-list { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; list-style: none; padding: 0; margin: 0; text-align: center; }
+.fold-cast-list img { width: min(100%, 180px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; border: 3px solid #b4873f; margin: 0 auto 14px; box-shadow: 0 0 0 5px #0b0820, 0 0 0 7px #5e462b; }
+.fold-cast-list h4 { font-family: Russo, system-ui, sans-serif; font-weight: 400; font-size: 16px; color: var(--gold-hi); margin: 0; }
+
+.fold-band { position: relative; isolation: isolate; overflow: hidden; padding: 130px 0; }
+.fold-band-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 72% center; z-index: -2; }
+.fold-band::after { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, #0b0820f5 0%, #0b0820e0 42%, #0b082040 100%), linear-gradient(180deg, #0b0820 0%, transparent 18%, transparent 82%, #0b0820 100%); }
+.fold-band .fold-text { max-width: 620px; }
+.fold-seal { display: grid; place-items: center; }
+.fold-seal-stone { width: min(100%, 400px); aspect-ratio: 1; display: grid; place-items: center; border-radius: 28px; border: 2px solid #5e462b;
+  background: radial-gradient(circle at 30% 25%, #3a2d55, #1a1230 70%); box-shadow: inset 0 2px 0 #ffffff14, inset 0 -10px 24px #0008, 0 10px 0 #05030b; }
+.fold-seal-stone img { width: 56%; height: auto; border: 0; border-radius: 0; box-shadow: none; filter: drop-shadow(0 6px 0 #05030b) drop-shadow(0 0 26px #7ff3ff55); }
+
+.fold-call { position: relative; isolation: isolate; overflow: hidden; text-align: center; padding: 130px 24px; }
+.fold-call-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; z-index: -2; opacity: .6; }
+.fold-call::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, #0b0820 0%, #0b082099 40%, #0b0820b3 100%); }
+.fold-call h2 { font-size: clamp(32px, 5vw, 58px); color: var(--gold-hi); margin: 0 0 10px; text-shadow: 0 3px 0 #2a1105, 0 8px 30px #000b; }
+.fold-call p { font-size: 22px; color: #efe8ff; margin-bottom: 30px; text-shadow: 0 2px 8px #000a; }
+.fold-call .fold-home { margin: 26px 0 0; font-size: 18px; }
+
+@media (max-width: 850px) {
+  .fold-grid { grid-template-columns: 1fr; gap: 36px; }
+  .fold-grid.flip .fold-text { order: 0; }
+  .fold-world-list, .fold-cast-list { grid-template-columns: repeat(3, 1fr); }
+  .fold-cast-list li:nth-child(n+4) { grid-column: span 1; }
+}
+@media (max-width: 600px) {
+  .fold-hero { min-height: 560px; }
+  .fold-hero-copy { padding: 90px 0 40px; }
+  .fold-hero h1 { font-size: 54px; }
+  .fold-index { gap: 8px 18px; font-size: 13px; }
+  .fold-chapter { padding: 60px 0; }
+  .fold-text p { font-size: 18px; }
+  .fold-worlds, .fold-cast { margin-top: 44px; }
+  .fold-worlds-top { display: block; }
+  .fold-world-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -18px; padding: 6px 18px 12px; }
+  .fold-world { flex: 0 0 74%; scroll-snap-align: start; transform: none; }
+  .fold-cast-list { grid-template-columns: repeat(2, 1fr); gap: 20px 12px; }
+  .fold-cast-list li:last-child { grid-column: span 2; }
+  .fold-cast-list img { width: min(100%, 140px); }
+  .fold-band, .fold-call { padding: 70px 0; }
+  .fold-call { padding-inline: 18px; }
+}

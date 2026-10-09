@@ -1,89 +1,73 @@
-The Tyrants open paths between worlds to invade the other side. The Riders follow those paths to stop
-the invasion. You are one of them — and your Shard is already pulling.
+The worlds lie apart, like layers of folded paper. The Tyrants found a way to tear through that paper and
+invade the other side.
 
-## Worlds that need help
-
-The order of Riders brings together people from many layers. Every world that joined remembers when a
-Tyrant arrived. Its Riders travel on to give others the same chance they had: close the invaders' passage
-and let life carry on.
-
-The order has one simple rule: an open Rift is a Rift to seal.
+You are a Rider. Cross worlds, fight the invaders and seal the Rifts before they grow.
 
 ## Worlds like folded paper
 
-The worlds lie in layers, like folded paper. Together, they are the Fold. Where it lies flat, the worlds
-live apart; many do not even know about the others. At the creases, two layers press together.
+The worlds lie in layers, one over another, like folded paper. Together they are the Fold. Where it lies
+flat, each world lives on its own; many do not even suspect the others exist. At the creases, two layers
+press together.
 
-Time runs at different speeds in each layer. Some have had time to build machines; others hold primeval
-forests. Each has its own creatures and its own history.
+Time does not run the same in all of them. In one layer it has barely begun, and the land is still forming.
+In another, the machines have taken over. In another, winter lasts for generations. Each world has its own
+creatures, its own people and its own story.
 
 No one knows who folded the worlds. No one knows if anyone did.
 
 ## Amber remembers
 
-Friction between layers leaves a residue in the creases that hardens into golden veins: Amber. Each
-fragment remembers the two worlds that formed it, like a fossil with two sides at once.
+Where two layers rub together, the friction leaves a residue that hardens into golden veins: Amber. Each
+fragment keeps the memory of the two worlds that formed it, like a fossil with two sides at once.
 
-An undisturbed vein only glows. But the Unfolded learned to gather enough Amber into nests and link its
-memories. Heating the gathered Amber helps awaken it; a single fragment is not enough. The two worlds
-remembered by the nest touch, and a Rift opens.
-
-The longer that link stays active, the wider the Rift grows.
+A vein left in peace only glows. But whoever gathers enough Amber into a nest and links its memories makes
+the two remembered worlds touch. That is how a Rift opens. And the longer the nest stays lit, the wider it
+grows.
 
 ## Those who open want to rule
 
-The Unfolded use Rifts to conquer other worlds. Some of the earliest Amber explorers were fleeing defeat
-or exile. Those who became Tyrants chose to turn their escape into conquest. Travelling between layers
-does not make someone one of the Unfolded; taking over other worlds is this faction's choice.
+The Unfolded learned to open Rifts, and they use each one to invade the world on the other side. Among the
+first to meddle with Amber were the defeated, the banished and people who had ruined their own home. Those
+who became Tyrants traded escape for conquest.
 
-Each Tyrant sustains a main nest. Their followers occupy the paths and maintain smaller nests to bring in
-troops. The Riders fight through these groups to reach the leader of the invasion.
+Each Tyrant sustains a main nest. Their followers take the paths and build smaller nests to bring in more
+troops; the Lieutenant, the Tyrant's right hand, guards the middle of the road. To undo a nest, you must
+defeat whoever defends it. To close the Rift, you must bring down the Tyrant.
 
-Defeating a nest's defenders lets a Rider break its link. The fragments lose their active glow, the nest
-cracks and the passage begins to close. At the main nest, the Tyrant and the remaining invaders must fall.
+They have an explanation for all of it. They say Amber proves the worlds were once one, that the Fold is a
+prison and that unfolding is freedom. And they intend to rule everything they free.
 
 ## Those who seal ride the pull
 
-Every Rider carries a Shard: a single fragment of Amber prepared by the order. Chipped, polished and with
-its memory stabilised, it glows cyan. It cannot open Rifts, even when heated. It follows paths that already exist.
+The Riders are an old order, from many worlds. Every world that joined remembers the day a Tyrant arrived,
+and who came to help. The rule is simple: an open Rift is a Rift to seal.
 
-When a Rift closes, the movement travels along the creases. The Shard pulls its Rider along that last path
-to the next crease that is giving way. The crossing finishes closing the passage behind them.
+Every Rider carries a Shard: a single fragment of Amber, chipped, polished and prepared by the order until
+it glows cyan. A Shard cannot open Rifts, even when heated. It only follows paths that already exist.
 
-That is why they are Riders: they ride the pull. The Fold sets the destination; the courage to go is theirs.
+When a nest comes undone and the Rift starts to close, the movement runs along the creases. The Shard feels
+it, and pulls its Rider down that last path to the next crease that is giving way. The crossing finishes
+closing the passage behind them.
+
+Hence the name: they ride the pull. The destination comes from the Fold. The courage to go is theirs.
 
 Protect the Fold. Seal the Rifts.
 
 ## Those who seal, carve
 
-The order has a custom older than any written rule. When a Rift closes, the Rider carves the order's symbol
-into the nearest stone: a shield with two folded layers and a crystal between them, painted the cyan of the Shard. It is
-the Seal. Every Rider adds a notch of their own.
+With the Rift closed, the Rider carves the order's symbol into the nearest stone: a shield with two folded
+layers and a crystal between them, painted the cyan of the Shard. It is the Seal. Every Rider adds a notch
+of their own.
 
-To the order, the drawing is two worlds and the Shard between them: a person standing in the middle so
-that both stay whole. To the people who live there, it is good news: there was an invasion here, and it is over.
+To the people who live there, the Seal is good news: there was an invasion here, and it is over. The worlds
+that were helped remake it their own way: a creased leaf with a drop in the middle, a spring with a rivet,
+slabs of basalt with a blue stone, a net with a glass float, a woven sail with a shell. None of them can say
+who taught them.
 
-The worlds that were helped remake the Seal with what they have. A creased leaf with a drop in the middle.
-A spring with a rivet. Stacked slabs of basalt with one blue stone. None of them can say who taught them.
+The Tyrants have the Seals broken in the worlds they take, and the strongest of the Unfolded carry the
+pieces. The Rider who defeats them collects the chip: it is a rune. Whoever carries one fights a little
+differently, and the order cannot explain why.
 
-## Seals that are too old
-
-Riders find Seals in worlds the order does not remember visiting. Worn by centuries of rain, the paint long
-gone, with notches nobody recognises.
-
-The order has no official answer, and the Riders freely disagree. Maybe there were others before. Maybe the
-order is far older than it thinks. Maybe it is only time: in a layer where time runs fast, last year's Seal
-is already a ruin.
-
-Veterans tell newcomers the story of the Rider who found their own notch on a thousand-year-old stone.
-Nobody believes it. Almost nobody.
-
-## A door locked from the outside
-
-The Unfolded read it all the other way round. They say Amber proves the worlds were once one: if every
-fragment remembers two worlds, they must have touched one day. The Fold would be a prison, and the crystal
-between the layers the staple that keeps the paper folded. “Unfolding is freedom,” they announce. And they intend
-to rule everything they free.
-
-That is why the Tyrants have the Seals broken in the worlds they take. The vainest carve their own version
-on top, with their own face on it.
+There are Seals far too old, in worlds the order does not remember visiting, with notches no one recognises.
+Veterans tell the story of the Rider who found their own notch on a thousand-year-old stone. Nobody believes
+it. Almost nobody.

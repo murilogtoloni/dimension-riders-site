@@ -966,9 +966,6 @@ a:hover {
 .play-badge { display: inline-block; max-width: 240px; }
 .play-badge img { width: 220px; }
 .apk-instructions { margin-top: 55px; }
-.fold-shot { max-width: 360px; margin: 45px auto 0; }
-.fold-shot img { border: 2px solid var(--gold); border-radius: 14px; width: 100%; }
-.fold-shot figcaption { text-align: center; font-size: 17px; color: var(--muted); margin-top: 12px; }
 .prose { overflow-wrap: anywhere; }
 .skip-link { position: absolute; left: 20px; top: -100px; z-index: 10; background: var(--gold-hi); color: var(--ink); border-radius: 8px; padding: 10px 16px; }
 .skip-link:focus { top: 12px; }
