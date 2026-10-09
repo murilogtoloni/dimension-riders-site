@@ -971,11 +971,11 @@ a:hover {
 .skip-link:focus { top: 12px; }
 
 @media (max-width: 850px) {
-  .hero-bg { object-position: 64% center; }
+  .hero-bg { object-position: 80% center; }
 }
 
 @media (max-width: 600px) {
-  .hero-bg { inset: auto 0 0; height: 425px; object-position: 78% bottom; }
+  .hero-bg { inset: auto 0 0; height: 425px; object-position: 90% bottom; }
   .hero::before { background: linear-gradient(180deg, #0d0921 0%, #100927e8 37%, #10092700 62%); }
   .lang-switch { padding-left: 12px; }
   .ribbon h2 { font-size: 18px; }

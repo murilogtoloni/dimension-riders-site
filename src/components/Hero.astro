@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import feature from '../images/feature.webp';
+import { Picture } from 'astro:assets';
+import hero from '../images/hero.webp';
 import { PLAY_STORE_URL } from '../config';
 import { localePath, t, type Locale } from '../i18n';
 import DownloadLink from './DownloadLink.astro';
@@ -9,7 +9,7 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 ---
 <section class="hero">
-  <Image class="hero-bg" src={feature} alt="" widths={[640, 1024]} sizes="100vw" loading="eager" fetchpriority="high" />
+  <Picture class="hero-bg" src={hero} alt="" formats={['avif']} fallbackFormat="webp" widths={[960, 1600, 2560]} sizes="100vw" loading="eager" fetchpriority="high" />
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <div class="eyebrow">{t(locale, 'hero.eyebrow')}</div>
