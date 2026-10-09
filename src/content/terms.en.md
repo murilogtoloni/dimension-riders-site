@@ -30,7 +30,7 @@ The game is provided as is. We fix problems as soon as we can, but we don't guar
 
 ## Changes and law
 
-If these terms change, the new version appears on this page with an updated date. These terms are governed by Brazilian law. If you download the game from Google Play, the Google Play terms also apply.
+If these terms change, we publish the new version on the website and in the game, with an updated date. These terms are governed by Brazilian law. If you download the game from Google Play, the Google Play terms also apply.
 
 ## Contact
 
