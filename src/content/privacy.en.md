@@ -1,6 +1,6 @@
 Last updated: 2026-10-05
 
-Dimension Riders is an Android game made by Murilo Toloni.
+Dimension Riders is an Android game made in Brazil.
 
 ## What the game collects
 

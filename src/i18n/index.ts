@@ -11,7 +11,7 @@ export const HTML_LANG: Record<Locale, string> = { en: 'en', pt: 'pt-BR' };
 /** Valor de og:locale por idioma. */
 export const OG_LOCALE: Record<Locale, string> = { en: 'en_US', pt: 'pt_BR' };
 
-export const PAGES = ['home', 'fold', 'download', 'privacy'] as const;
+export const PAGES = ['home', 'fold', 'download', 'privacy', 'support', 'terms'] as const;
 export type Page = (typeof PAGES)[number];
 
 /** Slug de cada página em cada idioma. '' é a raiz do idioma (Início). */
@@ -20,6 +20,8 @@ export const ROUTES: Record<Page, Record<Locale, string>> = {
   fold: { en: 'fold', pt: 'dobra' },
   download: { en: 'download', pt: 'baixar' },
   privacy: { en: 'privacy', pt: 'privacidade' },
+  support: { en: 'support', pt: 'suporte' },
+  terms: { en: 'terms', pt: 'termos' },
 };
 
 type Dictionary = Record<string, unknown>;

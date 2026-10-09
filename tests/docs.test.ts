@@ -22,6 +22,34 @@ describe('páginas de texto', () => {
     }
   });
 
+  it('Suporte dá o e-mail, o que mandar e a versão nas Configurações, nos dois idiomas (#281)', () => {
+    for (const [path, settings] of [['/en/support/index.html', 'Settings'], ['/pt/suporte/index.html', 'Configurações']]) {
+      const html = read(path);
+      expect(html).toContain('mailto:support@dimensionriders.app');
+      expect(html).toContain(settings);
+      expect(html).toContain('<h3');
+    }
+  });
+
+  it('Termos dizem 13+, anúncios recompensados e Âmbar sem valor em dinheiro, nos dois idiomas (#281)', () => {
+    const en = read('/en/terms/index.html');
+    expect(en).toContain('13 or older');
+    expect(en).toContain('Google AdMob');
+    expect(en).toMatch(/no monetary value/);
+    const pt = read('/pt/termos/index.html');
+    expect(pt).toContain('13 anos ou mais');
+    expect(pt).toContain('Google AdMob');
+    expect(pt).toMatch(/não têm valor em dinheiro/);
+    expect(pt).toContain('lei brasileira');
+  });
+
+  it('o rodapé de toda página leva a Suporte, Termos e Privacidade', () => {
+    for (const [locale, support, terms, privacy] of [['en', 'support', 'terms', 'privacy'], ['pt', 'suporte', 'termos', 'privacidade']]) {
+      const html = read(`/${locale}/index.html`);
+      for (const slug of [support, terms, privacy]) expect(html).toContain(`href="/${locale}/${slug}/"`);
+    }
+  });
+
   it('nunca afirma a origem da Dobra nem do Selo, e o Âmbar não guarda Marca', () => {
     for (const path of ['/en/fold/index.html', '/pt/dobra/index.html']) {
       const html = read(path);

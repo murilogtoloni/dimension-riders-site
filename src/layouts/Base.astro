@@ -57,8 +57,10 @@ const nav: Page[] = ['home', 'fold', 'download'];
     <main id="main" tabindex="-1"><slot /></main>
     <footer class="site-footer">
       <div class="wrap footer-inner">
-      <span>{t(locale, 'footer.madeBy', { developer: t(locale, 'site.developer') })}</span>
+      <span>{t(locale, 'footer.madeBy')}</span>
       <div class="footer-links">
+      <a href={localePath(locale, 'support')}>{t(locale, 'nav.support')}</a>
+      <a href={localePath(locale, 'terms')}>{t(locale, 'nav.terms')}</a>
       <a href={localePath(locale, 'privacy')}>{t(locale, 'nav.privacy')}</a>
       <a href={`mailto:${CONTACT_EMAIL}`}>{t(locale, 'footer.contact')}</a>
       </div>
