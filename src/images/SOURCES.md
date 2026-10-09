@@ -2,7 +2,8 @@
 
 Issue: #208. Murilo aprovou a direção A pelo painel em 2026-10-05.
 
-- `feature.webp` e `icon.webp`: artes aprovadas da ficha #117, `docs/store/graphics/FeatureGraphic_1024x500.png` e `AppIcon_512.png` do jogo.
+- `feature.webp`: recurso gráfico novo da ficha (dimension-riders#337, opção A "O duelo", escolhida pelo Murilo no painel em 2026-10-09), `docs/store/graphics/FeatureGraphic_1024x500.png` do jogo; o Cavaleiro com o arco, como no jogo, contra o Tirano da Floresta numa Fenda.
+- `icon.webp`: arte aprovada da ficha #117 (direção A da #260), `docs/store/graphics/AppIcon_512.png` do jogo.
 - `characters/knight.webp`: `art/characters/references/knight_golden.png` do jogo.
 - `characters/chaser.webp`, `forest-tyrant.webp`, `lava-tyrant.webp`: conceitos em `dimension-riders-art/characters/{forest/chaser,forest/tyrant,lava/tyrant}/1-concept/concept.png`. Identificados como arte de conceito no site.
 - `shots/{pt,en}/{forest,gear,lava,arsenal,fold}.webp`: capturas `docs/store/screenshots/{pt,en}/{2-run-0,3-run-1,4-run-2,5-arsenal,6-fold}.png` da #117. Cada idioma usa a própria HUD e menus.
