@@ -2,70 +2,44 @@
 
 Dimension Riders é um jogo para Android feito no Brasil. Responsável pelos dados descritos aqui: o desenvolvedor do jogo. Contato: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
-## Resumo
+Não pedimos conta nem login, nem nome ou email, e o seu progresso fica só no aparelho: desinstalar o jogo apaga tudo.
 
-O jogo funciona inteiro sem enviar dados de métricas ou de falhas. Usamos o Google Analytics para Firebase (métricas) e o Firebase Crashlytics (relatórios de falha) para ajustar a dificuldade e corrigir erros. Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, nada disso é enviado sem a sua permissão, pedida num aviso na primeira abertura. Nos outros lugares, o envio começa ligado e você pode desligar quando quiser. Não pedimos conta nem login, nem nome ou email, e o seu progresso fica só no aparelho. Os vídeos recompensados são opcionais e usam o Google AdMob.
+## O que sai do aparelho
 
-## Como o jogo sabe onde o aviso é exigido
+Google Analytics para Firebase (métricas): como o jogo é jogado (corridas, sessões, desempenho), a versão, o aparelho, o idioma, o país aproximado pelo IP e um identificador da instalação, sem o ID de publicidade; serve para ajustar a dificuldade.
 
-Ao abrir o jogo, o kit de privacidade de anúncios do Google informa, pelo endereço IP, se o aparelho está numa região onde as regras europeias de proteção de dados se aplicam. Usamos essa resposta só para decidir se o aviso aparece; ela não conta como permissão. Sem essa resposta (por exemplo, sem internet), o jogo não envia métricas nem relatórios de falha naquela sessão.
+Firebase Crashlytics (relatórios de falha): quando o jogo trava, o erro, o trecho do código, a versão, o aparelho e identificadores da instalação e da sessão; serve para corrigir erros.
 
-## Métricas do jogo (Google Analytics para Firebase)
+Google AdMob (vídeos recompensados, opcionais): para mostrar e medir anúncios e evitar fraude, pode tratar o ID de publicidade, outros identificadores do aparelho, o IP e as interações com os anúncios; o kit inicia ao abrir o jogo. Mais: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
 
-O que enviamos: como o jogo é jogado — começo, retomada e fim de cada corrida; começo e conclusão de cada trecho; quando o personagem cai e o que causou; a arma, a armadura e o nível delas; a duração de cada sessão, o tempo em pausa e em anúncios; a abertura do menu; e, em parte das sessões, o desempenho (tempo de quadro e de abertura). O próprio Analytics registra a primeira abertura, o começo das sessões e o tempo de uso, e recebe um identificador da instalação do app, a versão do jogo, o modelo e o sistema do aparelho, o idioma e o país ou região aproximados a partir do IP.
+## Identificador anônimo
 
-O que não enviamos: nome, email, o seu save, localização precisa, o ID de publicidade ou texto escrito por você. O Analytics fica configurado sem o ID de publicidade e sem personalização de anúncios.
+Para registrar as recompensas diárias e não pagar a mesma duas vezes, o jogo cria sozinho, no Firebase, um identificador aleatório, sem nome nem email, com os recibos e um contador de dias. Nada do seu progresso vai para lá.
 
-Para quê: entender onde o jogo está difícil ou fácil demais, em que ponto as pessoas desistem e se ele roda bem em cada aparelho.
+## Permissão e como desligar
 
-## Relatórios de falha (Firebase Crashlytics)
-
-Quando o jogo trava ou encontra um erro, o relatório pode trazer o tipo do erro, o trecho do código, a versão e o estado do app, o modelo e o sistema do aparelho, a memória e o espaço livres e identificadores da instalação e da sessão. O relatório pode ficar guardado no aparelho com o envio desligado; ele só sai se o envio estiver permitido.
-
-## Base legal
-
-Fora da União Europeia, do Espaço Econômico Europeu, da Suíça e do Reino Unido, tratamos esses dados pelo nosso legítimo interesse em manter e melhorar o jogo, com esta política e a opção de desligar a qualquer momento. Nessas regiões europeias, a base é o seu consentimento, dado no aviso de dados; sem ele, nada é enviado.
-
-## Mudar de ideia
-
-Em Configurações > Termos e privacidade > Opções de dados você liga ou desliga as métricas e os relatórios de falha, cada um separado. Desligar interrompe os novos envios e descarta o que ainda não foi enviado. Um relatório que já estava saindo pode terminar de ser enviado. Desligar ou desinstalar o jogo não apaga o que já chegou ao Google; para isso, veja "Seus direitos".
+Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, métricas e relatórios de falha só saem com a sua permissão, pedida na primeira abertura; fora dessas regiões, o envio começa ligado, pelo nosso legítimo interesse em melhorar o jogo. Ligue ou desligue cada um em Configurações > Termos e privacidade > Opções de dados. Anúncios personalizados: na área europeia, o Google pergunta antes (mude em Configurações > Privacidade dos anúncios); fora dela, não há personalização.
 
 ## Por quanto tempo guardamos
 
-Métricas: os dados de cada evento ficam no Google Analytics por 2 meses. Relatórios com totais (por exemplo, quantas pessoas voltaram no dia seguinte) podem ficar mais tempo, sem os eventos de cada pessoa.
+Métricas: 2 meses no Google Analytics.
 
 Relatórios de falha: 90 dias no Crashlytics.
 
-Recompensas: recibos e contador, 12 meses sem uso; o login anônimo, até você pedir a exclusão.
-
-## Quem recebe os dados
-
-O Google (Firebase e AdMob) trata os dados para prestar esses serviços, em servidores que podem ficar fora do Brasil, como nos Estados Unidos, com as garantias contratuais do Google. Não vendemos dados.
+Recompensas: recibos, contador e conta, 2 meses sem uso; o registro do identificador anônimo pode permanecer.
 
 ## Segurança
 
-Tudo o que sai do aparelho vai por conexão criptografada (HTTPS) para os serviços do Google descritos aqui; não mantemos servidores próprios com dados pessoais. No aparelho, o progresso e as opções ficam no armazenamento privado do app, que outros apps não leem.
-
-## Anúncios (Google AdMob)
-
-Os vídeos recompensados são opcionais. Para mostrar e medir os anúncios e evitar fraude, o Google AdMob pode tratar o ID de publicidade e outros identificadores do aparelho, o IP, informações do aparelho e as interações com os anúncios. O kit de anúncios é iniciado ao abrir o jogo, antes de você escolher assistir. Na área europeia, o Google pergunta antes de mostrar anúncios personalizados; você pode mudar a resposta quando quiser em Configurações > Privacidade dos anúncios. Fora dela, os anúncios não são personalizados. Mais informações: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
-
-## Seu progresso
-
-O progresso fica só no seu aparelho, e o jogo não usa o backup automático do Google. Trocar ou formatar o celular, ou desinstalar o jogo, apaga o progresso.
-
-## Recompensas diárias e semanais
-
-Para entregar cada recompensa diária ou semanal uma vez só, mesmo que o relógio do aparelho mude, o jogo usa o Firebase (Authentication e Cloud Firestore), do Google. Na primeira sincronização ele cria um login anônimo, sem nome, email ou senha, identificado por um código aleatório que você não vê, e guarda nele os recibos das recompensas (data, valor e posição no ciclo) e um contador de dias. Nada do seu progresso vai para lá. Os recibos e o contador são apagados sozinhos depois de 12 meses sem uso. O registro do login anônimo não expira sozinho: ele fica até você pedir a exclusão (veja "Seus direitos").
+Tudo sai por conexão criptografada (HTTPS) para o Google (Firebase e AdMob), que trata os dados só para prestar esses serviços, em servidores que podem ficar fora do Brasil. Não vendemos dados.
 
 ## Crianças e adolescentes
 
-O jogo não é dirigido a menores de 13 anos. Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, se você tem menos de 16 anos, peça a um responsável antes de permitir métricas ou relatórios de falha.
+O jogo não é dirigido a menores de 13 anos; nas regiões europeias acima, menores de 16 devem pedir a um responsável antes de permitir o envio.
 
 ## Seus direitos
 
-Você pode pedir acesso, correção, exclusão ou portabilidade dos seus dados, saber com quem são compartilhados e se opor ao tratamento, escrevendo para [support@dimensionriders.app](mailto:support@dimensionriders.app). Como não há login com nome ou email, explicaremos como localizar os dados da sua instalação no serviço correspondente. Se não for possível localizá-los, diremos o motivo e quando eles expiram. Não envie senha nem o seu save por email. Você também pode reclamar à ANPD, no Brasil, ou à autoridade de proteção de dados do seu país.
+Não temos como saber quem você é, então não conseguimos localizar nem apagar dados seus a pedido; eles expiram sozinhos nos prazos acima. Dúvidas e direitos (ANPD, no Brasil, ou a autoridade de proteção de dados do seu país): [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
 ## Mudanças nesta política
 
-Se esta política mudar de forma importante, o jogo avisa na abertura seguinte. O Google Play trata dados conforme os próprios termos e políticas.
+Se esta política mudar de forma importante, o jogo avisa na abertura seguinte.

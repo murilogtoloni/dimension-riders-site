@@ -28,4 +28,4 @@ The game is free and sells nothing. Amber is earned by playing and can't be boug
 
 ### How do I delete my data?
 
-The game has no account, and your progress stays only on your device: uninstalling erases it. What goes to Google (ads and, when turned on, metrics and crash reports) is covered in the [Privacy policy](/en/privacy/), along with how to ask for deletion.
+We don't ask you for an account or login, and your progress stays only on your device: uninstalling erases it. For daily rewards, the game creates an anonymous identifier on its own, with no name or email; since we don't know who you are, there is nothing to request: those records, metrics and crash reports expire on their own within the periods in the [Privacy policy](/en/privacy/).

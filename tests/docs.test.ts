@@ -20,8 +20,8 @@ describe('páginas de texto', () => {
     }
     expect(read('/pt/privacidade/index.html')).toContain('Segurança');
     // #312: recompensas pelo servidor com login anônimo; o texto diz que o registro não expira sozinho.
-    for (const s of ['Não pedimos conta nem login', 'Cloud Firestore', 'não expira sozinho']) expect(read('/pt/privacidade/index.html')).toContain(s);
-    for (const s of ['account or login', 'Cloud Firestore', 'does not expire on its own']) expect(read('/en/privacy/index.html')).toContain(s);
+    for (const s of ['Não pedimos conta nem login', 'Identificador anônimo', 'pode permanecer']) expect(read('/pt/privacidade/index.html')).toContain(s);
+    for (const s of ['account or login', 'Anonymous identifier', 'may remain']) expect(read('/en/privacy/index.html')).toContain(s);
   });
 
   it('nenhuma página identifica o desenvolvedor como pessoa (#281)', () => {
@@ -34,6 +34,7 @@ describe('páginas de texto', () => {
     for (const [path, settings] of [['/en/support/index.html', 'Settings'], ['/pt/suporte/index.html', 'Configurações']]) {
       const html = read(path);
       expect(html).toContain('mailto:support@dimensionriders.app');
+      expect(html).toContain(path.startsWith('/en') ? 'anonymous identifier' : 'identificador anônimo'); // #312
       expect(html).toContain(settings);
       expect(html).toContain('<h3');
     }
