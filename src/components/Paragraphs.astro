@@ -1,0 +1,6 @@
+---
+/** Parágrafos (HTML do Markdown) de um capítulo da Dobra; com `motto`, o último vira a frase de efeito. */
+interface Props { items: string[]; motto?: boolean }
+const { items, motto = false } = Astro.props;
+---
+{items.map((p, i) => <p class={motto && i === items.length - 1 ? 'motto' : undefined} set:html={p} />)}

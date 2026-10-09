@@ -1,0 +1,137 @@
+---
+/** Direção B, "Relicário": o céu do título do jogo (camadas do menu) e painéis do kit, como os menus. */
+import { Image } from 'astro:assets';
+import DownloadLink from '../components/DownloadLink.astro';
+import { localePath, t } from '../i18n';
+import Base from '../layouts/Base.astro';
+import { shotsFor } from '../images/shots';
+import Paragraphs from '../components/Paragraphs.astro';
+import type { FoldProps } from '../content/fold-chapters';
+import threeRifts from '../images/fold/three-rifts.webp';
+import riderRift from '../images/fold/rider-rift.webp';
+import amber from '../images/fold/amber.webp';
+import sun from '../images/fold/menu/sun.webp';
+import peaksFar from '../images/fold/menu/peaks-far.webp';
+import peaksMid from '../images/fold/menu/peaks-mid.webp';
+import hills from '../images/fold/menu/hills.webp';
+import clouds from '../images/fold/menu/clouds.webp';
+import { WORLDS, TYRANTS } from '../images/fold';
+
+type Props = FoldProps;
+const { locale, opening, chapters } = Astro.props;
+const [worlds, amberCh, unfolded, riders, seal] = chapters;
+const seal_ = `${import.meta.env.BASE_URL.replace(/\/+$/, '')}/selo.svg`;
+---
+<Base locale={locale} page="fold" title={t(locale, 'fold.title')}>
+  <article class="fb">
+    <header class="fb-hero">
+      <div class="fb-sky" aria-hidden="true">
+        <Image class="fb-layer fb-sun" src={sun} alt="" width={520} loading="eager" />
+        <Image class="fb-layer fb-clouds" src={clouds} alt="" widths={[1024, 2048]} sizes="100vw" loading="eager" />
+        <Image class="fb-layer fb-peaks-far" src={peaksFar} alt="" widths={[1024, 2048]} sizes="100vw" loading="eager" />
+        <Image class="fb-layer fb-peaks-mid" src={peaksMid} alt="" widths={[1024, 2048]} sizes="100vw" loading="eager" />
+        <Image class="fb-layer fb-hills" src={hills} alt="" widths={[1024, 2048]} sizes="100vw" loading="eager" />
+      </div>
+      <div class="wrap fb-hero-inner">
+        <div class="fb-hero-copy">
+          <p class="eyebrow">{t(locale, 'fold.eyebrow')}</p>
+          <h1>{t(locale, 'fold.title')}</h1>
+          <div class="fb-lede"><Paragraphs items={opening} /></div>
+          <nav class="fb-index" aria-label={t(locale, 'fold.indexLabel')}>
+            {chapters.map((c, i) => <a href={`#${c.id}`}><span aria-hidden="true">{i + 1}</span>{c.title}</a>)}
+          </nav>
+        </div>
+        <figure class="fb-phone">
+          <Image src={shotsFor(locale).fold} alt={t(locale, 'fold.imageAlt')} widths={[250, 500]} sizes="250px" loading="eager" />
+          <figcaption>{t(locale, 'fold.imageCaption')}</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <div class="wrap fb-body">
+      <section class="fb-panel" id={worlds.id} data-chapter="1">
+        <span class="fb-pill">{t(locale, 'fold.chapter', { n: '1' })}</span>
+        <h2>{worlds.title}</h2>
+        <div class="fb-panel-grid">
+          <div class="fb-copy"><Paragraphs items={worlds.paragraphs} /></div>
+          <figure class="fb-figure">
+            <Image src={threeRifts} alt={t(locale, 'fold.figures.threeRifts')} widths={[480, 760, 1100]} sizes="(max-width: 850px) 92vw, 480px" loading="lazy" />
+            <figcaption>{t(locale, 'fold.figures.threeRiftsCaption')}</figcaption>
+          </figure>
+        </div>
+        <div class="fb-worlds">
+          <div class="fb-subtop"><h3>{t(locale, 'fold.worlds.label')}</h3><p>{t(locale, 'fold.worlds.note')}</p></div>
+          <ul class="fb-world-list">
+            {WORLDS.map(({ key, image }, i) => (
+              <li class="fb-world">
+                <span class="layer">{t(locale, 'fold.worlds.layer', { n: String(i + 1) })}</span>
+                <Image src={image} alt={t(locale, `fold.worlds.${key}.alt`)} widths={[300, 450, 900]} sizes="(max-width: 600px) 70vw, 210px" loading="lazy" />
+                <div><h4>{t(locale, `fold.worlds.${key}.name`)}</h4><p>{t(locale, `fold.worlds.${key}.line`)}</p></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section class="fb-panel" id={amberCh.id} data-chapter="2">
+        <span class="fb-pill">{t(locale, 'fold.chapter', { n: '2' })}</span>
+        <h2>{amberCh.title}</h2>
+        <div class="fb-panel-grid flip">
+          <div class="fb-copy"><Paragraphs items={amberCh.paragraphs} /></div>
+          <figure class="fb-figure round">
+            <Image src={amber} alt={t(locale, 'fold.figures.amber')} widths={[320, 640]} sizes="320px" loading="lazy" />
+            <figcaption>{t(locale, 'fold.figures.amberCaption')}</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="fb-panel" id={unfolded.id} data-chapter="3">
+        <span class="fb-pill">{t(locale, 'fold.chapter', { n: '3' })}</span>
+        <h2>{unfolded.title}</h2>
+        <div class="fb-copy fb-copy-wide"><Paragraphs items={unfolded.paragraphs} /></div>
+        <div class="fb-cast">
+          <div class="fb-subtop"><h3>{t(locale, 'fold.cast.label')}</h3><p>{t(locale, 'fold.cast.note')}</p></div>
+          <ul class="fb-cast-list">
+            {TYRANTS.map(({ key, image }) => (
+              <li>
+                <Image src={image} alt={t(locale, `fold.cast.${key}.alt`)} widths={[220, 440]} sizes="(max-width: 600px) 45vw, 210px" loading="lazy" />
+                <div><h4>{t(locale, `fold.cast.${key}.name`)}</h4><small>{t(locale, 'roster.concept')}</small></div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section class="fb-panel" id={riders.id} data-chapter="4">
+        <span class="fb-pill">{t(locale, 'fold.chapter', { n: '4' })}</span>
+        <h2>{riders.title}</h2>
+        <div class="fb-panel-grid">
+          <div class="fb-copy"><Paragraphs items={riders.paragraphs} motto /></div>
+          <figure class="fb-figure">
+            <Image src={riderRift} alt={t(locale, 'fold.figures.riderRift')} widths={[480, 760, 1100]} sizes="(max-width: 850px) 92vw, 480px" loading="lazy" />
+            <figcaption>{t(locale, 'fold.figures.riderRiftCaption')}</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="fb-panel" id={seal.id} data-chapter="5">
+        <span class="fb-pill">{t(locale, 'fold.chapter', { n: '5' })}</span>
+        <h2>{seal.title}</h2>
+        <div class="fb-panel-grid flip">
+          <div class="fb-copy"><Paragraphs items={seal.paragraphs} /></div>
+          <figure class="fb-figure fb-seal">
+            <img src={seal_} width="135" height="155" alt={t(locale, 'fold.figures.seal')} loading="lazy" />
+            <figcaption>{t(locale, 'fold.figures.sealCaption')}</figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="closing">
+      <h2>{t(locale, 'fold.cta.title')}</h2>
+      <p>{t(locale, 'fold.cta.text')}</p>
+      <DownloadLink locale={locale} />
+      <p class="fb-home"><a class="text-link" href={localePath(locale, 'home')}>{t(locale, 'fold.cta.home')}</a></p>
+    </section>
+  </article>
+</Base>

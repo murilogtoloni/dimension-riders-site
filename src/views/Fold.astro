@@ -1,0 +1,19 @@
+---
+/**
+ * A página da Dobra (#339): a história em capítulos, com arte. O texto vem de src/content/fold.<idioma>.md
+ * (ver fold-chapters.ts). Prévia das duas direções: FOLD_DIRECTION=b monta a Relicário; o padrão é a Travessia.
+ */
+import { foldChapters } from '../content/fold-chapters';
+import type { Locale } from '../i18n';
+import FoldTravessia from './FoldTravessia.astro';
+import FoldRelicario from './FoldRelicario.astro';
+import '../styles/fold.css';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const { opening, chapters } = await foldChapters(locale);
+const direction = (process.env.FOLD_DIRECTION ?? 'a').toLowerCase();
+---
+{direction === 'b'
+  ? <FoldRelicario locale={locale} opening={opening} chapters={chapters} />
+  : <FoldTravessia locale={locale} opening={opening} chapters={chapters} />}

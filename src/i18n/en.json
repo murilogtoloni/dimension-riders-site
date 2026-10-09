@@ -110,8 +110,81 @@
   "fold": {
     "title": "The Fold",
     "intro": "Who the Riders are, what drives the Tyrants and why your Shard is pulling.",
+    "eyebrow": "The story of Dimension Riders",
+    "indexLabel": "Chapters",
+    "chapter": "Chapter {n}",
+    "heroAlt": "Painting: the Rider, bow in hand, before a wide Rift with islands floating inside it.",
     "imageAlt": "In-game dimension selection in the Fold.",
-    "imageCaption": "The Fold’s dimensions, as seen in the game."
+    "imageCaption": "The layers, as they appear in the game.",
+    "worlds": {
+      "label": "The five layers",
+      "note": "Cut from runs in the game.",
+      "layer": "Layer {n}",
+      "forest": {
+        "name": "Primeval Forest",
+        "line": "Where time runs slow, the Unfolded still wield stone and fury.",
+        "alt": "A run in the Primeval Forest, seen from above: grass, a stone wall and creatures."
+      },
+      "gear": {
+        "name": "Gearworks",
+        "line": "Where time runs fast, the Unfolded arrive in iron and smoke.",
+        "alt": "A run in Gearworks, seen from above: a floor of steel plates and machines."
+      },
+      "lava": {
+        "name": "Caldera",
+        "line": "Where time has barely begun, the Unfolded took the volcano from the tribes.",
+        "alt": "A run in Caldera, seen from above: basalt, ash and rock creatures."
+      },
+      "ice": {
+        "name": "Glacier",
+        "line": "Where time has all but stopped, the Unfolded took the frozen lake from the fishers.",
+        "alt": "A run in Glacier, seen from above: a frozen lake with snow along the edges."
+      },
+      "reef": {
+        "name": "Atoll",
+        "line": "Where time has long since sunk the volcano, the Unfolded closed the channels and took the lagoon from the stilt-house folk.",
+        "alt": "A run in Atoll, seen from above: pale sand, coral and reef creatures."
+      }
+    },
+    "cast": {
+      "label": "The Tyrants",
+      "note": "Game concept art.",
+      "forest": {
+        "name": "Forest Tyrant",
+        "alt": "Forest Tyrant: a tree-like body covered in moss, with a crown of Amber."
+      },
+      "gear": {
+        "name": "Gearworks Tyrant",
+        "alt": "Gearworks Tyrant: purple and gold armour with gears and Amber crystals."
+      },
+      "lava": {
+        "name": "Caldera Tyrant",
+        "alt": "Caldera Tyrant: a magma golem with Amber crystals."
+      },
+      "ice": {
+        "name": "Glacier Tyrant",
+        "alt": "Glacier Tyrant: an ice giant with a crown of crystals and a purple cape."
+      },
+      "reef": {
+        "name": "Atoll Tyrant",
+        "alt": "Atoll Tyrant: a dark red crab with a golden crown and one huge claw."
+      }
+    },
+    "figures": {
+      "threeRifts": "Painting: the Rider shoots while three Rifts open onto different worlds.",
+      "threeRiftsCaption": "Three Rifts, three layers: Glacier, Caldera and Forest.",
+      "amber": "Amber crystal: glowing golden veins.",
+      "amberCaption": "Amber of the Fold, as it appears in the nests.",
+      "riderRift": "Painting: the Rider before an open Rift, the Shard glowing on his chest.",
+      "riderRiftCaption": "The Rider and the Rift the Shard follows.",
+      "seal": "The Seal: a shield with two golden layers and a cyan crystal between them.",
+      "sealCaption": "The Seal, symbol of the order."
+    },
+    "cta": {
+      "title": "Your Shard is already pulling.",
+      "text": "Another world needs your help.",
+      "home": "Back to the start"
+    }
   },
   "privacy": {
     "title": "Privacy policy",
