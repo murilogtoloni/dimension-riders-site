@@ -1,6 +1,6 @@
-Last updated: 2026-10-07
+Last updated: 2026-10-09
 
-Dimension Riders is an Android game made by Murilo Toloni, in Brazil, who is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
+Dimension Riders is an Android game made in Brazil. The game's developer is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
 ## Summary
 
@@ -40,9 +40,13 @@ Crash reports: 90 days in Crashlytics.
 
 Google (Firebase and AdMob) processes the data to provide these services, on servers that may be outside Brazil, such as in the United States, under Google's contractual safeguards. We don't sell data.
 
+## Security
+
+Everything that leaves your device travels over an encrypted connection (HTTPS) to the Google services described here; we keep no servers of our own with personal data. On your device, progress and options stay in the app's private storage, which other apps cannot read.
+
 ## Ads (Google AdMob)
 
-Rewarded videos are optional. To show and measure ads and prevent fraud, Google AdMob may process the advertising ID and other device identifiers, your IP address, device information and your interactions with ads. The ad kit starts when the game opens, before you choose to watch anything. In the European region, Google shows its own ad choices form, which you can review in Settings > Ad privacy; elsewhere, ads are not personalised. More information: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+Rewarded videos are optional. To show and measure ads and prevent fraud, Google AdMob may process the advertising ID and other device identifiers, your IP address, device information and your interactions with ads. The ad kit starts when the game opens, before you choose to watch anything. In the European region, Google asks before showing personalised ads; you can change your answer at any time in Settings > Ad privacy. Elsewhere, ads are not personalised. More information: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
 
 ## Your progress
 

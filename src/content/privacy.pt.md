@@ -1,6 +1,6 @@
-Última atualização: 2026-10-07
+Última atualização: 2026-10-09
 
-Dimension Riders é um jogo para Android feito por Murilo Toloni, no Brasil, responsável pelos dados descritos aqui. Contato: [support@dimensionriders.app](mailto:support@dimensionriders.app).
+Dimension Riders é um jogo para Android feito no Brasil. Responsável pelos dados descritos aqui: o desenvolvedor do jogo. Contato: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
 ## Resumo
 
@@ -40,9 +40,13 @@ Relatórios de falha: 90 dias no Crashlytics.
 
 O Google (Firebase e AdMob) trata os dados para prestar esses serviços, em servidores que podem ficar fora do Brasil, como nos Estados Unidos, com as garantias contratuais do Google. Não vendemos dados.
 
+## Segurança
+
+Tudo o que sai do aparelho vai por conexão criptografada (HTTPS) para os serviços do Google descritos aqui; não mantemos servidores próprios com dados pessoais. No aparelho, o progresso e as opções ficam no armazenamento privado do app, que outros apps não leem.
+
 ## Anúncios (Google AdMob)
 
-Os vídeos recompensados são opcionais. Para mostrar e medir os anúncios e evitar fraude, o Google AdMob pode tratar o ID de publicidade e outros identificadores do aparelho, o IP, informações do aparelho e as interações com os anúncios. O kit de anúncios é iniciado ao abrir o jogo, antes de você escolher assistir. Na área europeia, o Google mostra o próprio formulário de escolhas de anúncios, que você pode rever em Configurações > Privacidade dos anúncios; fora dela, os anúncios não são personalizados. Mais informações: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+Os vídeos recompensados são opcionais. Para mostrar e medir os anúncios e evitar fraude, o Google AdMob pode tratar o ID de publicidade e outros identificadores do aparelho, o IP, informações do aparelho e as interações com os anúncios. O kit de anúncios é iniciado ao abrir o jogo, antes de você escolher assistir. Na área europeia, o Google pergunta antes de mostrar anúncios personalizados; você pode mudar a resposta quando quiser em Configurações > Privacidade dos anúncios. Fora dela, os anúncios não são personalizados. Mais informações: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
 
 ## Seu progresso
 
