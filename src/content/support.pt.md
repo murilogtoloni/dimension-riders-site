@@ -28,4 +28,6 @@ O jogo é grátis e não vende nada. O Âmbar se ganha jogando e não se compra.
 
 ### Como apago meus dados?
 
-Não pedimos conta nem login, e o progresso fica só no seu aparelho: desinstalar apaga tudo. Para as recompensas diárias, o jogo cria sozinho um identificador anônimo, sem nome nem email; como não sabemos quem você é, não há o que pedir: esses registros, as métricas e os relatórios de falha expiram sozinhos nos prazos da [Política de privacidade](/pt/privacidade/).
+Limpar os dados do app ou desinstalá-lo apaga o progresso local. Não oferecemos exclusão individual dos dados online a pedido. Nosso objetivo de retenção é 60 dias, mas a limpeza ainda não cobre todos os registros e o Google pode guardá-los por mais tempo, conforme a Política de privacidade. Métricas e relatórios de falha podem ser desligados nas Opções de dados. Dúvidas e direitos: [support@dimensionriders.app](mailto:support@dimensionriders.app).
+
+[Política de privacidade](https://dimensionriders.app/pt/privacidade/).

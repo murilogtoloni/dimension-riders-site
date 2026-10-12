@@ -28,4 +28,6 @@ The game is free and sells nothing. Amber is earned by playing and can't be boug
 
 ### How do I delete my data?
 
-We don't ask you for an account or login, and your progress stays only on your device: uninstalling erases it. For daily rewards, the game creates an anonymous identifier on its own, with no name or email; since we don't know who you are, there is nothing to request: those records, metrics and crash reports expire on their own within the periods in the [Privacy policy](/en/privacy/).
+Clearing the app's data or uninstalling it erases local progress. We do not offer individual deletion of online data on request. Our retention goal is 60 days, but cleanup does not yet cover all records and Google may keep them longer, as described in the Privacy Policy. Metrics and crash reports can be turned off in Data options. Questions and rights: [support@dimensionriders.app](mailto:support@dimensionriders.app).
+
+[Privacy Policy](https://dimensionriders.app/en/privacy/).
