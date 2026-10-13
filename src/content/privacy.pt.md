@@ -1,4 +1,4 @@
-Última atualização: 2026-10-09
+Última atualização: 2026-10-12
 
 Dimension Riders é um jogo para Android feito no Brasil. Responsável pelos dados descritos aqui: o desenvolvedor do jogo. Contato: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
@@ -12,9 +12,9 @@ Firebase Crashlytics (relatórios de falha): quando o jogo trava, o erro, o trec
 
 Google AdMob (vídeos recompensados, opcionais): para mostrar e medir anúncios e evitar fraude, pode tratar o ID de publicidade, outros identificadores do aparelho, o IP e as interações com os anúncios; o kit inicia ao abrir o jogo. Mais: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
 
-## Identificador anônimo
+## Identificador aleatório
 
-Para registrar as recompensas diárias e não pagar a mesma duas vezes, o jogo cria sozinho, no Firebase, um identificador aleatório, sem nome nem email, com os recibos e um contador de dias. Nada do seu progresso vai para lá.
+Para registrar as recompensas diárias e não pagar a mesma duas vezes, o jogo cria sozinho, no Firebase, um identificador aleatório, sem nome nem email, com os recibos e um contador de dias. O save do jogo não é enviado para esse serviço.
 
 ## Permissão e como desligar
 
@@ -22,15 +22,11 @@ Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, 
 
 ## Por quanto tempo guardamos
 
-Métricas: 2 meses no Google Analytics.
-
-Relatórios de falha: 90 dias no Crashlytics.
-
-Recompensas: recibos, contador e conta, 2 meses sem uso; o registro do identificador anônimo pode permanecer.
+Nosso objetivo é limitar a retenção a 60 dias, mas a exclusão automática ainda não abrange todos os registros. O Google, nosso parceiro de tecnologia, tem prazos próprios e pode guardar dados por mais tempo para prestar seus serviços, proteger contra fraudes ou cumprir obrigações legais. Saiba mais: [policies.google.com/technologies/retention](https://policies.google.com/technologies/retention).
 
 ## Segurança
 
-Tudo sai por conexão criptografada (HTTPS) para o Google (Firebase e AdMob), que trata os dados só para prestar esses serviços, em servidores que podem ficar fora do Brasil. Não vendemos dados.
+Os dados são transmitidos por conexão criptografada (HTTPS) ao Google (Firebase e AdMob), em servidores que podem ficar fora do Brasil. O tratamento segue as condições de cada serviço; anúncios podem envolver parceiros do Google. Não vendemos dados.
 
 ## Crianças e adolescentes
 
@@ -38,7 +34,7 @@ O jogo não é dirigido a menores de 13 anos; nas regiões europeias acima, meno
 
 ## Seus direitos
 
-Não temos como saber quem você é, então não conseguimos localizar nem apagar dados seus a pedido; eles expiram sozinhos nos prazos acima. Dúvidas e direitos (ANPD, no Brasil, ou a autoridade de proteção de dados do seu país): [support@dimensionriders.app](mailto:support@dimensionriders.app).
+O jogo e o site não oferecem exclusão individual a pedido. Não vinculamos o identificador a nome ou email fornecidos no jogo; apenas seu email não permite localizar esses registros. Desligar métricas ou desinstalar não apaga os dados já enviados. Para dúvidas e exercício de direitos, escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app). Você também pode procurar a ANPD, no Brasil, ou a autoridade de proteção de dados do seu país.
 
 ## Mudanças nesta política
 
