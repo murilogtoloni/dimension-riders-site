@@ -1,9 +1,25 @@
 ---
 import { GA_MEASUREMENT_ID, PLAY_STORE_URL } from '../config';
-import { metricsScript } from '../metrics';
+import { localePath, t, type Locale } from '../i18n';
+import { CONSENT_REGIONS, COOKIE_SECONDS, metricsScript } from '../metrics';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
 
 // Sem GA e sem link da Play não há o que medir nem repassar: a página fica sem script.
 const active = GA_MEASUREMENT_ID !== '' || PLAY_STORE_URL !== '';
+const cfg = {
+  gaId: GA_MEASUREMENT_ID,
+  regions: CONSENT_REGIONS,
+  cookieSeconds: COOKIE_SECONDS,
+  consent: {
+    text: t(locale, 'consent.text'),
+    accept: t(locale, 'consent.accept'),
+    decline: t(locale, 'consent.decline'),
+    privacyLabel: t(locale, 'nav.privacy'),
+    privacyHref: localePath(locale, 'privacy'),
+  },
+};
 ---
 {GA_MEASUREMENT_ID !== '' && <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>}
-{active && <script is:inline set:html={metricsScript({ gaId: GA_MEASUREMENT_ID })}></script>}
+{active && <script is:inline set:html={metricsScript(cfg)}></script>}

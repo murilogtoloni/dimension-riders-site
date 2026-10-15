@@ -1,7 +1,7 @@
 ---
 import LangSwitch from '../components/LangSwitch.astro';
 import Metrics from '../components/Metrics.astro';
-import { CONTACT_EMAIL } from '../config';
+import { CONTACT_EMAIL, GA_MEASUREMENT_ID } from '../config';
 import { HTML_LANG, LOCALES, OG_LOCALE, localePath, t, type Locale, type Page } from '../i18n';
 import '../styles/global.css';
 
@@ -41,7 +41,7 @@ const nav: Page[] = ['home', 'fold', 'download'];
     {LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#0b0820" />
-    <Metrics />
+    <Metrics locale={locale} />
   </head>
   <body>
     <a class="skip-link" href="#main">{t(locale, 'nav.skip')}</a>
@@ -65,6 +65,7 @@ const nav: Page[] = ['home', 'fold', 'download'];
       <a href={localePath(locale, 'terms')}>{t(locale, 'nav.terms')}</a>
       <a href={localePath(locale, 'privacy')}>{t(locale, 'nav.privacy')}</a>
       <a href={`mailto:${CONTACT_EMAIL}`}>{t(locale, 'footer.contact')}</a>
+      {GA_MEASUREMENT_ID !== '' && <button type="button" class="footer-cookies" data-consent-reset hidden>{t(locale, 'consent.manage')}</button>}
       </div>
       </div>
     </footer>

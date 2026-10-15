@@ -6,6 +6,12 @@ Issue: dimension-riders#450. Relacionadas: #449 (anúncios em rede social), #250
 **Decisão do Murilo pelo painel (2026-10-14):** opção B (GA4 no mesmo projeto do app, sem cookie) e "tudo agora"
 (base e GA4 já). Implementado neste branch; ver README, seção Métricas.
 
+**Correção em 2026-10-15:** no Chrome, com o ID real (`G-W6494Y4XPH`), o GA4 gravou os cookies `_ga` mesmo com
+`client_storage: 'none'` e outras três variações; só o consentimento negado evita o cookie, e aí os relatórios do
+GA4 quase não mostram nada. A opção B abaixo, como escrita ("sem cookie, sem banner"), não existe. O Murilo escolheu
+então cookie com aviso de aceite só na Europa: padrão negado por IP na UE/EEE/Reino Unido/Suíça, aviso para quem
+tem fuso da Europa, cookie de 60 dias no resto do mundo.
+
 A análise abaixo foi só análise e proposta: nenhuma conta criada, nenhum serviço cadastrado, nada mudado no DNS nem publicado.
 Conferido no ar em 2026-10-14.
 

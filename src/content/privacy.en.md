@@ -40,7 +40,9 @@ The game and website do not offer individual deletion on request. We do not link
 
 The dimensionriders.app website is hosted on GitHub Pages; GitHub records visitors' IP address and browser in its security logs.
 
-To learn how people find the game, the website uses Google Analytics without cookies: the page visited, the site or campaign you came from, the language, the device type, the approximate country and whether you tapped the Google Play button. Each page is counted on its own, with no identifier linking one visit to another or to the game, and this data is not used for ads. Legal basis: our legitimate interest in understanding how the game is promoted. A content blocker in your browser prevents the count. More: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+To learn how people find the game, the website uses Google Analytics: the page visited, the site or campaign you came from, the language, the device type, the approximate country and whether you tapped the Google Play button. To count visitors, it stores the _ga cookies, which recognize the same browser for up to 60 days after the last visit, without linking the visit to the game. This data is not used for ads. More: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+
+In the European Union, the European Economic Area, Switzerland and the United Kingdom, the cookies are stored only if you accept them in the website's notice; without that, Google receives only a record of the visit, with no cookie. Your choice is kept in the browser, and the Cookies button in the footer reopens the notice. Outside these regions, counting with cookies starts on, based on our legitimate interest in understanding how the game is promoted; to opt out, delete or block the website's cookies in your browser or use a content blocker.
 
 ## Changes to this policy
 

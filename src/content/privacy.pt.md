@@ -40,7 +40,9 @@ O jogo e o site não oferecem exclusão individual a pedido. Não vinculamos o i
 
 O site dimensionriders.app é hospedado no GitHub Pages; o GitHub registra o endereço IP e o navegador de quem visita nos registros de segurança dele.
 
-Para saber como o jogo é encontrado, o site usa o Google Analytics sem cookies: a página visitada, o site ou a campanha de onde você veio, o idioma, o tipo de aparelho, o país aproximado e se você tocou no botão da Google Play. Cada página é contada sozinha, sem identificador que ligue uma visita a outra nem ao jogo, e esses dados não servem para anúncios. Base legal: nosso legítimo interesse em entender a divulgação do jogo. Um bloqueador de conteúdo no navegador impede a contagem. Mais: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+Para saber como o jogo é encontrado, o site usa o Google Analytics: a página visitada, o site ou a campanha de onde você veio, o idioma, o tipo de aparelho, o país aproximado e se você tocou no botão da Google Play. Para contar visitantes, ele grava os cookies _ga, que reconhecem o mesmo navegador por até 60 dias desde a última visita, sem ligar a visita ao jogo. Esses dados não servem para anúncios. Mais: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+
+Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, os cookies só são gravados se você aceitar no aviso do site; sem aceite, o Google recebe só um registro da visita, sem cookie. A escolha fica guardada no navegador, e o botão Cookies no rodapé reabre o aviso. Fora dessas regiões, a contagem com cookies começa ligada, pelo nosso legítimo interesse em entender a divulgação do jogo; para não ser contado, apague ou bloqueie os cookies do site no navegador ou use um bloqueador de conteúdo.
 
 ## Mudanças nesta política
 

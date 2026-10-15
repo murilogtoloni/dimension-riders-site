@@ -980,3 +980,65 @@ a:hover {
   .lang-switch { padding-left: 12px; }
   .ribbon h2 { font-size: 18px; }
 }
+
+/* Aviso de cookies (#450): só para quem tem fuso da Europa; o script cria e remove. */
+.consent {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  padding: 16px 18px;
+  background: var(--panel);
+  border: 2px solid #6a4c28;
+  border-radius: 11px;
+  box-shadow: 0 7px 0 #09061a;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.consent p {
+  flex: 1 1 280px;
+  margin: 0;
+}
+
+.consent a {
+  color: var(--gold-hi);
+  text-underline-offset: 4px;
+}
+
+.consent button,
+.footer-cookies {
+  font: inherit;
+  cursor: pointer;
+}
+
+.consent button {
+  padding: 10px 18px;
+  border-radius: 9px;
+  border: 2px solid #6a4c28;
+  background: transparent;
+  color: var(--muted);
+}
+
+.consent .consent-accept {
+  border-color: #311307;
+  background: linear-gradient(#ffd166, #ff9419);
+  color: #271127;
+}
+
+.footer-cookies {
+  margin-left: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
