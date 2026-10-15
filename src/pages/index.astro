@@ -20,7 +20,8 @@ const siteName = t(DEFAULT_LOCALE, 'site.name');
         var code = String(langs[i]).toLowerCase().split('-')[0];
         if (targets[code]) hit = targets[code];
       }
-      location.replace(hit || fallback);
+      // A UTM do anúncio segue para a página do idioma (#450).
+      location.replace((hit || fallback) + location.search);
     </script>
   </head>
   <body>

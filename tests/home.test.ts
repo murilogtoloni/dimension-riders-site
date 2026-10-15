@@ -1,6 +1,6 @@
 import { existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { PLAY_STORE_URL } from '../src/config';
+import { GA_MEASUREMENT_ID, PLAY_STORE_URL } from '../src/config';
 import en from '../src/i18n/en.json';
 import pt from '../src/i18n/pt.json';
 import { BASE, DIST, SITE, read } from './helpers';
@@ -39,7 +39,7 @@ describe('página Início', () => {
     expect(html).not.toContain(en.buttons.playStore);
   });
 
-  it('não tem JavaScript no navegador', () => {
-    expect(read('/en/index.html')).not.toMatch(/<script/);
+  it('sem GA e sem link da Play, não tem JavaScript no navegador (o script de métricas é testado em metrics.test)', () => {
+    if (GA_MEASUREMENT_ID === '' && PLAY_STORE_URL === '') expect(read('/en/index.html')).not.toMatch(/<script/);
   });
 });

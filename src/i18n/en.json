@@ -224,5 +224,11 @@
     "title": "Another world needs your help.",
     "text": "The worlds lie in layers. The Tyrants open Rifts to invade. The Riders follow the creases to seal them.",
     "link": "Explore the Fold"
+  },
+  "consent": {
+    "text": "We use Google Analytics cookies to count visits and learn how people find the game. No ads.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "manage": "Cookies"
   }
 }

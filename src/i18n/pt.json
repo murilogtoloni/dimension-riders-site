@@ -224,5 +224,11 @@
     "title": "Tem outro mundo precisando de ajuda.",
     "text": "Os mundos vivem em camadas. Os Tiranos abrem Fendas para invadir. Os Cavaleiros seguem os vincos para fechá-las.",
     "link": "Explore a Dobra"
+  },
+  "consent": {
+    "text": "Usamos cookies do Google Analytics para contar visitas e saber como o jogo é encontrado. Nada de anúncios.",
+    "accept": "Aceitar",
+    "decline": "Recusar",
+    "manage": "Cookies"
   }
 }

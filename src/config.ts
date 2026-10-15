@@ -10,3 +10,9 @@ export const APK_URL = '';
 export const APP_VERSION = '0.1.0';
 
 export const CONTACT_EMAIL = 'support@dimensionriders.app';
+
+/**
+ * ID do fluxo Web do GA4 (G-XXXXXXXXXX), na mesma propriedade do app (#450). Vazio: o site não carrega o Google
+ * Analytics. Preenchido: conta visitas e o clique na Play, com aviso de cookies só na Europa (ver `src/metrics.ts`).
+ */
+export const GA_MEASUREMENT_ID = 'G-W6494Y4XPH';

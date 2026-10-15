@@ -13,7 +13,7 @@ describe('páginas de texto', () => {
   });
 
   it('Privacidade nomeia o Analytics, o Crashlytics e o AdMob, com data e contato, nos dois idiomas (#248)', () => {
-    expect(read('/en/privacy/index.html')).toContain('2026-10-12');
+    expect(read('/en/privacy/index.html')).toContain('2026-10-14');
     for (const path of ['/en/privacy/index.html', '/pt/privacidade/index.html']) {
       const html = read(path);
       for (const s of ['Google Analytics', 'Crashlytics', 'Google AdMob', 'mailto:support@dimensionriders.app']) expect(html).toContain(s);

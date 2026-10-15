@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { APK_URL, APP_VERSION, PLAY_STORE_URL } from '../src/config';
 import en from '../src/i18n/en.json';
 import pt from '../src/i18n/pt.json';
+import { playStoreHref } from '../src/metrics';
 import { DIST, read } from './helpers';
 
 describe('página Baixar', () => {
@@ -36,7 +37,7 @@ describe('página Baixar', () => {
       expect(html).not.toContain(pt.buttons.playStore);
     } else {
       expect(html).toContain(pt.download.storeReady);
-      expect(html).toContain(`href="${PLAY_STORE_URL}"`);
+      expect(html).toContain(`href="${playStoreHref(PLAY_STORE_URL).replaceAll('&', '&amp;')}"`);
       expect(html).toContain(`alt="${pt.buttons.playStore}"`);
       expect(html).not.toContain('class="store-disabled"');
     }
