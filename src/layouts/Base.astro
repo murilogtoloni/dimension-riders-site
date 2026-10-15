@@ -1,5 +1,6 @@
 ---
 import LangSwitch from '../components/LangSwitch.astro';
+import Metrics from '../components/Metrics.astro';
 import { CONTACT_EMAIL } from '../config';
 import { HTML_LANG, LOCALES, OG_LOCALE, localePath, t, type Locale, type Page } from '../i18n';
 import '../styles/global.css';
@@ -40,6 +41,7 @@ const nav: Page[] = ['home', 'fold', 'download'];
     {LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#0b0820" />
+    <Metrics />
   </head>
   <body>
     <a class="skip-link" href="#main">{t(locale, 'nav.skip')}</a>

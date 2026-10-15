@@ -14,4 +14,8 @@ describe('raiz do site', () => {
     expect(html).toContain(`"pt":"${BASE}/pt/"`);
     expect(html).toContain(`<a href="${BASE}/en/"`);
   });
+
+  it('leva a UTM da entrada para a página do idioma (#450)', () => {
+    expect(read('/index.html')).toContain('location.replace((hit || fallback) + location.search)');
+  });
 });

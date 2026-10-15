@@ -1,4 +1,4 @@
-Last updated: 2026-10-12
+Last updated: 2026-10-14
 
 Dimension Riders is an Android game made in Brazil. The game's developer is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
@@ -35,6 +35,12 @@ The game is not directed at children under 13; in the European regions above, an
 ## Your rights
 
 The game and website do not offer individual deletion on request. We do not link the identifier to a name or email provided in the game; your email alone cannot locate these records. Turning metrics off or uninstalling does not delete data already sent. For questions and to exercise your rights, write to [support@dimensionriders.app](mailto:support@dimensionriders.app). You can also contact Brazil's ANPD or your country's data protection authority.
+
+## This website
+
+The dimensionriders.app website is hosted on GitHub Pages; GitHub records visitors' IP address and browser in its security logs.
+
+To learn how people find the game, the website uses Google Analytics without cookies: the page visited, the site or campaign you came from, the language, the device type, the approximate country and whether you tapped the Google Play button. Each page is counted on its own, with no identifier linking one visit to another or to the game, and this data is not used for ads. Legal basis: our legitimate interest in understanding how the game is promoted. A content blocker in your browser prevents the count. More: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
 
 ## Changes to this policy
 

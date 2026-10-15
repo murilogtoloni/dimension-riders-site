@@ -1,0 +1,9 @@
+---
+import { GA_MEASUREMENT_ID, PLAY_STORE_URL } from '../config';
+import { metricsScript } from '../metrics';
+
+// Sem GA e sem link da Play não há o que medir nem repassar: a página fica sem script.
+const active = GA_MEASUREMENT_ID !== '' || PLAY_STORE_URL !== '';
+---
+{GA_MEASUREMENT_ID !== '' && <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>}
+{active && <script is:inline set:html={metricsScript({ gaId: GA_MEASUREMENT_ID })}></script>}
