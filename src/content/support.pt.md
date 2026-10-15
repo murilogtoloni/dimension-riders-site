@@ -12,7 +12,7 @@ Para a gente achar o problema mais rápido, conte:
 
 ### Troquei de celular ou reinstalei o jogo. Dá para recuperar o progresso?
 
-Não. O progresso fica salvo só no seu aparelho, e o jogo não guarda cópia em nenhum servidor. Desinstalar o jogo ou limpar os dados dele apaga tudo.
+Não. O progresso fica salvo só no seu aparelho: o jogo não guarda cópia em servidor nem no backup do Google. Trocar de celular, desinstalar o jogo ou limpar os dados dele perde tudo.
 
 ### O anúncio não carrega
 

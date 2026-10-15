@@ -1,8 +1,8 @@
-Last updated: 2026-10-14
+Last updated: 2026-10-15
 
 Dimension Riders is an Android game made in Brazil. The game's developer is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
-We don't ask you for an account or login, nor for your name or email, and your progress stays on your device: uninstalling the game erases it.
+We don't ask you for an account or login, nor for your name or email, and your progress stays only on your device, with no copy on a server or in Google's backup: changing phones, uninstalling the game or clearing its data loses all of it.
 
 ## What leaves your device
 

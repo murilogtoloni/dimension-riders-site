@@ -1,8 +1,8 @@
-Última atualização: 2026-10-14
+Última atualização: 2026-10-15
 
 Dimension Riders é um jogo para Android feito no Brasil. Responsável pelos dados descritos aqui: o desenvolvedor do jogo. Contato: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
-Não pedimos conta nem login, nem nome ou email, e o seu progresso fica só no aparelho: desinstalar o jogo apaga tudo.
+Não pedimos conta nem login, nem nome ou email, e o seu progresso fica só no aparelho, sem cópia em servidor nem no backup do Google: trocar de celular, desinstalar o jogo ou limpar os dados dele perde tudo.
 
 ## O que sai do aparelho
 
