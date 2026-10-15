@@ -12,7 +12,7 @@ To help us find the problem faster, tell us:
 
 ### I changed phones or reinstalled the game. Can I get my progress back?
 
-No. Your progress is saved only on your device, and the game keeps no copy on any server. Uninstalling the game or clearing its data erases everything.
+No. Your progress is saved only on your device: the game keeps no copy on a server or in Google's backup. Changing phones, uninstalling the game or clearing its data loses all of it.
 
 ### The ad won't load
 

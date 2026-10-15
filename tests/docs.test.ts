@@ -13,7 +13,10 @@ describe('páginas de texto', () => {
   });
 
   it('Privacidade nomeia o Analytics, o Crashlytics e o AdMob, com data e contato, nos dois idiomas (#248)', () => {
-    expect(read('/en/privacy/index.html')).toContain('2026-10-14');
+    expect(read('/en/privacy/index.html')).toContain('2026-10-15');
+    // #474: o progresso fica só no aparelho, e trocar de celular perde tudo (Política e FAQ do Suporte).
+    for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) expect(read(path)).toMatch(/[Tt]rocar de celular, desinstalar o jogo ou limpar os dados dele perde tudo/);
+    for (const path of ['/en/privacy/index.html', '/en/support/index.html']) expect(read(path)).toMatch(/[Cc]hanging phones, uninstalling the game or clearing its data loses all of it/);
     for (const path of ['/en/privacy/index.html', '/pt/privacidade/index.html']) {
       const html = read(path);
       for (const s of ['Google Analytics', 'Crashlytics', 'Google AdMob', 'mailto:support@dimensionriders.app']) expect(html).toContain(s);
