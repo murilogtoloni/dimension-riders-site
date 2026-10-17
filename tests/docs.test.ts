@@ -13,10 +13,23 @@ describe('páginas de texto', () => {
   });
 
   it('Privacidade nomeia o Analytics, o Crashlytics e o AdMob, com data e contato, nos dois idiomas (#248)', () => {
-    expect(read('/en/privacy/index.html')).toContain('2026-10-15');
-    // #474: o progresso fica só no aparelho, e trocar de celular perde tudo (Política e FAQ do Suporte).
-    for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) expect(read(path)).toMatch(/[Tt]rocar de celular, desinstalar o jogo ou limpar os dados dele perde tudo/);
-    for (const path of ['/en/privacy/index.html', '/en/support/index.html']) expect(read(path)).toMatch(/[Cc]hanging phones, uninstalling the game or clearing its data loses all of it/);
+    expect(read('/en/privacy/index.html')).toContain('2026-10-17');
+    // dimension-riders#592: o progresso tem duas cópias do Google, o backup do Android e o backup no Google Play (opcional),
+    // na Política e na FAQ do Suporte; os Termos dizem que sem cópia não há como recuperar.
+    for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) {
+      const html = read(path);
+      expect(html).toContain('backup do Google');
+      expect(html).toContain('Backup no Google Play');
+    }
+    expect(read('/pt/privacidade/index.html')).toContain('Cópia do progresso');
+    for (const path of ['/en/privacy/index.html', '/en/support/index.html']) {
+      const html = read(path);
+      expect(html).toContain('Google backup');
+      expect(html).toContain('Google Play backup');
+    }
+    expect(read('/en/privacy/index.html')).toContain('Copies of your progress');
+    expect(read('/pt/termos/index.html')).toContain('nenhuma dessas cópias estiver disponível');
+    expect(read('/en/terms/index.html')).toContain('none of those copies is available');
     for (const path of ['/en/privacy/index.html', '/pt/privacidade/index.html']) {
       const html = read(path);
       for (const s of ['Google Analytics', 'Crashlytics', 'Google AdMob', 'mailto:support@dimensionriders.app']) expect(html).toContain(s);
