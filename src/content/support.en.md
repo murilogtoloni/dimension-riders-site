@@ -12,7 +12,7 @@ To help us find the problem faster, tell us:
 
 ### I changed phones or reinstalled the game. Can I get my progress back?
 
-No. Your progress is saved only on your device: the game keeps no copy on a server or in Google's backup. Changing phones, uninstalling the game or clearing its data loses all of it.
+Yes, if there was a copy. With Google backup turned on in the Android settings, your progress comes back on its own when you reinstall the game or set up the new phone with the same Google account. If you turned on Settings > Google Play backup in the game, turn it on again on the new phone, sign in with the same Play Games account and tap Restore. Without either copy, progress is lost when you change phones, uninstall the game or clear its data.
 
 ### The ad won't load
 

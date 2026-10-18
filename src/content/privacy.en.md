@@ -1,8 +1,8 @@
-Last updated: 2026-10-15
+Last updated: 2026-10-17
 
 Dimension Riders is an Android game made in Brazil. The game's developer is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
-We don't ask you for an account or login, nor for your name or email, and your progress stays only on your device, with no copy on a server or in Google's backup: changing phones, uninstalling the game or clearing its data loses all of it.
+We don't ask you for an account or login, nor for your name or email. Your progress stays on your device and may have two copies, both kept by Google in your account: the Android backup and, if you turn it on, the Google Play backup (see "Copies of your progress").
 
 ## What leaves your device
 
@@ -16,6 +16,26 @@ Google AdMob (optional rewarded videos): to show and measure ads and prevent fra
 
 To record daily rewards and never pay the same one twice, the game creates on its own, in Firebase, a random identifier with no name or email, holding the receipts and a day counter. The game save is not sent to this service.
 
+## Copies of your progress").
+
+What leaves your device
+
+Google Analytics for Firebase (metrics): how the game is played (runs, sessions, performance), the version, the device, the language, the approximate country from the IP address and an installation identifier, without the advertising ID; used to tune the difficulty.
+
+Firebase Crashlytics (crash reports): when the game crashes, the error, the code location, the version, the device and installation and session identifiers; used to fix errors.
+
+Google AdMob (optional rewarded videos): to show and measure ads and prevent fraud, it may process the advertising ID, other device identifiers, your IP address and your interactions with ads; the ad kit starts when the game opens. More: policies.google.com/technologies/partner-sites.
+
+Random identifier
+
+To record daily rewards and never pay the same one twice, the game creates on its own, in Firebase, a random identifier with no name or email, holding the receipts and a day counter. The game save is not sent to this service.
+
+Copies of your progress
+
+Android backup: with Google backup turned on in your phone (in the Android settings), the game's progress file goes with it to your Google account and comes back when you reinstall the game or change phones. Only the progress goes (Amber, items, talents, records); the run in progress, the settings and the privacy choices stay on the device. Turning the Android backup off prevents the copy.
+
+Google Play backup (optional): when you turn on Settings > Google Play backup, the game signs in to Google Play Games with your account and keeps the same progress in its Saved Games, so you can recover it on another device. Unless you turn it on, none of your progress goes there. If you already use Play Games on your phone, it may sign in on its own when the game opens and show your gamer name; the game does not store that name or your email. Turning the switch off stops the uploads; what was already saved stays in your Play Games account, where you can delete the game's data.
+
 ## Permission, and how to turn it off
 
 In the European Union, the European Economic Area, Switzerland and the United Kingdom, metrics and crash reports only leave with your permission, asked the first time you open the game; outside those regions, sending starts on, based on our legitimate interest in improving the game. Turn each one on or off in Settings > Terms and privacy > Data options. Personalised ads: in the European region, Google asks first (change it in Settings > Ad privacy); elsewhere, there is no personalisation.
@@ -26,7 +46,7 @@ Our goal is to limit retention to 60 days, but automatic deletion does not yet c
 
 ## Security
 
-Data is transmitted over encrypted connections (HTTPS) to Google (Firebase and AdMob), on servers that may be outside Brazil. Processing follows each service's terms; advertising may involve Google's partners. We don't sell data.
+Data is transmitted over encrypted connections (HTTPS) to Google (Firebase, AdMob, Android backup and Google Play Games), on servers that may be outside Brazil. Processing follows each service's terms; advertising may involve Google's partners. We don't sell data.
 
 ## Children and teenagers
 
@@ -46,4 +66,4 @@ In the European Union, the European Economic Area, Switzerland and the United Ki
 
 ## Changes to this policy
 
-If this policy changes in an important way, the game tells you the next time you open it.
+When this policy changes, the new version goes into the game and onto the dimensionriders.app website, where the date at the top of the page shows the latest update.

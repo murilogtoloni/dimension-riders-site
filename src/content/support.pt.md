@@ -12,7 +12,7 @@ Para a gente achar o problema mais rápido, conte:
 
 ### Troquei de celular ou reinstalei o jogo. Dá para recuperar o progresso?
 
-Não. O progresso fica salvo só no seu aparelho: o jogo não guarda cópia em servidor nem no backup do Google. Trocar de celular, desinstalar o jogo ou limpar os dados dele perde tudo.
+Sim, se havia uma cópia. Com o backup do Google ligado nas configurações do Android, o progresso volta sozinho quando você reinstala o jogo ou configura o celular novo com a mesma conta Google. Se você ligou Configurações > Backup no Google Play no jogo, ligue de novo no celular novo, entre com a mesma conta do Play Games e toque em Restaurar. Sem nenhuma das duas cópias, o progresso se perde ao trocar de celular, desinstalar o jogo ou limpar os dados dele.
 
 ### O anúncio não carrega
 
