@@ -13,7 +13,7 @@ describe('páginas de texto', () => {
   });
 
   it('Privacidade nomeia o Analytics, o Crashlytics e o AdMob, com data e contato, nos dois idiomas (#248)', () => {
-    expect(read('/en/privacy/index.html')).toContain('2026-10-17');
+    expect(read('/en/privacy/index.html')).toContain('2026-10-24');
     // dimension-riders#592: o progresso tem duas cópias do Google, o backup do Android e o backup no Google Play (opcional),
     // na Política e na FAQ do Suporte; os Termos dizem que sem cópia não há como recuperar.
     for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) {
@@ -36,8 +36,8 @@ describe('páginas de texto', () => {
     }
     expect(read('/pt/privacidade/index.html')).toContain('Segurança');
     // #253: objetivo de 60 dias, limites da limpeza e prazos próprios do Google.
-    for (const s of ['Não pedimos conta nem login', 'Identificador aleatório', 'objetivo é limitar a retenção a 60 dias', 'a exclusão automática ainda não abrange todos os registros', 'tem prazos próprios']) expect(read('/pt/privacidade/index.html')).toContain(s);
-    for (const s of ['account or login', 'Random identifier', 'goal is to limit retention to 60 days', 'automatic deletion does not yet cover all records', 'has its own retention periods']) expect(read('/en/privacy/index.html')).toContain(s);
+    for (const s of ['Você pode jogar sem uma conta vinculada', 'Identificador aleatório', 'prazo de 60 dias', 'Contas vinculadas e contas com compras são protegidas', 'tem prazos próprios']) expect(read('/pt/privacidade/index.html')).toContain(s);
+    for (const s of ['You can play without a linked account', 'Random identifier', 'cleanup after 60 days', 'Linked accounts and accounts with purchases are protected', 'has its own retention periods']) expect(read('/en/privacy/index.html')).toContain(s);
   });
 
   it('nenhuma página identifica o desenvolvedor como pessoa (#281)', () => {
@@ -50,7 +50,7 @@ describe('páginas de texto', () => {
     for (const [path, settings] of [['/en/support/index.html', 'Settings'], ['/pt/suporte/index.html', 'Configurações']]) {
       const html = read(path);
       expect(html).toContain('mailto:support@dimensionriders.app');
-      expect(html).toContain(path.startsWith('/en') ? 'We do not offer individual deletion' : 'Não oferecemos exclusão individual'); // #253
+      expect(html).toContain(path.startsWith('/en') ? 'ACCOUNT DELETION - DIMENSION RIDERS' : 'EXCLUSÃO DE CONTA - DIMENSION RIDERS'); // #253
       expect(html).toContain(settings);
       expect(html).toContain('<h3');
     }
