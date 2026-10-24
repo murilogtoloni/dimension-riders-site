@@ -1,8 +1,8 @@
-Última atualização: 2026-10-17
+Última atualização: 2026-10-24
 
 Dimension Riders é um jogo para Android feito no Brasil. Responsável pelos dados descritos aqui: o desenvolvedor do jogo. Contato: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
-Não pedimos conta nem login, nem nome ou email. O seu progresso fica no aparelho e pode ter duas cópias, as duas guardadas pelo Google na sua conta: o backup do Android e, se você ligar, o backup no Google Play (veja "Cópia do progresso").
+Você pode jogar sem uma conta vinculada. O progresso fica no aparelho. No Android, o Play Games pode reconhecer seu perfil de jogador; nas Configurações você também pode vincular uma Conta Google para recuperar seu progresso. Essas formas de entrar podem acessar a mesma conta do jogo. Veja as cópias disponíveis em "Cópia do progresso".
 
 ## O que sai do aparelho
 
@@ -14,27 +14,15 @@ Google AdMob (vídeos recompensados, opcionais): para mostrar e medir anúncios 
 
 ## Identificador aleatório
 
-Para registrar as recompensas diárias e não pagar a mesma duas vezes, o jogo cria sozinho, no Firebase, um identificador aleatório, sem nome nem email, com os recibos e um contador de dias. O save do jogo não é enviado para esse serviço.
+Para registrar as recompensas diárias e não pagar a mesma duas vezes, o jogo cria sozinho, no Firebase, um identificador aleatório, sem nome nem email, com os recibos e um contador de dias. Ao vincular uma conta, esse identificador passa a permitir a recuperação do progresso. Google e Firebase podem tratar os dados de identidade autorizados no login, como nome e email; o jogo não solicita acesso às mensagens do Gmail.
 
-## Cópia do progresso").
-
-O que sai do aparelho
-
-Google Analytics para Firebase (métricas): como o jogo é jogado (corridas, sessões, desempenho), a versão, o aparelho, o idioma, o país aproximado pelo IP e um identificador da instalação, sem o ID de publicidade; serve para ajustar a dificuldade.
-
-Firebase Crashlytics (relatórios de falha): quando o jogo trava, o erro, o trecho do código, a versão, o aparelho e identificadores da instalação e da sessão; serve para corrigir erros.
-
-Google AdMob (vídeos recompensados, opcionais): para mostrar e medir anúncios e evitar fraude, pode tratar o ID de publicidade, outros identificadores do aparelho, o IP e as interações com os anúncios; o kit inicia ao abrir o jogo. Mais: policies.google.com/technologies/partner-sites.
-
-Identificador aleatório
-
-Para registrar as recompensas diárias e não pagar a mesma duas vezes, o jogo cria sozinho, no Firebase, um identificador aleatório, sem nome nem email, com os recibos e um contador de dias. O save do jogo não é enviado para esse serviço.
-
-Cópia do progresso
+## Cópia do progresso
 
 Backup do Android: com o backup do Google ligado no celular (nas configurações do Android), o arquivo de progresso do jogo vai junto para a sua conta Google e volta quando você reinstala o jogo ou troca de celular. Vai só o progresso (Âmbar, itens, talentos, recordes); a corrida em andamento, os ajustes e as escolhas de privacidade ficam no aparelho. Desligar o backup do Android impede a cópia.
 
 Backup no Google Play (opcional): ligando Configurações > Backup no Google Play, o jogo entra no Google Play Games com a sua conta e guarda o mesmo progresso nos jogos salvos (Saved Games) dela, para recuperar em outro aparelho. Sem ligar, nada do progresso vai para lá. Se você já usa o Play Games no celular, ele pode entrar sozinho quando o jogo abre e mostrar o seu nome de jogador; o jogo não guarda esse nome nem o seu email. Desligar a chave para os envios; o que já foi guardado fica na sua conta do Play Games, onde você pode apagar os dados do jogo.
+
+Conta do jogo no Firebase: para contas vinculadas, o progresso é sincronizado em momentos como abertura, fim de corrida, vínculo, compras e forja. Um snapshot comprimido fica no Firestore, associado ao identificador da conta do jogo. A sincronização usa a conexão disponível, preserva a corrida deste aparelho e pede confirmação antes de importar progresso convidado para outra conta. Esta cópia é separada da chave de backup no Google Play.
 
 ## Permissão e como desligar
 
@@ -42,7 +30,7 @@ Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, 
 
 ## Por quanto tempo guardamos
 
-Nosso objetivo é limitar a retenção a 60 dias, mas a exclusão automática ainda não abrange todos os registros. O Google, nosso parceiro de tecnologia, tem prazos próprios e pode guardar dados por mais tempo para prestar seus serviços, proteger contra fraudes ou cumprir obrigações legais. Saiba mais: [policies.google.com/technologies/retention](https://policies.google.com/technologies/retention).
+Há rotinas de limpeza de registros com prazo de 60 dias. Contas vinculadas e contas com compras são protegidas dessa limpeza; o progresso da conta vinculada permanece até a exclusão da conta. Isso não significa que todos os dados de métricas, anúncios ou backups tenham o mesmo prazo. O Google, nosso parceiro de tecnologia, tem prazos próprios e pode guardar dados por mais tempo para prestar seus serviços, proteger contra fraudes ou cumprir obrigações legais. Saiba mais: [policies.google.com/technologies/retention](https://policies.google.com/technologies/retention).
 
 ## Segurança
 
@@ -54,7 +42,9 @@ O jogo não é dirigido a menores de 13 anos; nas regiões europeias acima, meno
 
 ## Seus direitos
 
-O jogo e o site não oferecem exclusão individual a pedido. Não vinculamos o identificador a nome ou email fornecidos no jogo; apenas seu email não permite localizar esses registros. Desligar métricas ou desinstalar não apaga os dados já enviados. Para dúvidas e exercício de direitos, escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app). Você também pode procurar a ANPD, no Brasil, ou a autoridade de proteção de dados do seu país.
+No aplicativo, Configurações > Conta e Legal > Excluir conta e dados permite pedir a exclusão da conta do jogo e do progresso associado no Firebase; é necessária conexão para o pedido chegar ao servidor. Cópias do Android e do Play Games são gerenciadas separadamente na sua conta Google. O pedido de exclusão da conta do jogo não apaga automaticamente dados de métricas ou anúncios desses serviços. Desligar métricas ou desinstalar não apaga os dados já enviados. Para dúvidas e exercício de direitos, escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app). Você também pode procurar a ANPD, no Brasil, ou a autoridade de proteção de dados do seu país.
+
+Pedidos no aplicativo exigem conexão e são processados pela rotina diária. Sem o aplicativo, envie o pedido para [support@dimensionriders.app](mailto:support@dimensionriders.app), com o assunto EXCLUSÃO DE CONTA - DIMENSION RIDERS e o código da conta, se disponível. Precisamos validar a titularidade; não envie senhas ou códigos de login. Uma sessão anônima sem o código pode não ser identificável após desinstalar.
 
 ## Este site
 
