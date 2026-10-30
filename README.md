@@ -38,13 +38,16 @@ com cookie desde a primeira página, sem aviso. O modo "sem cookie" do GA4 (`cli
 gtag grava o `_ga` mesmo assim (conferido no Chrome em 2026-10-15).
 
 A origem da visita (UTM da URL ou o site que mandou o visitante) segue nos links internos e vai para o `referrer` do
-link da Play: `utm_source` = origem, `utm_medium=site`, `utm_campaign` = campanha da visita, `utm_content` = meio da
-visita. Sem origem: `direct`/`site`/`site`. A Play Console (aquisição por canal rastreado) e o `first_open` do app
-leem esse `referrer`. Tudo em `src/metrics.ts`; o script só entra nas páginas com `GA_MEASUREMENT_ID` ou
-`PLAY_STORE_URL` preenchido. Os eventos chegam ao BigQuery do app e ao espelho do homelab com `plataforma = WEB`.
+link da Play: `utm_source` = origem, `utm_medium` = meio da visita (ou `site` quando sem `utm_medium`), `utm_campaign` =
+campanha da visita, `utm_content` = conteúdo/criativo da visita. Sem origem: `direct`/`site`/`site`. A Play Console
+(aquisição por canal rastreado), o `firebase_campaign` e o `first_open` do app leem esse `referrer`. Tudo em
+`src/metrics.ts`; o script só entra nas páginas com `GA_MEASUREMENT_ID` ou `PLAY_STORE_URL` preenchido. Os eventos
+chegam ao BigQuery do app e ao espelho do homelab com `plataforma = WEB`.
 
-Para anúncios (dimension-riders#449): `utm_source` = rede (`tiktok`, `instagram`, `youtube`), `utm_medium` =
-`anuncio` ou `bio`, `utm_campaign` = id do vídeo; o mesmo padrão no anúncio que vai direto para a Play.
+Para anúncios e links de bio (dimension-riders#449, #1231, #1237): as páginas rápidas `/pt/jogar/` e `/en/play/` (com
+atalhos `/jogar` e `/play`) levam direto à ficha da Play Store com o `referrer` de UTM (`utm_source`, `utm_medium`,
+`utm_campaign`, `utm_content`), sem Meta Pixel. Quando `PLAY_STORE_URL` está ativo, redirecionam automaticamente em
+200 ms mantendo o botão visível como fallback.
 
 A política do site (`src/content/privacy.*.md`) tem a seção "Este site", que o texto do jogo
 (`Assets/Resources/Legal/privacy.*.txt`) não tem; o resto é igual. `sitemap.xml` e `robots.txt` saem do build

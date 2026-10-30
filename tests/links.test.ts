@@ -21,8 +21,8 @@ function targetFile(href: string): string {
 describe('links internos', () => {
   const files = existsSync(DIST) ? htmlFiles(DIST) : [];
 
-  it('dist/ existe e tem as 13 páginas (rode npm run build antes)', () => {
-    expect(files.length).toBe(13);
+  it('dist/ existe e tem as 17 páginas (rode npm run build antes)', () => {
+    expect(files.length).toBe(17);
   });
 
   for (const file of files) {
@@ -33,7 +33,7 @@ describe('links internos', () => {
       const withoutBase = internal.filter((h) => !h.startsWith(`${BASE}/`));
       const broken = internal.filter((h) => h.startsWith(`${BASE}/`) && !existsSync(targetFile(h)));
       expect({ withoutBase, broken }).toEqual({ withoutBase: [], broken: [] });
-      if (file.slice(DIST.length) === '/index.html') return;
+      if (['/index.html', '/jogar/index.html', '/play/index.html'].includes(file.slice(DIST.length))) return;
       // Único script: o de métricas (#450), e só quando há GA ou link da Play.
       const scripts = [...html.matchAll(/<script[^>]*>/g)].map((m) => m[0]);
       const expected = (GA_MEASUREMENT_ID !== '' ? 1 : 0) + (GA_MEASUREMENT_ID !== '' || PLAY_STORE_URL !== '' ? 1 : 0);

@@ -12,6 +12,7 @@ describe('i18n', () => {
   it('tem um slug por página em cada idioma', () => {
     expect(ROUTES.fold).toEqual({ en: 'fold', pt: 'dobra' });
     expect(ROUTES.download).toEqual({ en: 'download', pt: 'baixar' });
+    expect(ROUTES.play).toEqual({ en: 'play', pt: 'jogar' });
     expect(ROUTES.privacy).toEqual({ en: 'privacy', pt: 'privacidade' });
     expect(ROUTES.support).toEqual({ en: 'support', pt: 'suporte' });
     expect(ROUTES.terms).toEqual({ en: 'terms', pt: 'termos' });

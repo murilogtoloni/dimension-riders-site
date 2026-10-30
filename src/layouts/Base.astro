@@ -2,10 +2,10 @@
 import LangSwitch from '../components/LangSwitch.astro';
 import Metrics from '../components/Metrics.astro';
 import { CONTACT_EMAIL, GA_MEASUREMENT_ID } from '../config';
-import { HTML_LANG, LOCALES, OG_LOCALE, localePath, t, type Locale, type Page } from '../i18n';
+import { HTML_LANG, LOCALES, OG_LOCALE, localePath, t, type Locale, type Page, type RoutePage } from '../i18n';
 import '../styles/global.css';
 
-interface Props { locale: Locale; page: Page; title?: string }
+interface Props { locale: Locale; page: RoutePage; title?: string }
 const { locale, page, title } = Astro.props;
 
 const siteName = t(locale, 'site.name');

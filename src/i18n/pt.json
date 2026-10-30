@@ -18,6 +18,7 @@
     "home": "Um jogo de ação para celular. Cavalgue os vincos entre mundos, sele as Fendas, derrube os Tiranos.",
     "fold": "A história do Dimension Riders: a Dobra, o Âmbar, os Desdobrados, os Cavaleiros e o Selo.",
     "download": "Baixe o Dimension Riders para Android, grátis e offline.",
+    "play": "Instale o Dimension Riders no Google Play. Grátis, offline e sem anúncio forçado.",
     "privacy": "Política de privacidade do Dimension Riders: progresso local, anúncios opcionais e suas escolhas de privacidade.",
     "support": "Suporte do Dimension Riders: como falar com a gente e respostas às dúvidas mais comuns.",
     "terms": "Termos de uso do Dimension Riders: idade mínima, anúncios recompensados e o Âmbar, que não tem valor em dinheiro."
@@ -102,6 +103,17 @@
         "text": "Comece sua jornada sem cadastro."
       }
     }
+  },
+  "play": {
+    "title": "Jogar",
+    "eyebrow": "DIMENSION RIDERS · ANDROID",
+    "headline": "Proteja a Dobra. Sele as Fendas.",
+    "summary": "Ação com um polegar só entre mundos invadidos.",
+    "facts": "Grátis no Google Play · Joga offline · Sem anúncio forçado",
+    "cta": "Abrir no Google Play",
+    "redirecting": "Abrindo a Google Play Store… Se não abrir sozinho, toque no botão acima.",
+    "soonNote": "Lançamento em preparação na Google Play Store (Android 8 ou mais novo).",
+    "more": "Conhecer o site e a história"
   },
   "footer": {
     "madeBy": "Um jogo independente, feito no Brasil.",
