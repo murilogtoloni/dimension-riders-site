@@ -31,6 +31,16 @@ describe('páginas de texto', () => {
       expect(html).toContain('Settings &gt; Account &gt; Delete account');
     }
     expect(read('/en/support/index.html')).toContain('With a linked account, progress is also kept in the game');
+    // dimension-riders#1211 (2.3): o jogo não mostra código da conta; o suporte pede o e-mail da Conta Google ou o nome
+    // de jogador do Play Games.
+    for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) {
+      expect(read(path)).not.toContain('código da conta');
+      expect(read(path)).toContain('nome de jogador do Play Games');
+    }
+    for (const path of ['/en/privacy/index.html', '/en/support/index.html']) {
+      expect(read(path)).not.toContain('Account ID');
+      expect(read(path)).toContain('Play Games gamer name');
+    }
     expect(read('/en/privacy/index.html')).toContain('Copies of your progress');
     expect(read('/pt/termos/index.html')).toContain('nenhuma dessas cópias estiver disponível');
     expect(read('/en/terms/index.html')).toContain('none of those copies is available');
