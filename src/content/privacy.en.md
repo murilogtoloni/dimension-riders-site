@@ -1,28 +1,28 @@
-Last updated: 2026-10-24
+Last updated: 2026-10-30
 
-Dimension Riders is an Android game made in Brazil. The game's developer is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
+Dimension Riders is an Android game made in Brazil. The game's developer (MTechnologies) is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
 You can play without a linked account. Progress stays on your device. On Android, Play Games may recognize your gamer profile; in Settings you can also link a Google Account to recover your progress. These sign-in methods can access the same game account. See the available copies under "Copies of your progress".
 
 ## What leaves your device
 
-Google Analytics for Firebase (metrics): how the game is played (runs, sessions, performance), the version, the device, the language, the approximate country from the IP address and an installation identifier, without the advertising ID; used to tune the difficulty.
+Google Analytics for Firebase (metrics): how the game is played (runs, sessions, performance and cloud reliability), the install campaign (Play Install Referrer), the version, the device, the language, the approximate country from the IP address, an installation identifier and a pseudonymous code (irreversible hash) of the game account, without the advertising ID; used to tune the difficulty, check stability and measure promotion.
 
-Firebase Crashlytics (crash reports): when the game crashes, the error, the code location, the version, the device and installation and session identifiers; used to fix errors.
+Firebase Crashlytics (crash reports): when the game crashes, the error, the code location, the version, the device, technical sync indicators and installation and session identifiers; used to fix errors.
 
-Google AdMob (optional rewarded videos): to show and measure ads and prevent fraud, it may process the advertising ID, other device identifiers, your IP address and your interactions with ads; the ad kit starts when the game opens. More: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+Google AdMob (optional rewarded videos): to show and measure ads and prevent fraud, it may process the advertising ID, other device identifiers, your IP address and your interactions with ads; the ad kit starts when the game opens. When doubling the daily reward, it receives the game account identifier to confirm the reward on the server. More: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
 
 ## Random identifier
 
-To record daily rewards and never pay the same one twice, the game creates on its own, in Firebase, a random identifier with no name or email, holding the receipts and a day counter. Linking an account makes this identifier usable for progress recovery. Google and Firebase may process identity data authorized during sign-in, such as your name and email; the game does not request access to Gmail messages.
+To record daily rewards and never pay the same one twice, the game creates on its own, in Firebase, a random identifier with no name or email, holding the receipts and a day counter. Linking an account makes this identifier usable for progress recovery. Google and Firebase may process identity data authorized during sign-in, such as your name and email; the game does not request access to Gmail messages. The app also verifies its integrity on Android through Google Play Integrity (Firebase App Check).
 
 ## Copies of your progress
 
 Android backup: with Google backup turned on in your phone (in the Android settings), the game's progress file goes with it to your Google account and comes back when you reinstall the game or change phones. Only the progress goes (Amber, items, talents, records); the run in progress, the settings and the privacy choices stay on the device. Turning the Android backup off prevents the copy.
 
-Google Play backup (optional): when you turn on Settings > Google Play backup, the game signs in to Google Play Games with your account and keeps the same progress in its Saved Games, so you can recover it on another device. Unless you turn it on, none of your progress goes there. If you already use Play Games on your phone, it may sign in on its own when the game opens and show your gamer name; the game does not store that name or your email. Turning the switch off stops the uploads; what was already saved stays in your Play Games account, where you can delete the game's data.
+Play Games: if you use Play Games on your phone, the game signs in with it on its own when it opens and links the game account to your gamer profile, to recover your progress when you reinstall the game or change phones.
 
-Firebase game account: for linked accounts, progress is synchronized at milestones such as opening the game, run end, account linking, purchases and forging. A compressed snapshot is stored in Firestore under the game account identifier. Synchronization uses an available connection, preserves this device's run and asks for confirmation before importing guest progress into another account. This copy is separate from the Google Play backup switch.
+Firebase game account: for linked accounts, progress is synchronized at moments such as opening the game, run end, account linking, purchases, forging and menu changes. A compressed snapshot is stored in Firestore under the game account identifier. Synchronization uses an available connection, preserves this device's run and asks for confirmation before merging this device's progress into another account.
 
 ## Permission, and how to turn it off
 
@@ -30,11 +30,11 @@ In the European Union, the European Economic Area, Switzerland and the United Ki
 
 ## How long we keep data
 
-Some records are subject to cleanup after 60 days. Linked accounts and accounts with purchases are protected from this cleanup; linked account progress remains until account deletion. This does not mean all metrics, advertising data or backups have the same retention period. Google, our technology partner, has its own retention periods and may keep data longer to provide its services, prevent fraud or meet legal obligations. Learn more: [policies.google.com/technologies/retention](https://policies.google.com/technologies/retention).
+Some records are subject to cleanup after 60 days (including the developer's internal metrics mirror, where pseudonymous identifiers are removed within 60 days and only daily totals remain). Linked accounts and accounts with purchases are protected from this cleanup; linked account progress remains until account deletion. This does not mean all metrics, advertising data or backups have the same retention period. Google, our technology partner, has its own retention periods and may keep data longer to provide its services, prevent fraud or meet legal obligations. Learn more: [policies.google.com/technologies/retention](https://policies.google.com/technologies/retention).
 
 ## Security
 
-Data is transmitted over encrypted connections (HTTPS) to Google (Firebase, AdMob, Android backup and Google Play Games), on servers that may be outside Brazil. Processing follows each service's terms; advertising may involve Google's partners. We don't sell data.
+Data is transmitted over encrypted connections (HTTPS) to Google (Firebase, Play Integrity, AdMob, Android backup and Google Play Games), on servers that may be outside Brazil. Processing follows each service's terms; advertising may involve Google's partners. We don't sell data.
 
 ## Children and teenagers
 
@@ -42,9 +42,9 @@ The game is not directed at children under 13; in the European regions above, an
 
 ## Your rights
 
-In the app, Settings > Account & Legal > Delete account and data lets you request deletion of your game account and its associated Firebase progress; a connection is needed for the request to reach the server. Android and Play Games copies are managed separately in your Google account. Deleting the game account does not automatically delete metrics or advertising data held by those services. Turning metrics off or uninstalling does not erase data already sent. For questions and requests about your rights, contact [support@dimensionriders.app](mailto:support@dimensionriders.app). You can also contact Brazil's ANPD or your country's data protection authority.
+In the app, Settings > Account > Delete account lets you request deletion of your game account and its associated Firebase progress; a connection is needed for the request to reach the server. Deletion applies to the game account open on the device (when an account created only through Play Games and without purchases is merged into a Google Account, the old account is automatically retired; for another account of yours, contact support; if the account for the saved progress is no longer available on this device, the same button lets you erase only this device's progress). The Android backup and Play Games data are managed separately in your Google account. Deleting the game account does not automatically delete metrics or advertising data held by those services. Turning metrics off or uninstalling does not erase data already sent. For questions and requests about your rights, contact [support@dimensionriders.app](mailto:support@dimensionriders.app). You can also contact Brazil's ANPD or your country's data protection authority.
 
-In-app requests require a connection and are processed by the daily cleanup job. Without the app, email [support@dimensionriders.app](mailto:support@dimensionriders.app) with the subject ACCOUNT DELETION - DIMENSION RIDERS and your Account ID, if available. Ownership must be verified; do not send passwords or login codes. An anonymous session without its Account ID may not be identifiable after uninstalling.
+In-app requests require a connection and are processed by the daily cleanup job, which deletes the account, progress and rewards and retains only a de-identified technical marker and transaction receipts with the account identifier removed to prevent duplicate bonuses and fraud. Without the app, visit [dimension-riders.web.app/excluir-conta](https://dimension-riders.web.app/excluir-conta) or email [support@dimensionriders.app](mailto:support@dimensionriders.app) with the subject ACCOUNT DELETION - DIMENSION RIDERS and the email of your linked Google Account or your Play Games gamer name. Ownership must be verified; do not send passwords or login codes. An account without a linked Google Account or Play Games profile may not be identifiable after uninstalling.
 
 ## This website
 

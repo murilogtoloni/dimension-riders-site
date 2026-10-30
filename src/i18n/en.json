@@ -29,8 +29,8 @@
     "opening": "You are a Rider. Cross worlds, fight the invaders and bring down the Tyrants. Your Shard is already pulling.",
     "eyebrow": "ACTION FOR ANDROID · FREE · OFFLINE",
     "explore": "Discover the worlds",
-    "soon": "Coming soon to Google Play · No account",
-    "available": "On Google Play · No account",
+    "soon": "Coming soon to Google Play · No sign-up",
+    "available": "On Google Play · No sign-up",
     "art": "Game promotional art"
   },
   "features": {
@@ -64,7 +64,7 @@
   },
   "cta": {
     "title": "Your Shard is pulling.",
-    "text": "Free. Plays offline. No accounts. Ads only if you choose."
+    "text": "Free. Plays offline. No sign-up. Ads only if you choose."
   },
   "buttons": {
     "playStore": "Get it on Google Play",
