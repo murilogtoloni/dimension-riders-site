@@ -1,7 +1,7 @@
 ---
-import { HTML_LANG, LOCALES, localePath, t, type Locale, type Page } from '../i18n';
+import { HTML_LANG, LOCALES, localePath, t, type Locale, type RoutePage } from '../i18n';
 
-interface Props { locale: Locale; page: Page }
+interface Props { locale: Locale; page: RoutePage }
 const { locale, page } = Astro.props;
 const others = LOCALES.filter((l) => l !== locale);
 ---

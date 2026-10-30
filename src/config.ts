@@ -1,6 +1,9 @@
 /** Constantes de produto. Não são texto de interface: não vão no dicionário. */
 
-/** Link da ficha pública na Play Store. Vazio: botão Android em breve; preenchido: selo oficial com link. */
+/** Endereço oficial da ficha pública na Google Play Store (sempre HTTPS, nunca market://). */
+export const PLAY_STORE_LISTING_URL = 'https://play.google.com/store/apps/details?id=app.dimensionriders';
+
+/** Link da ficha pública na Play Store. Vazio: botão Android em breve; preenchido (PLAY_STORE_LISTING_URL): selo oficial com link e redirect em /jogar e /play. */
 export const PLAY_STORE_URL = '';
 
 /** Vazio até existir APK público. Releases do repositório privado não abrem para visitantes. */

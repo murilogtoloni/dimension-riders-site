@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import DownloadIcon from '../components/DownloadIcon.astro';
+import { PLAY_STORE_LISTING_URL, PLAY_STORE_URL } from '../config';
+import enBadge from '../images/badges/en-google-play.png';
+import ptBadge from '../images/badges/pt-google-play.png';
+import feature from '../images/feature.webp';
+import icon from '../images/icon.webp';
+import { localePath, t, type Locale } from '../i18n';
+import Base from '../layouts/Base.astro';
+import { playStoreHref } from '../metrics';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const storeHref = playStoreHref(PLAY_STORE_URL || PLAY_STORE_LISTING_URL);
+const autoRedirect = PLAY_STORE_URL !== '';
+---
+<Base locale={locale} page="play" title={t(locale, 'play.title')}>
+  <section class="play-main">
+    <div class="wrap">
+      <div class="play-card">
+        <div class="play-art">
+          <Image src={feature} alt={t(locale, 'download.artAlt')} widths={[480, 640, 1024]} sizes="(max-width: 600px) 92vw, 560px" loading="eager" fetchpriority="high" />
+          <Image class="play-icon" src={icon} alt={t(locale, 'site.name')} width={80} loading="eager" />
+        </div>
+        <div class="play-body">
+          <div class="eyebrow">{t(locale, 'play.eyebrow')}</div>
+          <h1>{t(locale, 'play.headline')}</h1>
+          <p class="play-summary">{t(locale, 'play.summary')}</p>
+          <p class="play-facts">{t(locale, 'play.facts')}</p>
+          <div class="play-actions">
+            <a
+              class="button play-cta"
+              href={storeHref}
+              data-play-link
+              data-play-redirect={autoRedirect ? '' : undefined}
+            >
+              <DownloadIcon />{t(locale, 'play.cta')}
+            </a>
+            <a class="play-badge" href={storeHref} data-play-link>
+              <Image src={locale === 'pt' ? ptBadge : enBadge} alt={t(locale, 'buttons.playStore')} width={200} format="png" loading="eager" />
+            </a>
+          </div>
+          <p class="play-note">{autoRedirect ? t(locale, 'play.redirecting') : t(locale, 'play.soonNote')}</p>
+          <p class="play-more"><a class="text-link" href={localePath(locale, 'home')}>{t(locale, 'play.more')} <span aria-hidden="true">→</span></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

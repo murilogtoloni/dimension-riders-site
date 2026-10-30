@@ -7,7 +7,7 @@ import { SITE, read } from './helpers';
 const STORE = 'https://play.google.com/store/apps/details?id=app.dimensionriders';
 
 /** Janela falsa com links internos e o selo da Play, o bastante para o script. */
-function fakeWindow(search: string, referrer = '', readyState = 'complete', timeZone = 'America/Sao_Paulo', stored: string | null = null) {
+function fakeWindow(search: string, referrer = '', readyState = 'complete', timeZone = 'America/Sao_Paulo', stored: string | null = null, autoRedirect = false) {
   const attr = (href: string, play = false) => ({
     href, play,
     getAttribute(name: string) { return name === 'href' ? this.href : null; },
@@ -19,6 +19,8 @@ function fakeWindow(search: string, referrer = '', readyState = 'complete', time
   const listeners: Record<string, Array<(e?: unknown) => void>> = {};
   const store: Record<string, string> = stored ? { dr_consent: stored } : {};
   const body: unknown[] = [];
+  const timers: Array<{ fn: () => void; ms: number }> = [];
+  const replaced: string[] = [];
   const el = (tag: string) => {
     const handlers: Record<string, () => void> = {};
     const node: Record<string, unknown> = {
@@ -35,19 +37,25 @@ function fakeWindow(search: string, referrer = '', readyState = 'complete', time
   const w: Record<string, unknown> = {
     Intl: { DateTimeFormat: () => ({ resolvedOptions: () => ({ timeZone }) }) },
     localStorage: { getItem: (k: string) => store[k] ?? null, setItem: (k: string, v: string) => { store[k] = v; } },
-    location: { search, hostname: 'dimensionriders.app', origin: SITE },
+    location: { search, hostname: 'dimensionriders.app', origin: SITE, replace: (url: string) => replaced.push(url) },
+    setTimeout: (fn: () => void, ms: number) => timers.push({ fn, ms }),
     document: {
       referrer,
       readyState,
       body: { appendChild: (n: unknown) => body.push(n) },
       createElement: el,
-      querySelectorAll: (sel: string) => (sel === 'a[data-play-link]' ? [play] : sel === 'a[href^="/"]' ? [internal] : sel === '[data-consent-reset]' ? [reset] : []),
+      querySelectorAll: (sel: string) => (
+        sel === 'a[data-play-link]' ? [play]
+          : sel === 'a[data-play-link][data-play-redirect]' ? (autoRedirect ? [play] : [])
+            : sel === 'a[href^="/"]' ? [internal]
+              : sel === '[data-consent-reset]' ? [reset] : []
+      ),
       addEventListener: (type: string, fn: (e?: unknown) => void) => (listeners[type] ??= []).push(fn),
     },
   };
   const fire = (type: string, e?: unknown) => (listeners[type] ?? []).forEach((fn) => fn(e));
   const consentCalls = () => (w.dataLayer as IArguments[] ?? []).map((a) => [...a]).filter((c) => c[0] === 'consent');
-  return { w, internal, play, body, store, reset, consentCalls, click: () => fire('click', { target: play }), loaded: () => fire('DOMContentLoaded') };
+  return { w, internal, play, body, store, reset, timers, replaced, consentCalls, click: () => fire('click', { target: play }), loaded: () => fire('DOMContentLoaded') };
 }
 
 const TEXTS = { text: 'Cookies?', accept: 'Aceitar', decline: 'Recusar', privacyLabel: 'Privacidade', privacyHref: '/pt/privacidade/' };
@@ -61,11 +69,27 @@ describe('métricas do site (#450)', () => {
     expect(new URL(playStoreHref(STORE)).searchParams.get('id')).toBe('app.dimensionriders');
   });
 
-  it('a campanha do anúncio segue nos links internos e chega à Play', () => {
-    const { w, internal, play } = fakeWindow('?utm_source=tiktok&utm_medium=anuncio&utm_campaign=v01');
+  it('a campanha do anúncio segue nos links internos e chega à Play preservando utm_medium e utm_content (#1237)', () => {
+    const { w, internal, play } = fakeWindow('?utm_source=meta&utm_medium=paid_social&utm_campaign=lancamento_br&utm_content=geleira15');
     metricsMain(cfg(), w);
-    expect(internal.href).toBe('/en/download/?utm_source=tiktok&utm_medium=anuncio&utm_campaign=v01');
-    expect(referrerOf(play.href)).toEqual({ utm_source: 'tiktok', utm_medium: 'site', utm_campaign: 'v01', utm_content: 'anuncio' });
+    expect(internal.href).toBe('/en/download/?utm_source=meta&utm_medium=paid_social&utm_campaign=lancamento_br&utm_content=geleira15');
+    expect(referrerOf(play.href)).toEqual({
+      utm_source: 'meta',
+      utm_medium: 'paid_social',
+      utm_campaign: 'lancamento_br',
+      utm_content: 'geleira15',
+    });
+  });
+
+  it('sem utm_medium na entrada, mantém utm_medium=site no referrer da Play', () => {
+    const { w, play } = fakeWindow('?utm_source=tiktok&utm_campaign=v01&utm_content=kling15');
+    metricsMain(cfg(), w);
+    expect(referrerOf(play.href)).toEqual({
+      utm_source: 'tiktok',
+      utm_medium: 'site',
+      utm_campaign: 'v01',
+      utm_content: 'kling15',
+    });
   });
 
   it('no <head>, espera a página carregar para mexer nos links', () => {
@@ -79,11 +103,30 @@ describe('métricas do site (#450)', () => {
   it('sem UTM, o site que mandou a visita vira a origem; a própria página não conta', () => {
     const vindo = fakeWindow('', 'https://www.instagram.com/p/x');
     metricsMain(cfg(), vindo.w);
-    expect(referrerOf(vindo.play.href)).toMatchObject({ utm_source: 'www.instagram.com', utm_campaign: 'site', utm_content: 'referral' });
+    expect(referrerOf(vindo.play.href)).toMatchObject({ utm_source: 'www.instagram.com', utm_medium: 'referral', utm_campaign: 'site' });
     const interno = fakeWindow('', `${SITE}/en/`);
     metricsMain(cfg(), interno.w);
     expect(interno.internal.href).toBe('/en/download/');
     expect(referrerOf(interno.play.href)).toEqual(PLAY_REFERRER_DEFAULT);
+  });
+
+  it('em /jogar com data-play-redirect ativo: registra click_play e redireciona em 200 ms com o referrer da campanha (#1237)', () => {
+    const { w, timers, replaced } = fakeWindow('?utm_source=meta&utm_medium=paid_social&utm_campaign=lancamento&utm_content=engrenagem15', '', 'complete', 'America/Sao_Paulo', null, true);
+    metricsMain(cfg('G-TESTE'), w);
+    expect(timers).toHaveLength(1);
+    expect(timers[0].ms).toBe(200);
+    expect(replaced).toHaveLength(0);
+    timers[0].fn();
+    expect(replaced).toHaveLength(1);
+    expect(replaced[0].startsWith(`${STORE}&referrer=`)).toBe(true);
+    expect(referrerOf(replaced[0])).toEqual({
+      utm_source: 'meta',
+      utm_medium: 'paid_social',
+      utm_campaign: 'lancamento',
+      utm_content: 'engrenagem15',
+    });
+    const calls = (w.dataLayer as IArguments[]).map((a) => [...a]);
+    expect(calls).toContainEqual(['event', 'click_play', { link_url: replaced[0] }]);
   });
 
   it('com o GA: cookie de 60 dias, sem sinal de anúncio, e o toque na Play vira click_play', () => {

@@ -7,10 +7,13 @@
  */
 
 /** Chaves de UTM lidas da URL e repassadas nos links internos. */
-export const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'] as const;
+export const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as const;
 
 /** Referrer de quem chega à Play sem origem conhecida. `utm_medium=site` separa quem passou pelo site do anúncio direto. */
 export const PLAY_REFERRER_DEFAULT = { utm_source: 'direct', utm_medium: 'site', utm_campaign: 'site' };
+
+/** Intervalo (ms) antes do redirecionamento automático para a Play Store em /jogar e /play (#1237). */
+export const PLAY_REDIRECT_DELAY_MS = 200;
 
 /** Link da ficha da Play com o referrer padrão do site. O script troca a origem pela da visita. */
 export function playStoreHref(storeUrl: string): string {
@@ -43,7 +46,7 @@ export interface MetricsConfig { gaId: string; regions: string[]; cookieSeconds:
 export function metricsMain(cfg: MetricsConfig, w: any): void {
   var loc = w.location;
   var doc = w.document;
-  var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  var keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
   var params = new URLSearchParams(loc.search);
   var origin: Record<string, string> = {};
   keys.forEach(function (k) {
@@ -65,49 +68,62 @@ export function metricsMain(cfg: MetricsConfig, w: any): void {
     else fn();
   };
 
-  ready(function () {
-    if (!origin.utm_source) return;
-    doc.querySelectorAll('a[href^="/"]').forEach(function (a: any) {
-      var u = new URL(a.getAttribute('href'), loc.origin);
-      Object.keys(origin).forEach(function (k) { if (!u.searchParams.has(k)) u.searchParams.set(k, origin[k]); });
-      a.setAttribute('href', u.pathname + u.search + u.hash);
-    });
-    doc.querySelectorAll('a[data-play-link]').forEach(function (a: any) {
-      var u = new URL(a.getAttribute('href'));
-      var r = new URLSearchParams(u.searchParams.get('referrer') || '');
-      r.set('utm_source', origin.utm_source);
-      if (origin.utm_campaign) r.set('utm_campaign', origin.utm_campaign);
-      if (origin.utm_medium) r.set('utm_content', origin.utm_medium);
-      u.searchParams.set('referrer', r.toString());
-      a.setAttribute('href', u.toString());
-    });
-  });
-
-  if (!cfg.gaId) return;
-
   var tz = '';
-  try { tz = w.Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { tz = ''; }
-  var europe = /^Europe\//.test(tz) || /^Atlantic\/(Canary|Madeira|Azores|Reykjavik|Faroe)$/.test(tz);
+  var europe = false;
   var stored = '';
-  try { stored = w.localStorage.getItem('dr_consent') || ''; } catch (e) { stored = ''; }
   var save = function (value: string) {
     try { w.localStorage.setItem('dr_consent', value); } catch (e) { /* sem armazenamento: o aviso volta na próxima página */ }
   };
 
-  w.dataLayer = w.dataLayer || [];
-  var gtag = function () { w.dataLayer.push(arguments); };
-  w.gtag = gtag;
-  var denied = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
-  (gtag as any)('consent', 'default', Object.assign({ region: cfg.regions }, denied));
-  (gtag as any)('consent', 'default', Object.assign({}, denied, { analytics_storage: europe ? 'denied' : 'granted' }));
-  if (stored === 'granted') (gtag as any)('consent', 'update', { analytics_storage: 'granted' });
-  (gtag as any)('js', new Date());
-  // Sem sinais de anúncio: só a contagem de visitas e cliques.
-  (gtag as any)('config', cfg.gaId, { cookie_expires: cfg.cookieSeconds, allow_google_signals: false, allow_ad_personalization_signals: false });
-  doc.addEventListener('click', function (e: any) {
-    var a = e.target && e.target.closest ? e.target.closest('a[data-play-link]') : null;
-    if (a) (gtag as any)('event', 'click_play', { link_url: a.getAttribute('href') });
+  if (cfg.gaId) {
+    try { tz = w.Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { tz = ''; }
+    europe = /^Europe\//.test(tz) || /^Atlantic\/(Canary|Madeira|Azores|Reykjavik|Faroe)$/.test(tz);
+    try { stored = w.localStorage.getItem('dr_consent') || ''; } catch (e) { stored = ''; }
+
+    w.dataLayer = w.dataLayer || [];
+    var gtag = function () { w.dataLayer.push(arguments); };
+    w.gtag = gtag;
+    var denied = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' };
+    (gtag as any)('consent', 'default', Object.assign({ region: cfg.regions }, denied));
+    (gtag as any)('consent', 'default', Object.assign({}, denied, { analytics_storage: europe ? 'denied' : 'granted' }));
+    if (stored === 'granted') (gtag as any)('consent', 'update', { analytics_storage: 'granted' });
+    (gtag as any)('js', new Date());
+    // Sem sinais de anúncio: só a contagem de visitas e cliques.
+    (gtag as any)('config', cfg.gaId, { cookie_expires: cfg.cookieSeconds, allow_google_signals: false, allow_ad_personalization_signals: false });
+    doc.addEventListener('click', function (e: any) {
+      var a = e.target && e.target.closest ? e.target.closest('a[data-play-link]') : null;
+      if (a) (gtag as any)('event', 'click_play', { link_url: a.getAttribute('href') });
+    });
+  }
+
+  ready(function () {
+    if (origin.utm_source) {
+      doc.querySelectorAll('a[href^="/"]').forEach(function (a: any) {
+        var u = new URL(a.getAttribute('href'), loc.origin);
+        Object.keys(origin).forEach(function (k) { if (!u.searchParams.has(k)) u.searchParams.set(k, origin[k]); });
+        a.setAttribute('href', u.pathname + u.search + u.hash);
+      });
+      doc.querySelectorAll('a[data-play-link]').forEach(function (a: any) {
+        var u = new URL(a.getAttribute('href'));
+        var r = new URLSearchParams(u.searchParams.get('referrer') || '');
+        r.set('utm_source', origin.utm_source);
+        r.set('utm_medium', origin.utm_medium || 'site');
+        if (origin.utm_campaign) r.set('utm_campaign', origin.utm_campaign);
+        if (origin.utm_content) r.set('utm_content', origin.utm_content);
+        if (origin.utm_term) r.set('utm_term', origin.utm_term);
+        u.searchParams.set('referrer', r.toString());
+        a.setAttribute('href', u.toString());
+      });
+    }
+    doc.querySelectorAll('a[data-play-link][data-play-redirect]').forEach(function (a: any) {
+      var href = a.getAttribute('href');
+      if (!href || !w.setTimeout || !loc.replace) return;
+      if (w.gtag) (w.gtag as any)('event', 'click_play', { link_url: href });
+      w.setTimeout(function () { loc.replace(href); }, 200);
+    });
   });
+
+  if (!cfg.gaId) return;
 
   var banner: any = null;
   var showBanner = function () {

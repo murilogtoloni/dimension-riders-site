@@ -13,12 +13,14 @@ export const OG_LOCALE: Record<Locale, string> = { en: 'en_US', pt: 'pt_BR' };
 
 export const PAGES = ['home', 'fold', 'download', 'privacy', 'support', 'terms'] as const;
 export type Page = (typeof PAGES)[number];
+export type RoutePage = Page | 'play';
 
 /** Slug de cada página em cada idioma. '' é a raiz do idioma (Início). */
-export const ROUTES: Record<Page, Record<Locale, string>> = {
+export const ROUTES: Record<RoutePage, Record<Locale, string>> = {
   home: { en: '', pt: '' },
   fold: { en: 'fold', pt: 'dobra' },
   download: { en: 'download', pt: 'baixar' },
+  play: { en: 'play', pt: 'jogar' },
   privacy: { en: 'privacy', pt: 'privacidade' },
   support: { en: 'support', pt: 'suporte' },
   terms: { en: 'terms', pt: 'termos' },
@@ -42,7 +44,7 @@ export function t(locale: Locale, key: string, vars: Record<string, string> = {}
 }
 
 /** Caminho absoluto (com base) de uma página num idioma, sempre com barra no fim. */
-export function localePath(locale: Locale, page: Page, base: string = import.meta.env.BASE_URL): string {
+export function localePath(locale: Locale, page: RoutePage, base: string = import.meta.env.BASE_URL): string {
   const root = base.replace(/\/+$/, '');
   const slug = ROUTES[page][locale];
   return slug ? `${root}/${locale}/${slug}/` : `${root}/${locale}/`;

@@ -1,0 +1,22 @@
+---
+import { HTML_LANG, localePath, t } from '../i18n';
+
+const target = localePath('en', 'play');
+const title = `${t('en', 'play.title')} · ${t('en', 'site.name')}`;
+---
+<!doctype html>
+<html lang={HTML_LANG.en}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{title}</title>
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <script is:inline define:vars={{ target }}>
+      location.replace(target + location.search);
+    </script>
+  </head>
+  <body>
+    <a href={target}>{title}</a>
+  </body>
+</html>
