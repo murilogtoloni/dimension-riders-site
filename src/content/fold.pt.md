@@ -39,10 +39,10 @@ uma prisão e que desdobrar é libertar. E pretendem mandar em tudo o que libert
 
 ## Quem sela segue o puxão
 
-Os Cavaleiros são uma ordem antiga, de muitos mundos. Cada mundo que entrou para ela lembra do dia em que um
+Os Cavaleiros são uma Ordem antiga, de muitos mundos. Cada mundo que entrou para ela lembra do dia em que um
 Tirano chegou, e de quem veio ajudar. A regra é simples: uma Fenda aberta é uma Fenda pra selar.
 
-Cada Cavaleiro carrega uma Estilha: um único fragmento de Âmbar, lascado, polido e preparado pela ordem até
+Cada Cavaleiro carrega uma Estilha: um único fragmento de Âmbar, lascado, polido e preparado pela Ordem até
 brilhar em ciano. A Estilha não abre Fendas, nem aquecida. Ela só acompanha caminhos que já existem.
 
 Quando um ninho se desfaz e a Fenda começa a fechar, o movimento corre pelos vincos. A Estilha sente, e puxa
@@ -55,7 +55,7 @@ Proteja a Dobra. Sele as Fendas.
 
 ## Quem sela, talha
 
-Fechada a Fenda, o Cavaleiro talha na pedra mais próxima o símbolo da ordem: um escudo com duas camadas
+Fechada a Fenda, o Cavaleiro talha na pedra mais próxima o símbolo da Ordem: um escudo com duas camadas
 dobradas e um cristal entre elas, pintado do ciano da Estilha. É o Selo. Cada Cavaleiro acrescenta um
 entalhe só seu.
 
@@ -64,9 +64,9 @@ jeito: uma folha dobrada com uma gota no meio, uma mola com um rebite, lajes de 
 uma rede com uma boia de vidro, uma vela de esteira com uma concha. Nenhum sabe dizer de quem aprendeu.
 
 Os Tiranos mandam quebrar os Selos dos mundos que tomam, e os Desdobrados mais fortes carregam os cacos. O
-Cavaleiro que os vence recolhe a lasca: é uma runa. Quem carrega uma luta um pouco diferente, e a ordem não
+Cavaleiro que os vence recolhe a lasca: é uma runa. Quem carrega uma luta um pouco diferente, e a Ordem não
 sabe explicar por quê.
 
-Há Selos velhos demais, em mundos onde a ordem não lembra de ter estado, com entalhes que ninguém reconhece.
+Há Selos velhos demais, em mundos onde a Ordem não lembra de ter estado, com entalhes que ninguém reconhece.
 Os veteranos contam a história do Cavaleiro que achou o próprio entalhe numa pedra de mil anos. Ninguém
 acredita. Quase ninguém.

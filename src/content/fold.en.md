@@ -39,10 +39,10 @@ prison and that unfolding is freedom. And they intend to rule everything they fr
 
 ## Those who seal ride the pull
 
-The Riders are an old order, from many worlds. Every world that joined remembers the day a Tyrant arrived,
+The Riders are an old Order, from many worlds. Every world that joined remembers the day a Tyrant arrived,
 and who came to help. The rule is simple: an open Rift is a Rift to seal.
 
-Every Rider carries a Shard: a single fragment of Amber, chipped, polished and prepared by the order until
+Every Rider carries a Shard: a single fragment of Amber, chipped, polished and prepared by the Order until
 it glows cyan. A Shard cannot open Rifts, even when heated. It only follows paths that already exist.
 
 When a nest comes undone and the Rift starts to close, the movement runs along the creases. The Shard feels
@@ -55,7 +55,7 @@ Protect the Fold. Seal the Rifts.
 
 ## Those who seal, carve
 
-With the Rift closed, the Rider carves the order's symbol into the nearest stone: a shield with two folded
+With the Rift closed, the Rider carves the Order's symbol into the nearest stone: a shield with two folded
 layers and a crystal between them, painted the cyan of the Shard. It is the Seal. Every Rider adds a notch
 of their own.
 
@@ -66,8 +66,8 @@ who taught them.
 
 The Tyrants have the Seals broken in the worlds they take, and the strongest of the Unfolded carry the
 pieces. The Rider who defeats them collects the chip: it is a rune. Whoever carries one fights a little
-differently, and the order cannot explain why.
+differently, and the Order cannot explain why.
 
-There are Seals far too old, in worlds the order does not remember visiting, with notches no one recognises.
+There are Seals far too old, in worlds the Order does not remember visiting, with notches no one recognises.
 Veterans tell the story of the Rider who found their own notch on a thousand-year-old stone. Nobody believes
 it. Almost nobody.

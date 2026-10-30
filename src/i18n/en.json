@@ -39,7 +39,7 @@
     },
     "seal": {
       "title": "Every run, a choice.",
-      "text": "Weapons, relics and runes."
+      "text": "Weapons, armor and runes."
     },
     "tyrants": {
       "title": "Worlds to protect.",
@@ -59,7 +59,7 @@
     "lava": "In Caldera",
     "lavaAlt": "Caldera run: Rider, creatures and combat effects.",
     "arsenal": "Prepare your equipment",
-    "arsenalAlt": "Equipment menu showing the Rider, weapons, relics and runes."
+    "arsenalAlt": "Equipment menu showing the Rider, weapons, armor and runes."
   },
   "cta": {
     "title": "Your Shard is pulling.",
@@ -148,24 +148,24 @@
       "label": "The Tyrants",
       "note": "Game concept art.",
       "forest": {
-        "name": "Forest Tyrant",
-        "alt": "Forest Tyrant: a tree-like body covered in moss, with a crown of Amber."
+        "name": "Oak King",
+        "alt": "Oak King, Forest Tyrant: a tree-like body covered in moss, with a crown of Amber."
       },
       "gear": {
-        "name": "Gearworks Tyrant",
-        "alt": "Gearworks Tyrant: purple and gold armour with gears and Amber crystals."
+        "name": "Lord Clockhand",
+        "alt": "Lord Clockhand, Gearworks Tyrant: purple and gold armour with gears and Amber crystals."
       },
       "lava": {
-        "name": "Caldera Tyrant",
-        "alt": "Caldera Tyrant: a magma golem with Amber crystals."
+        "name": "Lord Cinder",
+        "alt": "Lord Cinder, Caldera Tyrant: a magma golem with Amber crystals."
       },
       "ice": {
-        "name": "Glacier Tyrant",
-        "alt": "Glacier Tyrant: an ice giant with a crown of crystals and a purple cape."
+        "name": "Glacier King",
+        "alt": "Glacier King, Glacier Tyrant: an ice giant with a crown of crystals and a purple cape."
       },
       "reef": {
-        "name": "Atoll Tyrant",
-        "alt": "Atoll Tyrant: a dark red crab with a golden crown and one huge claw."
+        "name": "Tidecaller",
+        "alt": "Tidecaller, Atoll Tyrant: a dark red crab with a golden crown and one huge claw."
       }
     },
     "figures": {
@@ -175,7 +175,7 @@
       "amberCaption": "Amber of the Fold, as it appears in the nests.",
       "riderRift": "Painting: the Rider before an open Rift, the Shard glowing on his chest.",
       "seal": "The Seal: a shield with two golden layers and a cyan crystal between them.",
-      "sealCaption": "The Seal, symbol of the order."
+      "sealCaption": "The Seal, symbol of the Order."
     },
     "cta": {
       "title": "Your Shard is already pulling.",
@@ -210,14 +210,14 @@
       "alt": "Forest squirrel invader with Amber resin on its chest."
     },
     "forestTyrant": {
-      "title": "Forest Tyrant",
-      "text": "The leader behind the invasion.",
-      "alt": "Forest Tyrant with a tree body and an Amber crown."
+      "title": "Oak King",
+      "text": "The Tyrant behind the Forest invasion.",
+      "alt": "Oak King, Forest Tyrant, with a tree body and an Amber crown."
     },
     "lavaTyrant": {
-      "title": "Caldera Tyrant",
-      "text": "Amber, stone and a very bad temper.",
-      "alt": "Caldera Tyrant: magma golem with Amber crystals."
+      "title": "Lord Cinder",
+      "text": "Caldera's Tyrant: Amber, stone and a very bad temper.",
+      "alt": "Lord Cinder, Caldera Tyrant: magma golem with Amber crystals."
     }
   },
   "story": {
