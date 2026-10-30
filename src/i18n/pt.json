@@ -29,8 +29,8 @@
     "opening": "Você é um Cavaleiro. Atravesse mundos, enfrente os invasores e derrube os Tiranos. Sua Estilha já está puxando.",
     "eyebrow": "AÇÃO PARA ANDROID · GRÁTIS · OFFLINE",
     "explore": "Conheça os mundos",
-    "soon": "Em breve no Google Play · Sem conta",
-    "available": "No Google Play · Sem conta",
+    "soon": "Em breve no Google Play · Sem cadastro",
+    "available": "No Google Play · Sem cadastro",
     "art": "Arte promocional do jogo"
   },
   "features": {
@@ -64,7 +64,7 @@
   },
   "cta": {
     "title": "Sua Estilha está puxando.",
-    "text": "Grátis. Joga offline. Sem conta. Anúncio só se você quiser."
+    "text": "Grátis. Joga offline. Sem cadastro. Anúncio só se você quiser."
   },
   "buttons": {
     "playStore": "Disponível no Google Play",

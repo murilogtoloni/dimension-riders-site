@@ -13,7 +13,7 @@ describe('páginas de texto', () => {
   });
 
   it('Privacidade nomeia o Analytics, o Crashlytics e o AdMob, com data e contato, nos dois idiomas (#248)', () => {
-    expect(read('/en/privacy/index.html')).toContain('2026-10-29');
+    expect(read('/en/privacy/index.html')).toContain('2026-10-30');
     // dimension-riders#1198 (antes, #592): o progresso tem o backup do Android e, com conta vinculada, a nuvem do jogo; o
     // Backup no Google Play saiu do jogo. Na Política e na FAQ do Suporte; os Termos dizem que sem cópia não há como recuperar.
     for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) {
