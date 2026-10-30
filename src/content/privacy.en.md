@@ -1,4 +1,4 @@
-Last updated: 2026-10-24
+Last updated: 2026-10-29
 
 Dimension Riders is an Android game made in Brazil. The game's developer is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
@@ -20,9 +20,9 @@ To record daily rewards and never pay the same one twice, the game creates on it
 
 Android backup: with Google backup turned on in your phone (in the Android settings), the game's progress file goes with it to your Google account and comes back when you reinstall the game or change phones. Only the progress goes (Amber, items, talents, records); the run in progress, the settings and the privacy choices stay on the device. Turning the Android backup off prevents the copy.
 
-Google Play backup (optional): when you turn on Settings > Google Play backup, the game signs in to Google Play Games with your account and keeps the same progress in its Saved Games, so you can recover it on another device. Unless you turn it on, none of your progress goes there. If you already use Play Games on your phone, it may sign in on its own when the game opens and show your gamer name; the game does not store that name or your email. Turning the switch off stops the uploads; what was already saved stays in your Play Games account, where you can delete the game's data.
+Play Games: if you use Play Games on your phone, the game signs in with it on its own when it opens and links the game account to your gamer profile, to recover your progress when you reinstall the game or change phones.
 
-Firebase game account: for linked accounts, progress is synchronized at milestones such as opening the game, run end, account linking, purchases and forging. A compressed snapshot is stored in Firestore under the game account identifier. Synchronization uses an available connection, preserves this device's run and asks for confirmation before importing guest progress into another account. This copy is separate from the Google Play backup switch.
+Firebase game account: for linked accounts, progress is synchronized at moments such as opening the game, run end, account linking, purchases, forging and menu changes. A compressed snapshot is stored in Firestore under the game account identifier. Synchronization uses an available connection, preserves this device's run and asks for confirmation before merging this device's progress into another account.
 
 ## Permission, and how to turn it off
 
@@ -42,9 +42,9 @@ The game is not directed at children under 13; in the European regions above, an
 
 ## Your rights
 
-In the app, Settings > Account & Legal > Delete account and data lets you request deletion of your game account and its associated Firebase progress; a connection is needed for the request to reach the server. Android and Play Games copies are managed separately in your Google account. Deleting the game account does not automatically delete metrics or advertising data held by those services. Turning metrics off or uninstalling does not erase data already sent. For questions and requests about your rights, contact [support@dimensionriders.app](mailto:support@dimensionriders.app). You can also contact Brazil's ANPD or your country's data protection authority.
+In the app, Settings > Account > Delete account lets you request deletion of your game account and its associated Firebase progress; a connection is needed for the request to reach the server. Deletion applies to the game account open on the device; for another account of yours (for example, one from another Play Games profile that was merged into this one), contact support. The Android backup and Play Games data are managed separately in your Google account. Deleting the game account does not automatically delete metrics or advertising data held by those services. Turning metrics off or uninstalling does not erase data already sent. For questions and requests about your rights, contact [support@dimensionriders.app](mailto:support@dimensionriders.app). You can also contact Brazil's ANPD or your country's data protection authority.
 
-In-app requests require a connection and are processed by the daily cleanup job. Without the app, email [support@dimensionriders.app](mailto:support@dimensionriders.app) with the subject ACCOUNT DELETION - DIMENSION RIDERS and your Account ID, if available. Ownership must be verified; do not send passwords or login codes. An anonymous session without its Account ID may not be identifiable after uninstalling.
+In-app requests require a connection and are processed by the daily cleanup job. Without the app, email [support@dimensionriders.app](mailto:support@dimensionriders.app) with the subject ACCOUNT DELETION - DIMENSION RIDERS and the email of your linked Google Account or your Play Games gamer name. Ownership must be verified; do not send passwords or login codes. An account without a linked Google Account or Play Games profile may not be identifiable after uninstalling.
 
 ## This website
 
