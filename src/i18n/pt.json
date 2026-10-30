@@ -39,7 +39,7 @@
     },
     "seal": {
       "title": "Cada corrida, uma escolha.",
-      "text": "Armas, relíquias e runas."
+      "text": "Armas, armaduras e runas."
     },
     "tyrants": {
       "title": "Mundos para proteger.",
@@ -59,7 +59,7 @@
     "lava": "Na Caldeira",
     "lavaAlt": "Corrida na Caldeira: Cavaleiro, criaturas e efeitos do combate.",
     "arsenal": "Prepare seu equipamento",
-    "arsenalAlt": "Menu Equipar com o Cavaleiro, armas, relíquias e runas."
+    "arsenalAlt": "Menu Equipar com o Cavaleiro, armas, armaduras e runas."
   },
   "cta": {
     "title": "Sua Estilha está puxando.",
@@ -148,24 +148,24 @@
       "label": "Os Tiranos",
       "note": "Arte de conceito do jogo.",
       "forest": {
-        "name": "Tirano da Floresta",
-        "alt": "Tirano da Floresta: corpo de árvore coberto de musgo e coroa de Âmbar."
+        "name": "Rei Carvalho",
+        "alt": "Rei Carvalho, Tirano da Floresta: corpo de árvore coberto de musgo e coroa de Âmbar."
       },
       "gear": {
-        "name": "Tirano da Engrenagem",
-        "alt": "Tirano da Engrenagem: armadura roxa e dourada com engrenagens e cristais de Âmbar."
+        "name": "Lorde Ponteiro",
+        "alt": "Lorde Ponteiro, Tirano da Engrenagem: armadura roxa e dourada com engrenagens e cristais de Âmbar."
       },
       "lava": {
-        "name": "Tirano da Caldeira",
-        "alt": "Tirano da Caldeira: golem de magma com cristais de Âmbar."
+        "name": "Brasão",
+        "alt": "Brasão, Tirano da Caldeira: golem de magma com cristais de Âmbar."
       },
       "ice": {
-        "name": "Tirano da Geleira",
-        "alt": "Tirano da Geleira: gigante de gelo com coroa de cristais e capa roxa."
+        "name": "Rei da Geleira",
+        "alt": "Rei da Geleira, Tirano da Geleira: gigante de gelo com coroa de cristais e capa roxa."
       },
       "reef": {
-        "name": "Tirano do Atol",
-        "alt": "Tirano do Atol: caranguejo bordô com coroa dourada e uma garra enorme."
+        "name": "Chama-Maré",
+        "alt": "Chama-Maré, Tirano do Atol: caranguejo bordô com coroa dourada e uma garra enorme."
       }
     },
     "figures": {
@@ -175,7 +175,7 @@
       "amberCaption": "Âmbar da Dobra, como aparece nos ninhos.",
       "riderRift": "Pintura: o Cavaleiro diante de uma Fenda aberta, com a Estilha brilhando no peito.",
       "seal": "O Selo: escudo com duas camadas em ouro e um cristal ciano entre elas.",
-      "sealCaption": "O Selo, símbolo da ordem."
+      "sealCaption": "O Selo, símbolo da Ordem."
     },
     "cta": {
       "title": "Sua Estilha já está puxando.",
@@ -210,14 +210,14 @@
       "alt": "Invasor esquilo da Floresta com resina de Âmbar no peito."
     },
     "forestTyrant": {
-      "title": "Tirano da Floresta",
-      "text": "O líder que sustenta a invasão.",
-      "alt": "Tirano da Floresta com corpo de árvore e coroa de Âmbar."
+      "title": "Rei Carvalho",
+      "text": "O Tirano que sustenta a invasão na Floresta.",
+      "alt": "Rei Carvalho, Tirano da Floresta, com corpo de árvore e coroa de Âmbar."
     },
     "lavaTyrant": {
-      "title": "Tirano da Caldeira",
-      "text": "Âmbar, pedra e muito mau humor.",
-      "alt": "Tirano da Caldeira: golem de magma com cristais de Âmbar."
+      "title": "Brasão",
+      "text": "O Tirano da Caldeira: Âmbar, pedra e muito mau humor.",
+      "alt": "Brasão, Tirano da Caldeira: golem de magma com cristais de Âmbar."
     }
   },
   "story": {
