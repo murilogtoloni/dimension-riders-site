@@ -1,4 +1,4 @@
-Última atualização: 2026-10-17
+Última atualização: 2026-10-29
 
 Estes termos valem para o jogo Dimension Riders, feito no Brasil. Ao jogar, você concorda com eles.
 
@@ -18,7 +18,7 @@ O Âmbar, os itens, as runas e tudo o que você ganha ou destrava existem só de
 
 ## Seu progresso
 
-O progresso fica salvo no seu aparelho e, se você permitir, nas cópias do Google descritas na Política de Privacidade (o backup do Android e o backup no Google Play). Se ele se perder e nenhuma dessas cópias estiver disponível, não temos como recuperá-lo.
+O progresso fica salvo no seu aparelho e nas cópias descritas na Política de Privacidade (o backup do Android, se ligado, e a nuvem do jogo, com conta vinculada). Se ele se perder e nenhuma dessas cópias estiver disponível, não temos como recuperá-lo.
 
 ## Uso do jogo
 

@@ -1,8 +1,8 @@
-Última atualização: 2026-10-24
+Última atualização: 2026-10-29
 
 Dimension Riders é um jogo para Android feito no Brasil. Responsável pelos dados descritos aqui: o desenvolvedor do jogo. Contato: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
-Você pode jogar sem uma conta vinculada. O progresso fica no aparelho. No Android, o Play Games pode reconhecer seu perfil de jogador; nas Configurações você também pode vincular uma Conta Google para recuperar seu progresso. Essas formas de entrar podem acessar a mesma conta do jogo. Veja as cópias disponíveis em "Cópia do progresso".
+Você pode jogar sem uma conta vinculada. O progresso fica no aparelho. No Android, o Play Games pode reconhecer seu perfil de jogador; nos Ajustes você também pode vincular uma Conta Google para recuperar seu progresso. Essas formas de entrar podem acessar a mesma conta do jogo. Veja as cópias disponíveis em "Cópia do progresso".
 
 ## O que sai do aparelho
 
@@ -20,13 +20,13 @@ Para registrar as recompensas diárias e não pagar a mesma duas vezes, o jogo c
 
 Backup do Android: com o backup do Google ligado no celular (nas configurações do Android), o arquivo de progresso do jogo vai junto para a sua conta Google e volta quando você reinstala o jogo ou troca de celular. Vai só o progresso (Âmbar, itens, talentos, recordes); a corrida em andamento, os ajustes e as escolhas de privacidade ficam no aparelho. Desligar o backup do Android impede a cópia.
 
-Backup no Google Play (opcional): ligando Configurações > Backup no Google Play, o jogo entra no Google Play Games com a sua conta e guarda o mesmo progresso nos jogos salvos (Saved Games) dela, para recuperar em outro aparelho. Sem ligar, nada do progresso vai para lá. Se você já usa o Play Games no celular, ele pode entrar sozinho quando o jogo abre e mostrar o seu nome de jogador; o jogo não guarda esse nome nem o seu email. Desligar a chave para os envios; o que já foi guardado fica na sua conta do Play Games, onde você pode apagar os dados do jogo.
+Play Games: se você usa o Play Games no celular, o jogo entra com ele sozinho ao abrir e liga a conta do jogo ao seu perfil de jogador, para recuperar o progresso quando você reinstala o jogo ou troca de celular.
 
-Conta do jogo no Firebase: para contas vinculadas, o progresso é sincronizado em momentos como abertura, fim de corrida, vínculo, compras e forja. Um snapshot comprimido fica no Firestore, associado ao identificador da conta do jogo. A sincronização usa a conexão disponível, preserva a corrida deste aparelho e pede confirmação antes de importar progresso convidado para outra conta. Esta cópia é separada da chave de backup no Google Play.
+Conta do jogo no Firebase: para contas vinculadas, o progresso é sincronizado em momentos como abertura, fim de corrida, vínculo, compras, forja e mudanças no menu. Um snapshot comprimido fica no Firestore, associado ao identificador da conta do jogo. A sincronização usa a conexão disponível, preserva a corrida deste aparelho e pede confirmação antes de unir o progresso deste aparelho ao de outra conta.
 
 ## Permissão e como desligar
 
-Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, métricas e relatórios de falha só saem com a sua permissão, pedida na primeira abertura; fora dessas regiões, o envio começa ligado, pelo nosso legítimo interesse em melhorar o jogo. Ligue ou desligue cada um em Configurações > Termos e privacidade > Opções de dados. Anúncios personalizados: na área europeia, o Google pergunta antes (mude em Configurações > Privacidade dos anúncios); fora dela, não há personalização.
+Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, métricas e relatórios de falha só saem com a sua permissão, pedida na primeira abertura; fora dessas regiões, o envio começa ligado, pelo nosso legítimo interesse em melhorar o jogo. Ligue ou desligue cada um em Ajustes > Termos e privacidade > Opções de dados. Anúncios personalizados: na área europeia, o Google pergunta antes (mude em Ajustes > Privacidade dos anúncios); fora dela, não há personalização.
 
 ## Por quanto tempo guardamos
 
@@ -42,7 +42,7 @@ O jogo não é dirigido a menores de 13 anos; nas regiões europeias acima, meno
 
 ## Seus direitos
 
-No aplicativo, Configurações > Conta e Legal > Excluir conta e dados permite pedir a exclusão da conta do jogo e do progresso associado no Firebase; é necessária conexão para o pedido chegar ao servidor. Cópias do Android e do Play Games são gerenciadas separadamente na sua conta Google. O pedido de exclusão da conta do jogo não apaga automaticamente dados de métricas ou anúncios desses serviços. Desligar métricas ou desinstalar não apaga os dados já enviados. Para dúvidas e exercício de direitos, escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app). Você também pode procurar a ANPD, no Brasil, ou a autoridade de proteção de dados do seu país.
+No aplicativo, Ajustes > Conta > Excluir conta permite pedir a exclusão da conta do jogo e do progresso associado no Firebase; é necessária conexão para o pedido chegar ao servidor. A exclusão vale para a conta do jogo aberta no aparelho; para outra conta sua (por exemplo, a de outro perfil do Play Games, unida a esta), escreva ao suporte. Cópias do Android e do Play Games são gerenciadas separadamente na sua conta Google. O pedido de exclusão da conta do jogo não apaga automaticamente dados de métricas ou anúncios desses serviços. Desligar métricas ou desinstalar não apaga os dados já enviados. Para dúvidas e exercício de direitos, escreva para [support@dimensionriders.app](mailto:support@dimensionriders.app). Você também pode procurar a ANPD, no Brasil, ou a autoridade de proteção de dados do seu país.
 
 Pedidos no aplicativo exigem conexão e são processados pela rotina diária. Sem o aplicativo, envie o pedido para [support@dimensionriders.app](mailto:support@dimensionriders.app), com o assunto EXCLUSÃO DE CONTA - DIMENSION RIDERS e o código da conta, se disponível. Precisamos validar a titularidade; não envie senhas ou códigos de login. Uma sessão anônima sem o código pode não ser identificável após desinstalar.
 

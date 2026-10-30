@@ -13,20 +13,24 @@ describe('páginas de texto', () => {
   });
 
   it('Privacidade nomeia o Analytics, o Crashlytics e o AdMob, com data e contato, nos dois idiomas (#248)', () => {
-    expect(read('/en/privacy/index.html')).toContain('2026-10-24');
-    // dimension-riders#592: o progresso tem duas cópias do Google, o backup do Android e o backup no Google Play (opcional),
-    // na Política e na FAQ do Suporte; os Termos dizem que sem cópia não há como recuperar.
+    expect(read('/en/privacy/index.html')).toContain('2026-10-29');
+    // dimension-riders#1198 (antes, #592): o progresso tem o backup do Android e, com conta vinculada, a nuvem do jogo; o
+    // Backup no Google Play saiu do jogo. Na Política e na FAQ do Suporte; os Termos dizem que sem cópia não há como recuperar.
     for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) {
       const html = read(path);
       expect(html).toContain('backup do Google');
-      expect(html).toContain('Backup no Google Play');
+      expect(html).not.toContain('Backup no Google Play');
+      expect(html).toContain('Ajustes &gt; Conta &gt; Excluir conta');
     }
     expect(read('/pt/privacidade/index.html')).toContain('Cópia do progresso');
+    expect(read('/pt/suporte/index.html')).toContain('nuvem do jogo');
     for (const path of ['/en/privacy/index.html', '/en/support/index.html']) {
       const html = read(path);
       expect(html).toContain('Google backup');
-      expect(html).toContain('Google Play backup');
+      expect(html).not.toContain('Google Play backup');
+      expect(html).toContain('Settings &gt; Account &gt; Delete account');
     }
+    expect(read('/en/support/index.html')).toContain('With a linked account, progress is also kept in the game');
     expect(read('/en/privacy/index.html')).toContain('Copies of your progress');
     expect(read('/pt/termos/index.html')).toContain('nenhuma dessas cópias estiver disponível');
     expect(read('/en/terms/index.html')).toContain('none of those copies is available');
@@ -46,8 +50,8 @@ describe('páginas de texto', () => {
     }
   });
 
-  it('Suporte dá o e-mail, o que mandar e a versão nas Configurações, nos dois idiomas (#281)', () => {
-    for (const [path, settings] of [['/en/support/index.html', 'Settings'], ['/pt/suporte/index.html', 'Configurações']]) {
+  it('Suporte dá o e-mail, o que mandar e a versão nos Ajustes, nos dois idiomas (#281, #1198)', () => {
+    for (const [path, settings] of [['/en/support/index.html', 'Settings'], ['/pt/suporte/index.html', 'Ajustes']]) {
       const html = read(path);
       expect(html).toContain('mailto:support@dimensionriders.app');
       expect(html).toContain(path.startsWith('/en') ? 'ACCOUNT DELETION - DIMENSION RIDERS' : 'EXCLUSÃO DE CONTA - DIMENSION RIDERS'); // #253

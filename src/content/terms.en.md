@@ -1,4 +1,4 @@
-Last updated: 2026-10-17
+Last updated: 2026-10-29
 
 These terms apply to the game Dimension Riders, made in Brazil. By playing, you agree to them.
 
@@ -18,7 +18,7 @@ Amber, items, runes and everything you earn or unlock exist only inside the game
 
 ## Your progress
 
-Your progress is saved on your device and, if you allow it, in the Google copies described in the Privacy Policy (the Android backup and the Google Play backup). If it is lost and none of those copies is available, we have no way to recover it.
+Your progress is saved on your device and in the copies described in the Privacy Policy (the Android backup, if turned on, and the game's cloud, with a linked account). If it is lost and none of those copies is available, we have no way to recover it.
 
 ## Using the game
 
