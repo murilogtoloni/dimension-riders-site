@@ -24,6 +24,14 @@ describe('links curtos do compartilhar (#1321)', () => {
     }
   }
 
+  it('a 404 manda /<idioma>/s/<tipo desconhecido> à Início com a UTM do compartilhar (revisão #1344)', () => {
+    const html = read('/404.html');
+    expect(html).toContain('location.pathname.match(/^\\/(pt|en)\\/s(\\/|$)/)');
+    expect(html).toContain("'?utm_source=share&utm_medium=app'");
+    expect(html).toContain(`"pt":"${BASE}/pt/"`);
+    expect(html).toContain('name="robots" content="noindex"');
+  });
+
   it('a raiz também tem prévia (o link antigo do jogo)', () => {
     const html = read('/index.html');
     expect(html).toContain(`property="og:url" content="${SITE}/"`);

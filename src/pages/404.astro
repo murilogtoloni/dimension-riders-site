@@ -1,0 +1,26 @@
+---
+import { DEFAULT_LOCALE, LOCALES, localePath, t } from '../i18n';
+
+// dimension-riders#1321 (revisão #1344): o GitHub Pages serve esta página para qualquer caminho que não existe. Um link
+// do Compartilhar com tipo desconhecido (/pt/s/x, cortado em /pt/s/ ou de um APK mais novo que o site) vai à Início do
+// idioma com a UTM do compartilhar, sem campanha; o resto ganha só o link para a Início.
+const homes = Object.fromEntries(LOCALES.map((l) => [l, localePath(l, 'home')]));
+const fallback = homes[DEFAULT_LOCALE];
+const siteName = t(DEFAULT_LOCALE, 'site.name');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{siteName}</title>
+    <script is:inline define:vars={{ homes }}>
+      var m = location.pathname.match(/^\/(pt|en)\/s(\/|$)/);
+      if (m && homes[m[1]]) location.replace(homes[m[1]] + '?utm_source=share&utm_medium=app');
+    </script>
+  </head>
+  <body>
+    <p><a href={fallback}>{siteName}</a> · <a href={homes.pt}>Português</a></p>
+  </body>
+</html>
