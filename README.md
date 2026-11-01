@@ -21,6 +21,7 @@ npm run check    # build + testes (o que o deploy roda)
 | Adicionar capturas de tela | jogue PNG/JPG em `src/images/shots/` (ordem por nome de arquivo) |
 | Ligar o botão da Play Store | `PLAY_STORE_URL` em `src/config.ts` (o link sai com `referrer` de UTM; ver Métricas) |
 | Ligar as métricas | `GA_MEASUREMENT_ID` em `src/config.ts` (ver Métricas) |
+| Links do Compartilhar do jogo | `src/share.ts` (`/<idioma>/s/<tipo>`: v vitória, r recorde, q quase, d Fenda do Dia, t Sequência; a página tem prévia própria e leva à Início com `utm_source=share`); o jogo monta o link em `DailyShare.cs` (dimension-riders#1321) |
 | Nova versão do APK | `APK_URL` (endereço público) e `APP_VERSION` em `src/config.ts`; vazio oculta o APK |
 | Adicionar um idioma | `src/i18n/<xx>.json`, `src/content/*.<xx>.md`, pasta `src/pages/<xx>/` com as quatro páginas, e o código em `LOCALES`, `HTML_LANG` e `ROUTES` em `src/i18n/index.ts`, mais o locale em `astro.config.mjs` |
 | Domínio próprio | `site` e `base` em `astro.config.mjs`, e um `public/CNAME` |

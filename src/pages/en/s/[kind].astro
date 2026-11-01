@@ -1,0 +1,10 @@
+---
+import { SHARE_CODES, type ShareCode } from '../../../share';
+import ShareLanding from '../../../views/ShareLanding.astro';
+
+export function getStaticPaths() {
+  return SHARE_CODES.map((kind) => ({ params: { kind } }));
+}
+const { kind } = Astro.params;
+---
+<ShareLanding locale="en" code={kind as ShareCode} />
