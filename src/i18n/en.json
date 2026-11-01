@@ -242,5 +242,8 @@
     "accept": "Accept",
     "decline": "Decline",
     "manage": "Cookies"
+  },
+  "share": {
+    "title": "Up for the challenge?"
   }
 }

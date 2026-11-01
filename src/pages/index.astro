@@ -4,6 +4,11 @@ import { DEFAULT_LOCALE, LOCALES, localePath, t } from '../i18n';
 const targets = Object.fromEntries(LOCALES.map((l) => [l, localePath(l, 'home')]));
 const fallback = targets[DEFAULT_LOCALE];
 const siteName = t(DEFAULT_LOCALE, 'site.name');
+const description = t(DEFAULT_LOCALE, 'meta.home');
+// dimension-riders#1321: o robô da prévia (WhatsApp, Telegram) não roda o JS nem segue o refresh; a raiz traz a figura.
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const self = new URL(`${base}/`, Astro.site).toString();
+const ogImage = new URL(`${base}/og.jpg`, Astro.site).toString();
 ---
 <!doctype html>
 <html lang="en">
@@ -12,6 +17,15 @@ const siteName = t(DEFAULT_LOCALE, 'site.name');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>{siteName}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={siteName} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={self} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta http-equiv="refresh" content={`1;url=${fallback}`} />
     <script is:inline define:vars={{ targets, fallback }}>
       var langs = navigator.languages || [navigator.language || ''];
