@@ -6,6 +6,7 @@ To help us find the problem faster, tell us:
 
 - your phone model and Android version;
 - the game version, shown at the bottom of Settings (for example, v0.1.0);
+- if the problem is about the account or the progress, the account's support code (Settings > Account > Support code; one tap copies it);
 - what you were doing when it happened and, if you can, a screenshot or a short video.
 
 ## FAQ
@@ -28,6 +29,6 @@ The game is free and sells nothing. Amber is earned by playing and can't be boug
 
 ### How do I delete my data?
 
-In the game, Settings > Account > Delete account requests deletion of the account and its associated Firebase progress (if the account for the saved progress is no longer available on the device, the button lets you erase only this device's progress). A connection is required; the daily cleanup job processes the request. Without the app, email [support@dimensionriders.app](mailto:support@dimensionriders.app) with the subject ACCOUNT DELETION - DIMENSION RIDERS and the email of your linked Google Account or your Play Games gamer name. We verify ownership before deleting data; do not send passwords or login codes. An account without a linked Google Account or Play Games profile may not be identifiable after uninstalling. The Android backup, Play Games data, metrics and ads have separate controls. Linked accounts and accounts with purchases do not expire under the 60-day cleanup.
+In the game, Settings > Account > Delete account closes the account immediately and requests deletion of the associated Firebase progress, erased by the daily cleanup job by the next day (if the account for the saved progress is no longer available on the device, the button lets you erase only this device's progress). A connection is required. Without the app, there is no need to reinstall: email [support@dimensionriders.app](mailto:support@dimensionriders.app) with the subject ACCOUNT DELETION - DIMENSION RIDERS and the account's support code (Settings > Account > Support code; copy it before uninstalling) or, if the account has a linked Google Account, from that account's own email address. We confirm ownership before deleting data; do not send passwords or login codes. Without the code and without a linked Google Account, the account cannot be located after uninstalling. The Android backup, Play Games data, metrics and ads have separate controls. Linked accounts (Google Account or Play Games) and accounts with purchases do not expire under the 60-day cleanup.
 
 [Privacy Policy](https://dimensionriders.app/en/privacy/).
