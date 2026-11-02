@@ -13,7 +13,7 @@ describe('páginas de texto', () => {
   });
 
   it('Privacidade nomeia o Analytics, o Crashlytics e o AdMob, com data e contato, nos dois idiomas (#248)', () => {
-    expect(read('/en/privacy/index.html')).toContain('2026-10-30');
+    expect(read('/en/privacy/index.html')).toContain('2026-11-02');
     // dimension-riders#1198 (antes, #592): o progresso tem o backup do Android e, com conta vinculada, a nuvem do jogo; o
     // Backup no Google Play saiu do jogo. Na Política e na FAQ do Suporte; os Termos dizem que sem cópia não há como recuperar.
     for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) {
@@ -31,15 +31,17 @@ describe('páginas de texto', () => {
       expect(html).toContain('Settings &gt; Account &gt; Delete account');
     }
     expect(read('/en/support/index.html')).toContain('With a linked account, progress is also kept in the game');
-    // dimension-riders#1211 (2.3): o jogo não mostra código da conta; o suporte pede o e-mail da Conta Google ou o nome
-    // de jogador do Play Games.
+    // dimension-riders#1394 (antes #1211 2.3): o jogo mostra o código de suporte em Ajustes > Conta; o suporte pede esse
+    // código ou o e-mail da Conta Google. O nome de jogador do Play Games só aparece como o que o servidor não guarda.
     for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) {
       expect(read(path)).not.toContain('código da conta');
-      expect(read(path)).toContain('nome de jogador do Play Games');
+      expect(read(path)).toContain('Código de suporte');
+      expect(read(path)).not.toMatch(/nome de jogador do Play Games vinculados/);
     }
     for (const path of ['/en/privacy/index.html', '/en/support/index.html']) {
       expect(read(path)).not.toContain('Account ID');
-      expect(read(path)).toContain('Play Games gamer name');
+      expect(read(path)).toContain('Support code');
+      expect(read(path)).not.toMatch(/or your Play Games gamer name/);
     }
     expect(read('/en/privacy/index.html')).toContain('Copies of your progress');
     expect(read('/pt/termos/index.html')).toContain('nenhuma dessas cópias estiver disponível');

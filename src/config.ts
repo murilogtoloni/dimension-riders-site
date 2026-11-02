@@ -19,3 +19,6 @@ export const CONTACT_EMAIL = 'support@dimensionriders.app';
  * Analytics. Preenchido: conta visitas e o clique na Play, com aviso de cookies só na Europa (ver `src/metrics.ts`).
  */
 export const GA_MEASUREMENT_ID = 'G-W6494Y4XPH';
+
+/** Página de exclusão de conta e dados, no Firebase Hosting (a URL cadastrada no Play Console, #794). /excluir-conta e /delete-account aqui só redirecionam (#1394). */
+export const DELETION_PAGE_URL = 'https://dimension-riders.web.app/excluir-conta';
