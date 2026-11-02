@@ -21,3 +21,16 @@ describe('atalhos /excluir-conta e /delete-account (#1394)', () => {
     expect(read('/sitemap.xml')).not.toContain('excluir-conta');
   });
 });
+
+it('#1394: sem app/código há identificação PGS, confirmação e escopo distinto da conta Google', () => {
+  for (const [path, phrases, forbidden] of [
+    ['/pt/privacidade/index.html', ['autorize a identificação pelo Play Games', 'confirme o pedido', 'não comprova titularidade', 'não será excluída automaticamente', 'registro identificável do pedido é removido'], 'essas contas não podem ser localizadas'],
+    ['/en/privacy/index.html', ['authorize identification through Play Games', 'confirm the deletion request', 'does not prove ownership', 'will not be deleted automatically', 'identifiable request record is removed'], 'those accounts cannot be located'],
+    ['/pt/suporte/index.html', ['autorize a identificação pelo Play Games', 'confirme o pedido', 'não comprova titularidade'], 'Sem o código e sem Conta Google'],
+    ['/en/support/index.html', ['authorize identification through Play Games', 'confirm the deletion request', 'does not prove ownership'], 'Without the code and without']
+  ] as const) {
+    const html = read(path);
+    for (const phrase of phrases) expect(html).toContain(phrase);
+    expect(html).not.toContain(forbidden);
+  }
+});

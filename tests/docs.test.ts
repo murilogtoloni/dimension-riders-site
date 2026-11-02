@@ -35,12 +35,12 @@ describe('páginas de texto', () => {
     // código ou o e-mail da Conta Google. O nome de jogador do Play Games só aparece como o que o servidor não guarda.
     for (const path of ['/pt/privacidade/index.html', '/pt/suporte/index.html']) {
       expect(read(path)).not.toContain('código da conta');
-      expect(read(path)).toContain('Código de suporte');
+      expect(read(path).toLowerCase()).toContain('código de suporte');
       expect(read(path)).not.toMatch(/nome de jogador do Play Games vinculados/);
     }
     for (const path of ['/en/privacy/index.html', '/en/support/index.html']) {
       expect(read(path)).not.toContain('Account ID');
-      expect(read(path)).toContain('Support code');
+      expect(read(path).toLowerCase()).toContain('support code');
       expect(read(path)).not.toMatch(/or your Play Games gamer name/);
     }
     expect(read('/en/privacy/index.html')).toContain('Copies of your progress');
@@ -66,7 +66,7 @@ describe('páginas de texto', () => {
     for (const [path, settings] of [['/en/support/index.html', 'Settings'], ['/pt/suporte/index.html', 'Ajustes']]) {
       const html = read(path);
       expect(html).toContain('mailto:support@dimensionriders.app');
-      expect(html).toContain(path.startsWith('/en') ? 'ACCOUNT DELETION - DIMENSION RIDERS' : 'EXCLUSÃO DE CONTA - DIMENSION RIDERS'); // #253
+      expect(html).toContain(path.startsWith('/en') ? 'confirm the deletion request' : 'confirme o pedido de exclusão'); // #1394: página autenticada, sem depender de assunto de e-mail
       expect(html).toContain(settings);
       expect(html).toContain('<h3');
     }
