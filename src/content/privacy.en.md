@@ -32,6 +32,8 @@ In the European Union, the European Economic Area, Switzerland and the United Ki
 
 Some records are subject to cleanup after 60 days (including the developer's internal metrics mirror, where pseudonymous identifiers are removed within 60 days and only daily totals remain). Linked accounts and accounts with purchases are protected from this cleanup; linked account progress remains until account deletion. This does not mean all metrics, advertising data or backups have the same retention period. Google, our technology partner, has its own retention periods and may keep data longer to provide its services, prevent fraud or meet legal obligations. Learn more: [policies.google.com/technologies/retention](https://policies.google.com/technologies/retention).
 
+Point-in-time database versions are kept for up to 7 days, and daily backups for up to 14 days. Already-deleted data may remain in these copies until they expire. These copies are used to recover from failures; we do not use restoration to reactivate accounts deleted at the account holder’s request or by the retention routine.
+
 ## Security
 
 Data is transmitted over encrypted connections (HTTPS) to Google (Firebase, Play Integrity, AdMob, Android backup and Google Play Games), on servers that may be outside Brazil. Processing follows each service's terms; advertising may involve Google's partners. We don't sell data.

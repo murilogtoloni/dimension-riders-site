@@ -32,6 +32,8 @@ Na União Europeia, no Espaço Econômico Europeu, na Suíça e no Reino Unido, 
 
 Há rotinas de limpeza de registros com prazo de 60 dias (incluindo o espelho interno de métricas do desenvolvedor, onde identificadores pseudônimos saem em até 60 dias e restam só totais diários). Contas vinculadas e contas com compras são protegidas dessa limpeza; o progresso da conta vinculada permanece até a exclusão da conta. Isso não significa que todos os dados de métricas, anúncios ou backups tenham o mesmo prazo. O Google, nosso parceiro de tecnologia, tem prazos próprios e pode guardar dados por mais tempo para prestar seus serviços, proteger contra fraudes ou cumprir obrigações legais. Saiba mais: [policies.google.com/technologies/retention](https://policies.google.com/technologies/retention).
 
+As versões de recuperação pontual do banco são mantidas por até 7 dias, e os backups diários, por até 14 dias. Dados já apagados podem permanecer nessas cópias até sua expiração. As cópias são usadas para recuperação de falhas; não usamos a restauração para reativar contas excluídas a pedido do titular ou pela rotina de retenção.
+
 ## Segurança
 
 Os dados são transmitidos por conexão criptografada (HTTPS) ao Google (Firebase, Play Integrity, AdMob, backup do Android e Google Play Games), em servidores que podem ficar fora do Brasil. O tratamento segue as condições de cada serviço; anúncios podem envolver parceiros do Google. Não vendemos dados.
