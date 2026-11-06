@@ -1,0 +1,24 @@
+---
+import { DELETION_PAGE_URL } from '../config';
+import { HTML_LANG, t } from '../i18n';
+
+// #1394: atalho dimensionriders.app/excluir-conta para a página de exclusão no Firebase Hosting (a URL cadastrada no Play Console).
+const target = DELETION_PAGE_URL;
+const title = `Exclusão de conta e dados · ${t('pt', 'site.name')}`;
+---
+<!doctype html>
+<html lang={HTML_LANG.pt}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{title}</title>
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <script is:inline define:vars={{ target }}>
+      location.replace(target);
+    </script>
+  </head>
+  <body>
+    <a href={target}>{title}</a>
+  </body>
+</html>
