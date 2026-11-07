@@ -1,36 +1,34 @@
-Last updated: 2026-10-29
+Last updated: 2026-11-07
 
-These terms apply to the game Dimension Riders, made in Brazil. By playing, you agree to them.
+These terms apply to the game Dimension Riders, made in Brazil by the developer (MTechnologies). By playing, you agree to them.
 
 ## Age
 
-The game is for people aged 13 or older.
+The game is for people aged 13 or older. Anyone under 18 should ask a parent or guardian for permission.
 
 ## The game and ads
 
-The game is free. It is supported by video ads that play only when you choose to watch one in exchange for a reward (for example, to double the Amber at the end of a run or to revive after a defeat). The reward comes when the video ends. Without an internet connection or an available ad, there is no reward, and the rest of the game works the same.
+The game is free. Video ads (Google AdMob) play only when you choose to watch one for a reward at the end. Without internet or an available ad, there is no reward, and the rest of the game works the same. We don't pick each ad and aren't responsible for what advertisers offer.
 
-Ads come from Google AdMob. We don't pick each ad and aren't responsible for what advertisers offer. What AdMob collects is in the [Privacy policy](/en/privacy/).
+## Amber and in-game items
 
-## Amber and what you earn in the game
-
-Amber, items, runes and everything you earn or unlock exist only inside the game. They have no monetary value: they can't be bought, sold or traded, and they can't be turned into money or prizes. Updates may change how much they yield or cost in the game.
+Amber, items, runes, heroes and everything you earn exist only inside the game. They have no monetary value: they cannot be sold, traded or converted into money or prizes. Updates may change how much they yield or cost.
 
 ## Your progress
 
-Your progress is saved on your device and in the copies described in the Privacy Policy (the Android backup, if turned on, and the game's cloud, with a linked account). If it is lost and none of those copies is available, we have no way to recover it.
+Progress is saved on your device and in the copies described in the [Privacy Policy](/en/privacy/) (Google backup on Android, if on, and the game's cloud, with a linked account). If it is lost and none of those copies is available, we cannot recover it.
 
 ## Using the game
 
-You may play as much as you like on your device. You may not sell or redistribute the game, or modified copies of it. Do not use cheats, modified versions or programs that alter the game, and do not reverse engineer it. The game, its art, story and sounds belong to the developer or to those who licensed them to the developer.
+You receive a personal, free, non-exclusive and revocable license to play on your device. Do not sell, redistribute or modify the game, use cheats or programs that alter it, or reverse engineer it. We may suspend or terminate accounts that cheat or commit reward fraud. The game, art, story and sounds belong to the developer (MTechnologies) or its licensors.
 
 ## Warranty and liability
 
-The game is provided as is. We fix problems as soon as we can, but we don't guarantee that it works on every device or without interruption. The game may change or stop being offered at any time. To the extent the law allows, we are not liable for indirect losses, such as lost progress or time without playing. Nothing here takes away the rights that consumer law gives you.
+The game is provided as is, without warranty of working on every device or without interruption, and may change or end at any time. To the extent the law allows, we are not liable for indirect losses such as lost progress or downtime. Nothing here limits your rights under consumer protection law.
 
 ## Changes and law
 
-If these terms change, we publish the new version on the website and in the game, with an updated date. These terms are governed by Brazilian law. If you download the game from Google Play, the Google Play terms also apply.
+Changes are published on the website and in the game with an updated date. These terms are governed by Brazilian law, without limiting consumer rights under your country's law, alongside Google Play terms.
 
 ## Contact
 

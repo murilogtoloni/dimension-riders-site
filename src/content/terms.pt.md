@@ -1,36 +1,34 @@
-Última atualização: 2026-10-29
+Última atualização: 2026-11-07
 
-Estes termos valem para o jogo Dimension Riders, feito no Brasil. Ao jogar, você concorda com eles.
+Estes termos valem para o jogo Dimension Riders, feito no Brasil pelo desenvolvedor (MTechnologies). Ao jogar, você concorda com eles.
 
 ## Idade
 
-O jogo é para pessoas com 13 anos ou mais.
+O jogo é para pessoas com 13 anos ou mais. Menores de 18 devem pedir permissão a um responsável.
 
 ## O jogo e os anúncios
 
-O jogo é grátis. Ele se mantém com anúncios em vídeo que aparecem só quando você escolhe assistir, em troca de uma recompensa (por exemplo, dobrar o Âmbar no fim de uma corrida ou reviver depois de uma derrota). A recompensa vem quando o vídeo termina. Sem internet ou sem anúncio disponível, não há recompensa, e o resto do jogo funciona igual.
+O jogo é grátis. Anúncios em vídeo (Google AdMob) só passam quando você escolhe assistir por uma recompensa ao final. Sem internet ou anúncio, não há recompensa, e o resto do jogo funciona igual. Não escolhemos cada anúncio nem respondemos pelo que anunciantes oferecem.
 
-Os anúncios vêm do Google AdMob. Não escolhemos cada anúncio e não respondemos pelo que os anunciantes oferecem. O que o AdMob coleta está na [Política de privacidade](/pt/privacidade/).
+## Âmbar e itens do jogo
 
-## Âmbar e o que você ganha no jogo
-
-O Âmbar, os itens, as runas e tudo o que você ganha ou destrava existem só dentro do jogo. Eles não têm valor em dinheiro: não se compram, não se vendem, não se trocam e não viram dinheiro nem prêmio. Atualizações podem mudar quanto eles rendem ou custam no jogo.
+Âmbar, itens, runas, heróis e tudo o que você ganha existem só no jogo. Eles não têm valor em dinheiro: não podem ser vendidos, trocados nem convertidos em dinheiro ou prêmios. Atualizações podem mudar quanto rendem ou custam.
 
 ## Seu progresso
 
-O progresso fica salvo no seu aparelho e nas cópias descritas na Política de Privacidade (o backup do Android, se ligado, e a nuvem do jogo, com conta vinculada). Se ele se perder e nenhuma dessas cópias estiver disponível, não temos como recuperá-lo.
+O progresso fica salvo no aparelho e nas cópias descritas na [Política de Privacidade](/pt/privacidade/) (backup do Google no Android, se ligado, e nuvem do jogo, com conta vinculada). Se ele se perder e nenhuma dessas cópias estiver disponível, não há como recuperá-lo.
 
 ## Uso do jogo
 
-Você pode jogar à vontade no seu aparelho. Não pode vender nem redistribuir o jogo, nem cópias modificadas dele. Não use trapaças, versões modificadas ou programas que alterem o jogo, e não faça engenharia reversa dele. O jogo, a arte, a história e os sons pertencem ao desenvolvedor ou a quem os licenciou para ele.
+Você recebe licença pessoal, gratuita, não exclusiva e revogável para jogar no seu aparelho. Não venda, redistribua nem modifique o jogo, não use trapaças ou programas que o alterem e não faça engenharia reversa. Podemos suspender ou encerrar contas que trapaceiam ou fraudam recompensas. O jogo, a arte, a história e os sons pertencem ao desenvolvedor (MTechnologies) ou a quem os licenciou para ele.
 
 ## Garantia e responsabilidade
 
-O jogo é oferecido como está. Corrigimos falhas assim que possível, mas não garantimos que ele funcione em todo aparelho nem sem interrupção. O jogo pode mudar ou deixar de ser oferecido a qualquer momento. Na medida em que a lei permite, não respondemos por perdas indiretas, como progresso perdido ou tempo sem jogar. Nada aqui tira os direitos que a lei do consumidor garante a você.
+O jogo é oferecido como está, sem garantia de funcionar em todo aparelho ou sem interrupção, podendo mudar ou encerrar a qualquer momento. Na medida permitida por lei, não respondemos por perdas indiretas, como progresso perdido ou tempo sem jogar. Nada aqui tira os direitos que a lei do consumidor garante a você.
 
 ## Mudanças e lei
 
-Se estes termos mudarem, publicamos a nova versão no site e no jogo, com a data atualizada. Estes termos seguem a lei brasileira. Quem baixa pelo Google Play também segue os termos do Google Play.
+Mudanças entram no site e no jogo com a data atualizada. Valem a lei brasileira e, para quem baixa pelo Google Play, os termos dele; isso não tira os direitos que a lei do seu país garante ao consumidor.
 
 ## Contato
 
