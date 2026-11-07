@@ -12,7 +12,7 @@ Firebase Crashlytics (crashes): error, code location, version, device and instal
 
 Google AdMob (optional rewarded videos): processes advertising ID, device identifiers, IP and ad interactions to show and measure ads and prevent fraud (starts when the game opens); when you double a daily reward, it receives the account identifier to confirm the reward ([policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites)). You can delete or reset your advertising ID in your Android settings.
 
-## Random identifier
+## Account and rewards
 
 To validate daily rewards without paying twice, the game creates in Firebase a random identifier with no name or email, holding receipts and a day counter. When linking an account, Google and Firebase may process sign-in data (such as name and email, with no Gmail access). The game also checks that the app is genuine (Google Play Integrity / Firebase App Check). We use account data to provide the game you requested (saving, recovering and validating rewards) and, for metrics, crash reports and security, our legitimate interest, except where the law requires permission.
 

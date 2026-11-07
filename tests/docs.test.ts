@@ -52,8 +52,8 @@ describe('páginas de texto', () => {
     }
     expect(read('/pt/privacidade/index.html')).toContain('Segurança');
     // #253: objetivo de 60 dias, limites da limpeza e prazos próprios do Google.
-    for (const s of ['Você pode jogar sem uma conta vinculada', 'Identificador aleatório', 'prazo de 60 dias', 'Contas vinculadas e contas com compras são protegidas', 'tem prazos próprios']) expect(read('/pt/privacidade/index.html')).toContain(s);
-    for (const s of ['You can play without a linked account', 'Random identifier', 'cleanup after 60 days', 'Linked accounts and accounts with purchases are protected', 'has its own retention periods']) expect(read('/en/privacy/index.html')).toContain(s);
+    for (const s of ['Você pode jogar sem uma conta vinculada', 'Conta e recompensas', 'prazo de 60 dias', 'Contas vinculadas e contas com compras são protegidas', 'tem prazos próprios']) expect(read('/pt/privacidade/index.html')).toContain(s);
+    for (const s of ['You can play without a linked account', 'Account and rewards', 'cleanup after 60 days', 'Linked accounts and accounts with purchases are protected', 'has its own retention periods']) expect(read('/en/privacy/index.html')).toContain(s);
   });
 
   it('nenhuma página identifica o desenvolvedor como pessoa (#281)', () => {

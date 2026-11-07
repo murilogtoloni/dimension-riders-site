@@ -12,7 +12,7 @@ Firebase Crashlytics (falhas): erro, trecho do código, versão, aparelho e iden
 
 Google AdMob (vídeos recompensados opcionais): trata ID de publicidade, identificadores do aparelho, IP e interações para exibir e medir anúncios e evitar fraude (inicia ao abrir o jogo); ao dobrar a recompensa diária, recebe o identificador da conta para confirmar o prêmio ([policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites)). Você pode apagar ou redefinir o ID de publicidade nas configurações do Android.
 
-## Identificador aleatório
+## Conta e recompensas
 
 Para validar recompensas diárias sem pagá-las duas vezes, o jogo cria no Firebase um identificador aleatório, sem nome nem e-mail, com recibos e contador de dias. Ao vincular conta, Google e Firebase podem tratar os dados de login (como nome e e-mail, sem acesso ao Gmail). O jogo também confere se o aplicativo é original (Google Play Integrity / Firebase App Check). Usamos os dados da conta para prestar o jogo que você pediu (salvar, recuperar e validar recompensas) e, para métricas, falhas e segurança, nosso legítimo interesse, salvo onde a lei pede sua permissão.
 
@@ -22,7 +22,7 @@ Com o backup do Google ligado no Android, seu progresso (Âmbar, itens, talentos
 
 ## Permissão e como desligar
 
-Na União Europeia, EEE, Suíça e Reino Unido, métricas e falhas só saem com sua permissão na primeira abertura; fora dali, começam ligadas, pelo nosso legítimo interesse. Ligue ou desligue cada um em Ajustes > Termos e privacidade > Opções de dados. Anúncios personalizados: na região europeia, o Google pergunta antes (Ajustes > Privacidade dos anúncios); fora dela, não há personalização.
+Na União Europeia, EEE, Suíça e Reino Unido, métricas e falhas só saem com sua permissão na primeira abertura; fora dali, começam ligadas, pelo nosso legítimo interesse. Ligue ou desligue cada envio em Ajustes > Termos e privacidade > Opções de dados. Anúncios personalizados: na região europeia, o Google pergunta antes (Ajustes > Privacidade dos anúncios); fora dela, não há personalização.
 
 ## Por quanto tempo guardamos
 

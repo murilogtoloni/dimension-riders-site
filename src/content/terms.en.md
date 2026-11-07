@@ -28,7 +28,7 @@ The game is provided as is, without warranty of working on every device or witho
 
 ## Changes and law
 
-Changes are published on the website and in the game with an updated date. These terms are governed by Brazilian law, without limiting consumer rights under your country's law, alongside Google Play terms.
+Changes are published on the website and in the game with an updated date. These terms are governed by Brazilian law and, if you download from Google Play, its terms; this does not limit consumer rights under your country's law.
 
 ## Contact
 
