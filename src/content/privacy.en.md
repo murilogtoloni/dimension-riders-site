@@ -1,63 +1,55 @@
-Last updated: 2026-11-02
+Last updated: 2026-11-07
 
-Dimension Riders is an Android game made in Brazil. The game's developer (MTechnologies) is responsible for the data described here. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
+Dimension Riders is an Android game made in Brazil. The developer (MTechnologies) is the data controller. Contact: [support@dimensionriders.app](mailto:support@dimensionriders.app).
 
-You can play without a linked account. Progress stays on your device. On Android, Play Games may recognize your gamer profile; in Settings you can also link a Google Account to recover your progress. These sign-in methods can access the same game account. See the available copies under "Copies of your progress".
+You can play without a linked account, saving progress on your device. Play Games may recognize your profile, and in Settings you can link a Google Account (both can access the same account).
 
 ## What leaves your device
 
-Google Analytics for Firebase (metrics): how the game is played (runs, sessions, performance and cloud reliability), the install campaign (Play Install Referrer), the version, the device, the language, the approximate country from the IP address, an installation identifier and a pseudonymous code (irreversible hash) of the game account, without the advertising ID; used to tune the difficulty, check stability and measure promotion.
+Google Analytics for Firebase (metrics): runs, sessions, performance, cloud stability, the campaign that led to the install, version, device, language, country from IP, installation identifier and a code derived from the game account that does not reveal who you are (without the advertising ID), to tune difficulty, stability and promotion.
 
-Firebase Crashlytics (crash reports): when the game crashes, the error, the code location, the version, the device, technical sync indicators and installation and session identifiers; used to fix errors.
+Firebase Crashlytics (crashes): error, code location, version, device and installation and session identifiers when the game crashes, to fix bugs.
 
-Google AdMob (optional rewarded videos): to show and measure ads and prevent fraud, it may process the advertising ID, other device identifiers, your IP address and your interactions with ads; the ad kit starts when the game opens. When doubling the daily reward, it receives the game account identifier to confirm the reward on the server. More: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
+Google AdMob (optional rewarded videos): processes advertising ID, device identifiers, IP and ad interactions to show and measure ads and prevent fraud (starts when the game opens); when you double a daily reward, it receives the account identifier to confirm the reward ([policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites)). You can delete or reset your advertising ID in your Android settings.
 
 ## Random identifier
 
-To record daily rewards and never pay the same one twice, the game creates on its own, in Firebase, a random identifier with no name or email, holding the receipts and a day counter. Linking an account makes this identifier usable for progress recovery. Google and Firebase may process identity data authorized during sign-in, such as your name and email; the game does not request access to Gmail messages. The app also verifies its integrity on Android through Google Play Integrity (Firebase App Check).
+To validate daily rewards without paying twice, the game creates in Firebase a random identifier with no name or email, holding receipts and a day counter. When linking an account, Google and Firebase may process sign-in data (such as name and email, with no Gmail access). The game also checks that the app is genuine (Google Play Integrity / Firebase App Check). We use account data to provide the game you requested (saving, recovering and validating rewards) and, for metrics, crash reports and security, our legitimate interest, except where the law requires permission.
 
 ## Copies of your progress
 
-Android backup: with Google backup turned on in your phone (in the Android settings), the game's progress file goes with it to your Google account and comes back when you reinstall the game or change phones. Only the progress goes (Amber, items, talents, records); the run in progress, the settings and the privacy choices stay on the device. Turning the Android backup off prevents the copy.
-
-Play Games: if you use Play Games on your phone, the game signs in with it on its own when it opens and links the game account to your gamer profile, to recover your progress when you reinstall the game or change phones.
-
-Firebase game account: for linked accounts, progress is synchronized at moments such as opening the game, run end, account linking, purchases, forging and menu changes. A compressed snapshot is stored in Firestore under the game account identifier. Synchronization uses an available connection, preserves this device's run and asks for confirmation before merging this device's progress into another account.
+With Google backup on in Android, your progress (Amber, items, talents and records, excluding active runs and privacy choices) goes to your Google account. With Play Games or a linked Google Account, progress is also kept in the game's cloud (Firebase), preserving the local run and asking before replacing data.
 
 ## Permission, and how to turn it off
 
-In the European Union, the European Economic Area, Switzerland and the United Kingdom, metrics and crash reports only leave with your permission, asked the first time you open the game; outside those regions, sending starts on, based on our legitimate interest in improving the game. Turn each one on or off in Settings > Terms and privacy > Data options. Personalised ads: in the European region, Google asks first (change it in Settings > Ad privacy); elsewhere, there is no personalisation.
+In the EU, EEA, Switzerland and the UK, metrics and crash reports only leave with your permission on first open; elsewhere, they are on by default, based on our legitimate interest. Turn each one on or off in Settings > Terms and privacy > Data options. Personalised ads: in the European region, Google asks first (Settings > Ad privacy); elsewhere, there is no personalisation.
 
 ## How long we keep data
 
-Some records are subject to cleanup after 60 days (including the developer's internal metrics mirror, where pseudonymous identifiers are removed within 60 days and only daily totals remain). Linked accounts and accounts with purchases are protected from this cleanup; linked account progress remains until account deletion. This does not mean all metrics, advertising data or backups have the same retention period. Google, our technology partner, has its own retention periods and may keep data longer to provide its services, prevent fraud or meet legal obligations. Learn more: [policies.google.com/technologies/retention](https://policies.google.com/technologies/retention).
-
-Point-in-time database versions are kept for up to 7 days, and daily backups for up to 14 days. Already-deleted data may remain in these copies until they expire. These copies are used to recover from failures; we do not use restoration to reactivate accounts deleted at the account holder’s request or by the retention routine.
+Some records undergo cleanup after 60 days (unused guest accounts are deleted after 60 days without use, and metrics identifiers within 60 days). Linked accounts and accounts with purchases are protected, as are accounts with daily authorization, including guest accounts, which retain that authorization and claim records until deletion. This does not mean all metrics, advertising data or backups have the same retention period. Server backups keep data for up to 14 days, including already-deleted data, until they expire. They are used to recover from failures; we do not use restoration to reactivate accounts deleted at the account holder’s request or by the retention routine. Google has its own retention periods ([policies.google.com/technologies/retention](https://policies.google.com/technologies/retention)).
 
 ## Security
 
-Data is transmitted over encrypted connections (HTTPS) to Google (Firebase, Play Integrity, AdMob, Android backup and Google Play Games), on servers that may be outside Brazil. Processing follows each service's terms; advertising may involve Google's partners. We don't sell data.
+Data goes over HTTPS to Google (Firebase, Play Integrity, AdMob, Android backup and Play Games), on servers that may be outside Brazil and Europe, under Google's standard data protection clauses. Ads may involve Google partners. We don't sell data.
 
 ## Children and teenagers
 
-The game is not directed at children under 13; in the European regions above, anyone under 16 should ask a parent or guardian before allowing sending.
+The game is not for children under 13 (in the European region, anyone under 16 should ask a parent or guardian). If we learn we collected data from a child under 13, we delete it.
 
 ## Your rights
 
-In the app, Settings > Account > Delete account lets you request deletion of your game account and its associated Firebase progress; a connection is needed for the request to reach the server. Deletion applies to the game account open on the device (when an account created only through Play Games and without purchases is merged into a Google Account, the old account is automatically retired; for another account of yours, contact support; if the account for the saved progress is no longer available on this device, the same button lets you erase only this device's progress). The Android backup and Play Games data are managed separately in your Google account. Deleting the game account does not automatically delete metrics or advertising data held by those services. Turning metrics off or uninstalling does not erase data already sent. For questions and requests about your rights, contact [support@dimensionriders.app](mailto:support@dimensionriders.app). You can also contact Brazil's ANPD or your country's data protection authority.
+In the app, Settings > Account > Delete account (connection required): the account is closed immediately and cloud data is erased by the next day; only technical records with no personal data (a closure marker and transaction receipts without the account identifier) are kept, to prevent fraud and repeated bonuses. If the account is unavailable, the button erases only this device's progress.
 
-In the app, the game account is closed immediately and the cloud progress and rewards are erased by the daily cleanup job, by the next day; only a de-identified technical marker and transaction receipts with the account identifier removed are kept, to prevent duplicate bonuses and fraud. Without the app, visit https://dimension-riders.web.app/excluir-conta. If you use Play Games, sign in with the Google Account used for that profile and authorize identification through Play Games. You do not need to reinstall the game or have saved your support code. After your account is identified, confirm the deletion request on the page; support carries out the deletion after checking the request. The request applies only to the account identified through Play Games. If you have another game account linked separately to your Google Account, it may be a different account and will not be deleted automatically along with it. To request deletion of that other account, email support@dimensionriders.app from its linked email address; we must confirm control of the account before acting. The support code helps locate an account, but does not prove ownership and, on its own, does not authorize deletion or disclosure of data. Never send your password or sign-in codes to support. If you cannot complete identification, contact support for review; we do not promise to locate an account using only a public player name.
+Without the app, at https://dimension-riders.web.app/excluir-conta, sign in with your Play Games Google Account, authorize identification through Play Games and confirm the deletion request on the page (no need to reinstall or have your Support code; Google's authorization is used only to check the account and is not stored, and the identifiable request record is removed when handling is complete).
 
-To verify and handle a request through the page, we use the authorization provided by Google and the Play Games identifier to locate the Firebase game account. We do not store your password or Google access tokens. Access tokens are used only during verification and are not stored. We record the account identifier, date and purpose of the request for support to handle it; the identifiable request record is removed when handling is complete.
+This request applies only to the Play Games account; another account linked only to your Google Account will not be deleted automatically (email [support@dimensionriders.app](mailto:support@dimensionriders.app) from that Google Account). The Support code (Settings > Account) helps locate an account, but does not prove ownership, and the server does not store your gamer name.
+
+Deleting the account does not immediately erase metrics and crash reports already sent (which have no name or email); they expire under Google's retention periods. Turning metrics off or uninstalling the game does not erase data already sent either. Android backup and Play Games are managed in your Google Account, and ads in your Android ad settings. You can request access, correction, a copy, portability, sharing details, deletion or objection to data use, and withdraw permission at any time, at [support@dimensionriders.app](mailto:support@dimensionriders.app), or contact Brazil's ANPD or your local authority.
 
 ## This website
 
-The dimensionriders.app website is hosted on GitHub Pages; GitHub records visitors' IP address and browser in its security logs.
-
-To learn how people find the game, the website uses Google Analytics: the page visited, the site or campaign you came from, the language, the device type, the approximate country and whether you tapped the Google Play button. To count visitors, it stores the _ga cookies, which recognize the same browser for up to 60 days after the last visit, without linking the visit to the game. This data is not used for ads. More: [policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites).
-
-In the European Union, the European Economic Area, Switzerland and the United Kingdom, the cookies are stored only if you accept them in the website's notice; without that, Google receives only a record of the visit, with no cookie. Your choice is kept in the browser, and the Cookies button in the footer reopens the notice. Outside these regions, counting with cookies starts on, based on our legitimate interest in understanding how the game is promoted; to opt out, delete or block the website's cookies in your browser or use a content blocker.
+The dimensionriders.app website is hosted on GitHub Pages (which logs visitor IP and browser for security) and uses Google Analytics (_ga cookies for up to 60 days, unlinked to the game and not used for ads) to measure visits and clicks on the Google Play button ([policies.google.com/technologies/partner-sites](https://policies.google.com/technologies/partner-sites)). In the EU, EEA, Switzerland and the UK, cookies are stored only if you accept them in the site's notice (Cookies button in the footer); without that, Google receives only a record of the visit, with no cookie. Outside that region, counting starts on (legitimate interest); to opt out, block or delete cookies in your browser.
 
 ## Changes to this policy
 
-When this policy changes, the new version goes into the game and onto the dimensionriders.app website, where the date at the top of the page shows the latest update.
+Changes go into the game and onto dimensionriders.app with the updated date.
