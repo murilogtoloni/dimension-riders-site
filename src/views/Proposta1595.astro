@@ -3,6 +3,7 @@ import { Image, getImage } from 'astro:assets';
 import { CONTACT_EMAIL } from '../config';
 import { loadDoc } from '../content/load';
 import { HTML_LANG, t, type Locale } from '../i18n';
+import russoFontUrl from '../fonts/RussoOne-Regular.woff2?url';
 import '../styles/propostas-1595.css';
 
 import heroImg from '../images/hero.webp';
@@ -97,7 +98,7 @@ const wrapClass = variant === 'a' ? 'a-wrap' : variant === 'b' ? 'b-wrap' : 'c-w
     <meta name="robots" content="noindex" />
     <title>{`Dimension Riders — ${variantLabels[variant]}`}</title>
     <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
-    <link rel="preload" href={`${base}/fonts/RussoOne-Regular.woff2`} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={russoFontUrl} as="font" type="font/woff2" crossorigin />
   </head>
   <body class={`p1595 p1595-${variant}`}>
     <!-- Barra de protótipo #1595 -->
