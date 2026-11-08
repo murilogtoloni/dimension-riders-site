@@ -1,0 +1,1349 @@
+/* ==========================================================================
+   #1595 — Propostas de UI/UX para tirar a cara de IA (Direções A, B e C)
+   ========================================================================== */
+
+@font-face {
+  font-family: Russo;
+  src: url('../fonts/RussoOne-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rajdhani;
+  src: url('../fonts/Rajdhani-SemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Barra superior de navegação entre as propostas (apenas para revisão do Murilo) */
+.proto-switcher {
+  background: #18181b;
+  color: #e4e4e7;
+  border-bottom: 1px solid #27272a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 8px 16px;
+}
+
+.proto-switcher-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.proto-switcher-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.proto-switcher a {
+  color: #a1a1aa;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+
+.proto-switcher a:hover {
+  color: #ffffff;
+  background: #27272a;
+}
+
+.proto-switcher a[aria-current="true"] {
+  color: #18181b;
+  background: #f4f4f5;
+  font-weight: 600;
+}
+
+/* Base compartilhada das propostas */
+.p1595 {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.p1595 *,
+.p1595 *::before,
+.p1595 *::after {
+  box-sizing: border-box;
+}
+
+.p1595 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.p1595 a {
+  color: inherit;
+}
+
+/* ==========================================================================
+   TEMAS DAS 3 DIREÇÕES
+   ========================================================================== */
+
+/* Direção A: Noir Tático / Gameplay em Primeiro Plano (Hades / Linear Dark) */
+.p1595.dir-a {
+  color-scheme: dark;
+  --bg: #0b0c0e;
+  --bg-alt: #101216;
+  --surface: #14171c;
+  --surface-2: #1b1f26;
+  --text: #f3f4f6;
+  --secondary: #9ca3af;
+  --muted: #6b7280;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --accent: #f59e0b;
+  --accent-hi: #fbbf24;
+  --accent-ink: #111317;
+  --tag-bg: rgba(245, 158, 11, 0.12);
+  --tag-border: rgba(245, 158, 11, 0.28);
+  --tag-text: #fbbf24;
+}
+
+/* Direção B: Editorial Papel Dobrado / Manual da Ordem (#1594 / Playdate) */
+.p1595.dir-b {
+  color-scheme: light;
+  --bg: #f3efe6;
+  --bg-alt: #eae4d7;
+  --surface: #ffffff;
+  --surface-2: #f8f6f0;
+  --text: #18181b;
+  --secondary: #3f3f46;
+  --muted: #71717a;
+  --border: #dcd6c8;
+  --border-strong: #b8b09f;
+  --accent: #b45309;
+  --accent-hi: #92400e;
+  --accent-ink: #ffffff;
+  --tag-bg: #efe9dc;
+  --tag-border: #d5cdbc;
+  --tag-text: #78350f;
+}
+
+/* Direção C: Atlas Imersivo / Tela Cheia & Barra Mobile (Monument Valley / Supergiant) */
+.p1595.dir-c {
+  color-scheme: dark;
+  --bg: #070a10;
+  --bg-alt: #0c111b;
+  --surface: #111827;
+  --surface-2: #1e293b;
+  --text: #f8fafc;
+  --secondary: #cbd5e1;
+  --muted: #64748b;
+  --border: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.28);
+  --accent: #38bdf8;
+  --accent-hi: #f59e0b;
+  --accent-ink: #070a10;
+  --tag-bg: rgba(56, 189, 248, 0.1);
+  --tag-border: rgba(56, 189, 248, 0.25);
+  --tag-text: #7dd3fc;
+}
+
+.p-wrap {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   CABEÇALHO COMPACTO (1 LINHA, ALVOS >= 44px)
+   ========================================================================== */
+.p-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.p-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 12px;
+}
+
+.p-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: Russo, system-ui, sans-serif;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+.p-brand img {
+  width: 28px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.p-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.p-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--secondary);
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.p-nav a:hover,
+.p-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+.p-nav a[aria-current="page"] {
+  font-weight: 600;
+}
+
+.p-nav .p-nav-cta {
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+  padding: 0 14px;
+  margin-left: 4px;
+  min-height: 38px;
+}
+
+.dir-a .p-nav .p-nav-cta {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.p-nav .p-lang {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  margin-left: 4px;
+  padding-left: 12px;
+  min-width: 44px;
+}
+
+/* ==========================================================================
+   META TAGS / KICKERS TÉCNICOS (Sem ciano neon gritante)
+   ========================================================================== */
+.p-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tag-text);
+  margin: 0 0 12px;
+}
+
+.dir-b .p-kicker {
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   BOTÕES LIMPOS (Zero bisel 3D de cassino)
+   ========================================================================== */
+.p-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.p-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.p-btn:hover {
+  opacity: 0.94;
+}
+
+.p-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.p-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.p-btn-ghost:hover {
+  background: var(--surface-2);
+}
+
+/* ==========================================================================
+   HERO — DIREÇÃO A (Noir Tático)
+   ========================================================================== */
+.dir-a .p-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+}
+
+.dir-a .p-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 82% center;
+}
+
+.dir-a .p-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #0b0c0e 0%, rgba(11, 12, 14, 0.88) 42%, rgba(11, 12, 14, 0.18) 76%, rgba(11, 12, 14, 0.5) 100%),
+              linear-gradient(180deg, rgba(11, 12, 14, 0.3) 0%, transparent 40%, #0b0c0e 100%);
+}
+
+.p-hero-inner {
+  padding: 64px 0 56px;
+  width: 100%;
+}
+
+.p-hero-copy {
+  max-width: 540px;
+}
+
+.p-hero h1 {
+  font-family: Russo, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(36px, 4.6vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  color: var(--text);
+}
+
+.p-hero h1 span {
+  color: var(--accent-hi);
+}
+
+.dir-b .p-hero h1 span {
+  color: var(--accent);
+}
+
+.p-hero-lead {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--secondary);
+  margin: 0;
+  max-width: 470px;
+}
+
+.dir-a .p-hero-lead,
+.dir-c .p-hero-lead {
+  color: #d1d5db;
+}
+
+.p-specs-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+}
+
+.p-spec-item {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border);
+}
+
+.p-spec-item:last-child {
+  border-right: 0;
+}
+
+.p-spec-label {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.p-spec-val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ==========================================================================
+   HERO — DIREÇÃO B (Editorial Papel Dobrado)
+   ========================================================================== */
+.dir-b .p-hero {
+  padding: 40px 0 36px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dir-b .p-hero-sheet {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 0 #e3ddd0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.05fr 1.2fr;
+}
+
+.dir-b .p-hero-copy {
+  padding: 40px 36px;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dir-b .p-hero-art-frame {
+  position: relative;
+  border-left: 1px solid var(--border);
+  background: #100c1c;
+  min-height: 400px;
+}
+
+.dir-b .p-hero-art-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% center;
+}
+
+.dir-b .p-art-tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(24, 24, 27, 0.82);
+  color: #e4e4e7;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   HERO — DIREÇÃO C (Atlas Imersivo com Capturas Reais já no Topo)
+   ========================================================================== */
+.dir-c .p-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 56px 0 64px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dir-c .p-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.32;
+  filter: saturate(0.85);
+}
+
+.dir-c .p-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 70% 40%, rgba(7, 10, 16, 0.4), #070a10 75%);
+}
+
+.dir-c .p-hero-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.dir-c .p-hero-phones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.dir-c .p-phone-card {
+  background: #0d131f;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+}
+
+.dir-c .p-phone-card:nth-child(2) {
+  margin-top: 24px;
+}
+
+.dir-c .p-phone-card img {
+  border-radius: 9px;
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  object-fit: cover;
+}
+
+.dir-c .p-phone-card span {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  color: var(--secondary);
+  padding: 6px 4px 2px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   SEÇÕES DE CONTEÚDO E CABEÇALHO DE SEÇÃO EDITORIAL
+   ========================================================================== */
+.p-section {
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.p-section.alt {
+  background: var(--bg-alt);
+}
+
+.p-sec-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.p-sec-head h2 {
+  font-family: Russo, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--text);
+}
+
+.p-sec-head p {
+  margin: 0;
+  max-width: 440px;
+  font-size: 15px;
+  color: var(--secondary);
+}
+
+/* ==========================================================================
+   VITRINE DE CAPTURAS REAIS (9:16 grandes, scroll-snap no mobile)
+   ========================================================================== */
+.p-shots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.p-shot-card {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.dir-b .p-shot-card {
+  box-shadow: 0 2px 0 #e3ddd0;
+}
+
+.p-shot-card:hover {
+  border-color: var(--border-strong);
+}
+
+.p-shot-card a {
+  display: block;
+  text-decoration: none;
+}
+
+.p-shot-card img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.p-shot-meta {
+  padding: 12px 14px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.p-shot-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.p-shot-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ==========================================================================
+   PILARES DE MECÂNICA (3 colunas editoriais numeradas 01 / 02 / 03)
+   ========================================================================== */
+.p-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.dir-b .p-pillars {
+  box-shadow: 0 2px 0 #e3ddd0;
+}
+
+.p-pillar {
+  padding: 28px 26px;
+  border-right: 1px solid var(--border);
+}
+
+.p-pillar:last-child {
+  border-right: 0;
+}
+
+.p-pillar-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.p-pillar h3 {
+  font-family: Russo, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.p-pillar p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--secondary);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   CAMADAS DA DOBRA & TIRANOS (Substitui os 4 cards com T-pose de fundo cinza)
+   ========================================================================== */
+.p-worlds-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.p-world-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dir-b .p-world-card {
+  box-shadow: 0 2px 0 #e3ddd0;
+}
+
+.p-world-img {
+  position: relative;
+}
+
+.p-world-img > img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.p-tyrant-Thumb {
+  position: absolute;
+  right: 8px;
+  bottom: -16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.p-world-body {
+  padding: 18px 14px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.p-world-layer {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.p-world-body h3 {
+  font-family: Russo, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  margin: 3px 0 6px;
+  color: var(--text);
+}
+
+.p-world-body p {
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--secondary);
+  margin: 0 0 12px;
+  flex: 1;
+}
+
+.p-world-boss {
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.p-world-boss strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   CHAMADA DA HISTÓRIA (A DOBRA) + FECHAMENTO
+   ========================================================================== */
+.p-story-banner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+}
+
+.dir-b .p-story-banner {
+  box-shadow: 0 3px 0 #e3ddd0;
+}
+
+.p-story-copy {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.p-story-copy h2 {
+  font-family: Russo, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 2.8vw, 32px);
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.p-story-copy p {
+  margin: 0 0 20px;
+  color: var(--secondary);
+  font-size: 16px;
+}
+
+.p-story-art {
+  border-left: 1px solid var(--border);
+  min-height: 240px;
+}
+
+.p-story-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rodapé limpo */
+.p-footer {
+  padding: 32px 0;
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--bg);
+}
+
+.p-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.p-footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.p-footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 10px;
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border-strong);
+}
+
+.p-footer-links a:hover {
+  color: var(--text);
+}
+
+/* ==========================================================================
+   PÁGINA BAIXAR / JOGAR CORRIGIDA (Sem logo cortado ao meio!)
+   ========================================================================== */
+.p-download-section {
+  padding: 48px 0 64px;
+}
+
+.p-download-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+}
+
+.dir-b .p-download-card {
+  box-shadow: 0 4px 0 #e3ddd0;
+}
+
+.p-download-media {
+  position: relative;
+  background: #0d0a1a;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.p-download-media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 36% center;
+}
+
+.p-download-body {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.p-app-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.p-app-header img {
+  width: 68px;
+  height: 68px;
+  border-radius: 14px;
+  border: 1px solid var(--border-strong);
+  flex-shrink: 0;
+}
+
+.p-app-header h1 {
+  font-family: Russo, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 0 0 4px;
+}
+
+.p-app-header p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+.p-store-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 8px;
+}
+
+.p-store-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tag-text);
+  margin-bottom: 8px;
+}
+
+.p-store-status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.p-store-box p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--secondary);
+}
+
+.p-req-list {
+  margin: 20px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 16px;
+  list-style: none;
+  font-size: 13.5px;
+  color: var(--secondary);
+}
+
+.p-req-list strong {
+  color: var(--text);
+  display: block;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   PÁGINAS DE DOCUMENTO (Suporte, Privacidade, Termos — Estilo #1594)
+   ========================================================================== */
+.p-doc-wrap {
+  width: min(680px, calc(100% - 32px));
+  margin: 40px auto 64px;
+}
+
+.p-doc-sheet {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 36px 40px;
+}
+
+.dir-b .p-doc-sheet {
+  box-shadow: 0 2px 0 #e3ddd0;
+}
+
+.p-doc-sheet h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.p-doc-lead {
+  font-size: 15px;
+  color: var(--secondary);
+  margin: 0 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.p-doc-prose h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 28px 0 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.p-doc-prose h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.p-doc-prose h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 20px 0 6px;
+}
+
+.p-doc-prose p,
+.p-doc-prose li {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--secondary);
+  margin: 0 0 12px;
+}
+
+.p-doc-prose a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border-strong);
+}
+
+/* Barra fixa inferior de conversão mobile (Direção C) */
+.p-sticky-mobile-bar {
+  display: none;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Tablet <= 900px e Mobile <= 600px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .dir-b .p-hero-sheet,
+  .dir-c .p-hero-split,
+  .p-story-banner,
+  .p-download-card {
+    grid-template-columns: 1fr;
+  }
+
+  .dir-b .p-hero-art-frame {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    min-height: 260px;
+  }
+
+  .p-story-art {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .p-download-media {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .p-worlds-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .p-wrap {
+    width: calc(100% - 32px);
+  }
+
+  .p-header-inner {
+    min-height: 56px;
+    gap: 6px;
+  }
+
+  .p-brand {
+    font-size: 13.5px;
+    gap: 6px;
+  }
+
+  .p-brand img {
+    width: 22px;
+    height: 25px;
+  }
+
+  .p-nav {
+    gap: 1px;
+  }
+
+  .p-nav a {
+    padding: 0 6px;
+    font-size: 12.5px;
+  }
+
+  .p-nav .p-nav-cta {
+    padding: 0 9px;
+    margin-left: 2px;
+  }
+
+  .p-nav .p-lang {
+    padding-left: 6px;
+    margin-left: 2px;
+    min-width: 34px;
+  }
+
+  .dir-a .p-hero {
+    min-height: 580px;
+    align-items: flex-start;
+  }
+
+  .dir-a .p-hero-bg {
+    inset: auto 0 0;
+    height: 310px;
+    object-position: 86% bottom;
+  }
+
+  .dir-a .p-hero::before {
+    background: linear-gradient(180deg, #0b0c0e 0%, #0b0c0e 46%, rgba(11, 12, 14, 0.25) 75%, #0b0c0e 100%);
+  }
+
+  .dir-a .p-hero-inner {
+    padding: 28px 0 240px;
+  }
+
+  .dir-b .p-hero {
+    padding: 20px 0 24px;
+  }
+
+  .dir-b .p-hero-copy {
+    padding: 24px 20px;
+  }
+
+  .dir-b .p-hero-art-frame {
+    min-height: 220px;
+  }
+
+  .dir-c .p-hero {
+    padding: 28px 0 36px;
+  }
+
+  .p-hero h1 {
+    font-size: 33px;
+  }
+
+  .p-hero-lead {
+    font-size: 16px;
+  }
+
+  .p-specs-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .p-spec-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .p-spec-item:nth-child(1),
+  .p-spec-item:nth-child(2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .p-section {
+    padding: 44px 0;
+  }
+
+  .p-sec-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  /* Carrossel horizontal com scroll-snap para capturas reais 9:16 no celular! */
+  .p-shots-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    margin-inline: -16px;
+    padding: 0 16px 10px;
+  }
+
+  .p-shot-card {
+    flex: 0 0 72%;
+    scroll-snap-align: start;
+  }
+
+  .p-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .p-pillar {
+    padding: 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .p-pillar:last-child {
+    border-bottom: 0;
+  }
+
+  /* Carrossel horizontal também para as 5 camadas no celular */
+  .p-worlds-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    margin-inline: -16px;
+    padding: 0 16px 10px;
+  }
+
+  .p-world-card {
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+  }
+
+  .p-story-copy {
+    padding: 24px 20px;
+  }
+
+  .p-download-body {
+    padding: 24px 20px;
+  }
+
+  .p-doc-sheet {
+    padding: 24px 20px;
+  }
+
+  .dir-c .p-sticky-mobile-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 40;
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    padding: 10px 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+  }
+
+  .dir-c .p-sticky-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .dir-c .p-sticky-info img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .dir-c .p-sticky-info strong {
+    display: block;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dir-c .p-sticky-info span {
+    display: block;
+    font-size: 11px;
+    color: var(--secondary);
+  }
+
+  .dir-c .p-sticky-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 14px;
+    border-radius: 7px;
+    background: var(--accent-hi);
+    color: #070a10;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .dir-c .p-footer {
+    padding-bottom: 84px;
+  }
+}

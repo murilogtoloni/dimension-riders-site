@@ -1,0 +1,39 @@
+---
+import type { Locale } from '../../i18n';
+import Proposta1595 from '../../views/Proposta1595.astro';
+
+export function getStaticPaths() {
+  const dirs = ['a', 'b', 'c'] as const;
+  const locales: Locale[] = ['pt', 'en'];
+  const views = [
+    { view: 'home' as const, seg: '' },
+    { view: 'download' as const, seg: 'baixar' },
+    { view: 'support' as const, seg: 'suporte' },
+  ];
+
+  const paths = [];
+  for (const dir of dirs) {
+    for (const locale of locales) {
+      for (const { view, seg } of views) {
+        const parts = [dir];
+        if (locale === 'en') parts.push('en');
+        if (seg) parts.push(seg);
+        paths.push({
+          params: { slug: parts.join('/') },
+          props: { dir, locale, view },
+        });
+      }
+    }
+  }
+  return paths;
+}
+
+interface Props {
+  dir: 'a' | 'b' | 'c';
+  locale: Locale;
+  view: 'home' | 'download' | 'support';
+}
+
+const { dir, locale, view } = Astro.props;
+---
+<Proposta1595 dir={dir} locale={locale} view={view} />

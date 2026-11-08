@@ -1,0 +1,668 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>#1595 · Auditoria UI/UX e Comparação Antes × Propostas · Dimension Riders</title>
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f5f2;
+        --sheet: #ffffff;
+        --surface: #f0ede6;
+        --text: #18181b;
+        --secondary: #3f3f46;
+        --muted: #71717a;
+        --border: #e2ded5;
+        --border-strong: #c7c1b4;
+        --accent: #b45309;
+        --danger-bg: #fef2f2;
+        --danger-border: #fecaca;
+        --danger-text: #991b1b;
+        --ok-bg: #f0fdf4;
+        --ok-border: #bbf7d0;
+        --ok-text: #166534;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        font-size: 15px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { max-width: 100%; height: auto; display: block; }
+      a { color: inherit; }
+      code { overflow-wrap: anywhere; }
+      .wrap { width: min(1360px, calc(100% - 32px)); margin: 0 auto; }
+
+      .top-bar {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(246, 245, 242, 0.94);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        padding: 10px 0;
+      }
+      .top-bar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+      }
+      .top-title {
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .top-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .top-nav a {
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 6px 10px;
+        border-radius: 6px;
+        background: var(--sheet);
+        border: 1px solid var(--border);
+      }
+      .top-nav a.primary {
+        background: #18181b;
+        color: #ffffff;
+        border-color: #18181b;
+      }
+
+      .hero-box {
+        background: var(--sheet);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 28px;
+        margin: 24px 0;
+      }
+      .hero-box h1 {
+        font-size: clamp(22px, 3vw, 30px);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin: 0 0 10px;
+      }
+      .hero-box p {
+        margin: 0 0 16px;
+        color: var(--secondary);
+        max-width: 880px;
+      }
+      .proto-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+      }
+      .proto-card {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 18px;
+        background: var(--bg);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .proto-card.rec {
+        border: 2px solid #18181b;
+        background: #ffffff;
+      }
+      .proto-badge {
+        display: inline-block;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 2px 7px;
+        border-radius: 4px;
+        background: var(--surface);
+        margin-bottom: 8px;
+        align-self: flex-start;
+      }
+      .proto-card.rec .proto-badge {
+        background: #18181b;
+        color: #ffffff;
+      }
+      .proto-card h2 {
+        font-size: 17px;
+        margin: 0 0 6px;
+      }
+      .proto-card p {
+        font-size: 13.5px;
+        margin: 0 0 14px;
+        color: var(--secondary);
+      }
+      .proto-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .proto-links a {
+        text-decoration: none;
+        font-size: 12.5px;
+        font-weight: 600;
+        padding: 7px 11px;
+        border-radius: 6px;
+        border: 1px solid var(--border-strong);
+        background: var(--sheet);
+      }
+      .proto-links a.open-main {
+        background: #18181b;
+        color: #ffffff;
+        border-color: #18181b;
+      }
+
+      .comp-section {
+        background: var(--sheet);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+      .comp-head {
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 14px;
+        margin-bottom: 20px;
+      }
+      .comp-head h2 {
+        font-size: 20px;
+        margin: 0 0 4px;
+        letter-spacing: -0.01em;
+      }
+      .comp-head p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--secondary);
+      }
+
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        align-items: start;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        align-items: start;
+      }
+      .shot-col {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .shot-col.before {
+        border-color: var(--danger-border);
+      }
+      .shot-col.after {
+        border-color: var(--ok-border);
+      }
+      .shot-col-head {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        font-size: 13px;
+      }
+      .shot-col.before .shot-col-head {
+        background: var(--danger-bg);
+        color: var(--danger-text);
+      }
+      .shot-col.after .shot-col-head {
+        background: var(--ok-bg);
+        color: var(--ok-text);
+      }
+      .shot-col-head strong {
+        display: block;
+        font-size: 13.5px;
+      }
+      .shot-col-head span {
+        display: block;
+        font-size: 12px;
+        opacity: 0.9;
+        margin-top: 2px;
+      }
+      .shot-col a.zoom {
+        display: block;
+      }
+      .shot-col img {
+        width: 100%;
+        display: block;
+      }
+
+      .audit-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      .audit-table th,
+      .audit-table td {
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .audit-table th {
+        background: var(--bg);
+        font-size: 12px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        text-transform: uppercase;
+      }
+      .tag-p1 {
+        display: inline-block;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 4px;
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      @media (max-width: 960px) {
+        .proto-cards,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .wrap { width: calc(100% - 20px); }
+        .top-bar { position: static; }
+        .hero-box, .comp-section { padding: 16px; }
+        .grid-4 { gap: 8px; }
+        .shot-col-head { padding: 8px; font-size: 11.5px; }
+        .shot-col-head strong { font-size: 12px; }
+        .shot-col-head span { font-size: 11px; }
+        .audit-table { display: block; overflow-x: auto; max-width: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="wrap top-bar-inner">
+        <span class="top-title">#1595 · Auditoria UI/UX & Comparação Antes × Propostas</span>
+        <nav class="top-nav" aria-label="Atalhos da comparação">
+          <a href="#celular-dobra">1. Celular (1ª Dobra)</a>
+          <a href="#bug-baixar">2. Bug /baixar</a>
+          <a href="#celular-completa">3. Celular (Inteira)</a>
+          <a href="#desktop-completa">4. Desktop (1440px)</a>
+          <a href="#suporte-doc">5. Suporte / Docs</a>
+          <a href="#melhorias">6. Melhorias & Refs</a>
+          <a class="primary" href={`${base}/proposta/a/`}>Abrir Protótipo A →</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero-box">
+        <h1>Por que o site atual parece "padrão feito por IA" — e 3 direções reais para escolher</h1>
+        <p>
+          Auditamos todas as páginas de <strong>dimensionriders.app</strong> em celular (<strong>390 px</strong>) e desktop (<strong>1440 px</strong>), PT e EN.
+          O diagnóstico mostra que a sensação de "feito por IA" vem de 5 fatores combinados: <strong>(1)</strong> paleta roxo-índigo + dourado + ciano neon com 5 gradientes radiais roxos;{' '}
+          <strong>(2)</strong> molduras marrons grossas de <code>2px</code> com bisel 3D e botões de cassino mobile;{' '}
+          <strong>(3)</strong> capturas reais do jogo escondidas a <code>2.221 px</code> de rolagem no celular (atrás de 3 caixinhas esmagadas de <code>118 px</code> e de arte de conceito com o esquilo em T-pose de modelagem 3D em fundo cinza);{' '}
+          <strong>(4)</strong> fonte condensada <code>Rajdhani SemiBold (600)</code> em <code>20px</code> usada em 100% dos parágrafos e textos legais; e{' '}
+          <strong>(5)</strong> um recorte em <code>/baixar</code> e <code>/jogar</code> que corta o logotipo ao meio (<strong><code>ENSION / ERS</code></strong>).
+        </p>
+
+        <div class="proto-cards">
+          <article class="proto-card rec">
+            <div>
+              <span class="proto-badge">Recomendada · Direção A</span>
+              <h2>A · Noir Tático & Gameplay na Frente</h2>
+              <p>
+                Mantém o clima escuro de ação, mas elimina 100% do roxo/dourado/ciano de IA e os botões 3D. Usa obsidiana fosca (<code>#0B0C0E</code>), fios de <code>1px</code> (estilo <em>Hades</em> / <em>Linear</em>), fonte de corpo limpa e sobe as capturas reais 9:16 para <code>y = 697px</code> num carrossel <code>scroll-snap</code>.
+              </p>
+            </div>
+            <div class="proto-links">
+              <a class="open-main" href={`${base}/proposta/a/`}>Abrir Início A</a>
+              <a href={`${base}/proposta/a/baixar/`}>Baixar A</a>
+              <a href={`${base}/proposta/a/suporte/`}>Suporte A</a>
+              <a href={`${base}/proposta/a/en/`}>EN</a>
+            </div>
+          </article>
+
+          <article class="proto-card">
+            <div>
+              <span class="proto-badge">Direção B · Estilo #1594</span>
+              <h2>B · Editorial Papel Dobrado</h2>
+              <p>
+                Traz a metáfora literal do jogo (<em>"mundos como camadas de papel dobrado"</em>) e o visual humano aprovado ontem na <code>/excluir-conta</code> (<code>#1594</code>): papel pedra (<code>#F3EFE6</code>), folha <code>#FFFFFF</code> com borda <code>1px</code> e alto contraste para as pinturas e capturas.
+              </p>
+            </div>
+            <div class="proto-links">
+              <a class="open-main" href={`${base}/proposta/b/`}>Abrir Início B</a>
+              <a href={`${base}/proposta/b/baixar/`}>Baixar B</a>
+              <a href={`${base}/proposta/b/suporte/`}>Suporte B</a>
+              <a href={`${base}/proposta/b/en/`}>EN</a>
+            </div>
+          </article>
+
+          <article class="proto-card">
+            <div>
+              <span class="proto-badge">Direção C · Mobile First</span>
+              <h2>C · Atlas Imersivo & Barra Fixa</h2>
+              <p>
+                Fundo azul-abismo neutro (<code>#070A10</code>) com <strong>2 capturas reais do jogo já dentro do Hero</strong> (<code>y = 458px</code> no celular) + <strong>barra fixa inferior no celular</strong> (ícone + botão Baixar sempre ao alcance do polegar durante a rolagem).
+              </p>
+            </div>
+            <div class="proto-links">
+              <a class="open-main" href={`${base}/proposta/c/`}>Abrir Início C</a>
+              <a href={`${base}/proposta/c/baixar/`}>Baixar C</a>
+              <a href={`${base}/proposta/c/suporte/`}>Suporte C</a>
+              <a href={`${base}/proposta/c/en/`}>EN</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 1. CELULAR 1ª DOBRA -->
+      <section class="comp-section" id="celular-dobra">
+        <div class="comp-head">
+          <h2>1. Celular (390×844 px) — Primeira Dobra (O que o visitante vê ao abrir)</h2>
+          <p>
+            Capturas reais na mesma largura (390 px, 2x DPR). Toque em qualquer imagem para ampliar. No celular, as colunas ficam 2×2 para comparar lado a lado.
+          </p>
+        </div>
+        <div class="grid-4">
+          <div class="shot-col before">
+            <div class="shot-col-head">
+              <strong>ANTES (Atual no ar)</strong>
+              <span>Cabeçalho de 125px (2 linhas), botão plástico 3D e zero captura do jogo até y=2221px.</span>
+            </div>
+            <a class="zoom" href={img('fold-mobile-pt-home')}>
+              <img src={img('fold-mobile-pt-home')} alt="Antes: Início celular primeira dobra" loading="eager" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA A (Noir Tático)</strong>
+              <span>Cabeçalho em 1 linha (57px), ficha 2×2 objetiva e botão "Ver corrida real ↓".</span>
+            </div>
+            <a class="zoom" href={img('fold-mobile-a-pt-home')}>
+              <img src={img('fold-mobile-a-pt-home')} alt="Proposta A: Início celular primeira dobra" loading="eager" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA B (Papel Dobrado)</strong>
+              <span>Folha clara estilo #1594 sobre papel pedra; pintura emoldurada com contraste limpo.</span>
+            </div>
+            <a class="zoom" href={img('fold-mobile-b-pt-home')}>
+              <img src={img('fold-mobile-b-pt-home')} alt="Proposta B: Início celular primeira dobra" loading="eager" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA C (Atlas + Barra Fixa)</strong>
+              <span>Duas capturas reais (Caldeira e Menu Equipar) visíveis já na 1ª tela + barra fixa inferior.</span>
+            </div>
+            <a class="zoom" href={img('fold-mobile-c-pt-home')}>
+              <img src={img('fold-mobile-c-pt-home')} alt="Proposta C: Início celular primeira dobra" loading="eager" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. BUG DA PÁGINA BAIXAR -->
+      <section class="comp-section" id="bug-baixar">
+        <div class="comp-head">
+          <h2>2. Página Baixar (/pt/baixar/) — Correção do Logo Cortado ("ENSION / ERS") e Duplicações</h2>
+          <p>
+            No site atual, <code>Download.astro</code> recorta <code>feature.webp</code> com <code>aspect-ratio: 1.35; object-position: 78% center</code>, decepando o logo em <strong>"ENSION / ERS"</strong> e o Cavaleiro ao meio, além de repetir "EM BREVE" duas vezes na mesma caixa. As propostas usam <code>duel.webp</code> (a pintura limpa sem o texto duplicado) e alinham o ícone ao lado do título.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="shot-col before">
+            <div class="shot-col-head">
+              <strong>ANTES — /pt/baixar/ (Desktop 1440px)</strong>
+              <span>Logo cortado ("ENSION / ERS"), ícone tapando o Cavaleiro e "EM BREVE" duplicado.</span>
+            </div>
+            <a class="zoom" href={img('full-desktop-pt-baixar')}>
+              <img src={img('full-desktop-pt-baixar')} alt="Antes: Baixar desktop" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA A — /pt/baixar/ (Noir Tático)</strong>
+              <span>Pintura duel.webp inteira, ícone 68px junto ao título e grade 2×2 de requisitos.</span>
+            </div>
+            <a class="zoom" href={img('full-desktop-a-pt-baixar')}>
+              <img src={img('full-desktop-a-pt-baixar')} alt="Proposta A: Baixar desktop" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA B — /pt/baixar/ (Papel Dobrado)</strong>
+              <span>Mesma correção estrutural no tema claro editorial (#F3EFE6 / #FFFFFF).</span>
+            </div>
+            <a class="zoom" href={img('full-desktop-b-pt-baixar')}>
+              <img src={img('full-desktop-b-pt-baixar')} alt="Proposta B: Baixar desktop" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. CELULAR PÁGINA INTEIRA -->
+      <section class="comp-section" id="celular-completa">
+        <div class="comp-head">
+          <h2>3. Celular (390 px) — Página Inicial Completa (Antes × A × B × C)</h2>
+          <p>
+            Veja a diferença na ordem e no respiro: saem as 3 caixinhas esmagadas de 118px e os 4 conceitos com fundo cinza (incluindo o esquilo em T-pose); entram o carrossel <code>scroll-snap</code> de capturas reais (281px de largura) logo no topo, os 3 pilares explicados e as 5 camadas reais.
+          </p>
+        </div>
+        <div class="grid-4">
+          <div class="shot-col before">
+            <div class="shot-col-head">
+              <strong>ANTES (390 px completa)</strong>
+              <span>3 colunas esmagadas + T-pose cinza antes das capturas minúsculas em 2×2.</span>
+            </div>
+            <a class="zoom" href={img('full-mobile-pt-home')}>
+              <img src={img('full-mobile-pt-home')} alt="Antes: Início celular completa" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA A (390 px completa)</strong>
+              <span>Capturas reais grandes no 1º scroll + 3 pilares + 5 camadas reais.</span>
+            </div>
+            <a class="zoom" href={img('full-mobile-a-pt-home')}>
+              <img src={img('full-mobile-a-pt-home')} alt="Proposta A: Início celular completa" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA B (390 px completa)</strong>
+              <span>Folhas editoriais em papel dobrado com leitura limpa e alto contraste.</span>
+            </div>
+            <a class="zoom" href={img('full-mobile-b-pt-home')}>
+              <img src={img('full-mobile-b-pt-home')} alt="Proposta B: Início celular completa" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA C (390 px completa)</strong>
+              <span>Capturas já no Hero + barra inferior fixa acompanhando a rolagem.</span>
+            </div>
+            <a class="zoom" href={img('full-mobile-c-pt-home')}>
+              <img src={img('full-mobile-c-pt-home')} alt="Proposta C: Início celular completa" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. DESKTOP PÁGINA INTEIRA -->
+      <section class="comp-section" id="desktop-completa">
+        <div class="comp-head">
+          <h2>4. Desktop (1440 px) — Página Inicial Completa (Antes × A × B × C)</h2>
+          <p>
+            Comparação em 1440 px de largura. Repare como a remoção das bordas marrons de 2px e dos fundos cinzas dos conceitos deixa as pinturas e capturas do jogo muito mais profissionais.
+          </p>
+        </div>
+        <div class="grid-4">
+          <div class="shot-col before">
+            <div class="shot-col-head">
+              <strong>ANTES (1440 px)</strong>
+              <span>Fundo roxo #0b0820, bordas marrons e conceitos em fundo cinza.</span>
+            </div>
+            <a class="zoom" href={img('full-desktop-pt-home')}>
+              <img src={img('full-desktop-pt-home')} alt="Antes: Início desktop completa" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA A (1440 px)</strong>
+              <span>Noir Tático (#0B0C0E), fios de 1px e vitrine de 4 capturas + 5 camadas.</span>
+            </div>
+            <a class="zoom" href={img('full-desktop-a-pt-home')}>
+              <img src={img('full-desktop-a-pt-home')} alt="Proposta A: Início desktop completa" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA B (1440 px)</strong>
+              <span>Editorial Papel Dobrado (#F3EFE6 / #FFFFFF) alinhado à #1594.</span>
+            </div>
+            <a class="zoom" href={img('full-desktop-b-pt-home')}>
+              <img src={img('full-desktop-b-pt-home')} alt="Proposta B: Início desktop completa" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA C (1440 px)</strong>
+              <span>Hero dividido com 2 capturas reais em destaque já no topo.</span>
+            </div>
+            <a class="zoom" href={img('full-desktop-c-pt-home')}>
+              <img src={img('full-desktop-c-pt-home')} alt="Proposta C: Início desktop completa" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SUPORTE E DOCUMENTOS -->
+      <section class="comp-section" id="suporte-doc">
+        <div class="comp-head">
+          <h2>5. Páginas de Texto (Suporte, Privacidade e Termos) — Fim do Paredão em Rajdhani SemiBold</h2>
+          <p>
+            Os textos legais continuam intactos palavra por palavra, mas trocamos o paredão roxo/dourado em <code>Rajdhani SemiBold 20px</code> por uma folha de leitura limpa (<code>680px</code>, fonte de sistema <code>15px</code>, divisórias de <code>1px</code>), irmã da <code>/excluir-conta</code> aprovada na #1594.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="shot-col before">
+            <div class="shot-col-head">
+              <strong>ANTES — /pt/suporte/ (Celular 390px)</strong>
+              <span>Corpo inteiro em Rajdhani SemiBold 20px sobre roxo escuro, sem divisórias na FAQ.</span>
+            </div>
+            <a class="zoom" href={img('full-mobile-pt-suporte')}>
+              <img src={img('full-mobile-pt-suporte')} alt="Antes: Suporte celular" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA A — /pt/suporte/ (Noir Tático)</strong>
+              <span>Folha escura de leitura com tipografia de sistema limpa e divisórias claras.</span>
+            </div>
+            <a class="zoom" href={img('full-mobile-a-pt-suporte')}>
+              <img src={img('full-mobile-a-pt-suporte')} alt="Proposta A: Suporte celular" loading="lazy" />
+            </a>
+          </div>
+          <div class="shot-col after">
+            <div class="shot-col-head">
+              <strong>PROPOSTA B — /pt/suporte/ (Papel Dobrado / #1594)</strong>
+              <span>Unificação total com a /excluir-conta (#1594): folha clara editorial legível.</span>
+            </div>
+            <a class="zoom" href={img('full-mobile-b-pt-suporte')}>
+              <img src={img('full-mobile-b-pt-suporte')} alt="Proposta B: Suporte celular" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. TABELA PRIORIZADA DE MELHORIAS E REFERÊNCIAS -->
+      <section class="comp-section" id="melhorias">
+        <div class="comp-head">
+          <h2>6. Lista Priorizada de Melhorias (Impacto × Esforço)</h2>
+          <p>Relatório completo gravado em <code>/home/murilo/projetos/manager/research/1595/RELATORIO.md</code>.</p>
+        </div>
+        <table class="audit-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Melhoria ("Coisinhas" e Estrutura)</th>
+              <th>Onde mexe</th>
+              <th>Impacto × Esforço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag-p1">P1.1</span></td>
+              <td><strong>Corrigir o logo decepado ("ENSION / ERS") e o Cavaleiro cortado em /baixar e /jogar</strong>: usar <code>fold/duel.webp</code> (sem texto duplicado na pintura) e alinhar <code>icon.webp</code> ao lado do título.</td>
+              <td><code>Download.astro</code>, <code>Play.astro</code>, <code>global.css</code></td>
+              <td>Crítico × Baixo</td>
+            </tr>
+            <tr>
+              <td><span class="tag-p1">P1.2</span></td>
+              <td><strong>Trocar Rajdhani SemiBold 20px no corpo por sans-serif limpa de leitura</strong>: manter <code>Russo One</code> só nos títulos principais e usar pilha de sistema (16px) em parágrafos, Suporte, Termos e Privacidade.</td>
+              <td><code>global.css</code>, <code>fold.css</code></td>
+              <td>Alto × Baixo</td>
+            </tr>
+            <tr>
+              <td><span class="tag-p1">P1.3</span></td>
+              <td><strong>Subir as Capturas Reais (Veja a corrida de perto) para logo abaixo do Hero + Carrossel scroll-snap no celular</strong>: tira as capturas de <code>y=2221px</code> e aumenta de 170px para 281px no mobile.</td>
+              <td><code>Home.astro</code>, <code>Gallery.astro</code>, <code>global.css</code></td>
+              <td>Alto × Baixo</td>
+            </tr>
+            <tr>
+              <td><span class="tag-p1">P1.4</span></td>
+              <td><strong>Cabeçalho mobile em 1 linha (57px em vez de 125px) e alvos de toque &gt;= 44px</strong> nos menus e rodapé.</td>
+              <td><code>Base.astro</code>, <code>global.css</code></td>
+              <td>Alto × Baixo</td>
+            </tr>
+            <tr>
+              <td><span class="tag-p1">P1.5</span></td>
+              <td><strong>Substituir as 3 caixinhas esmagadas (118px no celular)</strong> por barra de especificações 2×2 + 3 pilares numerados explicando o controle de 1 polegar e as runas.</td>
+              <td><code>Home.astro</code>, <code>pt.json</code>, <code>en.json</code></td>
+              <td>Alto × Médio</td>
+            </tr>
+            <tr>
+              <td><span class="tag-p1">P1.6</span></td>
+              <td><strong>Tirar o cartão do esquilo em T-pose (chaser.webp) e os fundos cinzas chapados da Home</strong>: mostrar as 5 Camadas reais (<code>fold/worlds/*.webp</code>) com o nome do respectivo Tirano.</td>
+              <td><code>Roster.astro</code> / <code>Home.astro</code></td>
+              <td>Alto × Médio</td>
+            </tr>
+            <tr>
+              <td><span class="tag-p1">P1.7</span></td>
+              <td><strong>Limpar duplicações em /baixar e /jogar</strong> (selo "EM BREVE" repetido 2x; botão laranja + badge da Play Store duplicados) e usar ícone da Google Play.</td>
+              <td><code>Download.astro</code>, <code>Play.astro</code>, <code>StoreButtons.astro</code></td>
+              <td>Médio × Baixo</td>
+            </tr>
+            <tr>
+              <td><span class="tag-p1">P1.8</span></td>
+              <td><strong>Na página A Dobra: remover a inclinação torta (<code>rotate(-1.2deg)</code>) das 5 camadas</strong> e suavizar o medalhão branco estourado do Âmbar.</td>
+              <td><code>fold.css</code></td>
+              <td>Médio × Baixo</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
