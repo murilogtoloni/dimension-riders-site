@@ -1,135 +1,93 @@
 ---
-import { Image, Picture } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { CONTACT_EMAIL } from '../config';
 import { loadDoc } from '../content/load';
 import { HTML_LANG, t, type Locale } from '../i18n';
-import duel from '../images/fold/duel.webp';
-import { TYRANTS, WORLDS } from '../images/fold';
-import threeRifts from '../images/fold/three-rifts.webp';
-import hero from '../images/hero.webp';
-import icon from '../images/icon.webp';
-import { shotsFor } from '../images/shots';
 import '../styles/propostas-1595.css';
 
+import heroImg from '../images/hero.webp';
+import duelImg from '../images/fold/duel.webp';
+import riderRiftImg from '../images/fold/rider-rift.webp';
+import appIcon from '../images/icon.webp';
+import { WORLDS } from '../images/fold';
+import { shotsFor } from '../images/shots';
+
+export type Variant = 'a' | 'b' | 'c';
+export type ViewType = 'home' | 'download' | 'support';
+
 interface Props {
-  dir: 'a' | 'b' | 'c';
+  dir: Variant;
   locale: Locale;
-  view?: 'home' | 'download' | 'support';
+  view?: ViewType;
 }
 
-const { dir, locale, view = 'home' } = Astro.props;
+const { dir: variant, locale, view = 'home' } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
-const seal = `${base}/selo.svg`;
-const shots = shotsFor(locale);
+const seloUrl = `${base}/selo.svg`;
+const isPt = locale === 'pt';
+
+const rawShots = shotsFor(locale);
 const shotKeys = ['forest', 'gear', 'lava', 'arsenal'] as const;
+const shotCaptions: Record<Locale, Record<typeof shotKeys[number], string>> = {
+  pt: {
+    forest: 'Arraste para escapar dos projéteis e solte para disparar junto à muralha.',
+    gear: 'Piso de aço, serras e inimigos mecânicos na segunda camada.',
+    lava: 'Combate intenso entre basalto e magma contra a horda de Brasão.',
+    arsenal: 'Combine armas, armaduras e lascas do Selo antes da descida.',
+  },
+  en: {
+    forest: 'Drag to dodge incoming fire and release to shoot by the stone wall.',
+    gear: 'Steel plates, saws, and clockwork foes in the second layer.',
+    lava: 'Fierce combat across basalt and magma against Ignis’s horde.',
+    arsenal: 'Combine weapons, armor, and Seal shards before your run.',
+  },
+};
+
+const shots = await Promise.all(
+  shotKeys.map(async (key, idx) => {
+    const src = rawShots[key];
+    const full = await getImage({ src, format: 'webp', width: 1080 });
+    return {
+      key,
+      num: idx + 1,
+      src,
+      fullHref: full.src,
+      title: t(locale, `gallery.${key}`),
+      caption: shotCaptions[locale][key],
+      alt: t(locale, `gallery.${key}Alt`),
+    };
+  })
+);
+
+const roman = ['I', 'II', 'III', 'IV', 'V'];
+const worlds = WORLDS.map((w, idx) => ({
+  key: w.key,
+  roman: roman[idx],
+  worldImg: w.image,
+  name: t(locale, `fold.worlds.${w.key}.name`),
+  line: t(locale, `fold.worlds.${w.key}.line`),
+  alt: t(locale, `fold.worlds.${w.key}.alt`),
+  tyrantName: t(locale, `fold.cast.${w.key}.name`),
+}));
+
 const { Content: SupportContent } = loadDoc('support', locale);
 
-const otherLocale: Locale = locale === 'pt' ? 'en' : 'pt';
-const protoHref = (d: 'a' | 'b' | 'c', l: Locale = locale, v: 'home' | 'download' | 'support' = view) => {
-  const langSeg = l === 'en' ? 'en/' : '';
-  const viewSeg = v === 'home' ? '' : `${v === 'download' ? 'baixar' : 'suporte'}/`;
-  return `${base}/proposta/${d}/${langSeg}${viewSeg}`;
+const protoHref = (v: Variant, loc: Locale = locale, vw: ViewType = view) => {
+  const locPart = loc === 'en' ? '/en' : '';
+  const vwPart = vw === 'home' ? '' : vw === 'download' ? '/baixar' : '/suporte';
+  return `${base}/proposta/${v}${locPart}${vwPart}/`;
 };
 
-const copy = locale === 'pt' ? {
-  dirLabel: {
-    a: 'Direção A · Noir Tático & Gameplay na Frente',
-    b: 'Direção B · Editorial Papel Dobrado (#1594)',
-    c: 'Direção C · Atlas Imersivo & Barra Fixa Mobile',
-  }[dir],
-  specs: [
-    { label: 'Plataforma', val: 'Android 8.0+' },
-    { label: 'Controle', val: '1 polegar (mover e atirar)' },
-    { label: 'Conexão', val: 'Joga 100% offline' },
-    { label: 'Modelo', val: 'Grátis · Sem anúncio forçado' },
-  ],
-  heroKicker: 'AÇÃO PARA ANDROID · UM POLEGAR · OFFLINE',
-  shotsKicker: '01 · DIRETO DO APARELHO',
-  shotsTitle: 'Veja a corrida antes de baixar.',
-  shotsIntro: 'Capturas reais em 9:16 com a interface do jogo. Deslize para ver as camadas e o menu Equipar.',
-  pillarsKicker: '02 · COMO FUNCIONA A CORRIDA',
-  pillarsTitle: 'Três regras simples. Nenhuma distração.',
-  pillarsIntro: 'Feito para partidas rápidas no celular, sem tutoriais intermináveis nem janelas de cobrança.',
-  pillars: [
-    {
-      num: '01 / COMBATE',
-      title: 'Mova para escapar. Pare para atirar.',
-      text: 'Tudo em um polegar só: arraste pelo chão para desviar dos projéteis e solte para o Cavaleiro cravar os pés e disparar no alvo marcado.',
-    },
-    {
-      num: '02 / ARSENAL',
-      title: 'Cada corrida, uma combinação.',
-      text: 'Troque entre arco, lâminas e cajados, vista armaduras das camadas e encaixe lascas do Selo como runas que mudam seu estilo.',
-    },
-    {
-      num: '03 / PROGRESSO',
-      title: 'No seu aparelho, no seu ritmo.',
-      text: 'Funciona no avião ou no metrô sem internet. Sem conta obrigatória para começar e sem anúncios interrompendo sua partida.',
-    },
-  ],
-  worldsKicker: '03 · CINCO CAMADAS INVADIDAS',
-  worldsTitle: 'Mundos que você atravessa.',
-  worldsIntro: 'Recortes reais das corridas em cada camada e o Tirano que sustenta o ninho principal.',
-  bossPrefix: 'Tirano:',
-  storyKicker: '04 · A HISTÓRIA DA DOBRA',
-  downloadKicker: 'FICHA DE INSTALAÇÃO · ANDROID',
-  downloadStatus: 'Lançamento em preparação na Google Play Store',
-  downloadReqs: [
-    { label: 'Sistema', val: 'Android 8.0 ou mais novo' },
-    { label: 'Preço', val: 'Grátis (anúncios opcionais)' },
-    { label: 'Conta', val: 'Opcional (joga sem cadastro)' },
-    { label: 'Modo offline', val: 'Corridas e progresso locais' },
-  ],
-} : {
-  dirLabel: {
-    a: 'Direction A · Tactical Noir & Gameplay First',
-    b: 'Direction B · Folded-Paper Editorial (#1594)',
-    c: 'Direction C · Immersive Atlas & Mobile Bar',
-  }[dir],
-  specs: [
-    { label: 'Platform', val: 'Android 8.0+' },
-    { label: 'Controls', val: 'One thumb (move & shoot)' },
-    { label: 'Connection', val: 'Plays 100% offline' },
-    { label: 'Model', val: 'Free · No forced ads' },
-  ],
-  heroKicker: 'ANDROID ACTION · ONE THUMB · OFFLINE',
-  shotsKicker: '01 · STRAIGHT FROM THE DEVICE',
-  shotsTitle: 'See the run before you install.',
-  shotsIntro: 'Real 9:16 screenshots with in-game HUD. Swipe across worlds and the Equipment screen.',
-  pillarsKicker: '02 · HOW A RUN WORKS',
-  pillarsTitle: 'Three clear rules. Zero clutter.',
-  pillarsIntro: 'Built for quick mobile sessions without endless tutorials or pop-up store offers.',
-  pillars: [
-    {
-      num: '01 / COMBAT',
-      title: 'Move to dodge. Stop to shoot.',
-      text: 'Built for one thumb: drag to weave through incoming fire, release to plant your feet and fire at your locked target.',
-    },
-    {
-      num: '02 / LOADOUT',
-      title: 'Every run, a new build.',
-      text: 'Swap bows, blades and staves, equip world armor sets, and socket carved Seal shards as runes that reshape how you fight.',
-    },
-    {
-      num: '03 / PROGRESS',
-      title: 'On your device, at your pace.',
-      text: 'Play on a plane or subway with no connection. No mandatory sign-up to start and zero forced ads breaking your run.',
-    },
-  ],
-  worldsKicker: '03 · FIVE INVADED LAYERS',
-  worldsTitle: 'Worlds you ride across.',
-  worldsIntro: 'Real in-game arena cuts from each layer alongside the Tyrant holding the main nest.',
-  bossPrefix: 'Tyrant:',
-  storyKicker: '04 · LORE OF THE FOLD',
-  downloadKicker: 'INSTALLATION LISTING · ANDROID',
-  downloadStatus: 'Google Play Store launch in preparation',
-  downloadReqs: [
-    { label: 'System', val: 'Android 8.0 or newer' },
-    { label: 'Price', val: 'Free (optional rewarded ads)' },
-    { label: 'Account', val: 'Optional (play without sign-up)' },
-    { label: 'Offline mode', val: 'Local runs and progress' },
-  ],
+const otherLocale: Locale = locale === 'pt' ? 'en' : 'pt';
+const heroHeadline = `${t(locale, 'hero.tagline')} ${t(locale, 'hero.call')}`;
+
+const variantLabels: Record<Variant, string> = {
+  a: isPt ? 'A · Pôster Cinematográfico (Firewatch / Supergiant)' : 'A · Cinematic Poster (Firewatch / Supergiant)',
+  b: isPt ? 'B · Almanaque Impresso de Papel Dobrado' : 'B · Printed Folded-Paper Almanac',
+  c: isPt ? 'C · Vitrine Mobile Direta (Gameplay na 1ª Tela)' : 'C · Mobile Storefront (Gameplay First)',
 };
+
+const wrapClass = variant === 'a' ? 'a-wrap' : variant === 'b' ? 'b-wrap' : 'c-wrap';
 ---
 <!doctype html>
 <html lang={HTML_LANG[locale]}>
@@ -137,293 +95,526 @@ const copy = locale === 'pt' ? {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
-    <title>{copy.dirLabel} · Dimension Riders</title>
+    <title>{`Dimension Riders — ${variantLabels[variant]}`}</title>
     <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <link rel="preload" href={`${base}/fonts/RussoOne-Regular.woff2`} as="font" type="font/woff2" crossorigin />
   </head>
-  <body class={`p1595 dir-${dir}`}>
-    <div class="proto-switcher" role="region" aria-label="Navegação do protótipo #1595">
-      <div class="proto-switcher-inner">
-        <span><strong>#1595 Protótipo</strong> · {copy.dirLabel}</span>
-        <div class="proto-switcher-links">
-          <a href={`${base}/comparacao/`}>← Comparação Antes × Propostas</a>
-          <a href={protoHref('a', locale, view)} aria-current={dir === 'a' ? 'true' : undefined}>Direção A</a>
-          <a href={protoHref('b', locale, view)} aria-current={dir === 'b' ? 'true' : undefined}>Direção B</a>
-          <a href={protoHref('c', locale, view)} aria-current={dir === 'c' ? 'true' : undefined}>Direção C</a>
-          <a href={protoHref(dir, locale, 'home')} aria-current={view === 'home' ? 'true' : undefined}>Início</a>
-          <a href={protoHref(dir, locale, 'download')} aria-current={view === 'download' ? 'true' : undefined}>Baixar</a>
-          <a href={protoHref(dir, locale, 'support')} aria-current={view === 'support' ? 'true' : undefined}>Suporte</a>
-          <a href={protoHref(dir, otherLocale, view)}>{otherLocale.toUpperCase()}</a>
-        </div>
+  <body class={`p1595 p1595-${variant}`}>
+    <!-- Barra de protótipo #1595 -->
+    <div class="p-proto-bar" role="region" aria-label="Navegação de protótipos #1595">
+      <span><strong>#1595</strong> · {variantLabels[variant]}</span>
+      <div class="p-proto-bar-links">
+        <a class={variant === 'a' ? 'is-active' : ''} href={protoHref('a', locale, view)}>A · Pôster</a>
+        <a class={variant === 'b' ? 'is-active' : ''} href={protoHref('b', locale, view)}>B · Almanaque</a>
+        <a class={variant === 'c' ? 'is-active' : ''} href={protoHref('c', locale, view)}>C · Vitrine Mobile</a>
+        <a href={protoHref(variant, locale, 'home')}>{isPt ? 'Início' : 'Home'}</a>
+        <a href={protoHref(variant, locale, 'download')}>{isPt ? 'Baixar' : 'Download'}</a>
+        <a href={protoHref(variant, locale, 'support')}>{isPt ? 'Suporte' : 'Support'}</a>
+        <a href={protoHref(variant, otherLocale, view)}>{otherLocale.toUpperCase()}</a>
+        <a class="back-comp" href={`${base}/comparacao/`}>← Comparação</a>
       </div>
     </div>
 
-    <header class="p-header">
-      <div class="p-wrap p-header-inner">
-        <a class="p-brand" href={protoHref(dir, locale, 'home')}>
-          <img src={seal} width="28" height="32" alt="" />
-          <span>Dimension Riders</span>
-        </a>
-        <nav class="p-nav" aria-label={t(locale, 'nav.label')}>
-          <a href={protoHref(dir, locale, 'home')} aria-current={view === 'home' ? 'page' : undefined}>{t(locale, 'nav.home')}</a>
-          <a href={`${base}/${locale}/${locale === 'pt' ? 'dobra' : 'fold'}/`}>{t(locale, 'nav.fold')}</a>
-          <a class="p-nav-cta" href={protoHref(dir, locale, 'download')} aria-current={view === 'download' ? 'page' : undefined}>{t(locale, 'nav.download')}</a>
-          <a class="p-lang" href={protoHref(dir, otherLocale, view)} aria-label={t(locale, 'nav.switchLabel')}>{otherLocale.toUpperCase()}</a>
-        </nav>
-      </div>
-    </header>
+    {/* =====================================================================
+        CABEÇALHO ESPECÍFICO DE CADA DIREÇÃO
+       ===================================================================== */}
+    {variant === 'a' && (
+      <header class={`a-header ${view !== 'home' ? 'a-header-solid' : ''}`}>
+        <div class="a-wrap a-header-inner">
+          <a class="a-brand" href={protoHref('a', locale, 'home')}>
+            <img src={seloUrl} width="28" height="28" alt="" />
+            <span>Dimension Riders</span>
+          </a>
+          <nav class="a-nav" aria-label={t(locale, 'nav.label')}>
+            <a href={protoHref('a', locale, 'home')} aria-current={view === 'home' ? 'page' : undefined}>{t(locale, 'nav.home')}</a>
+            <a href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>{t(locale, 'nav.fold')}</a>
+            <a href={protoHref('a', locale, 'download')} aria-current={view === 'download' ? 'page' : undefined}>{t(locale, 'nav.download')}</a>
+            <a href={protoHref('a', locale, 'support')} aria-current={view === 'support' ? 'page' : undefined}>{t(locale, 'nav.support')}</a>
+            <a class="a-lang" href={protoHref('a', otherLocale, view)}>{otherLocale.toUpperCase()}</a>
+          </nav>
+        </div>
+      </header>
+    )}
 
-    <main id="main">
-      {view === 'home' && (
-        <>
-          {dir === 'a' && (
-            <section class="p-hero">
-              <Picture class="p-hero-bg" src={hero} alt="" formats={['avif']} fallbackFormat="webp" widths={[960, 1600, 2560]} sizes="100vw" loading="eager" fetchpriority="high" />
-              <div class="p-wrap p-hero-inner">
-                <div class="p-hero-copy">
-                  <p class="p-kicker">{copy.heroKicker}</p>
-                  <h1>{t(locale, 'hero.tagline')}<br /><span>{t(locale, 'hero.call')}</span></h1>
-                  <p class="p-hero-lead">{t(locale, 'hero.opening')}</p>
-                  <div class="p-actions">
-                    <a class="p-btn" href={protoHref(dir, locale, 'download')}>
-                      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 3.6v16.8c0 .8.9 1.3 1.6.8l13.4-8.4c.6-.4.6-1.3 0-1.7L6.1 2.8c-.7-.5-1.6 0-1.6.8z"/></svg>
-                      {t(locale, 'buttons.android')}
-                    </a>
-                    <a class="p-btn-ghost" href="#gameplay">{locale === 'pt' ? 'Ver corrida real ↓' : 'See real gameplay ↓'}</a>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
+    {variant === 'b' && (
+      <header class="b-masthead">
+        <div class="b-wrap b-masthead-bar">
+          <a class="b-brand" href={protoHref('b', locale, 'home')}>
+            <img src={seloUrl} width="26" height="26" alt="" />
+            <span>Dimension Riders</span>
+          </a>
+          <span class="b-edition">{isPt ? 'Almanaque da Dobra · Edição Android' : 'Fold Almanac · Android Edition'}</span>
+          <nav class="b-nav" aria-label={t(locale, 'nav.label')}>
+            <a href={protoHref('b', locale, 'home')} aria-current={view === 'home' ? 'page' : undefined}>{t(locale, 'nav.home')}</a>
+            <a href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>{t(locale, 'nav.fold')}</a>
+            <a href={protoHref('b', locale, 'download')} aria-current={view === 'download' ? 'page' : undefined}>{t(locale, 'nav.download')}</a>
+            <a href={protoHref('b', locale, 'support')} aria-current={view === 'support' ? 'page' : undefined}>{t(locale, 'nav.support')}</a>
+            <a href={protoHref('b', otherLocale, view)}>{otherLocale.toUpperCase()}</a>
+          </nav>
+        </div>
+      </header>
+    )}
 
-          {dir === 'b' && (
-            <section class="p-hero">
-              <div class="p-wrap">
-                <div class="p-hero-sheet">
-                  <div class="p-hero-copy">
-                    <p class="p-kicker">{copy.heroKicker}</p>
-                    <h1>{t(locale, 'hero.tagline')}<br /><span>{t(locale, 'hero.call')}</span></h1>
-                    <p class="p-hero-lead">{t(locale, 'hero.opening')}</p>
-                    <div class="p-actions">
-                      <a class="p-btn" href={protoHref(dir, locale, 'download')}>
-                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 3.6v16.8c0 .8.9 1.3 1.6.8l13.4-8.4c.6-.4.6-1.3 0-1.7L6.1 2.8c-.7-.5-1.6 0-1.6.8z"/></svg>
-                        {t(locale, 'buttons.android')}
-                      </a>
-                      <a class="p-btn-ghost" href={`${base}/${locale}/${locale === 'pt' ? 'dobra' : 'fold'}/`}>{t(locale, 'hero.explore')} →</a>
-                    </div>
-                  </div>
-                  <div class="p-hero-art-frame">
-                    <Picture src={hero} alt={t(locale, 'hero.art')} formats={['avif']} fallbackFormat="webp" widths={[960, 1600]} sizes="(max-width: 900px) 95vw, 640px" loading="eager" fetchpriority="high" />
-                    <span class="p-art-tag">{t(locale, 'hero.art')}</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
+    {variant === 'c' && (
+      <header class="c-topbar">
+        <div class="c-wrap c-topbar-inner">
+          <a class="c-brand" href={protoHref('c', locale, 'home')}>
+            <img src={seloUrl} width="24" height="24" alt="" />
+            <span>Dimension Riders</span>
+          </a>
+          <nav class="c-nav" aria-label={t(locale, 'nav.label')}>
+            <a href={protoHref('c', locale, 'home')} aria-current={view === 'home' ? 'page' : undefined}>{t(locale, 'nav.home')}</a>
+            <a href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>{t(locale, 'nav.fold')}</a>
+            <a href={protoHref('c', locale, 'download')} aria-current={view === 'download' ? 'page' : undefined}>{t(locale, 'nav.download')}</a>
+            <a href={protoHref('c', locale, 'support')} aria-current={view === 'support' ? 'page' : undefined}>{t(locale, 'nav.support')}</a>
+            <a href={protoHref('c', otherLocale, view)}>{otherLocale.toUpperCase()}</a>
+          </nav>
+        </div>
+      </header>
+    )}
 
-          {dir === 'c' && (
-            <section class="p-hero">
-              <Picture class="p-hero-bg" src={hero} alt="" formats={['avif']} fallbackFormat="webp" widths={[960, 1600]} sizes="100vw" loading="eager" fetchpriority="high" />
-              <div class="p-wrap p-hero-split">
-                <div class="p-hero-copy">
-                  <p class="p-kicker">{copy.heroKicker}</p>
-                  <h1>{t(locale, 'hero.tagline')}<br /><span>{t(locale, 'hero.call')}</span></h1>
-                  <p class="p-hero-lead">{t(locale, 'hero.opening')}</p>
-                  <div class="p-actions">
-                    <a class="p-btn" href={protoHref(dir, locale, 'download')}>
-                      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 3.6v16.8c0 .8.9 1.3 1.6.8l13.4-8.4c.6-.4.6-1.3 0-1.7L6.1 2.8c-.7-.5-1.6 0-1.6.8z"/></svg>
-                      {t(locale, 'buttons.android')}
-                    </a>
-                    <a class="p-btn-ghost" href={`${base}/${locale}/${locale === 'pt' ? 'dobra' : 'fold'}/`}>{t(locale, 'hero.explore')} →</a>
-                  </div>
-                </div>
-                <div class="p-hero-phones">
-                  <div class="p-phone-card">
-                    <Image src={shots.lava} alt={t(locale, 'gallery.lavaAlt')} widths={[280, 560]} sizes="260px" loading="eager" />
-                    <span>{t(locale, 'gallery.lava')}</span>
-                  </div>
-                  <div class="p-phone-card">
-                    <Image src={shots.arsenal} alt={t(locale, 'gallery.arsenalAlt')} widths={[280, 560]} sizes="260px" loading="eager" />
-                    <span>{t(locale, 'gallery.arsenal')}</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {/* Barra técnica objetiva logo abaixo do Hero */}
-          <div class="p-specs-bar" role="region" aria-label={t(locale, 'features.label')}>
-            {copy.specs.map((s) => (
-              <div class="p-spec-item">
-                <span class="p-spec-label">{s.label}</span>
-                <span class="p-spec-val">{s.val}</span>
-              </div>
-            ))}
+    {/* =====================================================================
+        HOME DA DIREÇÃO A — PÔSTER CINEMATOGRÁFICO & PALCO DE JOGO
+       ===================================================================== */}
+    {view === 'home' && variant === 'a' && (
+      <main>
+        <section class="a-poster">
+          <div class="a-poster-bg">
+            <Image src={heroImg} alt={t(locale, 'hero.art')} widths={[960, 1600, 2560]} sizes="100vw" loading="eager" fetchpriority="high" />
           </div>
-
-          {/* SEÇÃO 1: Capturas reais do jogo na primeira dobra de rolagem (antes ficava em y=2221px!) */}
-          <section class="p-section" id="gameplay" aria-labelledby="shots-title">
-            <div class="p-wrap">
-              <p class="p-kicker">{copy.shotsKicker}</p>
-              <div class="p-sec-head">
-                <h2 id="shots-title">{copy.shotsTitle}</h2>
-                <p>{copy.shotsIntro}</p>
+          <div class="a-wrap">
+            <div class="a-poster-copy">
+              <div class="a-emblem-row">
+                <Image src={appIcon} alt="Dimension Riders" widths={[104]} sizes="52px" loading="eager" />
+                <span>{isPt ? 'Ação para Android · Joga offline' : 'Action for Android · Plays offline'}</span>
               </div>
-              <div class="p-shots-grid">
-                {shotKeys.map((key, idx) => (
-                  <figure class="p-shot-card">
-                    <a href={shots[key].src} aria-label={t(locale, 'gallery.enlarge', { name: t(locale, `gallery.${key}`) })}>
-                      <Image src={shots[key]} alt={t(locale, `gallery.${key}Alt`)} widths={[280, 560]} sizes="(max-width: 600px) 72vw, 270px" loading="eager" />
-                    </a>
-                    <figcaption class="p-shot-meta">
-                      <span class="p-shot-title">{t(locale, `gallery.${key}`)}</span>
-                      <span class="p-shot-num">0{idx + 1}/04</span>
-                    </figcaption>
-                  </figure>
-                ))}
+              <h1>{heroHeadline}</h1>
+              <p class="a-poster-lead">{t(locale, 'hero.opening')}</p>
+              <div class="a-cta-row">
+                <a class="a-btn-primary" href={protoHref('a', locale, 'download')}>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d="M4.5 3.6c-.3.3-.5.8-.5 1.4v14c0 .6.2 1.1.5 1.4l.1.1L12.4 12v-.2L4.6 3.5l-.1.1zm10.5 11l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.7-.1.1zm-1.4 1.3L11.8 14 4.9 20.9c.3.3.8.3 1.4 0l7.3-4.2zm0-7.8L6.3 3.9c-.6-.3-1.1-.3-1.4 0L11.8 10l1.8-1.9z" />
+                  </svg>
+                  <span>{t(locale, 'buttons.android')}</span>
+                </a>
+                <a class="a-link-story" href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>
+                  {isPt ? 'Ler a história da Dobra →' : 'Read the story of the Fold →'}
+                </a>
               </div>
+              <p class="a-poster-note">
+                {isPt ? 'Grátis · Sem cadastro · Sem anúncio forçado · Em breve no Google Play' : 'Free · No sign-up · No forced ads · Coming soon to Google Play'}
+              </p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* SEÇÃO 2: Mecânica concreta em 3 pilares editoriais */}
-          <section class="p-section alt" aria-labelledby="pillars-title">
-            <div class="p-wrap">
-              <p class="p-kicker">{copy.pillarsKicker}</p>
-              <div class="p-sec-head">
-                <h2 id="pillars-title">{copy.pillarsTitle}</h2>
-                <p>{copy.pillarsIntro}</p>
-              </div>
-              <div class="p-pillars">
-                {copy.pillars.map((p) => (
-                  <div class="p-pillar">
-                    <span class="p-pillar-num">{p.num}</span>
-                    <h3>{p.title}</h3>
-                    <p>{p.text}</p>
-                  </div>
-                ))}
-              </div>
+        <section class="a-stage" id="gameplay">
+          <div class="a-wrap">
+            <div class="a-stage-head">
+              <h2>{t(locale, 'gallery.title')}</h2>
+              <p>{isPt ? 'Capturas reais em 9:16 direto do aparelho. Toque em qualquer tela para ampliar.' : 'Real 9:16 captures straight from the device. Tap any screen to enlarge.'}</p>
             </div>
-          </section>
-
-          {/* SEÇÃO 3: As 5 Camadas reais + Tiranos (sem T-pose em fundo cinza!) */}
-          <section class="p-section" aria-labelledby="worlds-title">
-            <div class="p-wrap">
-              <p class="p-kicker">{copy.worldsKicker}</p>
-              <div class="p-sec-head">
-                <h2 id="worlds-title">{copy.worldsTitle}</h2>
-                <p>{copy.worldsIntro}</p>
-              </div>
-              <div class="p-worlds-grid">
-                {WORLDS.map(({ key, image }, i) => {
-                  const tyrant = TYRANTS.find((ty) => ty.key === key)!;
-                  return (
-                    <article class="p-world-card">
-                      <div class="p-world-img">
-                        <Image src={image} alt={t(locale, `fold.worlds.${key}.alt`)} widths={[300, 450]} sizes="(max-width: 600px) 78vw, 220px" loading="eager" />
-                      </div>
-                      <div class="p-world-body">
-                        <span class="p-world-layer">{t(locale, 'fold.worlds.layer', { n: String(i + 1) })}</span>
-                        <h3>{t(locale, `fold.worlds.${key}.name`)}</h3>
-                        <p>{t(locale, `fold.worlds.${key}.line`)}</p>
-                        <div class="p-world-boss">
-                          {copy.bossPrefix} <strong>{t(locale, `fold.cast.${key}.name`)}</strong>
-                        </div>
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
+            <div class="a-phones">
+              {shots.map((shot) => (
+                <figure class="a-phone">
+                  <a class="a-phone-screen" href={shot.fullHref}>
+                    <Image src={shot.src} alt={shot.alt} widths={[360, 540]} sizes="(max-width: 680px) 72vw, 260px" loading="eager" />
+                  </a>
+                  <figcaption>
+                    <strong>{shot.title}</strong>
+                    <span>{shot.caption}</span>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* SEÇÃO 4: Chamada editorial para A Dobra com pintura real (em vez de repetir o Selo SVG gigante) */}
-          <section class="p-section alt">
-            <div class="p-wrap">
-              <div class="p-story-banner">
-                <div class="p-story-copy">
-                  <p class="p-kicker">{copy.storyKicker}</p>
-                  <h2>{t(locale, 'story.title')}</h2>
-                  <p>{t(locale, 'story.text')}</p>
-                  <div>
-                    <a class="p-btn-ghost" href={`${base}/${locale}/${locale === 'pt' ? 'dobra' : 'fold'}/`}>{t(locale, 'story.link')} →</a>
-                  </div>
+        <section class="a-duel-band">
+          <div class="a-wrap a-duel-split">
+            <figure class="a-duel-painting">
+              <Image src={duelImg} alt={t(locale, 'download.artAlt')} widths={[640, 1080]} sizes="(max-width: 920px) 92vw, 600px" loading="lazy" />
+              <figcaption>{isPt ? 'O Cavaleiro diante da Fenda na Floresta Primeva.' : 'The Knight facing the Rift in the Primeval Forest.'}</figcaption>
+            </figure>
+            <div class="a-duel-prose">
+              <h2>{isPt ? 'Mova para escapar. Pare para atirar.' : 'Move to dodge. Stop to shoot.'}</h2>
+              <div class="a-prose-list">
+                <div class="a-prose-item">
+                  <strong>{isPt ? 'Tudo em um polegar só' : 'All with a single thumb'}</strong>
+                  <p>{isPt ? 'Arraste pelo chão para desviar dos projéteis e solte para o Cavaleiro cravar os pés e disparar no alvo marcado.' : 'Drag across the ground to dodge projectiles and release so your Knight plants their feet and fires at the marked target.'}</p>
                 </div>
-                <div class="p-story-art">
-                  <Image src={threeRifts} alt={t(locale, 'fold.figures.threeRifts')} widths={[480, 760]} sizes="(max-width: 900px) 95vw, 520px" loading="eager" />
+                <div class="a-prose-item">
+                  <strong>{isPt ? 'Cada corrida, uma combinação' : 'Every run, a new build'}</strong>
+                  <p>{isPt ? 'Troque entre arco, lâminas e cajados, vista armaduras das camadas e encaixe lascas do Selo como runas que mudam seu estilo.' : 'Swap between bow, blades, and staves, wear layer armor, and socket Seal shards as runes that reshape your style.'}</p>
                 </div>
-              </div>
-            </div>
-          </section>
-        </>
-      )}
-
-      {view === 'download' && (
-        <section class="p-download-section">
-          <div class="p-wrap">
-            <div class="p-download-card">
-              <div class="p-download-media">
-                {/* Usa duel.webp sem o logo gravado que era cortado ao meio em "ENSION / ERS"! */}
-                <Image src={duel} alt={t(locale, 'download.artAlt')} widths={[640, 1024]} sizes="(max-width: 900px) 95vw, 600px" loading="eager" />
-              </div>
-              <div class="p-download-body">
-                <p class="p-kicker">{copy.downloadKicker}</p>
-                <div class="p-app-header">
-                  <Image src={icon} alt="Dimension Riders" width={68} loading="eager" />
-                  <div>
-                    <h1>Dimension Riders</h1>
-                    <p>{t(locale, 'download.intro')}</p>
-                  </div>
+                <div class="a-prose-item">
+                  <strong>{isPt ? 'Joga offline, sem cadastro' : 'Plays offline, no account required'}</strong>
+                  <p>{isPt ? 'A corrida e o progresso ficam no aparelho. Anúncios em vídeo são sempre opcionais e nunca interrompem a partida.' : 'Your runs and progress live on your device. Video ads are always optional and never interrupt a match.'}</p>
                 </div>
-                <div class="p-store-box">
-                  <div class="p-store-status">{copy.downloadStatus}</div>
-                  <p>{t(locale, 'download.storeSoon')}</p>
-                </div>
-                <ul class="p-req-list">
-                  {copy.downloadReqs.map((r) => (
-                    <li><strong>{r.label}</strong>{r.val}</li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>
         </section>
-      )}
 
-      {view === 'support' && (
-        <div class="p-doc-wrap">
-          <div class="p-doc-sheet">
-            <p class="p-kicker">DIMENSION RIDERS · {t(locale, 'support.title').toUpperCase()}</p>
-            <h1>{t(locale, 'support.title')}</h1>
-            <p class="p-doc-lead">{t(locale, 'support.intro')}</p>
-            <article class="p-doc-prose">
-              <SupportContent />
-            </article>
+        <section class="a-horizon-sec">
+          <div class="a-wrap">
+            <div class="a-stage-head">
+              <h2>{isPt ? 'Cinco camadas invadidas' : 'Five invaded layers'}</h2>
+              <p>
+                <a class="a-link-story" href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>
+                  {isPt ? 'Explorar os 5 capítulos de A Dobra →' : 'Explore all 5 chapters of The Fold →'}
+                </a>
+              </p>
+            </div>
+            <div class="a-horizon-strip">
+              {worlds.map((w) => (
+                <article class="a-horizon-slice">
+                  <Image src={w.worldImg} alt={w.alt} widths={[360, 600]} sizes="(max-width: 680px) 78vw, 240px" loading="lazy" />
+                  <div class="a-slice-meta">
+                    <span class="a-slice-roman">{w.roman}</span>
+                    <h3>{w.name}</h3>
+                    <p>{w.line}</p>
+                    <span class="a-slice-tyrant">{isPt ? `Tirano: ${w.tyrantName}` : `Tyrant: ${w.tyrantName}`}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-    </main>
+        </section>
 
-    {dir === 'c' && view === 'home' && (
-      <div class="p-sticky-mobile-bar" role="region" aria-label="Atalho de instalação">
-        <div class="p-sticky-info">
-          <Image src={icon} alt="" width={36} loading="eager" />
+        <section class="a-finale">
+          <div class="a-finale-bg">
+            <Image src={riderRiftImg} alt={t(locale, 'fold.figures.riderRift')} widths={[960, 1600]} sizes="100vw" loading="lazy" />
+          </div>
+          <div class="a-wrap">
+            <h2>{t(locale, 'cta.title')}</h2>
+            <p>{t(locale, 'cta.text')}</p>
+            <a class="a-btn-primary" href={protoHref('a', locale, 'download')}>
+              <span>{t(locale, 'buttons.android')}</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    )}
+
+    {/* =====================================================================
+        HOME DA DIREÇÃO B — ALMANAQUE IMPRESSO DE PAPEL DOBRADO
+       ===================================================================== */}
+    {view === 'home' && variant === 'b' && (
+      <main>
+        <section class="b-wrap b-spread">
           <div>
-            <strong>Dimension Riders</strong>
-            <span>{locale === 'pt' ? 'Grátis · Offline · Android' : 'Free · Offline · Android'}</span>
+            <p class="b-rubric">{isPt ? 'Crônica dos Cavaleiros · Ação em Retrato no Android' : 'Chronicle of the Knights · Portrait Action on Android'}</p>
+            <h1>{heroHeadline}</h1>
+            <p class="b-dropcap">
+              {isPt
+                ? 'Pense nos mundos como folhas de papel dobrado: onde duas camadas encostam, abre-se uma Fenda. Em Dimension Riders, você guia o Cavaleiro com um único polegar por cinco regiões invadidas, combina lascas do Selo como runas e derruba o Tirano que sustenta cada ninho.'
+                : 'Think of the worlds as sheets of folded paper: where two layers touch, a Rift tears open. In Dimension Riders, you guide your Knight with a single thumb across five invaded regions, socket Seal shards as runes, and topple the Tyrant holding each nest.'}
+            </p>
+            <div class="b-actions">
+              <a class="b-btn-ink" href={protoHref('b', locale, 'download')}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M4.5 3.6c-.3.3-.5.8-.5 1.4v14c0 .6.2 1.1.5 1.4l.1.1L12.4 12v-.2L4.6 3.5l-.1.1zm10.5 11l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.7-.1.1zm-1.4 1.3L11.8 14 4.9 20.9c.3.3.8.3 1.4 0l7.3-4.2zm0-7.8L6.3 3.9c-.6-.3-1.1-.3-1.4 0L11.8 10l1.8-1.9z" />
+                </svg>
+                <span>{t(locale, 'buttons.android')}</span>
+              </a>
+              <a class="b-link-plain" href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>
+                {isPt ? 'Ler os capítulos de A Dobra →' : 'Read the chapters of The Fold →'}
+              </a>
+            </div>
+            <dl class="b-colophon">
+              <div class="b-colophon-row">
+                <dt>{isPt ? 'Controle' : 'Controls'}</dt>
+                <dd>{isPt ? 'Mova para escapar, pare para atirar (1 polegar)' : 'Move to dodge, stop to shoot (1 thumb)'}</dd>
+              </div>
+              <div class="b-colophon-row">
+                <dt>{isPt ? 'Sessão' : 'Session'}</dt>
+                <dd>{isPt ? 'Joga 100% offline · Sem cadastro obrigatório' : 'Plays 100% offline · No sign-up required'}</dd>
+              </div>
+              <div class="b-colophon-row">
+                <dt>{isPt ? 'Lançamento' : 'Release'}</dt>
+                <dd>{isPt ? 'Grátis no Android · Em breve no Google Play' : 'Free on Android · Coming soon to Google Play'}</dd>
+              </div>
+            </dl>
           </div>
+
+          <div class="b-collage">
+            <figure class="b-plate-main">
+              <Image src={duelImg} alt={t(locale, 'download.artAlt')} widths={[640, 1080]} sizes="(max-width: 920px) 92vw, 560px" loading="eager" fetchpriority="high" />
+              <figcaption>{isPt ? 'Estampa I — O Cavaleiro diante da Fenda aberta na Floresta Primeva.' : 'Plate I — The Knight before the open Rift in the Primeval Forest.'}</figcaption>
+            </figure>
+            <figure class="b-plate-inset">
+              <Image src={shots[0].src} alt={shots[0].alt} widths={[240, 360]} sizes="170px" loading="eager" />
+              <figcaption>{isPt ? 'Fig. 1 — Corrida real no aparelho' : 'Fig. 1 — Real run on device'}</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="b-kraft-band" id="gameplay">
+          <div class="b-wrap">
+            <div class="b-sec-head">
+              <h2>{isPt ? 'Pranchas de Jogo — Capturas Reais no Aparelho' : 'Game Plates — Real Device Captures'}</h2>
+              <span>{isPt ? 'Figuras 1 a 4 · Sem cortes nem montagem (toque para ampliar)' : 'Figures 1 to 4 · Uncropped device screens (tap to enlarge)'}</span>
+            </div>
+            <div class="b-plates-grid">
+              {shots.map((shot) => (
+                <figure class="b-plate">
+                  <a href={shot.fullHref}>
+                    <Image src={shot.src} alt={shot.alt} widths={[360, 540]} sizes="(max-width: 680px) 74vw, 250px" loading="eager" />
+                  </a>
+                  <figcaption>
+                    <strong>{`Fig. ${shot.num} · ${shot.title}`}</strong>
+                    {shot.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="b-notes-sec">
+          <div class="b-wrap">
+            <div class="b-columns-3">
+              <article class="b-col-note">
+                <h3>{isPt ? 'I. Mova. Pare. Atire.' : 'I. Move. Stop. Shoot.'}</h3>
+                <p>
+                  {isPt
+                    ? 'Arraste pelo chão com o polegar para escapar das investidas; solte para o Cavaleiro firmar os pés e disparar no alvo marcado.'
+                    : 'Drag across the ground with your thumb to evade attacks; release so your Knight plants their feet and fires at the marked target.'}
+                </p>
+              </article>
+              <article class="b-col-note">
+                <h3>{isPt ? 'II. Armas, armaduras e runas' : 'II. Weapons, armor & runes'}</h3>
+                <p>
+                  {isPt
+                    ? 'Arco, lâminas ou cajado: cada corrida pede uma combinação de equipamento e lascas do Selo para vencer o Tirano da camada.'
+                    : 'Bow, blades, or staff: every run calls for a new mix of gear and Seal shards to overcome the layer’s Tyrant.'}
+                </p>
+              </article>
+              <article class="b-col-note">
+                <h3>{isPt ? 'III. Offline e sem interrupções' : 'III. Offline & uninterrupted'}</h3>
+                <p>
+                  {isPt
+                    ? 'A corrida roda inteira no seu aparelho, mesmo sem internet. Comece sem criar conta e jogue sem anúncios forçados.'
+                    : 'Runs play entirely on your device, even offline. Start without creating an account and play with zero forced ads.'}
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="b-ledger-sec">
+          <div class="b-wrap">
+            <div class="b-sec-head">
+              <h2>{isPt ? 'Índice das Cinco Camadas Conhecidas' : 'Index of the Five Known Layers'}</h2>
+              <span>
+                <a class="b-link-plain" href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>
+                  {isPt ? 'Abrir o relato completo de A Dobra →' : 'Open the full account of The Fold →'}
+                </a>
+              </span>
+            </div>
+            <div class="b-ledger">
+              {worlds.map((w) => (
+                <article class="b-ledger-row">
+                  <div class="b-ledger-num">{w.roman}.</div>
+                  <Image class="b-ledger-thumb" src={w.worldImg} alt={w.alt} widths={[320, 480]} sizes="200px" loading="lazy" />
+                  <div class="b-ledger-title">
+                    <h3>{w.name}</h3>
+                    <span>{isPt ? `Tirano: ${w.tyrantName}` : `Tyrant: ${w.tyrantName}`}</span>
+                  </div>
+                  <p class="b-ledger-desc">{w.line}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+    )}
+
+    {/* =====================================================================
+        HOME DA DIREÇÃO C — VITRINE DIRETA DE JOGO MOBILE (GAMEPLAY NA 1ª TELA)
+       ===================================================================== */}
+    {view === 'home' && variant === 'c' && (
+      <main>
+        <div class="c-cover">
+          <Image src={heroImg} alt={t(locale, 'hero.art')} widths={[960, 1600, 2560]} sizes="100vw" loading="eager" fetchpriority="high" />
         </div>
-        <a class="p-sticky-cta" href={protoHref(dir, locale, 'download')}>{t(locale, 'nav.download')}</a>
-      </div>
+
+        <section class="c-wrap">
+          <div class="c-app-dock">
+            <div class="c-app-id">
+              <Image class="c-app-icon" src={appIcon} alt="Dimension Riders" widths={[176]} sizes="88px" loading="eager" />
+              <div class="c-app-titles">
+                <h1>Dimension Riders</h1>
+                <p class="c-app-sub">{heroHeadline}</p>
+                <p class="c-app-meta">
+                  {isPt ? 'Ação · 1 Polegar · Offline · Grátis no Android (Em breve no Google Play)' : 'Action · 1 Thumb · Offline · Free on Android (Coming soon to Google Play)'}
+                </p>
+              </div>
+            </div>
+            <div class="c-dock-cta">
+              <a class="c-btn-get" href={protoHref('c', locale, 'download')}>
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M4.5 3.6c-.3.3-.5.8-.5 1.4v14c0 .6.2 1.1.5 1.4l.1.1L12.4 12v-.2L4.6 3.5l-.1.1zm10.5 11l-2.6-2.6v-.2l2.6-2.6.1.1 3.1 1.8c.9.5.9 1.3 0 1.8l-3.1 1.7-.1.1zm-1.4 1.3L11.8 14 4.9 20.9c.3.3.8.3 1.4 0l7.3-4.2zm0-7.8L6.3 3.9c-.6-.3-1.1-.3-1.4 0L11.8 10l1.8-1.9z" />
+                </svg>
+                <span>{t(locale, 'buttons.android')}</span>
+              </a>
+              <a class="c-btn-ghost" href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>
+                {t(locale, 'nav.fold')}
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="c-reel-sec" id="gameplay">
+          <div class="c-wrap">
+            <div class="c-reel-track">
+              {shots.map((shot) => (
+                <figure class="c-reel-item">
+                  <a href={shot.fullHref}>
+                    <Image src={shot.src} alt={shot.alt} widths={[360, 540]} sizes="(max-width: 680px) 68vw, 260px" loading="eager" />
+                  </a>
+                  <figcaption>
+                    <strong>{shot.title}</strong> — {shot.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="c-wrap c-overview-sec">
+          <div class="c-about">
+            <h2>{isPt ? 'Como é jogar' : 'How it plays'}</h2>
+            <p>{t(locale, 'hero.opening')}</p>
+            <ul class="c-feature-points">
+              <li>
+                <strong>{isPt ? 'Mova para escapar. Pare para atirar.' : 'Move to dodge. Stop to shoot.'}</strong>
+                {isPt ? 'Controle tudo com um polegar só em retrato: desvie dos ataques e solte para disparar.' : 'Control everything with one thumb in portrait: dodge attacks and release to fire.'}
+              </li>
+              <li>
+                <strong>{isPt ? 'Armas, armaduras e lascas do Selo' : 'Weapons, armor & Seal shards'}</strong>
+                {isPt ? 'Prepare seu equipamento no Arsenal e escolha runas durante a corrida para enfrentar cada Tirano.' : 'Prepare your gear in the Arsenal and pick runes mid-run to face each Tyrant.'}
+              </li>
+              <li>
+                <strong>{isPt ? 'Joga offline e sem anúncio forçado' : 'Plays offline with no forced ads'}</strong>
+                {isPt ? 'Comece sem cadastro. O progresso fica no aparelho e anúncios em vídeo são sempre opcionais.' : 'Start without sign-up. Progress stays on your device and video ads are always optional.'}
+              </li>
+            </ul>
+            <div class="c-duel-preview">
+              <Image src={duelImg} alt={t(locale, 'download.artAlt')} widths={[600]} sizes="(max-width: 920px) 92vw, 480px" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="c-worlds-col">
+            <h2>{isPt ? 'As 5 Camadas da Dobra' : 'The 5 Layers of the Fold'}</h2>
+            <div class="c-world-stack">
+              {worlds.map((w) => (
+                <article class="c-world-banner">
+                  <Image src={w.worldImg} alt={w.alt} widths={[480, 720]} sizes="(max-width: 920px) 92vw, 560px" loading="lazy" />
+                  <div class="c-wb-left">
+                    <h3>{`${w.roman}. ${w.name}`}</h3>
+                    <p>{w.line}</p>
+                  </div>
+                  <div class="c-wb-right">
+                    {w.tyrantName}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <div class="c-sticky-bar" aria-label={isPt ? 'Atalho de download' : 'Download shortcut'}>
+          <div class="c-sticky-left">
+            <Image src={appIcon} alt="" widths={[72]} sizes="36px" loading="lazy" />
+            <div>
+              <strong>Dimension Riders</strong>
+              <span>{isPt ? 'Android · Grátis · Offline' : 'Android · Free · Offline'}</span>
+            </div>
+          </div>
+          <a class="c-btn-get" href={protoHref('c', locale, 'download')}>
+            {t(locale, 'nav.download')}
+          </a>
+        </div>
+      </main>
+    )}
+
+    {/* =====================================================================
+        PÁGINA BAIXAR (/baixar) — SEM LOGO CORTADO "ENSION / ERS"
+       ===================================================================== */}
+    {view === 'download' && (
+      <main class={`${wrapClass} p-subpage`}>
+        <div class="p-download-split">
+          <div>
+            <div class="p-dl-head">
+              <Image src={appIcon} alt="Dimension Riders" widths={[136]} sizes="68px" loading="eager" />
+              <div>
+                <h1>{t(locale, 'download.headline')}</h1>
+              </div>
+            </div>
+            <p>{t(locale, 'download.intro')}</p>
+            <p>{t(locale, 'download.storeSoon')}</p>
+
+            <div class="p-dl-specs">
+              <div class="p-dl-spec-row">
+                <strong>{isPt ? 'Sistema' : 'System'}</strong>
+                <span>{t(locale, 'download.requirements')}</span>
+              </div>
+              <div class="p-dl-spec-row">
+                <strong>{isPt ? 'Estado atual' : 'Current status'}</strong>
+                <span>{t(locale, 'download.soon')} (Google Play)</span>
+              </div>
+              <div class="p-dl-spec-row">
+                <strong>{t(locale, 'download.benefits.offline.title')}</strong>
+                <span>{t(locale, 'download.benefits.offline.text')}</span>
+              </div>
+              <div class="p-dl-spec-row">
+                <strong>{t(locale, 'download.benefits.free.title')}</strong>
+                <span>{t(locale, 'download.benefits.free.text')}</span>
+              </div>
+            </div>
+
+            <a
+              class={variant === 'b' ? 'b-btn-ink' : variant === 'c' ? 'c-btn-get' : 'a-btn-primary'}
+              href={protoHref(variant, locale, 'support')}
+            >
+              <span>{isPt ? 'Dúvidas? Falar com o Suporte →' : 'Questions? Contact Support →'}</span>
+            </a>
+          </div>
+
+          <figure class="p-dl-painting">
+            <Image src={duelImg} alt={t(locale, 'download.artAlt')} widths={[640, 1080]} sizes="(max-width: 920px) 92vw, 560px" loading="eager" />
+            <figcaption>{isPt ? 'Pintura oficial de duelo diante da Fenda (sem corte no logo).' : 'Official duel painting before the Rift (uncropped).'}</figcaption>
+          </figure>
+        </div>
+      </main>
+    )}
+
+    {/* =====================================================================
+        PÁGINA SUPORTE (/suporte) — LEITURA HUMANA SEM PAREDÃO RAJDHANI
+       ===================================================================== */}
+    {view === 'support' && (
+      <main class={`${wrapClass} p-subpage`}>
+        <article class="p-doc-sheet">
+          <h1>{t(locale, 'support.title')}</h1>
+          <p>{t(locale, 'support.intro')}</p>
+          <SupportContent />
+        </article>
+      </main>
     )}
 
     <footer class="p-footer">
-      <div class="p-wrap p-footer-inner">
-        <span>{t(locale, 'footer.madeBy')}</span>
-        <div class="p-footer-links">
-          <a href={protoHref(dir, locale, 'support')}>{t(locale, 'nav.support')}</a>
-          <a href={`${base}/${locale}/${locale === 'pt' ? 'termos' : 'terms'}/`}>{t(locale, 'nav.terms')}</a>
-          <a href={`${base}/${locale}/${locale === 'pt' ? 'privacidade' : 'privacy'}/`}>{t(locale, 'nav.privacy')}</a>
-          <a href={`mailto:${CONTACT_EMAIL}`}>{t(locale, 'footer.contact')}</a>
-        </div>
+      <div class={`${wrapClass} p-footer-inner`}>
+        <span>© {new Date().getFullYear()} Dimension Riders · {t(locale, 'footer.madeBy')} · <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></span>
+        <nav class="p-footer-links" aria-label="Links do rodapé">
+          <a href={isPt ? `${base}/pt/dobra/` : `${base}/en/fold/`}>{t(locale, 'nav.fold')}</a>
+          <a href={protoHref(variant, locale, 'download')}>{t(locale, 'nav.download')}</a>
+          <a href={protoHref(variant, locale, 'support')}>{t(locale, 'nav.support')}</a>
+          <a href={isPt ? `${base}/excluir-conta/` : `${base}/delete-account/`}>{isPt ? 'Excluir conta' : 'Delete account'}</a>
+          <a href={isPt ? `${base}/pt/privacidade/` : `${base}/en/privacy/`}>{t(locale, 'nav.privacy')}</a>
+          <a href={isPt ? `${base}/pt/termos/` : `${base}/en/terms/`}>{t(locale, 'nav.terms')}</a>
+        </nav>
       </div>
     </footer>
   </body>

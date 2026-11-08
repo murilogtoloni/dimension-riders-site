@@ -313,23 +313,19 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
 
     <main class="wrap">
       <section class="hero-box">
-        <h1>Por que o site atual parece "padrão feito por IA" — e 3 direções reais para escolher</h1>
+        <h1>Rodada 2 (#1595) — Três arquiteturas humanas distintas (zero bento-grid / template SaaS de IA)</h1>
         <p>
-          Auditamos todas as páginas de <strong>dimensionriders.app</strong> em celular (<strong>390 px</strong>) e desktop (<strong>1440 px</strong>), PT e EN.
-          O diagnóstico mostra que a sensação de "feito por IA" vem de 5 fatores combinados: <strong>(1)</strong> paleta roxo-índigo + dourado + ciano neon com 5 gradientes radiais roxos;{' '}
-          <strong>(2)</strong> molduras marrons grossas de <code>2px</code> com bisel 3D e botões de cassino mobile;{' '}
-          <strong>(3)</strong> capturas reais do jogo escondidas a <code>2.221 px</code> de rolagem no celular (atrás de 3 caixinhas esmagadas de <code>118 px</code> e de arte de conceito com o esquilo em T-pose de modelagem 3D em fundo cinza);{' '}
-          <strong>(4)</strong> fonte condensada <code>Rajdhani SemiBold (600)</code> em <code>20px</code> usada em 100% dos parágrafos e textos legais; e{' '}
-          <strong>(5)</strong> um recorte em <code>/baixar</code> e <code>/jogar</code> que corta o logotipo ao meio (<strong><code>ENSION / ERS</code></strong>).
+          Na primeira tentativa, as opções A, B e C ainda pareciam site gerado por IA porque compartilhavam o <strong>mesmo esqueleto de landing page SaaS/Tailwind</strong> (rótulos numerados <code>01 / GAMEPLAY</code>, caixinhas arredondadas em grade <code>repeat(3, 1fr)</code>, pílulas <code>CAMADA I</code> e tabela 2×2 no topo).{' '}
+          Agora cada opção tem uma <strong>arquitetura de página própria</strong>, inspirada em sites reais de jogos independentes (<em>Firewatch / Supergiant</em>, <em>Untitled Goose Game / manuais impressos</em> e <em>Apple Arcade / vitrines mobile</em>), já com o pacote <strong>P1.1 a P1.8</strong> aprovado.
         </p>
 
         <div class="proto-cards">
           <article class="proto-card rec">
             <div>
-              <span class="proto-badge">Recomendada · Direção A</span>
-              <h2>A · Noir Tático & Gameplay na Frente</h2>
+              <span class="proto-badge">Opção A · Pôster & Palco</span>
+              <h2>A · Pôster Cinematográfico (Firewatch / Supergiant)</h2>
               <p>
-                Mantém o clima escuro de ação, mas elimina 100% do roxo/dourado/ciano de IA e os botões 3D. Usa obsidiana fosca (<code>#0B0C0E</code>), fios de <code>1px</code> (estilo <em>Hades</em> / <em>Linear</em>), fonte de corpo limpa e sobe as capturas reais 9:16 para <code>y = 697px</code> num carrossel <code>scroll-snap</code>.
+                <strong>Zero cards e zero caixas.</strong> A pintura <code>hero.webp</code> abre em tela cheia como pôster (fundo carvão quente <code>#11100E</code>); abaixo, as 4 telas reais <code>9:16</code> aparecem soltas em degraus assimétricos, seguidas de prosa editorial ao lado de <code>duel.webp</code> e de um panorama contínuo de 5 fatias das camadas.
               </p>
             </div>
             <div class="proto-links">
@@ -342,10 +338,10 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
 
           <article class="proto-card">
             <div>
-              <span class="proto-badge">Direção B · Estilo #1594</span>
-              <h2>B · Editorial Papel Dobrado</h2>
+              <span class="proto-badge">Opção B · Papel & Nanquim</span>
+              <h2>B · Almanaque Impresso de Papel Dobrado</h2>
               <p>
-                Traz a metáfora literal do jogo (<em>"mundos como camadas de papel dobrado"</em>) e o visual humano aprovado ontem na <code>/excluir-conta</code> (<code>#1594</code>): papel pedra (<code>#F3EFE6</code>), folha <code>#FFFFFF</code> com borda <code>1px</code> e alto contraste para as pinturas e capturas.
+                Desenhado como um <strong>almanaque impresso de RPG</strong> sobre papel creme (<code>#F2ECE1</code>) e faixa kraft (<code>#E5DCC8</code>), cantos vivos (<code>0px</code>), fios de nanquim (<code>#191714</code>), corpo em serifa <code>Georgia</code> com capitular vermelha, gravuras coladas (<em>Estampa I</em> + <em>Fig. 1 a 4</em>) e as 5 camadas num índice horizontal de livro.
               </p>
             </div>
             <div class="proto-links">
@@ -358,10 +354,10 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
 
           <article class="proto-card">
             <div>
-              <span class="proto-badge">Direção C · Mobile First</span>
-              <h2>C · Atlas Imersivo & Barra Fixa</h2>
+              <span class="proto-badge">Opção C · Gameplay na 1ª Tela</span>
+              <h2>C · Vitrine Direta de Jogo Mobile</h2>
               <p>
-                Fundo azul-abismo neutro (<code>#070A10</code>) com <strong>2 capturas reais do jogo já dentro do Hero</strong> (<code>y = 458px</code> no celular) + <strong>barra fixa inferior no celular</strong> (ícone + botão Baixar sempre ao alcance do polegar durante a rolagem).
+                Pensada para quem abre no celular e quer ver o jogo em 1 segundo: capa panorâmica + <strong>doca de ícone (88px), título e botão Baixar</strong>, seguida <strong>imediatamente em <code>y = 385px</code> pelas 4 capturas reais <code>9:16</code></strong> (sem texto de marketing antes do jogo!), tira de camadas em banner e barra fixa inferior no celular.
               </p>
             </div>
             <div class="proto-links">
@@ -379,7 +375,7 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
         <div class="comp-head">
           <h2>1. Celular (390×844 px) — Primeira Dobra (O que o visitante vê ao abrir)</h2>
           <p>
-            Capturas reais na mesma largura (390 px, 2x DPR). Toque em qualquer imagem para ampliar. No celular, as colunas ficam 2×2 para comparar lado a lado.
+            Capturas reais na mesma largura (390 px, 2x DPR). Toque em qualquer imagem para ampliar. Repare como as três opções têm estrutura, tipografia e personalidade completamente diferentes entre si.
           </p>
         </div>
         <div class="grid-4">
@@ -394,8 +390,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA A (Noir Tático)</strong>
-              <span>Cabeçalho em 1 linha (57px), ficha 2×2 objetiva e botão "Ver corrida real ↓".</span>
+              <strong>OPÇÃO A (Pôster Cinematográfico)</strong>
+              <span>Pintura em tela cheia, fundo carvão #11100E e topo das capturas reais já visível na 1ª tela.</span>
             </div>
             <a class="zoom" href={img('fold-mobile-a-pt-home')}>
               <img src={img('fold-mobile-a-pt-home')} alt="Proposta A: Início celular primeira dobra" loading="eager" />
@@ -403,8 +399,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA B (Papel Dobrado)</strong>
-              <span>Folha clara estilo #1594 sobre papel pedra; pintura emoldurada com contraste limpo.</span>
+              <strong>OPÇÃO B (Almanaque Impresso)</strong>
+              <span>Papel creme #F2ECE1, capitular em serifa, botão nanquim e prancha dupla (Estampa I + Fig. 1).</span>
             </div>
             <a class="zoom" href={img('fold-mobile-b-pt-home')}>
               <img src={img('fold-mobile-b-pt-home')} alt="Proposta B: Início celular primeira dobra" loading="eager" />
@@ -412,8 +408,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA C (Atlas + Barra Fixa)</strong>
-              <span>Duas capturas reais (Caldeira e Menu Equipar) visíveis já na 1ª tela + barra fixa inferior.</span>
+              <strong>OPÇÃO C (Vitrine Mobile Direta)</strong>
+              <span>Ícone + título + CTA e duas capturas reais grandes já ocupando metade da 1ª tela (y=385px).</span>
             </div>
             <a class="zoom" href={img('fold-mobile-c-pt-home')}>
               <img src={img('fold-mobile-c-pt-home')} alt="Proposta C: Início celular primeira dobra" loading="eager" />
@@ -442,8 +438,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA A — /pt/baixar/ (Noir Tático)</strong>
-              <span>Pintura duel.webp inteira, ícone 68px junto ao título e grade 2×2 de requisitos.</span>
+              <strong>OPÇÃO A — /pt/baixar/ (Pôster)</strong>
+              <span>Pintura duel.webp inteira sobre carvão quente #11100E e ficha em linhas simples.</span>
             </div>
             <a class="zoom" href={img('full-desktop-a-pt-baixar')}>
               <img src={img('full-desktop-a-pt-baixar')} alt="Proposta A: Baixar desktop" loading="lazy" />
@@ -451,8 +447,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA B — /pt/baixar/ (Papel Dobrado)</strong>
-              <span>Mesma correção estrutural no tema claro editorial (#F3EFE6 / #FFFFFF).</span>
+              <strong>OPÇÃO B — /pt/baixar/ (Almanaque)</strong>
+              <span>Prancha impressa em papel com moldura de nanquim e tipografia editorial.</span>
             </div>
             <a class="zoom" href={img('full-desktop-b-pt-baixar')}>
               <img src={img('full-desktop-b-pt-baixar')} alt="Proposta B: Baixar desktop" loading="lazy" />
@@ -466,7 +462,7 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
         <div class="comp-head">
           <h2>3. Celular (390 px) — Página Inicial Completa (Antes × A × B × C)</h2>
           <p>
-            Veja a diferença na ordem e no respiro: saem as 3 caixinhas esmagadas de 118px e os 4 conceitos com fundo cinza (incluindo o esquilo em T-pose); entram o carrossel <code>scroll-snap</code> de capturas reais (281px de largura) logo no topo, os 3 pilares explicados e as 5 camadas reais.
+            Veja a página inteira em 390 px: zero caixas esmagadas de 118px, zero esquilo em T-pose em fundo cinza e três arquiteturas reais de página.
           </p>
         </div>
         <div class="grid-4">
@@ -481,8 +477,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA A (390 px completa)</strong>
-              <span>Capturas reais grandes no 1º scroll + 3 pilares + 5 camadas reais.</span>
+              <strong>OPÇÃO A (Pôster Cinematográfico)</strong>
+              <span>Telas soltas sem caixa, prosa com duel.webp e panorama das 5 camadas.</span>
             </div>
             <a class="zoom" href={img('full-mobile-a-pt-home')}>
               <img src={img('full-mobile-a-pt-home')} alt="Proposta A: Início celular completa" loading="lazy" />
@@ -490,8 +486,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA B (390 px completa)</strong>
-              <span>Folhas editoriais em papel dobrado com leitura limpa e alto contraste.</span>
+              <strong>OPÇÃO B (Almanaque Impresso)</strong>
+              <span>Faixa kraft com Fig. 1–4, 3 colunas de jornal e índice de livro das 5 camadas.</span>
             </div>
             <a class="zoom" href={img('full-mobile-b-pt-home')}>
               <img src={img('full-mobile-b-pt-home')} alt="Proposta B: Início celular completa" loading="lazy" />
@@ -499,8 +495,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA C (390 px completa)</strong>
-              <span>Capturas já no Hero + barra inferior fixa acompanhando a rolagem.</span>
+              <strong>OPÇÃO C (Vitrine Mobile Direta)</strong>
+              <span>Capturas reais logo abaixo do ícone do jogo + banners horizontais das 5 camadas.</span>
             </div>
             <a class="zoom" href={img('full-mobile-c-pt-home')}>
               <img src={img('full-mobile-c-pt-home')} alt="Proposta C: Início celular completa" loading="lazy" />
@@ -514,7 +510,7 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
         <div class="comp-head">
           <h2>4. Desktop (1440 px) — Página Inicial Completa (Antes × A × B × C)</h2>
           <p>
-            Comparação em 1440 px de largura. Repare como a remoção das bordas marrons de 2px e dos fundos cinzas dos conceitos deixa as pinturas e capturas do jogo muito mais profissionais.
+            Comparação em 1440 px de largura: veja como cada opção organiza o palco principal, as 4 capturas verticais e as 5 camadas de um jeito único.
           </p>
         </div>
         <div class="grid-4">
@@ -529,8 +525,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA A (1440 px)</strong>
-              <span>Noir Tático (#0B0C0E), fios de 1px e vitrine de 4 capturas + 5 camadas.</span>
+              <strong>OPÇÃO A (Pôster · 1440 px)</strong>
+              <span>Pintura full-bleed, 4 telas em degraus assimétricos e horizonte contínuo de 5 fatias.</span>
             </div>
             <a class="zoom" href={img('full-desktop-a-pt-home')}>
               <img src={img('full-desktop-a-pt-home')} alt="Proposta A: Início desktop completa" loading="lazy" />
@@ -538,8 +534,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA B (1440 px)</strong>
-              <span>Editorial Papel Dobrado (#F3EFE6 / #FFFFFF) alinhado à #1594.</span>
+              <strong>OPÇÃO B (Almanaque · 1440 px)</strong>
+              <span>Papel creme e faixa kraft, gravuras emolduradas em nanquim e tabela-razão das 5 camadas.</span>
             </div>
             <a class="zoom" href={img('full-desktop-b-pt-home')}>
               <img src={img('full-desktop-b-pt-home')} alt="Proposta B: Início desktop completa" loading="lazy" />
@@ -547,8 +543,8 @@ const img = (name: string) => `${base}/capturas-1595/${name}.webp`;
           </div>
           <div class="shot-col after">
             <div class="shot-col-head">
-              <strong>PROPOSTA C (1440 px)</strong>
-              <span>Hero dividido com 2 capturas reais em destaque já no topo.</span>
+              <strong>OPÇÃO C (Vitrine Mobile · 1440 px)</strong>
+              <span>Capa + doca de app com as 4 telas reais imediatamente abaixo e pilha de banners das camadas.</span>
             </div>
             <a class="zoom" href={img('full-desktop-c-pt-home')}>
               <img src={img('full-desktop-c-pt-home')} alt="Proposta C: Início desktop completa" loading="lazy" />

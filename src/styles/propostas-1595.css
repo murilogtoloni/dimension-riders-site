@@ -1,82 +1,23 @@
-/* ==========================================================================
-   #1595 — Propostas de UI/UX para tirar a cara de IA (Direções A, B e C)
-   ========================================================================== */
-
 @font-face {
-  font-family: Russo;
-  src: url('../fonts/RussoOne-Regular.woff2') format('woff2');
+  font-family: 'Russo';
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
+  src: url('/fonts/RussoOne-Regular.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: Rajdhani;
-  src: url('../fonts/Rajdhani-SemiBold.woff2') format('woff2');
-  font-display: swap;
-}
-
-/* Barra superior de navegação entre as propostas (apenas para revisão do Murilo) */
-.proto-switcher {
-  background: #18181b;
-  color: #e4e4e7;
-  border-bottom: 1px solid #27272a;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-  font-size: 13px;
-  line-height: 1.4;
-  padding: 8px 16px;
-}
-
-.proto-switcher-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-}
-
-.proto-switcher-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.proto-switcher a {
-  color: #a1a1aa;
-  text-decoration: none;
-  padding: 4px 10px;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  font-weight: 500;
-}
-
-.proto-switcher a:hover {
-  color: #ffffff;
-  background: #27272a;
-}
-
-.proto-switcher a[aria-current="true"] {
-  color: #18181b;
-  background: #f4f4f5;
-  font-weight: 600;
-}
-
-/* Base compartilhada das propostas */
-.p1595 {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  background: var(--bg);
-  color: var(--text);
-}
-
-.p1595 *,
-.p1595 *::before,
-.p1595 *::after {
+*, *::before, *::after {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.p1595 {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .p1595 img {
@@ -85,1265 +26,1562 @@
   display: block;
 }
 
-.p1595 a {
+:where(.p1595) a {
   color: inherit;
 }
 
-/* ==========================================================================
-   TEMAS DAS 3 DIREÇÕES
-   ========================================================================== */
-
-/* Direção A: Noir Tático / Gameplay em Primeiro Plano (Hades / Linear Dark) */
-.p1595.dir-a {
-  color-scheme: dark;
-  --bg: #0b0c0e;
-  --bg-alt: #101216;
-  --surface: #14171c;
-  --surface-2: #1b1f26;
-  --text: #f3f4f6;
-  --secondary: #9ca3af;
-  --muted: #6b7280;
-  --border: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --accent: #f59e0b;
-  --accent-hi: #fbbf24;
-  --accent-ink: #111317;
-  --tag-bg: rgba(245, 158, 11, 0.12);
-  --tag-border: rgba(245, 158, 11, 0.28);
-  --tag-text: #fbbf24;
-}
-
-/* Direção B: Editorial Papel Dobrado / Manual da Ordem (#1594 / Playdate) */
-.p1595.dir-b {
-  color-scheme: light;
-  --bg: #f3efe6;
-  --bg-alt: #eae4d7;
-  --surface: #ffffff;
-  --surface-2: #f8f6f0;
-  --text: #18181b;
-  --secondary: #3f3f46;
-  --muted: #71717a;
-  --border: #dcd6c8;
-  --border-strong: #b8b09f;
-  --accent: #b45309;
-  --accent-hi: #92400e;
-  --accent-ink: #ffffff;
-  --tag-bg: #efe9dc;
-  --tag-border: #d5cdbc;
-  --tag-text: #78350f;
-}
-
-/* Direção C: Atlas Imersivo / Tela Cheia & Barra Mobile (Monument Valley / Supergiant) */
-.p1595.dir-c {
-  color-scheme: dark;
-  --bg: #070a10;
-  --bg-alt: #0c111b;
-  --surface: #111827;
-  --surface-2: #1e293b;
-  --text: #f8fafc;
-  --secondary: #cbd5e1;
-  --muted: #64748b;
-  --border: rgba(148, 163, 184, 0.14);
-  --border-strong: rgba(148, 163, 184, 0.28);
-  --accent: #38bdf8;
-  --accent-hi: #f59e0b;
-  --accent-ink: #070a10;
-  --tag-bg: rgba(56, 189, 248, 0.1);
-  --tag-border: rgba(56, 189, 248, 0.25);
-  --tag-text: #7dd3fc;
-}
-
-.p-wrap {
-  width: min(1160px, calc(100% - 40px));
-  margin: 0 auto;
-}
-
-/* ==========================================================================
-   CABEÇALHO COMPACTO (1 LINHA, ALVOS >= 44px)
-   ========================================================================== */
-.p-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-}
-
-.p-header-inner {
+/* Barra discreta de troca rápida entre protótipos (só da prévia #1595) */
+.p-proto-bar {
+  background: #18181b;
+  color: #e4e4e7;
+  border-bottom: 1px solid #27272a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  padding: 6px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 64px;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+  z-index: 60;
 }
-
-.p-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-family: Russo, system-ui, sans-serif;
-  font-size: 17px;
-  letter-spacing: -0.01em;
-  color: var(--text);
-  min-height: 44px;
-  white-space: nowrap;
-}
-
-.p-brand img {
-  width: 28px;
-  height: 32px;
-  flex-shrink: 0;
-}
-
-.p-nav {
+.p-proto-bar-links {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 4px;
 }
-
-.p-nav a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0 12px;
-  font-size: 14px;
-  font-weight: 500;
+.p-proto-bar a {
   text-decoration: none;
-  color: var(--secondary);
-  border-radius: 6px;
-  white-space: nowrap;
-  transition: color 0.15s, background-color 0.15s;
-}
-
-.p-nav a:hover,
-.p-nav a[aria-current="page"] {
-  color: var(--text);
-}
-
-.p-nav a[aria-current="page"] {
-  font-weight: 600;
-}
-
-.p-nav .p-nav-cta {
-  background: var(--text);
-  color: var(--bg);
-  font-weight: 600;
-  padding: 0 14px;
-  margin-left: 4px;
-  min-height: 38px;
-}
-
-.dir-a .p-nav .p-nav-cta {
-  background: var(--accent);
-  color: var(--accent-ink);
-}
-
-.p-nav .p-lang {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  border-left: 1px solid var(--border);
-  border-radius: 0;
-  margin-left: 4px;
-  padding-left: 12px;
-  min-width: 44px;
-}
-
-/* ==========================================================================
-   META TAGS / KICKERS TÉCNICOS (Sem ciano neon gritante)
-   ========================================================================== */
-.p-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--tag-text);
-  margin: 0 0 12px;
-}
-
-.dir-b .p-kicker {
-  background: var(--tag-bg);
-  border: 1px solid var(--tag-border);
   padding: 3px 8px;
   border-radius: 4px;
+  color: #d4d4d8;
+  border: 1px solid transparent;
+}
+.p-proto-bar a:hover {
+  color: #ffffff;
+  background: #27272a;
+}
+.p-proto-bar a.is-active {
+  background: #f4f4f5;
+  color: #18181b;
+  font-weight: 600;
+}
+.p-proto-bar a.back-comp {
+  color: #fbbf24;
+  font-weight: 600;
 }
 
-/* ==========================================================================
-   BOTÕES LIMPOS (Zero bisel 3D de cassino)
-   ========================================================================== */
-.p-actions {
+/* ============================================================================
+   DIREÇÃO A — PÔSTER CINEMATOGRÁFICO & PALCO DE JOGO
+   (Inspirado em Firewatch / Supergiant / Playdead — zero cards SaaS)
+   ============================================================================ */
+body.p1595-a {
+  background: #11100e;
+  color: #f4efe6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.a-wrap {
+  width: min(1220px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.a-header {
+  position: absolute;
+  top: 34px;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 18px 0;
+  background: linear-gradient(180deg, rgba(17, 16, 14, 0.86) 0%, rgba(17, 16, 14, 0) 100%);
+}
+.a-header-solid {
+  position: relative;
+  top: 0;
+  background: #11100e;
+  border-bottom: 1px solid #26231e;
+}
+.a-header-inner {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
+  justify-content: space-between;
+  gap: 16px;
 }
-
-.p-btn {
+.a-brand {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 10px;
-  min-height: 48px;
-  padding: 12px 22px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
   text-decoration: none;
-  background: var(--accent);
-  color: var(--accent-ink);
-  border: 1px solid transparent;
-  transition: transform 0.12s ease, opacity 0.12s ease;
+  font-family: 'Russo', sans-serif;
+  font-size: 18px;
+  color: #f4efe6;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
-
-.p-btn:hover {
-  opacity: 0.94;
+.a-brand img {
+  width: 28px;
+  height: 28px;
 }
-
-.p-btn svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
+.a-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
-
-.p-btn-ghost {
+.a-nav a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #d6cec2;
+  padding: 8px 2px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border-strong);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.a-nav a:hover,
+.a-nav a[aria-current="page"] {
+  color: #ffffff;
+  border-bottom-color: #e07a22;
+}
+.a-nav a.a-lang {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a89f91;
 }
 
-.p-btn-ghost:hover {
-  background: var(--surface-2);
-}
-
-/* ==========================================================================
-   HERO — DIREÇÃO A (Noir Tático)
-   ========================================================================== */
-.dir-a .p-hero {
+/* Palco de abertura em tela cheia com a pintura hero.webp */
+.a-poster {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
-  border-bottom: 1px solid var(--border);
-  min-height: 540px;
+  min-height: 640px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  padding: 130px 0 84px;
+  overflow: hidden;
+  border-bottom: 1px solid #26231e;
 }
-
-.dir-a .p-hero-bg {
+.a-poster-bg {
   position: absolute;
   inset: 0;
   z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 82% center;
 }
-
-.dir-a .p-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(90deg, #0b0c0e 0%, rgba(11, 12, 14, 0.88) 42%, rgba(11, 12, 14, 0.18) 76%, rgba(11, 12, 14, 0.5) 100%),
-              linear-gradient(180deg, rgba(11, 12, 14, 0.3) 0%, transparent 40%, #0b0c0e 100%);
-}
-
-.p-hero-inner {
-  padding: 64px 0 56px;
-  width: 100%;
-}
-
-.p-hero-copy {
-  max-width: 540px;
-}
-
-.p-hero h1 {
-  font-family: Russo, system-ui, sans-serif;
-  font-weight: 400;
-  font-size: clamp(36px, 4.6vw, 58px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin: 0 0 16px;
-  color: var(--text);
-}
-
-.p-hero h1 span {
-  color: var(--accent-hi);
-}
-
-.dir-b .p-hero h1 span {
-  color: var(--accent);
-}
-
-.p-hero-lead {
-  font-size: 18px;
-  line-height: 1.55;
-  color: var(--secondary);
-  margin: 0;
-  max-width: 470px;
-}
-
-.dir-a .p-hero-lead,
-.dir-c .p-hero-lead {
-  color: #d1d5db;
-}
-
-.p-specs-bar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-alt);
-}
-
-.p-spec-item {
-  padding: 16px 20px;
-  border-right: 1px solid var(--border);
-}
-
-.p-spec-item:last-child {
-  border-right: 0;
-}
-
-.p-spec-label {
-  display: block;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  margin-bottom: 2px;
-}
-
-.p-spec-val {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-/* ==========================================================================
-   HERO — DIREÇÃO B (Editorial Papel Dobrado)
-   ========================================================================== */
-.dir-b .p-hero {
-  padding: 40px 0 36px;
-  border-bottom: 1px solid var(--border);
-}
-
-.dir-b .p-hero-sheet {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  box-shadow: 0 4px 0 #e3ddd0;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.05fr 1.2fr;
-}
-
-.dir-b .p-hero-copy {
-  padding: 40px 36px;
-  max-width: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.dir-b .p-hero-art-frame {
-  position: relative;
-  border-left: 1px solid var(--border);
-  background: #100c1c;
-  min-height: 400px;
-}
-
-.dir-b .p-hero-art-frame img {
+.a-poster-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 78% center;
 }
-
-.dir-b .p-art-tag {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(24, 24, 27, 0.82);
-  color: #e4e4e7;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-/* ==========================================================================
-   HERO — DIREÇÃO C (Atlas Imersivo com Capturas Reais já no Topo)
-   ========================================================================== */
-.dir-c .p-hero {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 56px 0 64px;
-  border-bottom: 1px solid var(--border);
-}
-
-.dir-c .p-hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.32;
-  filter: saturate(0.85);
-}
-
-.dir-c .p-hero::before {
+.a-poster::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(circle at 70% 40%, rgba(7, 10, 16, 0.4), #070a10 75%);
+  background:
+    linear-gradient(90deg, #11100e 0%, rgba(17, 16, 14, 0.92) 38%, rgba(17, 16, 14, 0.28) 72%, rgba(17, 16, 14, 0.05) 100%),
+    linear-gradient(180deg, rgba(17, 16, 14, 0.45) 0%, rgba(17, 16, 14, 0) 35%, rgba(17, 16, 14, 0.95) 94%, #11100e 100%);
 }
-
-.dir-c .p-hero-split {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 40px;
+.a-poster-copy {
+  max-width: 580px;
+}
+.a-emblem-row {
+  display: inline-flex;
   align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
 }
-
-.dir-c .p-hero-phones {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  align-items: start;
+.a-emblem-row img {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
-
-.dir-c .p-phone-card {
-  background: #0d131f;
-  border: 1px solid var(--border-strong);
-  border-radius: 14px;
-  padding: 6px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+.a-emblem-row span {
+  font-size: 14px;
+  color: #cfc6b8;
+  letter-spacing: 0.02em;
 }
-
-.dir-c .p-phone-card:nth-child(2) {
-  margin-top: 24px;
+.a-poster h1 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  color: #fbf8f3;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
 }
-
-.dir-c .p-phone-card img {
-  border-radius: 9px;
-  aspect-ratio: 9 / 16;
-  width: 100%;
-  object-fit: cover;
+.a-poster-lead {
+  font-size: 18px;
+  line-height: 1.55;
+  color: #ddd5c7;
+  margin: 0 0 26px;
+  max-width: 500px;
 }
-
-.dir-c .p-phone-card span {
-  display: block;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
-  color: var(--secondary);
-  padding: 6px 4px 2px;
-  text-align: center;
-}
-
-/* ==========================================================================
-   SEÇÕES DE CONTEÚDO E CABEÇALHO DE SEÇÃO EDITORIAL
-   ========================================================================== */
-.p-section {
-  padding: 64px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.p-section.alt {
-  background: var(--bg-alt);
-}
-
-.p-sec-head {
+.a-cta-row {
   display: flex;
-  align-items: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+.a-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #e07a22;
+  color: #11100e;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 22px;
+  min-height: 48px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.a-btn-primary:hover {
+  background: #f08c33;
+}
+.a-btn-primary svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.a-link-story {
+  font-size: 15px;
+  font-weight: 600;
+  color: #f4efe6;
+  text-decoration: none;
+  border-bottom: 1px solid #6e6559;
+  padding-bottom: 2px;
+}
+.a-poster-note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: #a89f91;
+}
+
+/* Palco das 4 telas verticais sem caixas de card */
+.a-stage {
+  padding: 56px 0 72px;
+}
+.a-stage-head {
+  display: flex;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-bottom: 32px;
 }
-
-.p-sec-head h2 {
-  font-family: Russo, system-ui, sans-serif;
+.a-stage-head h2 {
+  font-family: 'Russo', sans-serif;
   font-weight: 400;
-  font-size: clamp(26px, 3vw, 36px);
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  font-size: clamp(24px, 3vw, 34px);
   margin: 0;
-  color: var(--text);
+  color: #f4efe6;
 }
-
-.p-sec-head p {
+.a-stage-head p {
   margin: 0;
-  max-width: 440px;
   font-size: 15px;
-  color: var(--secondary);
+  color: #a89f91;
+}
+.a-phones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.a-phone {
+  margin: 0;
+}
+.a-phone:nth-child(even) {
+  margin-top: 28px;
+}
+.a-phone-screen {
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(244, 239, 230, 0.14);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65);
+  background: #090807;
+}
+.a-phone-screen img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+.a-phone figcaption {
+  margin-top: 14px;
+  padding: 0 4px;
+}
+.a-phone figcaption strong {
+  display: block;
+  font-size: 15px;
+  color: #f4efe6;
+  margin-bottom: 3px;
+}
+.a-phone figcaption span {
+  display: block;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: #a89f91;
 }
 
-/* ==========================================================================
-   VITRINE DE CAPTURAS REAIS (9:16 grandes, scroll-snap no mobile)
-   ========================================================================== */
-.p-shots-grid {
+/* Seção editorial assimétrica com a pintura duel.webp (sem cards!) */
+.a-duel-band {
+  background: #171512;
+  border-top: 1px solid #26231e;
+  border-bottom: 1px solid #26231e;
+  padding: 72px 0;
+}
+.a-duel-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 52px;
+  align-items: center;
+}
+.a-duel-painting {
+  margin: 0;
+}
+.a-duel-painting img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+.a-duel-painting figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #8f8678;
+}
+.a-duel-prose h2 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+.a-prose-list {
+  border-top: 1px solid #2c2822;
+}
+.a-prose-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #2c2822;
+}
+.a-prose-item strong {
+  display: block;
+  font-size: 16px;
+  color: #f4efe6;
+  margin-bottom: 4px;
+}
+.a-prose-item p {
+  margin: 0;
+  font-size: 14.5px;
+  color: #b8afa0;
+}
+
+/* Panorama contínuo das 5 camadas (sem caixas/pílulas de IA) */
+.a-horizon-sec {
+  padding: 72px 0;
+}
+.a-horizon-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  background: #26231e;
+  border: 1px solid #26231e;
+}
+.a-horizon-slice {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px 16px;
+  background: #11100e;
+}
+.a-horizon-slice img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  transition: transform 0.3s ease;
+}
+.a-horizon-slice:hover img {
+  transform: scale(1.04);
+}
+.a-horizon-slice::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(17, 16, 14, 0.05) 0%, rgba(17, 16, 14, 0.45) 45%, rgba(17, 16, 14, 0.95) 100%);
+}
+.a-slice-meta {
+  width: 100%;
+}
+.a-slice-roman {
+  font-family: 'Russo', sans-serif;
+  font-size: 13px;
+  color: #e07a22;
+  display: block;
+  margin-bottom: 2px;
+}
+.a-slice-meta h3 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0 0 4px;
+  color: #fbf8f3;
+}
+.a-slice-meta p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #d6cec2;
+}
+.a-slice-tyrant {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #a89f91;
+  font-style: italic;
+}
+
+/* Fechamento cinematográfico */
+.a-finale {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 88px 0;
+  border-top: 1px solid #26231e;
+  text-align: center;
+}
+.a-finale-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.a-finale-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  opacity: 0.45;
+}
+.a-finale::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(17, 16, 14, 0.55) 0%, #11100e 85%);
+}
+.a-finale h2 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 44px);
+  margin: 0 0 10px;
+}
+.a-finale p {
+  margin: 0 auto 24px;
+  max-width: 460px;
+  color: #cfc6b8;
+}
+
+
+/* ============================================================================
+   DIREÇÃO B — ALMANAQUE IMPRESSO DA DOBRA (PAPEL & NANQUIM)
+   (Inspirado em manual de RPG impresso / Untitled Goose Game / #1594)
+   ============================================================================ */
+body.p1595-b {
+  background: #f2ece1;
+  color: #191714;
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.b-wrap {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.b-masthead {
+  padding: 18px 0 0;
+}
+.b-masthead-bar {
+  border-top: 3px solid #191714;
+  border-bottom: 1px solid #191714;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.b-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: 'Russo', sans-serif;
+  font-size: 18px;
+  color: #191714;
+  white-space: nowrap;
+}
+.b-brand img {
+  width: 26px;
+  height: 26px;
+}
+.b-edition {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #5c5449;
+}
+.b-nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 14px;
+}
+.b-nav a {
+  text-decoration: none;
+  color: #191714;
+  font-weight: 600;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.b-nav a:hover,
+.b-nav a[aria-current="page"] {
+  color: #b83a1b;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Primeira dobra estilo página de almanaque com gravura colada */
+.b-spread {
+  padding: 40px 0 52px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 44px;
+  align-items: center;
+}
+.b-rubric {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #b83a1b;
+  margin: 0 0 10px;
+}
+.b-spread h1 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+  color: #191714;
+}
+.b-dropcap {
+  margin: 0 0 22px;
+  color: #2e2a24;
+  font-size: 17.5px;
+}
+.b-dropcap::first-letter {
+  float: left;
+  font-family: 'Russo', sans-serif;
+  font-size: 52px;
+  line-height: 0.86;
+  padding-right: 10px;
+  padding-top: 4px;
+  color: #b83a1b;
+}
+.b-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.b-btn-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #191714;
+  color: #f2ece1;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 22px;
+  min-height: 48px;
+  text-decoration: none;
+  border: 2px solid #191714;
+  box-shadow: 4px 4px 0 #b83a1b;
+}
+.b-btn-ink:hover {
+  background: #2e2a24;
+}
+.b-btn-ink svg {
+  width: 18px;
+  height: 18px;
+}
+.b-link-plain {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #191714;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.b-colophon {
+  border-top: 1px solid #191714;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13.5px;
+}
+.b-colophon-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid #cfc6b4;
+}
+.b-colophon-row dt {
+  font-weight: 700;
+  color: #191714;
+}
+.b-colophon-row dd {
+  margin: 0;
+  color: #4a4339;
+  text-align: right;
+}
+
+/* Prancha dupla colada na abertura (pintura + captura vertical real) */
+.b-collage {
+  position: relative;
+  padding-bottom: 24px;
+}
+.b-plate-main {
+  margin: 0;
+  background: #faf6ee;
+  padding: 10px 10px 12px;
+  border: 1.5px solid #191714;
+  box-shadow: 6px 6px 0 #d5cbb4;
+}
+.b-plate-main img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border: 1px solid #191714;
+}
+.b-plate-main figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  font-style: italic;
+  color: #4a4339;
+}
+.b-plate-inset {
+  position: absolute;
+  right: -10px;
+  bottom: -12px;
+  width: 170px;
+  margin: 0;
+  background: #faf6ee;
+  padding: 6px 6px 8px;
+  border: 1.5px solid #191714;
+  box-shadow: 5px 5px 0 rgba(25, 23, 20, 0.22);
+}
+.b-plate-inset img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border: 1px solid #191714;
+}
+.b-plate-inset figcaption {
+  margin-top: 4px;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.25;
+  color: #191714;
+}
+
+/* Faixa Kraft — As 4 Pranchas de Jogo */
+.b-kraft-band {
+  background: #e5dcc8;
+  border-top: 2px solid #191714;
+  border-bottom: 2px solid #191714;
+  padding: 48px 0 56px;
+}
+.b-sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 1px solid #191714;
+  padding-bottom: 12px;
+  margin-bottom: 28px;
+}
+.b-sec-head h2 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(22px, 2.8vw, 30px);
+  margin: 0;
+}
+.b-sec-head span {
+  font-size: 14px;
+  font-style: italic;
+  color: #4a4339;
+}
+.b-plates-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
-.p-shot-card {
+.b-plate {
   margin: 0;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: border-color 0.15s ease;
+  background: #faf6ee;
+  padding: 8px 8px 12px;
+  border: 1px solid #191714;
+  box-shadow: 4px 4px 0 #c8bfa8;
 }
-
-.dir-b .p-shot-card {
-  box-shadow: 0 2px 0 #e3ddd0;
-}
-
-.p-shot-card:hover {
-  border-color: var(--border-strong);
-}
-
-.p-shot-card a {
+.b-plate a {
   display: block;
-  text-decoration: none;
+  border: 1px solid #191714;
+  overflow: hidden;
 }
-
-.p-shot-card img {
+.b-plate img {
   width: 100%;
   aspect-ratio: 9 / 16;
   object-fit: cover;
-  border-bottom: 1px solid var(--border);
+}
+.b-plate figcaption {
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: #2e2a24;
+}
+.b-plate figcaption strong {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #b83a1b;
+  margin-bottom: 2px;
 }
 
-.p-shot-meta {
-  padding: 12px 14px;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
+/* Colunas editoriais estilo jornal/manual (com fios verticais, sem cards) */
+.b-notes-sec {
+  padding: 52px 0;
 }
-
-.p-shot-num {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.p-shot-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-/* ==========================================================================
-   PILARES DE MECÂNICA (3 colunas editoriais numeradas 01 / 02 / 03)
-   ========================================================================== */
-.p-pillars {
+.b-columns-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
-  overflow: hidden;
+  border-top: 2px solid #191714;
+  border-bottom: 1px solid #191714;
 }
-
-.dir-b .p-pillars {
-  box-shadow: 0 2px 0 #e3ddd0;
+.b-col-note {
+  padding: 24px 24px 24px 0;
 }
-
-.p-pillar {
-  padding: 28px 26px;
-  border-right: 1px solid var(--border);
+.b-col-note + .b-col-note {
+  padding-left: 24px;
+  border-left: 1px solid #c8bfa8;
 }
-
-.p-pillar:last-child {
-  border-right: 0;
-}
-
-.p-pillar-num {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 10px;
-}
-
-.p-pillar h3 {
-  font-family: Russo, system-ui, sans-serif;
+.b-col-note h3 {
+  font-family: 'Russo', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 19px;
   margin: 0 0 8px;
-  color: var(--text);
+  color: #191714;
 }
-
-.p-pillar p {
+.b-col-note p {
   margin: 0;
-  font-size: 15px;
-  color: var(--secondary);
+  font-size: 15.5px;
+  color: #38332c;
+}
+
+/* Índice das Cinco Camadas em Tabela-Razão Horizontal (zero cards!) */
+.b-ledger-sec {
+  padding: 12px 0 64px;
+}
+.b-ledger {
+  border-top: 2px solid #191714;
+}
+.b-ledger-row {
+  display: grid;
+  grid-template-columns: 54px 200px 220px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #c8bfa8;
+}
+.b-ledger-num {
+  font-family: 'Russo', sans-serif;
+  font-size: 22px;
+  color: #b83a1b;
+}
+.b-ledger-thumb {
+  border: 1px solid #191714;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+.b-ledger-title h3 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0 0 3px;
+}
+.b-ledger-title span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12.5px;
+  color: #5c5449;
+}
+.b-ledger-desc {
+  margin: 0;
+  font-size: 15.5px;
+  color: #2e2a24;
+}
+
+
+/* ============================================================================
+   DIREÇÃO C — VITRINE DIRETA DE JOGO MOBILE (GAMEPLAY NA 1ª TELA)
+   (Inspirado em Apple Arcade / Supercell Mobile Storefront)
+   ============================================================================ */
+body.p1595-c {
+  background: #0c1118;
+  color: #ecf1f8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+  font-size: 15.5px;
   line-height: 1.55;
+  padding-bottom: 74px;
 }
 
-/* ==========================================================================
-   CAMADAS DA DOBRA & TIRANOS (Substitui os 4 cards com T-pose de fundo cinza)
-   ========================================================================== */
-.p-worlds-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+.c-wrap {
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto;
 }
 
-.p-world-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+.c-topbar {
+  background: #0c1118;
+  border-bottom: 1px solid #1e293b;
+  padding: 10px 0;
 }
-
-.dir-b .p-world-card {
-  box-shadow: 0 2px 0 #e3ddd0;
-}
-
-.p-world-img {
-  position: relative;
-}
-
-.p-world-img > img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-bottom: 1px solid var(--border);
-}
-
-.p-tyrant-Thumb {
-  position: absolute;
-  right: 8px;
-  bottom: -16px;
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  border: 1px solid var(--border-strong);
-  background: var(--surface-2);
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-}
-
-.p-world-body {
-  padding: 18px 14px 16px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.p-world-layer {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted);
-}
-
-.p-world-body h3 {
-  font-family: Russo, system-ui, sans-serif;
-  font-weight: 400;
-  font-size: 17px;
-  margin: 3px 0 6px;
-  color: var(--text);
-}
-
-.p-world-body p {
-  font-size: 13.5px;
-  line-height: 1.45;
-  color: var(--secondary);
-  margin: 0 0 12px;
-  flex: 1;
-}
-
-.p-world-boss {
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.p-world-boss strong {
-  color: var(--text);
-  font-weight: 600;
-}
-
-/* ==========================================================================
-   CHAMADA DA HISTÓRIA (A DOBRA) + FECHAMENTO
-   ========================================================================== */
-.p-story-banner {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: stretch;
-}
-
-.dir-b .p-story-banner {
-  box-shadow: 0 3px 0 #e3ddd0;
-}
-
-.p-story-copy {
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.p-story-copy h2 {
-  font-family: Russo, system-ui, sans-serif;
-  font-weight: 400;
-  font-size: clamp(24px, 2.8vw, 32px);
-  margin: 0 0 12px;
-  color: var(--text);
-}
-
-.p-story-copy p {
-  margin: 0 0 20px;
-  color: var(--secondary);
-  font-size: 16px;
-}
-
-.p-story-art {
-  border-left: 1px solid var(--border);
-  min-height: 240px;
-}
-
-.p-story-art img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Rodapé limpo */
-.p-footer {
-  padding: 32px 0;
-  font-size: 14px;
-  color: var(--muted);
-  background: var(--bg);
-}
-
-.p-footer-inner {
+.c-topbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
 }
-
-.p-footer-links {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.p-footer-links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 10px;
-  color: var(--secondary);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--border-strong);
-}
-
-.p-footer-links a:hover {
-  color: var(--text);
-}
-
-/* ==========================================================================
-   PÁGINA BAIXAR / JOGAR CORRIGIDA (Sem logo cortado ao meio!)
-   ========================================================================== */
-.p-download-section {
-  padding: 48px 0 64px;
-}
-
-.p-download-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-}
-
-.dir-b .p-download-card {
-  box-shadow: 0 4px 0 #e3ddd0;
-}
-
-.p-download-media {
-  position: relative;
-  background: #0d0a1a;
-  border-right: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-}
-
-.p-download-media > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 36% center;
-}
-
-.p-download-body {
-  padding: 36px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.p-app-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.p-app-header img {
-  width: 68px;
-  height: 68px;
-  border-radius: 14px;
-  border: 1px solid var(--border-strong);
-  flex-shrink: 0;
-}
-
-.p-app-header h1 {
-  font-family: Russo, system-ui, sans-serif;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 1.15;
-  margin: 0 0 4px;
-}
-
-.p-app-header p {
-  margin: 0;
-  font-size: 14px;
-  color: var(--secondary);
-}
-
-.p-store-box {
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 8px;
-}
-
-.p-store-status {
+.c-brand {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--tag-text);
-  margin-bottom: 8px;
+  text-decoration: none;
+  font-family: 'Russo', sans-serif;
+  font-size: 16px;
+  color: #f3e3c3;
+  white-space: nowrap;
 }
-
-.p-store-status::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
+.c-brand img {
+  width: 24px;
+  height: 24px;
 }
-
-.p-store-box p {
-  margin: 0;
-  font-size: 14.5px;
-  color: var(--secondary);
+.c-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-
-.p-req-list {
-  margin: 20px 0 0;
-  padding: 16px 0 0;
-  border-top: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px 16px;
-  list-style: none;
+.c-nav a {
+  text-decoration: none;
   font-size: 13.5px;
-  color: var(--secondary);
+  font-weight: 500;
+  color: #cbd5e1;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.c-nav a:hover,
+.c-nav a[aria-current="page"] {
+  color: #fbbf24;
 }
 
-.p-req-list strong {
-  color: var(--text);
-  display: block;
-  font-size: 12px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  text-transform: uppercase;
+/* Capa Panorâmica + Doca de Identidade do App */
+.c-cover {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
 }
-
-/* ==========================================================================
-   PÁGINAS DE DOCUMENTO (Suporte, Privacidade, Termos — Estilo #1594)
-   ========================================================================== */
-.p-doc-wrap {
-  width: min(680px, calc(100% - 32px));
-  margin: 40px auto 64px;
+.c-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% 28%;
 }
-
-.p-doc-sheet {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 36px 40px;
+.c-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 17, 24, 0.15) 0%, rgba(12, 17, 24, 0.55) 60%, #0c1118 100%);
 }
-
-.dir-b .p-doc-sheet {
-  box-shadow: 0 2px 0 #e3ddd0;
+.c-app-dock {
+  position: relative;
+  margin-top: -64px;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #1e293b;
 }
-
-.p-doc-sheet h1 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.c-app-id {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.c-app-icon {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  flex-shrink: 0;
+}
+.c-app-titles h1 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: 1.1;
+  margin: 0 0 4px;
+  color: #ffffff;
+}
+.c-app-sub {
   margin: 0 0 6px;
-  color: var(--text);
-}
-
-.p-doc-lead {
   font-size: 15px;
-  color: var(--secondary);
-  margin: 0 0 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
+  color: #f3e3c3;
+  font-weight: 600;
+}
+.c-app-meta {
+  margin: 0;
+  font-size: 13px;
+  color: #94a3b8;
+}
+.c-dock-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.c-btn-get {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #f59e0b;
+  color: #0c1118;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 22px;
+  min-height: 46px;
+  border-radius: 999px;
+  text-decoration: none;
+}
+.c-btn-get:hover {
+  background: #fbbf24;
+}
+.c-btn-get svg {
+  width: 17px;
+  height: 17px;
+}
+.c-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid #334155;
 }
 
-.p-doc-prose h2 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+/* Galeria Imediata de Capturas Reais (logo abaixo do nome do jogo!) */
+.c-reel-sec {
+  padding: 26px 0 36px;
+  border-bottom: 1px solid #1e293b;
+}
+.c-reel-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.c-reel-item {
+  margin: 0;
+}
+.c-reel-item a {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #263346;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+.c-reel-item img {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+.c-reel-item figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+.c-reel-item figcaption strong {
+  color: #e2e8f0;
+  margin-right: 4px;
+}
+
+/* Seção de 2 colunas: Sobre o Jogo + Tira Visual das 5 Camadas */
+.c-overview-sec {
+  padding: 44px 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 44px;
+  align-items: start;
+}
+.c-about h2,
+.c-worlds-col h2 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  margin: 0 0 14px;
+  color: #f3e3c3;
+}
+.c-about p {
+  margin: 0 0 14px;
+  color: #cbd5e1;
+}
+.c-feature-points {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 24px;
+  border-top: 1px solid #1e293b;
+}
+.c-feature-points li {
+  padding: 12px 0;
+  border-bottom: 1px solid #1e293b;
+  font-size: 14.5px;
+  color: #cbd5e1;
+}
+.c-feature-points li strong {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 2px;
+}
+.c-duel-preview {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+}
+
+.c-world-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.c-world-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #263346;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+}
+.c-world-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  z-index: -2;
+}
+.c-world-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(12, 17, 24, 0.92) 0%, rgba(12, 17, 24, 0.78) 55%, rgba(12, 17, 24, 0.25) 100%);
+}
+.c-wb-left {
+  max-width: 72%;
+}
+.c-wb-left h3 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
   font-size: 17px;
+  margin: 0 0 2px;
+  color: #ffffff;
+}
+.c-wb-left p {
+  margin: 0;
+  font-size: 13px;
+  color: #cbd5e1;
+}
+.c-wb-right {
+  font-size: 12px;
+  color: #f3e3c3;
+  text-align: right;
   font-weight: 600;
-  color: var(--text);
-  margin: 28px 0 10px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
 }
 
-.p-doc-prose h2:first-child {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
-}
-
-.p-doc-prose h3 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text);
-  margin: 20px 0 6px;
-}
-
-.p-doc-prose p,
-.p-doc-prose li {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--secondary);
-  margin: 0 0 12px;
-}
-
-.p-doc-prose a {
-  color: var(--text);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--border-strong);
-}
-
-/* Barra fixa inferior de conversão mobile (Direção C) */
-.p-sticky-mobile-bar {
+/* Barra fixa inferior no celular para a Direção C */
+.c-sticky-bar {
   display: none;
 }
 
-/* ==========================================================================
-   RESPONSIVIDADE (Tablet <= 900px e Mobile <= 600px)
-   ========================================================================== */
-@media (max-width: 900px) {
-  .dir-b .p-hero-sheet,
-  .dir-c .p-hero-split,
-  .p-story-banner,
-  .p-download-card {
+/* ============================================================================
+   PÁGINAS INTERNAS (/baixar e /suporte) ADAPTADAS A CADA DIREÇÃO
+   ============================================================================ */
+.p-subpage {
+  padding: 44px 0 72px;
+}
+.p-download-split {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 40px;
+  align-items: center;
+}
+.p-dl-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.p-dl-head img {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+.p1595-b .p-dl-head img {
+  border-radius: 0;
+  border: 1.5px solid #191714;
+}
+.p-dl-head h1 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(26px, 3.5vw, 38px);
+  line-height: 1.1;
+  margin: 0;
+}
+.p-dl-painting {
+  margin: 0;
+}
+.p-dl-painting img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.p1595-b .p-dl-painting {
+  background: #faf6ee;
+  padding: 10px;
+  border: 1.5px solid #191714;
+  box-shadow: 6px 6px 0 #d5cbb4;
+}
+.p1595-b .p-dl-painting img {
+  border-radius: 0;
+  border: 1px solid #191714;
+}
+.p-dl-painting figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.78;
+}
+.p-dl-specs {
+  margin: 24px 0;
+  border-top: 1px solid rgba(150, 150, 150, 0.25);
+}
+.p1595-b .p-dl-specs {
+  border-top: 1.5px solid #191714;
+}
+.p-dl-spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.2);
+  font-size: 14.5px;
+}
+.p-doc-sheet {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.p1595-b .p-doc-sheet {
+  background: #faf6ee;
+  padding: 36px 40px;
+  border: 1.5px solid #191714;
+  box-shadow: 6px 6px 0 #d5cbb4;
+}
+.p-doc-sheet h1 {
+  font-family: 'Russo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(26px, 3.4vw, 36px);
+  margin: 0 0 12px;
+}
+.p-doc-sheet h2 {
+  font-size: 19px;
+  margin: 28px 0 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(150, 150, 150, 0.25);
+}
+.p-faq-item {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.2);
+}
+.p-faq-item h3 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+.p-faq-item p {
+  margin: 0;
+  opacity: 0.88;
+}
+
+/* Rodapé enxuto */
+.p-footer {
+  border-top: 1px solid rgba(150, 150, 150, 0.2);
+  padding: 28px 0 40px;
+  font-size: 13.5px;
+  opacity: 0.82;
+}
+.p1595-b .p-footer {
+  border-top: 2px solid #191714;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.p-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.p-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.p-footer-links a {
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.p-footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================================
+   RESPONSIVO CELULAR (390 px) E TABLET
+   ============================================================================ */
+@media (max-width: 920px) {
+  .a-duel-split,
+  .b-spread,
+  .c-overview-sec,
+  .p-download-split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .b-columns-3 {
     grid-template-columns: 1fr;
   }
-
-  .dir-b .p-hero-art-frame {
+  .b-col-note + .b-col-note {
+    padding-left: 0;
     border-left: 0;
-    border-top: 1px solid var(--border);
-    min-height: 260px;
+    border-top: 1px solid #c8bfa8;
   }
-
-  .p-story-art {
-    border-left: 0;
-    border-top: 1px solid var(--border);
+  .b-ledger-row {
+    grid-template-columns: 36px 120px 1fr;
+    gap: 12px;
   }
-
-  .p-download-media {
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .p-worlds-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .b-ledger-desc {
+    grid-column: 1 / -1;
+    font-size: 14.5px;
   }
 }
 
-@media (max-width: 600px) {
-  .p-wrap {
-    width: calc(100% - 32px);
+@media (max-width: 680px) {
+  .p-proto-bar {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+  .a-wrap, .b-wrap, .c-wrap {
+    width: calc(100% - 28px);
   }
 
-  .p-header-inner {
-    min-height: 56px;
+  /* Direção A no celular */
+  .a-header {
+    position: relative;
+    top: 0;
+    padding: 8px 0;
+    background: #11100e;
+    border-bottom: 1px solid #26231e;
+  }
+  .a-brand {
+    font-size: 14.5px;
     gap: 6px;
   }
-
-  .p-brand {
-    font-size: 13.5px;
-    gap: 6px;
+  .a-brand img {
+    width: 20px;
+    height: 20px;
   }
-
-  .p-brand img {
-    width: 22px;
-    height: 25px;
+  .a-nav {
+    gap: 11px;
   }
-
-  .p-nav {
-    gap: 1px;
+  .a-nav a:first-child,
+  .b-nav a:first-child,
+  .c-nav a:first-child {
+    display: none;
   }
-
-  .p-nav a {
-    padding: 0 6px;
+  .a-nav a {
     font-size: 12.5px;
+    min-height: 38px;
   }
-
-  .p-nav .p-nav-cta {
-    padding: 0 9px;
-    margin-left: 2px;
+  .a-poster {
+    min-height: auto;
+    display: block;
+    padding: 0 0 20px;
   }
-
-  .p-nav .p-lang {
-    padding-left: 6px;
-    margin-left: 2px;
-    min-width: 34px;
+  .a-poster-bg {
+    position: relative;
+    aspect-ratio: 16 / 9;
   }
-
-  .dir-a .p-hero {
-    min-height: 580px;
-    align-items: flex-start;
+  .a-poster-bg img {
+    object-position: 82% center;
   }
-
-  .dir-a .p-hero-bg {
-    inset: auto 0 0;
-    height: 310px;
-    object-position: 86% bottom;
+  .a-poster-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(17,16,14,0) 45%, #11100e 100%);
   }
-
-  .dir-a .p-hero::before {
-    background: linear-gradient(180deg, #0b0c0e 0%, #0b0c0e 46%, rgba(11, 12, 14, 0.25) 75%, #0b0c0e 100%);
+  .a-poster::after {
+    display: none;
   }
-
-  .dir-a .p-hero-inner {
-    padding: 28px 0 240px;
+  .a-poster-copy {
+    margin-top: -32px;
+    position: relative;
+    z-index: 2;
   }
-
-  .dir-b .p-hero {
-    padding: 20px 0 24px;
+  .a-emblem-row {
+    margin-bottom: 8px;
   }
-
-  .dir-b .p-hero-copy {
-    padding: 24px 20px;
+  .a-emblem-row img {
+    width: 40px;
+    height: 40px;
   }
-
-  .dir-b .p-hero-art-frame {
-    min-height: 220px;
+  .a-poster h1 {
+    font-size: 29px;
+    margin-bottom: 8px;
   }
-
-  .dir-c .p-hero {
-    padding: 28px 0 36px;
+  .a-poster-lead {
+    font-size: 15px;
+    margin-bottom: 14px;
   }
-
-  .p-hero h1 {
-    font-size: 33px;
+  .a-stage {
+    padding: 22px 0 40px;
   }
-
-  .p-hero-lead {
-    font-size: 16px;
-  }
-
-  .p-specs-bar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .p-spec-item:nth-child(2) {
-    border-right: 0;
-  }
-
-  .p-spec-item:nth-child(1),
-  .p-spec-item:nth-child(2) {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .p-section {
-    padding: 44px 0;
-  }
-
-  .p-sec-head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-
-  /* Carrossel horizontal com scroll-snap para capturas reais 9:16 no celular! */
-  .p-shots-grid {
+  .a-phones {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 14px;
-    margin-inline: -16px;
-    padding: 0 16px 10px;
+    margin-inline: -14px;
+    padding: 4px 14px 14px;
   }
-
-  .p-shot-card {
+  .a-phone {
     flex: 0 0 72%;
     scroll-snap-align: start;
   }
-
-  .p-pillars {
-    grid-template-columns: 1fr;
+  .a-phone:nth-child(even) {
+    margin-top: 0;
+  }
+  .a-horizon-strip {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    background: transparent;
+    border: 0;
+    margin-inline: -14px;
+    padding: 0 14px 10px;
+  }
+  .a-horizon-slice {
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+    min-height: 230px;
+    border: 1px solid #26231e;
   }
 
-  .p-pillar {
-    padding: 20px;
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
+  /* Direção B no celular */
+  .b-edition {
+    display: none;
+  }
+  .b-brand {
+    font-size: 14.5px;
+    gap: 6px;
+  }
+  .b-brand img {
+    width: 20px;
+    height: 20px;
+  }
+  .b-nav {
+    gap: 11px;
+    font-size: 12.5px;
+  }
+  .b-spread {
+    padding: 18px 0 32px;
+    gap: 20px;
+  }
+  .b-spread h1 {
+    font-size: 29px;
+  }
+  .b-dropcap {
+    font-size: 15.5px;
+  }
+  .b-plate-main figcaption {
+    padding-right: 124px;
+  }
+  .b-plate-inset {
+    width: 114px;
+    right: -2px;
+    bottom: -10px;
+  }
+  .b-plates-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    margin-inline: -14px;
+    padding: 4px 14px 14px;
+  }
+  .b-plate {
+    flex: 0 0 74%;
+    scroll-snap-align: start;
+  }
+  .p1595-b .p-doc-sheet {
+    padding: 20px 18px;
   }
 
-  .p-pillar:last-child {
-    border-bottom: 0;
+  /* Direção C no celular */
+  .c-brand {
+    font-size: 14.5px;
+    gap: 6px;
   }
-
-  /* Carrossel horizontal também para as 5 camadas no celular */
-  .p-worlds-grid {
+  .c-brand img {
+    width: 20px;
+    height: 20px;
+  }
+  .c-nav {
+    gap: 11px;
+  }
+  .c-nav a {
+    font-size: 12.5px;
+  }
+  .c-cover {
+    height: 175px;
+  }
+  .c-app-dock {
+    margin-top: -42px;
+    gap: 14px;
+    padding-bottom: 16px;
+  }
+  .c-app-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+  }
+  .c-app-titles h1 {
+    font-size: 23px;
+  }
+  .c-app-sub {
+    font-size: 13.5px;
+  }
+  .c-dock-cta {
+    width: 100%;
+  }
+  .c-btn-get {
+    flex: 1;
+    justify-content: center;
+  }
+  .c-reel-sec {
+    padding: 18px 0 24px;
+  }
+  .c-reel-track {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 12px;
-    margin-inline: -16px;
-    padding: 0 16px 10px;
+    margin-inline: -14px;
+    padding: 4px 14px 10px;
   }
-
-  .p-world-card {
-    flex: 0 0 78%;
+  .c-reel-item {
+    flex: 0 0 68%;
     scroll-snap-align: start;
   }
-
-  .p-story-copy {
-    padding: 24px 20px;
-  }
-
-  .p-download-body {
-    padding: 24px 20px;
-  }
-
-  .p-doc-sheet {
-    padding: 24px 20px;
-  }
-
-  .dir-c .p-sticky-mobile-bar {
+  .c-sticky-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
     position: fixed;
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    z-index: 40;
-    background: rgba(17, 24, 39, 0.95);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border-strong);
-    border-radius: 10px;
-    padding: 10px 12px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background: rgba(12, 17, 24, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #263346;
+    padding: 10px 14px;
   }
-
-  .dir-c .p-sticky-info {
+  .c-sticky-left {
     display: flex;
     align-items: center;
     gap: 10px;
-    min-width: 0;
   }
-
-  .dir-c .p-sticky-info img {
+  .c-sticky-left img {
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    flex-shrink: 0;
   }
-
-  .dir-c .p-sticky-info strong {
+  .c-sticky-left strong {
     display: block;
-    font-size: 13px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 13.5px;
+    color: #ffffff;
   }
-
-  .dir-c .p-sticky-info span {
+  .c-sticky-left span {
     display: block;
-    font-size: 11px;
-    color: var(--secondary);
+    font-size: 11.5px;
+    color: #94a3b8;
   }
-
-  .dir-c .p-sticky-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding: 0 14px;
-    border-radius: 7px;
-    background: var(--accent-hi);
-    color: #070a10;
-    font-size: 13px;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .dir-c .p-footer {
-    padding-bottom: 84px;
+  .c-sticky-bar .c-btn-get {
+    flex: 0 0 auto;
+    padding: 8px 16px;
+    min-height: 38px;
+    font-size: 13.5px;
   }
 }
